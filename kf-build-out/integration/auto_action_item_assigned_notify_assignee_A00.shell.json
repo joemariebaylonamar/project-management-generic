@@ -1,0 +1,4 @@
+{
+  "Name": "Action item created/assigned → notify Assignee",
+  "Description": "workflow_meta status-change → field-user:Assignee (ITPH-00255): action items are assigned at creation; notify the assignee immediately."
+}

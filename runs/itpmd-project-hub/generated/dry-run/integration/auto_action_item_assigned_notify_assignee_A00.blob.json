@@ -1,0 +1,57 @@
+{
+  "Root": "auto_action_item_assigned_notify_assignee_A00",
+  "auto_action_item_assigned_notify_assignee_A00": {
+    "_id": "auto_action_item_assigned_notify_assignee_A00",
+    "Id": "auto_action_item_assigned_notify_assignee_A00",
+    "Kind": "Integration",
+    "Name": "Action item created/assigned → notify Assignee",
+    "Type": "Integration",
+    "Status": "Draft",
+    "IsActive": true,
+    "_application_id": "itpmd_project_hub_A00",
+    "Connectors": [
+      "Connector_i42ym4"
+    ],
+    "Integration::Trigger": [
+      "Trigger_1dxdx9m"
+    ],
+    "Integration::Action": [
+      "Action_1dxdx93"
+    ]
+  },
+  "Connector_i42ym4": {
+    "_id": "Connector_i42ym4",
+    "Id": "Connector_i42ym4",
+    "Kind": "Connector",
+    "Name": "Action item created/assigned → notify Assignee connector",
+    "Entities": [
+      "Trigger_1dxdx9m",
+      "Action_1dxdx93"
+    ]
+  },
+  "Trigger_1dxdx9m": {
+    "_id": "Trigger_1dxdx9m",
+    "Id": "Trigger_1dxdx9m",
+    "Kind": "Trigger",
+    "Version": 1,
+    "Name": "itpmd_action_item · created",
+    "Flow": "itpmd_action_item",
+    "On": "Open",
+    "Event": "created"
+  },
+  "Action_1dxdx93": {
+    "_id": "Action_1dxdx93",
+    "Id": "Action_1dxdx93",
+    "Kind": "Action",
+    "Version": 1,
+    "Name": "notify → itpmd_action_item",
+    "ActionType": "notify",
+    "TargetFlow": "itpmd_action_item",
+    "FieldMap": {
+      "Assignee": "Assignee",
+      "Project": "Project",
+      "Due_Date": "Due_Date"
+    },
+    "Condition": null
+  }
+}

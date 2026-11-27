@@ -1,0 +1,199 @@
+{
+  "Root": "itpmd_hub_settings",
+  "itpmd_hub_settings": {
+    "Id": "itpmd_hub_settings",
+    "Name": "ITPMD Hub Settings",
+    "Kind": "Model",
+    "FlowType": "Form",
+    "Description": "",
+    "Model::Row": [
+      "Row_r0jb9y"
+    ],
+    "Model::Field": [
+      "setting_name",
+      "psr_due_working_day",
+      "psr_reminder_days_before",
+      "psr_reminder_final_day_before",
+      "issue_aging_period_days",
+      "escalation_recipients"
+    ]
+  },
+  "Row_r0jb9y": {
+    "Id": "Row_r0jb9y",
+    "Kind": "Row",
+    "Model": "itpmd_hub_settings",
+    "Row::Column": [
+      "Column_r0jb9y"
+    ]
+  },
+  "Column_r0jb9y": {
+    "Id": "Column_r0jb9y",
+    "Kind": "Column",
+    "Type": "Section",
+    "Name": "Details",
+    "Start": 0,
+    "End": 6,
+    "Row": "Row_r0jb9y",
+    "Column::Row": [
+      "Row_r0i34g",
+      "Row_r0i34h",
+      "Row_r0i34i"
+    ]
+  },
+  "Row_r0i34g": {
+    "Id": "Row_r0i34g",
+    "Kind": "Row",
+    "Column": "Column_r0jb9y",
+    "Row::Column": [
+      "Column_lukmp5",
+      "Column_173tcsa"
+    ]
+  },
+  "Column_lukmp5": {
+    "Id": "Column_lukmp5",
+    "Kind": "Column",
+    "Type": "Field",
+    "Start": 0,
+    "End": 3,
+    "Row": "Row_r0i34g",
+    "Column::Field": [
+      "setting_name"
+    ]
+  },
+  "Column_173tcsa": {
+    "Id": "Column_173tcsa",
+    "Kind": "Column",
+    "Type": "Field",
+    "Start": 3,
+    "End": 6,
+    "Row": "Row_r0i34g",
+    "Column::Field": [
+      "psr_due_working_day"
+    ]
+  },
+  "Row_r0i34h": {
+    "Id": "Row_r0i34h",
+    "Kind": "Row",
+    "Column": "Column_r0jb9y",
+    "Row::Column": [
+      "Column_1mgm7jr",
+      "Column_1ddbfil"
+    ]
+  },
+  "Column_1mgm7jr": {
+    "Id": "Column_1mgm7jr",
+    "Kind": "Column",
+    "Type": "Field",
+    "Start": 0,
+    "End": 3,
+    "Row": "Row_r0i34h",
+    "Column::Field": [
+      "psr_reminder_days_before"
+    ]
+  },
+  "Column_1ddbfil": {
+    "Id": "Column_1ddbfil",
+    "Kind": "Column",
+    "Type": "Field",
+    "Start": 3,
+    "End": 6,
+    "Row": "Row_r0i34h",
+    "Column::Field": [
+      "psr_reminder_final_day_before"
+    ]
+  },
+  "Row_r0i34i": {
+    "Id": "Row_r0i34i",
+    "Kind": "Row",
+    "Column": "Column_r0jb9y",
+    "Row::Column": [
+      "Column_1fotzuz",
+      "Column_1fzm4w3"
+    ]
+  },
+  "Column_1fotzuz": {
+    "Id": "Column_1fotzuz",
+    "Kind": "Column",
+    "Type": "Field",
+    "Start": 0,
+    "End": 3,
+    "Row": "Row_r0i34i",
+    "Column::Field": [
+      "issue_aging_period_days"
+    ]
+  },
+  "Column_1fzm4w3": {
+    "Id": "Column_1fzm4w3",
+    "Kind": "Column",
+    "Type": "Field",
+    "Start": 3,
+    "End": 6,
+    "Row": "Row_r0i34i",
+    "Column::Field": [
+      "escalation_recipients"
+    ]
+  },
+  "setting_name": {
+    "Id": "setting_name",
+    "Kind": "Field",
+    "Type": "Text",
+    "Name": "Setting_Name",
+    "Model": "itpmd_hub_settings",
+    "Column": "Column_lukmp5",
+    "Required": true
+  },
+  "psr_due_working_day": {
+    "Id": "psr_due_working_day",
+    "Kind": "Field",
+    "Type": "Number",
+    "Name": "PSR_Due_Working_Day",
+    "Model": "itpmd_hub_settings",
+    "Column": "Column_173tcsa",
+    "Required": true
+  },
+  "psr_reminder_days_before": {
+    "Id": "psr_reminder_days_before",
+    "Kind": "Field",
+    "Type": "Number",
+    "Name": "PSR_Reminder_Days_Before",
+    "Model": "itpmd_hub_settings",
+    "Column": "Column_1mgm7jr"
+  },
+  "psr_reminder_final_day_before": {
+    "Id": "psr_reminder_final_day_before",
+    "Kind": "Field",
+    "Type": "Number",
+    "Name": "PSR_Reminder_Final_Day_Before",
+    "Model": "itpmd_hub_settings",
+    "Column": "Column_1ddbfil"
+  },
+  "issue_aging_period_days": {
+    "Id": "issue_aging_period_days",
+    "Kind": "Field",
+    "Type": "Number",
+    "Name": "Issue_Aging_Period_Days",
+    "Model": "itpmd_hub_settings",
+    "Column": "Column_1fotzuz",
+    "Required": true
+  },
+  "QueryDefinition_1fzm4w3": {
+    "Id": "QueryDefinition_1fzm4w3",
+    "Kind": "QueryDefinition",
+    "Field": "escalation_recipients",
+    "LHSModel": "User",
+    "FlowType": "User",
+    "LookupField": [],
+    "HiddenField": []
+  },
+  "escalation_recipients": {
+    "Id": "escalation_recipients",
+    "Kind": "Field",
+    "Type": "User",
+    "Name": "Escalation_Recipients",
+    "Model": "itpmd_hub_settings",
+    "Column": "Column_1fzm4w3",
+    "Field::QueryDefinition": [
+      "QueryDefinition_1fzm4w3"
+    ]
+  }
+}

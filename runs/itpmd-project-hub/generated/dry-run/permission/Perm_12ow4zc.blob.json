@@ -1,0 +1,63 @@
+{
+  "Root": "Perm_12ow4zc",
+  "Perm_12ow4zc": {
+    "Id": "Perm_12ow4zc",
+    "Kind": "FlowPermission",
+    "Role": "project_manager",
+    "RoleName": "Project Manager",
+    "Model": "itpmd_cost_entry",
+    "Level": "Editable",
+    "Scope": "my",
+    "FlowPermission::Permission": [
+      "Permission_1ekf0vr",
+      "Permission_18t5xib",
+      "Permission_eqra0r",
+      "Permission_1g9ti08",
+      "Permission_sxqcc9",
+      "Permission_uau12d",
+      "Permission_6otf7a"
+    ]
+  },
+  "Permission_1ekf0vr": {
+    "Id": "Permission_1ekf0vr",
+    "Kind": "Permission",
+    "Column": "cost_entry_title",
+    "Permission": "Editable"
+  },
+  "Permission_18t5xib": {
+    "Id": "Permission_18t5xib",
+    "Kind": "Permission",
+    "Column": "project",
+    "Permission": "Editable"
+  },
+  "Permission_eqra0r": {
+    "Id": "Permission_eqra0r",
+    "Kind": "Permission",
+    "Column": "entry_date",
+    "Permission": "Editable"
+  },
+  "Permission_1g9ti08": {
+    "Id": "Permission_1g9ti08",
+    "Kind": "Permission",
+    "Column": "cost_description",
+    "Permission": "Editable"
+  },
+  "Permission_sxqcc9": {
+    "Id": "Permission_sxqcc9",
+    "Kind": "Permission",
+    "Column": "actual_amount",
+    "Permission": "Editable"
+  },
+  "Permission_uau12d": {
+    "Id": "Permission_uau12d",
+    "Kind": "Permission",
+    "Column": "committed_amount",
+    "Permission": "Editable"
+  },
+  "Permission_6otf7a": {
+    "Id": "Permission_6otf7a",
+    "Kind": "Permission",
+    "Column": "forecast_amount",
+    "Permission": "Editable"
+  }
+}

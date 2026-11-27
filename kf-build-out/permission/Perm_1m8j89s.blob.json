@@ -1,0 +1,35 @@
+{
+  "Root": "Perm_1m8j89s",
+  "Perm_1m8j89s": {
+    "Id": "Perm_1m8j89s",
+    "Kind": "FlowPermission",
+    "Role": "project_sponsor",
+    "RoleName": "Project Sponsor",
+    "Model": "itpmd_portfolio_report",
+    "Level": "ReadOnly",
+    "Scope": "all",
+    "FlowPermission::Permission": [
+      "Permission_zhpwb8",
+      "Permission_16nh3of",
+      "Permission_r1ohyf"
+    ]
+  },
+  "Permission_zhpwb8": {
+    "Id": "Permission_zhpwb8",
+    "Kind": "Permission",
+    "Column": "report_period",
+    "Permission": "ReadOnly"
+  },
+  "Permission_16nh3of": {
+    "Id": "Permission_16nh3of",
+    "Kind": "Permission",
+    "Column": "portfolio_narrative",
+    "Permission": "ReadOnly"
+  },
+  "Permission_r1ohyf": {
+    "Id": "Permission_r1ohyf",
+    "Kind": "Permission",
+    "Column": "total_projects_reported",
+    "Permission": "ReadOnly"
+  }
+}

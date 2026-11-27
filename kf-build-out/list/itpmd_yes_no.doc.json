@@ -1,0 +1,16 @@
+{
+  "_id": "itpmd_yes_no",
+  "Name": "ITPMD Yes No",
+  "Description": "",
+  "Type": "List",
+  "Status": "Live",
+  "ListItems": [
+    "Yes",
+    "No"
+  ],
+  "_application_id": "itpmd_project_hub_A00",
+  "Security": {
+    "AllowAllFlows": true,
+    "AllowedFlows": []
+  }
+}

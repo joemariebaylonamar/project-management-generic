@@ -1,0 +1,6 @@
+{"ts":"2026-10-28T07:58:30.452Z","actor":"engine","step":"verify","ev":"start"}
+{"ts":"2026-10-28T07:58:30.456Z","actor":"engine","step":"verify","ev":"end"}
+{"ts":"2026-10-28T07:58:41.966Z","actor":"engine","step":"gate","ev":"start"}
+{"ts":"2026-10-28T07:58:41.973Z","actor":"engine","step":"gate","ev":"end"}
+{"ts":"2026-10-28T07:59:36.877Z","actor":"engine","step":"apply","ev":"start"}
+{"ts":"2026-10-28T08:01:06.208Z","actor":"engine","step":"apply","ev":"end"}

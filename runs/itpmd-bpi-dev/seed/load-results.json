@@ -1,0 +1,163 @@
+{
+ "mode": "execute",
+ "at": "2026-10-28T08:21:22.015Z",
+ "res": {
+  "list:ITPMD_Business_Unit_A00": {
+   "insert": 0,
+   "update": 0,
+   "skip": 10,
+   "reject": 0
+  },
+  "list:ITPMD_Portfolio_List_A00": {
+   "insert": 0,
+   "update": 0,
+   "skip": 8,
+   "reject": 0
+  },
+  "list:ITPMD_Project_Status_A00": {
+   "insert": 0,
+   "update": 0,
+   "skip": 4,
+   "reject": 0
+  },
+  "list:ITPMD_Dependency_Type_A00": {
+   "insert": 0,
+   "update": 0,
+   "skip": 4,
+   "reject": 0
+  },
+  "list:ITPMD_Risk_Category_A00": {
+   "insert": 0,
+   "update": 0,
+   "skip": 12,
+   "reject": 0
+  },
+  "list:ITPMD_Risk_Response_Strategy_A00": {
+   "insert": 0,
+   "update": 0,
+   "skip": 4,
+   "reject": 0
+  },
+  "list:ITPMD_Risk_Status_A00": {
+   "insert": 0,
+   "update": 0,
+   "skip": 3,
+   "reject": 0
+  },
+  "list:ITPMD_Issue_Category_A00": {
+   "insert": 0,
+   "update": 0,
+   "skip": 10,
+   "reject": 0
+  },
+  "list:ITPMD_Priority_Level_A00": {
+   "insert": 0,
+   "update": 0,
+   "skip": 4,
+   "reject": 0
+  },
+  "list:ITPMD_Invoice_Status_A00": {
+   "insert": 0,
+   "update": 0,
+   "skip": 5,
+   "reject": 0
+  },
+  "list:ITPMD_Budget_Change_Type_A00": {
+   "insert": 0,
+   "update": 0,
+   "skip": 3,
+   "reject": 0
+  },
+  "list:ITPMD_Project_Team_Role_A00": {
+   "insert": 0,
+   "update": 0,
+   "skip": 6,
+   "reject": 0
+  },
+  "list:ITPMD_Holiday_Coverage_A00": {
+   "insert": 0,
+   "update": 0,
+   "skip": 4,
+   "reject": 0
+  },
+  "list:ITPMD_Schedule_Highlight_Type_A00": {
+   "insert": 0,
+   "update": 0,
+   "skip": 4,
+   "reject": 0
+  },
+  "list:ITPMD_Yes_No_A00": {
+   "insert": 0,
+   "update": 0,
+   "skip": 2,
+   "reject": 0
+  },
+  "list:ITPMD_Discussion_Link_Type_A00": {
+   "insert": 0,
+   "update": 0,
+   "skip": 2,
+   "reject": 0
+  },
+  "list:ITPMD_Notification_Type_A00": {
+   "insert": 0,
+   "update": 0,
+   "skip": 4,
+   "reject": 0
+  },
+  "list:ITPMD_WBS_Item_Type_A00": {
+   "insert": 0,
+   "update": 0,
+   "skip": 5,
+   "reject": 0
+  },
+  "Hub_Settings": {
+   "insert": 0,
+   "update": 0,
+   "skip": 1,
+   "reject": 0
+  },
+  "Holiday_Calendar": {
+   "insert": 0,
+   "update": 0,
+   "skip": 18,
+   "reject": 0
+  },
+  "Project": {
+   "insert": 4,
+   "update": 0,
+   "skip": 0,
+   "reject": 0
+  },
+  "Activity": {
+   "insert": 40,
+   "update": 0,
+   "skip": 0,
+   "reject": 0
+  },
+  "Risk": {
+   "insert": 9,
+   "update": 0,
+   "skip": 0,
+   "reject": 0
+  },
+  "Cost_Entry": {
+   "insert": 4,
+   "update": 0,
+   "skip": 0,
+   "reject": 0
+  },
+  "Issue": {
+   "insert": 6,
+   "update": 0,
+   "skip": 0,
+   "reject": 0
+  },
+  "Action_Item": {
+   "insert": 6,
+   "update": 0,
+   "skip": 0,
+   "reject": 0
+  }
+ },
+ "rejects": []
+}

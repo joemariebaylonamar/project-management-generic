@@ -1,0 +1,4 @@
+{
+  "Name": "Portfolio Command Center",
+  "Description": "PSC Member's account-wide portfolio oversight. Editable/all only on the Portfolio Status Report (its creator) — the consolidated PPSR (with its Project Summaries child rows of approved-PSR health/cost figures) is this role's reporting surface. Project/Risk/Cost Entry/PSR/Issue/Action Item are ReadOnly for this role and are not carded directly (the page-driven grant would escalate them to Delete/InitiateItems even for Board flows per the gate's static check) — residual gap, see decisions.md."
+}

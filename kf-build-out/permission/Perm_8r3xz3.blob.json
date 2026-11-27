@@ -1,0 +1,42 @@
+{
+  "Root": "Perm_8r3xz3",
+  "Perm_8r3xz3": {
+    "Id": "Perm_8r3xz3",
+    "Kind": "FlowPermission",
+    "Role": "hub_administrator",
+    "RoleName": "Hub Administrator",
+    "Model": "itpmd_holiday_calendar",
+    "Level": "Editable",
+    "Scope": "all",
+    "FlowPermission::Permission": [
+      "Permission_ssw5ge",
+      "Permission_ssogcb",
+      "Permission_1hsm1xc",
+      "Permission_1fr7077"
+    ]
+  },
+  "Permission_ssw5ge": {
+    "Id": "Permission_ssw5ge",
+    "Kind": "Permission",
+    "Column": "holiday_name",
+    "Permission": "Editable"
+  },
+  "Permission_ssogcb": {
+    "Id": "Permission_ssogcb",
+    "Kind": "Permission",
+    "Column": "holiday_date",
+    "Permission": "Editable"
+  },
+  "Permission_1hsm1xc": {
+    "Id": "Permission_1hsm1xc",
+    "Kind": "Permission",
+    "Column": "coverage",
+    "Permission": "Editable"
+  },
+  "Permission_1fr7077": {
+    "Id": "Permission_1fr7077",
+    "Kind": "Permission",
+    "Column": "is_recurring_annually",
+    "Permission": "Editable"
+  }
+}

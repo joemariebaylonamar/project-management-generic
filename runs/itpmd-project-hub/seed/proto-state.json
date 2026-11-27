@@ -1,0 +1,3113 @@
+{
+ "holidays": [
+  {
+   "date": "2026-01-01",
+   "name": "New Year's Day",
+   "coverage": "Nationwide"
+  },
+  {
+   "date": "2026-02-17",
+   "name": "Chinese New Year",
+   "coverage": "Nationwide"
+  },
+  {
+   "date": "2026-02-25",
+   "name": "EDSA Anniversary",
+   "coverage": "Nationwide"
+  },
+  {
+   "date": "2026-04-02",
+   "name": "Maundy Thursday",
+   "coverage": "Nationwide"
+  },
+  {
+   "date": "2026-04-03",
+   "name": "Good Friday",
+   "coverage": "Nationwide"
+  },
+  {
+   "date": "2026-04-09",
+   "name": "Araw ng Kagitingan",
+   "coverage": "Nationwide"
+  },
+  {
+   "date": "2026-05-01",
+   "name": "Labor Day",
+   "coverage": "Nationwide"
+  },
+  {
+   "date": "2026-06-12",
+   "name": "Independence Day",
+   "coverage": "Nationwide"
+  },
+  {
+   "date": "2026-08-21",
+   "name": "Ninoy Aquino Day",
+   "coverage": "Nationwide"
+  },
+  {
+   "date": "2026-08-31",
+   "name": "National Heroes Day",
+   "coverage": "Nationwide"
+  },
+  {
+   "date": "2026-11-02",
+   "name": "All Souls' Day (special)",
+   "coverage": "Nationwide"
+  },
+  {
+   "date": "2026-11-30",
+   "name": "Bonifacio Day",
+   "coverage": "Nationwide"
+  },
+  {
+   "date": "2026-12-08",
+   "name": "Immaculate Conception",
+   "coverage": "Nationwide"
+  },
+  {
+   "date": "2026-12-24",
+   "name": "Christmas Eve (special)",
+   "coverage": "Nationwide"
+  },
+  {
+   "date": "2026-12-25",
+   "name": "Christmas Day",
+   "coverage": "Nationwide"
+  },
+  {
+   "date": "2026-12-30",
+   "name": "Rizal Day",
+   "coverage": "Nationwide"
+  },
+  {
+   "date": "2026-12-31",
+   "name": "Last day of the year (special)",
+   "coverage": "Nationwide"
+  },
+  {
+   "date": "2027-01-01",
+   "name": "New Year's Day",
+   "coverage": "Nationwide"
+  }
+ ],
+ "users": [
+  {
+   "id": "U01",
+   "uid": "rvillanueva",
+   "name": "Ramon Villanueva",
+   "role": "PM",
+   "unit": "ITPMD – Delivery Group 1",
+   "status": "Active",
+   "last": "2026-09-28"
+  },
+  {
+   "id": "U02",
+   "uid": "mcruz",
+   "name": "Marites Cruz",
+   "role": "PM",
+   "unit": "ITPMD – Delivery Group 2",
+   "status": "Active",
+   "last": "2026-09-28"
+  },
+  {
+   "id": "U03",
+   "uid": "jdelosreyes",
+   "name": "Jose Delos Reyes",
+   "role": "DH",
+   "unit": "ITPMD – Office of the Head",
+   "status": "Active",
+   "last": "2026-09-27"
+  },
+  {
+   "id": "U04",
+   "uid": "asantos",
+   "name": "Ana Santos",
+   "role": "PS",
+   "unit": "Lending Operations",
+   "status": "Active",
+   "last": "2026-09-22"
+  },
+  {
+   "id": "U05",
+   "uid": "lbautista",
+   "name": "Liza Bautista",
+   "role": "PSC",
+   "unit": "Project Steering Committee",
+   "status": "Active",
+   "last": "2026-09-25"
+  },
+  {
+   "id": "U06",
+   "uid": "gtan",
+   "name": "Grace Tan",
+   "role": "QA",
+   "unit": "ITPMD – Quality Assurance",
+   "status": "Active",
+   "last": "2026-09-24"
+  },
+  {
+   "id": "U07",
+   "uid": "nfernandez",
+   "name": "Nina Fernandez",
+   "role": "APPADMIN",
+   "unit": "ITPMD – Business Analysis",
+   "status": "Active",
+   "last": "2026-09-26"
+  },
+  {
+   "id": "U08",
+   "uid": "kreyes",
+   "name": "Karlo Reyes",
+   "role": "SYSADMIN",
+   "unit": "IT Operations",
+   "status": "Active",
+   "last": "2026-09-28"
+  },
+  {
+   "id": "U09",
+   "uid": "pgarcia",
+   "name": "Paolo Garcia",
+   "role": "TEAM",
+   "unit": "ITPMD – Delivery Group 1",
+   "status": "Active",
+   "last": "2026-09-28"
+  },
+  {
+   "id": "U10",
+   "uid": "emendoza",
+   "name": "Elena Mendoza",
+   "role": "TEAM",
+   "unit": "ITPMD – Delivery Group 2",
+   "status": "Locked",
+   "last": "2026-09-18"
+  }
+ ],
+ "projects": [
+  {
+   "id": "P1",
+   "code": "PRJ-2026-014",
+   "name": "Loan Origination System Upgrade",
+   "bu": "Lending",
+   "portfolio": "Core Banking",
+   "pm": "U01",
+   "dh": "U03",
+   "ps": "U04",
+   "psRequired": false,
+   "vendor": "Northwind Systems Inc.",
+   "contract": 48500000,
+   "noa": "2026-01-26",
+   "po": "2026-02-09",
+   "poNo": "PO-2026-0187",
+   "ntp": "2026-03-02",
+   "expiry": "2027-02-26",
+   "start": "2026-03-02",
+   "fin": {
+    "budget": 50000000,
+    "changes": [
+     {
+      "id": "BC1",
+      "amt": 2000000,
+      "date": "2026-06-15",
+      "reason": "Additional credit bureau interface (CR-003)"
+     }
+    ],
+    "contingency": 2600000,
+    "draws": [
+     {
+      "id": "CD1",
+      "amt": 900000,
+      "date": "2026-07-10",
+      "reason": "Additional SIT environment licenses"
+     },
+     {
+      "id": "CD2",
+      "amt": 1100000,
+      "date": "2026-09-05",
+      "reason": "Extended vendor onsite support (design slippage)"
+     }
+    ],
+    "actual": 21800000,
+    "committed": 24200000,
+    "eac": 51200000,
+    "invoices": [
+     {
+      "no": "NW-INV-0412",
+      "date": "2026-04-20",
+      "doNo": "DO-26-0331",
+      "doDate": "2026-04-16",
+      "vendor": "Northwind Systems Inc.",
+      "amt": 7275000,
+      "paid": "2026-05-08",
+      "status": "Paid",
+      "remarks": "Milestone 1 billing"
+     }
+    ]
+   },
+   "risks": [
+    {
+     "id": "R-014-01",
+     "title": "Credit scoring vendor delays interface specifications",
+     "cat": "Vendor",
+     "p": 4,
+     "i": 4,
+     "owner": "U09",
+     "resp": "Mitigate",
+     "mit": "Weekly joint design clinic; escalate to vendor account head if specs slip past 9 Oct",
+     "rp": 2,
+     "ri": 3,
+     "status": "Open",
+     "raised": "2026-06-22"
+    },
+    {
+     "id": "R-014-02",
+     "title": "Legacy loan records fail migration data-quality checks",
+     "cat": "Data",
+     "p": 3,
+     "i": 5,
+     "owner": "U01",
+     "resp": "Mitigate",
+     "mit": "Early profiling of 2019–2025 records; cleansing sprint with Lending Ops",
+     "rp": 2,
+     "ri": 4,
+     "status": "Open",
+     "raised": "2026-05-11"
+    },
+    {
+     "id": "R-014-03",
+     "title": "Vendor developer attrition during build",
+     "cat": "Resource",
+     "p": 2,
+     "i": 3,
+     "owner": "U01",
+     "resp": "Transfer",
+     "mit": "Contractual replacement within 10 working days",
+     "rp": 2,
+     "ri": 2,
+     "status": "Open",
+     "raised": "2026-04-06"
+    }
+   ],
+   "issues": [
+    {
+     "id": "I-014-01",
+     "title": "Credit bureau test environment unavailable",
+     "cat": "Environment",
+     "pri": "High",
+     "owner": "U09",
+     "raised": "2026-09-08",
+     "target": "2026-09-25",
+     "status": "Open",
+     "escalated": false,
+     "actions": [
+      {
+       "id": "AC1",
+       "text": "Request temporary sandbox access from bureau",
+       "who": "U09",
+       "due": "2026-09-18",
+       "status": "Done"
+      },
+      {
+       "id": "AC2",
+       "text": "Mock responses for SIT pre-checks",
+       "who": "U09",
+       "due": "2026-10-02",
+       "status": "Open"
+      }
+     ]
+    },
+    {
+     "id": "I-014-02",
+     "title": "Late change to loan product parameters from business",
+     "cat": "Scope",
+     "pri": "Medium",
+     "owner": "U01",
+     "raised": "2026-09-14",
+     "target": "2026-10-09",
+     "status": "In progress",
+     "escalated": false,
+     "actions": [
+      {
+       "id": "AC3",
+       "text": "Assess impact and raise CR if needed",
+       "who": "U01",
+       "due": "2026-09-25",
+       "status": "Open"
+      }
+     ]
+    }
+   ],
+   "decisions": [
+    {
+     "date": "2026-07-06",
+     "text": "Use phased data migration (active loans first, closed loans after go-live).",
+     "by": "PSC"
+    },
+    {
+     "date": "2026-09-15",
+     "text": "Approve use of contingency for extended vendor onsite support.",
+     "by": "DH"
+    }
+   ],
+   "activities": [
+    {
+     "id": "A1",
+     "name": "Kick-off and mobilization",
+     "dur": 5,
+     "preds": [],
+     "pct": 100,
+     "owner": "U01",
+     "ms": false,
+     "price": 0,
+     "manualFinish": "",
+     "bStart": "2026-03-02",
+     "bFinish": "2026-03-06",
+     "pStart": "2026-03-02",
+     "pFinish": "2026-03-06",
+     "aStart": "2026-03-02",
+     "aFinish": "2026-03-06",
+     "fStart": "2026-03-02",
+     "fFinish": "2026-03-06"
+    },
+    {
+     "id": "A2",
+     "name": "Requirements validation",
+     "dur": 20,
+     "preds": [
+      "A1"
+     ],
+     "pct": 100,
+     "owner": "U09",
+     "ms": false,
+     "price": 0,
+     "manualFinish": "",
+     "bStart": "2026-03-09",
+     "bFinish": "2026-04-07",
+     "pStart": "2026-03-09",
+     "pFinish": "2026-04-07",
+     "aStart": "2026-03-09",
+     "aFinish": "2026-04-07",
+     "fStart": "2026-03-09",
+     "fFinish": "2026-04-07"
+    },
+    {
+     "id": "A3",
+     "name": "Solution design and sign-off",
+     "dur": 15,
+     "preds": [
+      "A2"
+     ],
+     "pct": 100,
+     "owner": "U09",
+     "ms": false,
+     "price": 0,
+     "manualFinish": "",
+     "bStart": "2026-04-08",
+     "bFinish": "2026-04-29",
+     "pStart": "2026-04-08",
+     "pFinish": "2026-04-29",
+     "aStart": "2026-04-08",
+     "aFinish": "2026-05-06",
+     "fStart": "2026-04-08",
+     "fFinish": "2026-05-06"
+    },
+    {
+     "id": "M1",
+     "name": "Milestone 1 – Design accepted",
+     "dur": 1,
+     "preds": [
+      "A3"
+     ],
+     "pct": 100,
+     "owner": "U01",
+     "ms": true,
+     "price": 7275000,
+     "manualFinish": "",
+     "bStart": "2026-04-30",
+     "bFinish": "2026-04-30",
+     "pStart": "2026-04-30",
+     "pFinish": "2026-04-30",
+     "aStart": "2026-05-07",
+     "aFinish": "2026-05-07",
+     "fStart": "2026-05-07",
+     "fFinish": "2026-05-07"
+    },
+    {
+     "id": "A4",
+     "name": "Build – origination workflows",
+     "dur": 70,
+     "preds": [
+      "M1"
+     ],
+     "pct": 100,
+     "owner": "U09",
+     "ms": false,
+     "price": 0,
+     "manualFinish": "",
+     "bStart": "2026-05-04",
+     "bFinish": "2026-08-10",
+     "pStart": "2026-05-04",
+     "pFinish": "2026-08-10",
+     "aStart": "2026-05-08",
+     "aFinish": "2026-08-19",
+     "fStart": "2026-05-08",
+     "fFinish": "2026-08-19"
+    },
+    {
+     "id": "A5",
+     "name": "Build – credit scoring interface",
+     "dur": 110,
+     "preds": [
+      "M1"
+     ],
+     "pct": 88,
+     "owner": "U09",
+     "ms": false,
+     "price": 0,
+     "manualFinish": "",
+     "bStart": "2026-05-04",
+     "bFinish": "2026-10-07",
+     "pStart": "2026-05-04",
+     "pFinish": "2026-10-07",
+     "aStart": "2026-05-08",
+     "aFinish": "",
+     "fStart": "2026-05-08",
+     "fFinish": "2026-10-15"
+    },
+    {
+     "id": "A6",
+     "name": "System integration testing",
+     "dur": 25,
+     "preds": [
+      "A4",
+      "A5"
+     ],
+     "pct": 0,
+     "owner": "U09",
+     "ms": false,
+     "price": 0,
+     "manualFinish": "",
+     "bStart": "2026-10-08",
+     "bFinish": "2026-11-12",
+     "pStart": "2026-10-08",
+     "pFinish": "2026-11-12",
+     "aStart": "",
+     "aFinish": "",
+     "fStart": "2026-10-16",
+     "fFinish": "2026-11-20"
+    },
+    {
+     "id": "M2",
+     "name": "Milestone 2 – SIT completed",
+     "dur": 1,
+     "preds": [
+      "A6"
+     ],
+     "pct": 0,
+     "owner": "U01",
+     "ms": true,
+     "price": 14550000,
+     "manualFinish": "",
+     "bStart": "2026-11-13",
+     "bFinish": "2026-11-13",
+     "pStart": "2026-11-13",
+     "pFinish": "2026-11-13",
+     "aStart": "",
+     "aFinish": "",
+     "fStart": "2026-11-23",
+     "fFinish": "2026-11-23"
+    },
+    {
+     "id": "A7",
+     "name": "User acceptance testing",
+     "dur": 20,
+     "preds": [
+      "M2"
+     ],
+     "pct": 0,
+     "owner": "U01",
+     "ms": false,
+     "price": 0,
+     "manualFinish": "",
+     "bStart": "2026-11-16",
+     "bFinish": "2026-12-15",
+     "pStart": "2026-11-16",
+     "pFinish": "2026-12-15",
+     "aStart": "",
+     "aFinish": "",
+     "fStart": "2026-11-24",
+     "fFinish": "2026-12-23"
+    },
+    {
+     "id": "A8",
+     "name": "Data migration dry runs",
+     "dur": 15,
+     "preds": [
+      "M2"
+     ],
+     "pct": 0,
+     "owner": "U09",
+     "ms": false,
+     "price": 0,
+     "manualFinish": "",
+     "bStart": "2026-11-16",
+     "bFinish": "2026-12-07",
+     "pStart": "2026-11-16",
+     "pFinish": "2026-12-07",
+     "aStart": "",
+     "aFinish": "",
+     "fStart": "2026-11-24",
+     "fFinish": "2026-12-16"
+    },
+    {
+     "id": "M3",
+     "name": "Milestone 3 – Go-live",
+     "dur": 1,
+     "preds": [
+      "A7",
+      "A8"
+     ],
+     "pct": 0,
+     "owner": "U01",
+     "ms": true,
+     "price": 19400000,
+     "manualFinish": "",
+     "bStart": "2026-12-16",
+     "bFinish": "2026-12-16",
+     "pStart": "2026-12-16",
+     "pFinish": "2026-12-16",
+     "aStart": "",
+     "aFinish": "",
+     "fStart": "2026-12-28",
+     "fFinish": "2026-12-28"
+    },
+    {
+     "id": "A9",
+     "name": "Hypercare",
+     "dur": 20,
+     "preds": [
+      "M3"
+     ],
+     "pct": 0,
+     "owner": "U09",
+     "ms": false,
+     "price": 0,
+     "manualFinish": "",
+     "bStart": "2026-12-17",
+     "bFinish": "2027-01-20",
+     "pStart": "2026-12-17",
+     "pFinish": "2027-01-20",
+     "aStart": "",
+     "aFinish": "",
+     "fStart": "2026-12-29",
+     "fFinish": "2027-01-28"
+    },
+    {
+     "id": "M4",
+     "name": "Milestone 4 – Final acceptance",
+     "dur": 1,
+     "preds": [
+      "A9"
+     ],
+     "pct": 0,
+     "owner": "U01",
+     "ms": true,
+     "price": 7275000,
+     "manualFinish": "",
+     "bStart": "2027-01-21",
+     "bFinish": "2027-01-21",
+     "pStart": "2027-01-21",
+     "pFinish": "2027-01-21",
+     "aStart": "",
+     "aFinish": "",
+     "fStart": "2027-01-29",
+     "fFinish": "2027-01-29"
+    }
+   ],
+   "baselines": [
+    {
+     "v": 1,
+     "date": "2026-03-02",
+     "by": "U01",
+     "note": "Initial approved baseline"
+    }
+   ],
+   "schedHistory": [
+    {
+     "at": "2026-09-24 15:18:09",
+     "who": "U01",
+     "what": "A5 Build – credit scoring interface: % complete 80 → 88"
+    }
+   ],
+   "psrs": [
+    {
+     "id": "PSR-WD6ZG",
+     "period": {
+      "y": 2026,
+      "m": 7
+     },
+     "status": "Approved",
+     "created": "2026-09-28",
+     "createdBy": "U01",
+     "historic": true,
+     "snap": {
+      "master": {
+       "code": "PRJ-2026-014",
+       "name": "Loan Origination System Upgrade",
+       "bu": "Lending",
+       "vendor": "Northwind Systems Inc.",
+       "contract": 48500000,
+       "pm": "Ramon Villanueva",
+       "ps": "Ana Santos",
+       "ntp": "2026-03-02",
+       "expiry": "2027-02-26",
+       "poNo": "PO-2026-0187"
+      },
+      "health": {
+       "overall": "A",
+       "sched": "A",
+       "cost": "A",
+       "risk": "A",
+       "issue": "A",
+       "reasons": [
+        "Forecast finish 6 working days after baseline",
+        "Contingency 76.9% used",
+        "2 high/critical risk(s)",
+        "1 critical/escalated issue(s)"
+       ]
+      },
+      "sched": {
+       "base": "2027-01-21",
+       "fore": "2027-01-29",
+       "var": 6,
+       "complete": 68.93333333333334,
+       "expected": 71
+      },
+      "milestones": [
+       {
+        "id": "M1",
+        "name": "Milestone 1 – Design accepted",
+        "ms": true,
+        "pct": 100,
+        "bFinish": "2026-04-30",
+        "fFinish": "2026-05-07",
+        "st": "Complete"
+       },
+       {
+        "id": "M2",
+        "name": "Milestone 2 – SIT completed",
+        "ms": true,
+        "pct": 0,
+        "bFinish": "2026-11-13",
+        "fFinish": "2026-11-23",
+        "st": "Behind"
+       },
+       {
+        "id": "M3",
+        "name": "Milestone 3 – Go-live",
+        "ms": true,
+        "pct": 0,
+        "bFinish": "2026-12-16",
+        "fFinish": "2026-12-28",
+        "st": "Behind"
+       },
+       {
+        "id": "M4",
+        "name": "Milestone 4 – Final acceptance",
+        "ms": true,
+        "pct": 0,
+        "bFinish": "2027-01-21",
+        "fFinish": "2027-01-29",
+        "st": "Behind"
+       }
+      ],
+      "behind": [
+       {
+        "id": "A5",
+        "name": "Build – credit scoring interface",
+        "ms": false,
+        "pct": 88,
+        "bFinish": "2026-10-07",
+        "fFinish": "2026-10-15",
+        "st": "Behind"
+       },
+       {
+        "id": "A6",
+        "name": "System integration testing",
+        "ms": false,
+        "pct": 0,
+        "bFinish": "2026-11-12",
+        "fFinish": "2026-11-20",
+        "st": "Behind"
+       },
+       {
+        "id": "A7",
+        "name": "User acceptance testing",
+        "ms": false,
+        "pct": 0,
+        "bFinish": "2026-12-15",
+        "fFinish": "2026-12-23",
+        "st": "Behind"
+       },
+       {
+        "id": "A8",
+        "name": "Data migration dry runs",
+        "ms": false,
+        "pct": 0,
+        "bFinish": "2026-12-07",
+        "fFinish": "2026-12-16",
+        "st": "Behind"
+       },
+       {
+        "id": "A9",
+        "name": "Hypercare",
+        "ms": false,
+        "pct": 0,
+        "bFinish": "2027-01-20",
+        "fFinish": "2027-01-28",
+        "st": "Behind"
+       }
+      ],
+      "ahead": [],
+      "next": [
+       {
+        "id": "A5",
+        "name": "Build – credit scoring interface",
+        "fStart": "2026-05-08",
+        "fFinish": "2026-10-15",
+        "ms": false
+       }
+      ],
+      "issues": [
+       {
+        "id": "I-014-01",
+        "title": "Credit bureau test environment unavailable",
+        "pri": "High",
+        "owner": "Paolo Garcia",
+        "target": "2026-09-25",
+        "esc": false
+       },
+       {
+        "id": "I-014-02",
+        "title": "Late change to loan product parameters from business",
+        "pri": "Medium",
+        "owner": "Ramon Villanueva",
+        "target": "2026-10-09",
+        "esc": false
+       }
+      ],
+      "risks": [
+       {
+        "id": "R-014-01",
+        "title": "Credit scoring vendor delays interface specifications",
+        "lvl": "High",
+        "score": 16,
+        "owner": "Paolo Garcia",
+        "mit": "Weekly joint design clinic; escalate to vendor account head if specs slip past 9 Oct"
+       },
+       {
+        "id": "R-014-02",
+        "title": "Legacy loan records fail migration data-quality checks",
+        "lvl": "High",
+        "score": 15,
+        "owner": "Ramon Villanueva",
+        "mit": "Early profiling of 2019–2025 records; cleansing sprint with Lending Ops"
+       }
+      ],
+      "actions": [
+       {
+        "text": "Mock responses for SIT pre-checks",
+        "who": "Paolo Garcia",
+        "due": "2026-10-02",
+        "overdue": false
+       },
+       {
+        "text": "Assess impact and raise CR if needed",
+        "who": "Ramon Villanueva",
+        "due": "2026-09-25",
+        "overdue": true
+       }
+      ],
+      "fin": {
+       "current": 52000000,
+       "actual": 21800000,
+       "committed": 24200000,
+       "eac": 51200000,
+       "eacPct": 98.46153846153847,
+       "remaining": 6000000,
+       "cont": 2600000,
+       "contUsed": 2000000,
+       "contPct": 76.92307692307693,
+       "contLeft": 600000
+      },
+      "decisions": [
+       {
+        "date": "2026-07-06",
+        "text": "Use phased data migration (active loans first, closed loans after go-live).",
+        "by": "PSC"
+       },
+       {
+        "date": "2026-09-15",
+        "text": "Approve use of contingency for extended vendor onsite support.",
+        "by": "DH"
+       }
+      ]
+     },
+     "narrative": {
+      "acc": "Activities progressed as reported in the schedule section.",
+      "next": "Continue planned activities for the next period.",
+      "issues": ""
+     },
+     "attachments": [],
+     "history": [
+      {
+       "at": "2026-08-07 16:20:11",
+       "who": "U01",
+       "action": "Submitted",
+       "comment": ""
+      },
+      {
+       "at": "2026-08-10 10:05:42",
+       "who": "U03",
+       "action": "Approved (DH)",
+       "comment": ""
+      }
+     ]
+    },
+    {
+     "id": "PSR-8QUSD",
+     "period": {
+      "y": 2026,
+      "m": 8
+     },
+     "status": "Approved",
+     "created": "2026-09-28",
+     "createdBy": "U01",
+     "historic": true,
+     "snap": {
+      "master": {
+       "code": "PRJ-2026-014",
+       "name": "Loan Origination System Upgrade",
+       "bu": "Lending",
+       "vendor": "Northwind Systems Inc.",
+       "contract": 48500000,
+       "pm": "Ramon Villanueva",
+       "ps": "Ana Santos",
+       "ntp": "2026-03-02",
+       "expiry": "2027-02-26",
+       "poNo": "PO-2026-0187"
+      },
+      "health": {
+       "overall": "A",
+       "sched": "A",
+       "cost": "A",
+       "risk": "A",
+       "issue": "A",
+       "reasons": [
+        "Forecast finish 6 working days after baseline",
+        "Contingency 76.9% used",
+        "2 high/critical risk(s)",
+        "1 critical/escalated issue(s)"
+       ]
+      },
+      "sched": {
+       "base": "2027-01-21",
+       "fore": "2027-01-29",
+       "var": 6,
+       "complete": 68.93333333333334,
+       "expected": 71
+      },
+      "milestones": [
+       {
+        "id": "M1",
+        "name": "Milestone 1 – Design accepted",
+        "ms": true,
+        "pct": 100,
+        "bFinish": "2026-04-30",
+        "fFinish": "2026-05-07",
+        "st": "Complete"
+       },
+       {
+        "id": "M2",
+        "name": "Milestone 2 – SIT completed",
+        "ms": true,
+        "pct": 0,
+        "bFinish": "2026-11-13",
+        "fFinish": "2026-11-23",
+        "st": "Behind"
+       },
+       {
+        "id": "M3",
+        "name": "Milestone 3 – Go-live",
+        "ms": true,
+        "pct": 0,
+        "bFinish": "2026-12-16",
+        "fFinish": "2026-12-28",
+        "st": "Behind"
+       },
+       {
+        "id": "M4",
+        "name": "Milestone 4 – Final acceptance",
+        "ms": true,
+        "pct": 0,
+        "bFinish": "2027-01-21",
+        "fFinish": "2027-01-29",
+        "st": "Behind"
+       }
+      ],
+      "behind": [
+       {
+        "id": "A5",
+        "name": "Build – credit scoring interface",
+        "ms": false,
+        "pct": 88,
+        "bFinish": "2026-10-07",
+        "fFinish": "2026-10-15",
+        "st": "Behind"
+       },
+       {
+        "id": "A6",
+        "name": "System integration testing",
+        "ms": false,
+        "pct": 0,
+        "bFinish": "2026-11-12",
+        "fFinish": "2026-11-20",
+        "st": "Behind"
+       },
+       {
+        "id": "A7",
+        "name": "User acceptance testing",
+        "ms": false,
+        "pct": 0,
+        "bFinish": "2026-12-15",
+        "fFinish": "2026-12-23",
+        "st": "Behind"
+       },
+       {
+        "id": "A8",
+        "name": "Data migration dry runs",
+        "ms": false,
+        "pct": 0,
+        "bFinish": "2026-12-07",
+        "fFinish": "2026-12-16",
+        "st": "Behind"
+       },
+       {
+        "id": "A9",
+        "name": "Hypercare",
+        "ms": false,
+        "pct": 0,
+        "bFinish": "2027-01-20",
+        "fFinish": "2027-01-28",
+        "st": "Behind"
+       }
+      ],
+      "ahead": [],
+      "next": [
+       {
+        "id": "A5",
+        "name": "Build – credit scoring interface",
+        "fStart": "2026-05-08",
+        "fFinish": "2026-10-15",
+        "ms": false
+       }
+      ],
+      "issues": [
+       {
+        "id": "I-014-01",
+        "title": "Credit bureau test environment unavailable",
+        "pri": "High",
+        "owner": "Paolo Garcia",
+        "target": "2026-09-25",
+        "esc": false
+       },
+       {
+        "id": "I-014-02",
+        "title": "Late change to loan product parameters from business",
+        "pri": "Medium",
+        "owner": "Ramon Villanueva",
+        "target": "2026-10-09",
+        "esc": false
+       }
+      ],
+      "risks": [
+       {
+        "id": "R-014-01",
+        "title": "Credit scoring vendor delays interface specifications",
+        "lvl": "High",
+        "score": 16,
+        "owner": "Paolo Garcia",
+        "mit": "Weekly joint design clinic; escalate to vendor account head if specs slip past 9 Oct"
+       },
+       {
+        "id": "R-014-02",
+        "title": "Legacy loan records fail migration data-quality checks",
+        "lvl": "High",
+        "score": 15,
+        "owner": "Ramon Villanueva",
+        "mit": "Early profiling of 2019–2025 records; cleansing sprint with Lending Ops"
+       }
+      ],
+      "actions": [
+       {
+        "text": "Mock responses for SIT pre-checks",
+        "who": "Paolo Garcia",
+        "due": "2026-10-02",
+        "overdue": false
+       },
+       {
+        "text": "Assess impact and raise CR if needed",
+        "who": "Ramon Villanueva",
+        "due": "2026-09-25",
+        "overdue": true
+       }
+      ],
+      "fin": {
+       "current": 52000000,
+       "actual": 21800000,
+       "committed": 24200000,
+       "eac": 51200000,
+       "eacPct": 98.46153846153847,
+       "remaining": 6000000,
+       "cont": 2600000,
+       "contUsed": 2000000,
+       "contPct": 76.92307692307693,
+       "contLeft": 600000
+      },
+      "decisions": [
+       {
+        "date": "2026-09-15",
+        "text": "Approve use of contingency for extended vendor onsite support.",
+        "by": "DH"
+       }
+      ]
+     },
+     "narrative": {
+      "acc": "Activities progressed as reported in the schedule section.",
+      "next": "Continue planned activities for the next period.",
+      "issues": ""
+     },
+     "attachments": [],
+     "history": [
+      {
+       "at": "2026-09-07 16:20:11",
+       "who": "U01",
+       "action": "Submitted",
+       "comment": ""
+      },
+      {
+       "at": "2026-09-08 10:05:42",
+       "who": "U03",
+       "action": "Approved (DH)",
+       "comment": ""
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "P2",
+   "code": "PRJ-2026-021",
+   "name": "Branch Network SD-WAN Rollout",
+   "bu": "Branch Banking",
+   "portfolio": "Infrastructure",
+   "pm": "U02",
+   "dh": "U03",
+   "ps": "U04",
+   "psRequired": true,
+   "vendor": "Meridian Networks Corp.",
+   "contract": 36800000,
+   "noa": "2026-01-05",
+   "po": "2026-01-19",
+   "poNo": "PO-2026-0044",
+   "ntp": "2026-02-02",
+   "expiry": "2026-12-18",
+   "start": "2026-02-02",
+   "fin": {
+    "budget": 38000000,
+    "changes": [],
+    "contingency": 1900000,
+    "draws": [
+     {
+      "id": "CD3",
+      "amt": 400000,
+      "date": "2026-06-02",
+      "reason": "Additional survey crew for Mindanao branches"
+     }
+    ],
+    "actual": 19600000,
+    "committed": 14100000,
+    "eac": 40300000,
+    "invoices": []
+   },
+   "risks": [
+    {
+     "id": "R-021-01",
+     "title": "Global shortage of edge routers delays delivery",
+     "cat": "Vendor",
+     "p": 5,
+     "i": 5,
+     "owner": "U02",
+     "resp": "Mitigate",
+     "mit": "Vendor to source alternate SKU; split delivery into two lots",
+     "rp": 4,
+     "ri": 4,
+     "status": "Open",
+     "raised": "2026-07-01"
+    },
+    {
+     "id": "R-021-02",
+     "title": "Telco last-mile circuits not ready for Wave 1 branches",
+     "cat": "External",
+     "p": 4,
+     "i": 4,
+     "owner": "U10",
+     "resp": "Mitigate",
+     "mit": "Weekly telco readiness tracker; re-sequence branches by circuit readiness",
+     "rp": 3,
+     "ri": 3,
+     "status": "Open",
+     "raised": "2026-08-10"
+    },
+    {
+     "id": "R-021-03",
+     "title": "After-hours branch access restrictions",
+     "cat": "Operations",
+     "p": 3,
+     "i": 3,
+     "owner": "U10",
+     "resp": "Accept",
+     "mit": "Area heads to pre-approve access windows",
+     "rp": 3,
+     "ri": 2,
+     "status": "Open",
+     "raised": "2026-08-10"
+    }
+   ],
+   "issues": [
+    {
+     "id": "I-021-01",
+     "title": "Router shipment held at customs",
+     "cat": "Vendor",
+     "pri": "Critical",
+     "owner": "U02",
+     "raised": "2026-09-02",
+     "target": "2026-09-15",
+     "status": "Open",
+     "escalated": true,
+     "actions": [
+      {
+       "id": "AC4",
+       "text": "Vendor to submit complete import documents",
+       "who": "U02",
+       "due": "2026-09-10",
+       "status": "Open"
+      },
+      {
+       "id": "AC5",
+       "text": "Issue formal notice of delay to vendor",
+       "who": "U02",
+       "due": "2026-09-30",
+       "status": "Open"
+      }
+     ]
+    },
+    {
+     "id": "I-021-02",
+     "title": "Three branches refused after-hours access",
+     "cat": "Operations",
+     "pri": "Medium",
+     "owner": "U10",
+     "raised": "2026-09-11",
+     "target": "2026-10-05",
+     "status": "Open",
+     "escalated": false,
+     "actions": []
+    }
+   ],
+   "decisions": [
+    {
+     "date": "2026-08-24",
+     "text": "Proceed with pilot using 10 routers from demo pool while shipment is held.",
+     "by": "PSC"
+    }
+   ],
+   "activities": [
+    {
+     "id": "B1",
+     "name": "Kick-off and mobilization",
+     "dur": 5,
+     "preds": [],
+     "pct": 100,
+     "owner": "U02",
+     "ms": false,
+     "price": 0,
+     "manualFinish": "",
+     "bStart": "2026-02-02",
+     "bFinish": "2026-02-06",
+     "pStart": "2026-02-02",
+     "pFinish": "2026-02-06",
+     "aStart": "2026-02-02",
+     "aFinish": "2026-02-06",
+     "fStart": "2026-02-02",
+     "fFinish": "2026-02-06"
+    },
+    {
+     "id": "B2",
+     "name": "Site survey – 120 branches",
+     "dur": 45,
+     "preds": [
+      "B1"
+     ],
+     "pct": 100,
+     "owner": "U10",
+     "ms": false,
+     "price": 0,
+     "manualFinish": "",
+     "bStart": "2026-02-09",
+     "bFinish": "2026-04-17",
+     "pStart": "2026-02-09",
+     "pFinish": "2026-04-17",
+     "aStart": "2026-02-09",
+     "aFinish": "2026-04-29",
+     "fStart": "2026-02-09",
+     "fFinish": "2026-04-29"
+    },
+    {
+     "id": "B3",
+     "name": "Network design and approval",
+     "dur": 20,
+     "preds": [
+      "B2"
+     ],
+     "pct": 100,
+     "owner": "U10",
+     "ms": false,
+     "price": 0,
+     "manualFinish": "",
+     "bStart": "2026-04-20",
+     "bFinish": "2026-05-18",
+     "pStart": "2026-04-20",
+     "pFinish": "2026-05-18",
+     "aStart": "2026-04-30",
+     "aFinish": "2026-06-05",
+     "fStart": "2026-04-30",
+     "fFinish": "2026-06-05"
+    },
+    {
+     "id": "B4",
+     "name": "Equipment delivery",
+     "dur": 40,
+     "preds": [
+      "B3"
+     ],
+     "pct": 60,
+     "owner": "U02",
+     "ms": false,
+     "price": 0,
+     "manualFinish": "",
+     "bStart": "2026-05-19",
+     "bFinish": "2026-07-14",
+     "pStart": "2026-05-19",
+     "pFinish": "2026-07-14",
+     "aStart": "2026-06-08",
+     "aFinish": "",
+     "fStart": "2026-06-08",
+     "fFinish": "2026-10-19"
+    },
+    {
+     "id": "N1",
+     "name": "Milestone 1 – Equipment delivered",
+     "dur": 1,
+     "preds": [
+      "B4"
+     ],
+     "pct": 0,
+     "owner": "U02",
+     "ms": true,
+     "price": 18400000,
+     "manualFinish": "",
+     "bStart": "2026-07-15",
+     "bFinish": "2026-07-15",
+     "pStart": "2026-07-15",
+     "pFinish": "2026-07-15",
+     "aStart": "",
+     "aFinish": "",
+     "fStart": "2026-10-20",
+     "fFinish": "2026-10-20"
+    },
+    {
+     "id": "B5",
+     "name": "Pilot deployment – 10 branches",
+     "dur": 15,
+     "preds": [
+      "N1"
+     ],
+     "pct": 0,
+     "owner": "U10",
+     "ms": false,
+     "price": 0,
+     "manualFinish": "",
+     "bStart": "2026-07-16",
+     "bFinish": "2026-08-05",
+     "pStart": "2026-07-16",
+     "pFinish": "2026-08-05",
+     "aStart": "",
+     "aFinish": "",
+     "fStart": "2026-10-21",
+     "fFinish": "2026-11-11"
+    },
+    {
+     "id": "B6",
+     "name": "Wave 1 rollout – 50 branches",
+     "dur": 40,
+     "preds": [
+      "B5"
+     ],
+     "pct": 0,
+     "owner": "U10",
+     "ms": false,
+     "price": 0,
+     "manualFinish": "",
+     "bStart": "2026-08-06",
+     "bFinish": "2026-10-02",
+     "pStart": "2026-08-06",
+     "pFinish": "2026-10-02",
+     "aStart": "",
+     "aFinish": "",
+     "fStart": "2026-11-12",
+     "fFinish": "2027-01-15"
+    },
+    {
+     "id": "B7",
+     "name": "Wave 2 rollout – 60 branches",
+     "dur": 45,
+     "preds": [
+      "B6"
+     ],
+     "pct": 0,
+     "owner": "U10",
+     "ms": false,
+     "price": 0,
+     "manualFinish": "",
+     "bStart": "2026-10-05",
+     "bFinish": "2026-12-09",
+     "pStart": "2026-10-05",
+     "pFinish": "2026-12-09",
+     "aStart": "",
+     "aFinish": "",
+     "fStart": "2027-01-18",
+     "fFinish": "2027-03-19"
+    },
+    {
+     "id": "N2",
+     "name": "Milestone 2 – Rollout complete",
+     "dur": 1,
+     "preds": [
+      "B7"
+     ],
+     "pct": 0,
+     "owner": "U02",
+     "ms": true,
+     "price": 14720000,
+     "manualFinish": "",
+     "bStart": "2026-12-10",
+     "bFinish": "2026-12-10",
+     "pStart": "2026-12-10",
+     "pFinish": "2026-12-10",
+     "aStart": "",
+     "aFinish": "",
+     "fStart": "2027-03-22",
+     "fFinish": "2027-03-22"
+    },
+    {
+     "id": "B8",
+     "name": "Acceptance testing",
+     "dur": 10,
+     "preds": [
+      "N2"
+     ],
+     "pct": 0,
+     "owner": "U02",
+     "ms": false,
+     "price": 0,
+     "manualFinish": "",
+     "bStart": "2026-12-11",
+     "bFinish": "2026-12-28",
+     "pStart": "2026-12-11",
+     "pFinish": "2026-12-28",
+     "aStart": "",
+     "aFinish": "",
+     "fStart": "2027-03-23",
+     "fFinish": "2027-04-05"
+    },
+    {
+     "id": "N3",
+     "name": "Milestone 3 – Final acceptance",
+     "dur": 1,
+     "preds": [
+      "B8"
+     ],
+     "pct": 0,
+     "owner": "U02",
+     "ms": true,
+     "price": 3680000,
+     "manualFinish": "",
+     "bStart": "2026-12-29",
+     "bFinish": "2026-12-29",
+     "pStart": "2026-12-29",
+     "pFinish": "2026-12-29",
+     "aStart": "",
+     "aFinish": "",
+     "fStart": "2027-04-06",
+     "fFinish": "2027-04-06"
+    }
+   ],
+   "baselines": [
+    {
+     "v": 1,
+     "date": "2026-02-02",
+     "by": "U02",
+     "note": "Initial approved baseline"
+    }
+   ],
+   "schedHistory": [
+    {
+     "at": "2026-09-21 11:02:40",
+     "who": "U02",
+     "what": "B4 Equipment delivery: % complete 40 → 60"
+    }
+   ],
+   "psrs": [
+    {
+     "id": "PSR-PKSSH",
+     "period": {
+      "y": 2026,
+      "m": 7
+     },
+     "status": "Approved",
+     "created": "2026-09-28",
+     "createdBy": "U02",
+     "historic": true,
+     "snap": {
+      "master": {
+       "code": "PRJ-2026-021",
+       "name": "Branch Network SD-WAN Rollout",
+       "bu": "Branch Banking",
+       "vendor": "Meridian Networks Corp.",
+       "contract": 36800000,
+       "pm": "Marites Cruz",
+       "ps": "Ana Santos",
+       "ntp": "2026-02-02",
+       "expiry": "2026-12-18",
+       "poNo": "PO-2026-0044"
+      },
+      "health": {
+       "overall": "R",
+       "sched": "R",
+       "cost": "R",
+       "risk": "R",
+       "issue": "R",
+       "reasons": [
+        "1 milestone(s) past due and not achieved",
+        "Forecast cost at 106.1% of budget",
+        "2 high/critical risk(s)",
+        "1 critical/escalated issue(s)"
+       ]
+      },
+      "sched": {
+       "base": "2026-12-29",
+       "fore": "2027-04-06",
+       "var": 67,
+       "complete": 42.72727272727273,
+       "expected": 73.18181818181819
+      },
+      "milestones": [
+       {
+        "id": "N1",
+        "name": "Milestone 1 – Equipment delivered",
+        "ms": true,
+        "pct": 0,
+        "bFinish": "2026-07-15",
+        "fFinish": "2026-10-20",
+        "st": "Behind"
+       },
+       {
+        "id": "N2",
+        "name": "Milestone 2 – Rollout complete",
+        "ms": true,
+        "pct": 0,
+        "bFinish": "2026-12-10",
+        "fFinish": "2027-03-22",
+        "st": "Behind"
+       },
+       {
+        "id": "N3",
+        "name": "Milestone 3 – Final acceptance",
+        "ms": true,
+        "pct": 0,
+        "bFinish": "2026-12-29",
+        "fFinish": "2027-04-06",
+        "st": "Behind"
+       }
+      ],
+      "behind": [
+       {
+        "id": "B4",
+        "name": "Equipment delivery",
+        "ms": false,
+        "pct": 60,
+        "bFinish": "2026-07-14",
+        "fFinish": "2026-10-19",
+        "st": "Behind"
+       },
+       {
+        "id": "B5",
+        "name": "Pilot deployment – 10 branches",
+        "ms": false,
+        "pct": 0,
+        "bFinish": "2026-08-05",
+        "fFinish": "2026-11-11",
+        "st": "Behind"
+       },
+       {
+        "id": "B6",
+        "name": "Wave 1 rollout – 50 branches",
+        "ms": false,
+        "pct": 0,
+        "bFinish": "2026-10-02",
+        "fFinish": "2027-01-15",
+        "st": "Behind"
+       },
+       {
+        "id": "B7",
+        "name": "Wave 2 rollout – 60 branches",
+        "ms": false,
+        "pct": 0,
+        "bFinish": "2026-12-09",
+        "fFinish": "2027-03-19",
+        "st": "Behind"
+       },
+       {
+        "id": "B8",
+        "name": "Acceptance testing",
+        "ms": false,
+        "pct": 0,
+        "bFinish": "2026-12-28",
+        "fFinish": "2027-04-05",
+        "st": "Behind"
+       }
+      ],
+      "ahead": [],
+      "next": [
+       {
+        "id": "B4",
+        "name": "Equipment delivery",
+        "fStart": "2026-06-08",
+        "fFinish": "2026-10-19",
+        "ms": false
+       }
+      ],
+      "issues": [
+       {
+        "id": "I-021-01",
+        "title": "Router shipment held at customs",
+        "pri": "Critical",
+        "owner": "Marites Cruz",
+        "target": "2026-09-15",
+        "esc": true
+       },
+       {
+        "id": "I-021-02",
+        "title": "Three branches refused after-hours access",
+        "pri": "Medium",
+        "owner": "Elena Mendoza",
+        "target": "2026-10-05",
+        "esc": false
+       }
+      ],
+      "risks": [
+       {
+        "id": "R-021-01",
+        "title": "Global shortage of edge routers delays delivery",
+        "lvl": "Critical",
+        "score": 25,
+        "owner": "Marites Cruz",
+        "mit": "Vendor to source alternate SKU; split delivery into two lots"
+       },
+       {
+        "id": "R-021-02",
+        "title": "Telco last-mile circuits not ready for Wave 1 branches",
+        "lvl": "High",
+        "score": 16,
+        "owner": "Elena Mendoza",
+        "mit": "Weekly telco readiness tracker; re-sequence branches by circuit readiness"
+       }
+      ],
+      "actions": [
+       {
+        "text": "Vendor to submit complete import documents",
+        "who": "Marites Cruz",
+        "due": "2026-09-10",
+        "overdue": true
+       },
+       {
+        "text": "Issue formal notice of delay to vendor",
+        "who": "Marites Cruz",
+        "due": "2026-09-30",
+        "overdue": false
+       }
+      ],
+      "fin": {
+       "current": 38000000,
+       "actual": 19600000,
+       "committed": 14100000,
+       "eac": 40300000,
+       "eacPct": 106.05263157894737,
+       "remaining": 4300000,
+       "cont": 1900000,
+       "contUsed": 400000,
+       "contPct": 21.052631578947366,
+       "contLeft": 1500000
+      },
+      "decisions": [
+       {
+        "date": "2026-08-24",
+        "text": "Proceed with pilot using 10 routers from demo pool while shipment is held.",
+        "by": "PSC"
+       }
+      ]
+     },
+     "narrative": {
+      "acc": "Activities progressed as reported in the schedule section.",
+      "next": "Continue planned activities for the next period.",
+      "issues": ""
+     },
+     "attachments": [],
+     "history": [
+      {
+       "at": "2026-08-07 16:20:11",
+       "who": "U02",
+       "action": "Submitted",
+       "comment": ""
+      },
+      {
+       "at": "2026-08-10 10:05:42",
+       "who": "U03",
+       "action": "Approved (DH)",
+       "comment": ""
+      },
+      {
+       "at": "2026-08-11 09:12:03",
+       "who": "U04",
+       "action": "Approved (PS)",
+       "comment": ""
+      }
+     ]
+    },
+    {
+     "id": "PSR-O8H65",
+     "period": {
+      "y": 2026,
+      "m": 8
+     },
+     "status": "Approved",
+     "created": "2026-09-28",
+     "createdBy": "U02",
+     "historic": true,
+     "snap": {
+      "master": {
+       "code": "PRJ-2026-021",
+       "name": "Branch Network SD-WAN Rollout",
+       "bu": "Branch Banking",
+       "vendor": "Meridian Networks Corp.",
+       "contract": 36800000,
+       "pm": "Marites Cruz",
+       "ps": "Ana Santos",
+       "ntp": "2026-02-02",
+       "expiry": "2026-12-18",
+       "poNo": "PO-2026-0044"
+      },
+      "health": {
+       "overall": "R",
+       "sched": "R",
+       "cost": "R",
+       "risk": "R",
+       "issue": "R",
+       "reasons": [
+        "1 milestone(s) past due and not achieved",
+        "Forecast cost at 106.1% of budget",
+        "2 high/critical risk(s)",
+        "1 critical/escalated issue(s)"
+       ]
+      },
+      "sched": {
+       "base": "2026-12-29",
+       "fore": "2027-04-06",
+       "var": 67,
+       "complete": 42.72727272727273,
+       "expected": 73.18181818181819
+      },
+      "milestones": [
+       {
+        "id": "N1",
+        "name": "Milestone 1 – Equipment delivered",
+        "ms": true,
+        "pct": 0,
+        "bFinish": "2026-07-15",
+        "fFinish": "2026-10-20",
+        "st": "Behind"
+       },
+       {
+        "id": "N2",
+        "name": "Milestone 2 – Rollout complete",
+        "ms": true,
+        "pct": 0,
+        "bFinish": "2026-12-10",
+        "fFinish": "2027-03-22",
+        "st": "Behind"
+       },
+       {
+        "id": "N3",
+        "name": "Milestone 3 – Final acceptance",
+        "ms": true,
+        "pct": 0,
+        "bFinish": "2026-12-29",
+        "fFinish": "2027-04-06",
+        "st": "Behind"
+       }
+      ],
+      "behind": [
+       {
+        "id": "B4",
+        "name": "Equipment delivery",
+        "ms": false,
+        "pct": 60,
+        "bFinish": "2026-07-14",
+        "fFinish": "2026-10-19",
+        "st": "Behind"
+       },
+       {
+        "id": "B5",
+        "name": "Pilot deployment – 10 branches",
+        "ms": false,
+        "pct": 0,
+        "bFinish": "2026-08-05",
+        "fFinish": "2026-11-11",
+        "st": "Behind"
+       },
+       {
+        "id": "B6",
+        "name": "Wave 1 rollout – 50 branches",
+        "ms": false,
+        "pct": 0,
+        "bFinish": "2026-10-02",
+        "fFinish": "2027-01-15",
+        "st": "Behind"
+       },
+       {
+        "id": "B7",
+        "name": "Wave 2 rollout – 60 branches",
+        "ms": false,
+        "pct": 0,
+        "bFinish": "2026-12-09",
+        "fFinish": "2027-03-19",
+        "st": "Behind"
+       },
+       {
+        "id": "B8",
+        "name": "Acceptance testing",
+        "ms": false,
+        "pct": 0,
+        "bFinish": "2026-12-28",
+        "fFinish": "2027-04-05",
+        "st": "Behind"
+       }
+      ],
+      "ahead": [],
+      "next": [
+       {
+        "id": "B4",
+        "name": "Equipment delivery",
+        "fStart": "2026-06-08",
+        "fFinish": "2026-10-19",
+        "ms": false
+       }
+      ],
+      "issues": [
+       {
+        "id": "I-021-01",
+        "title": "Router shipment held at customs",
+        "pri": "Critical",
+        "owner": "Marites Cruz",
+        "target": "2026-09-15",
+        "esc": true
+       },
+       {
+        "id": "I-021-02",
+        "title": "Three branches refused after-hours access",
+        "pri": "Medium",
+        "owner": "Elena Mendoza",
+        "target": "2026-10-05",
+        "esc": false
+       }
+      ],
+      "risks": [
+       {
+        "id": "R-021-01",
+        "title": "Global shortage of edge routers delays delivery",
+        "lvl": "Critical",
+        "score": 25,
+        "owner": "Marites Cruz",
+        "mit": "Vendor to source alternate SKU; split delivery into two lots"
+       },
+       {
+        "id": "R-021-02",
+        "title": "Telco last-mile circuits not ready for Wave 1 branches",
+        "lvl": "High",
+        "score": 16,
+        "owner": "Elena Mendoza",
+        "mit": "Weekly telco readiness tracker; re-sequence branches by circuit readiness"
+       }
+      ],
+      "actions": [
+       {
+        "text": "Vendor to submit complete import documents",
+        "who": "Marites Cruz",
+        "due": "2026-09-10",
+        "overdue": true
+       },
+       {
+        "text": "Issue formal notice of delay to vendor",
+        "who": "Marites Cruz",
+        "due": "2026-09-30",
+        "overdue": false
+       }
+      ],
+      "fin": {
+       "current": 38000000,
+       "actual": 19600000,
+       "committed": 14100000,
+       "eac": 40300000,
+       "eacPct": 106.05263157894737,
+       "remaining": 4300000,
+       "cont": 1900000,
+       "contUsed": 400000,
+       "contPct": 21.052631578947366,
+       "contLeft": 1500000
+      },
+      "decisions": [
+       {
+        "date": "2026-08-24",
+        "text": "Proceed with pilot using 10 routers from demo pool while shipment is held.",
+        "by": "PSC"
+       }
+      ]
+     },
+     "narrative": {
+      "acc": "Activities progressed as reported in the schedule section.",
+      "next": "Continue planned activities for the next period.",
+      "issues": ""
+     },
+     "attachments": [],
+     "history": [
+      {
+       "at": "2026-09-07 16:20:11",
+       "who": "U02",
+       "action": "Submitted",
+       "comment": ""
+      },
+      {
+       "at": "2026-09-08 10:05:42",
+       "who": "U03",
+       "action": "Approved (DH)",
+       "comment": ""
+      },
+      {
+       "at": "2026-09-09 09:12:03",
+       "who": "U04",
+       "action": "Approved (PS)",
+       "comment": ""
+      }
+     ]
+    },
+    {
+     "id": "PSR-JK5DD",
+     "period": {
+      "y": 2026,
+      "m": 9
+     },
+     "status": "Submitted",
+     "created": "2026-09-28",
+     "createdBy": "U02",
+     "historic": false,
+     "snap": {
+      "master": {
+       "code": "PRJ-2026-021",
+       "name": "Branch Network SD-WAN Rollout",
+       "bu": "Branch Banking",
+       "vendor": "Meridian Networks Corp.",
+       "contract": 36800000,
+       "pm": "Marites Cruz",
+       "ps": "Ana Santos",
+       "ntp": "2026-02-02",
+       "expiry": "2026-12-18",
+       "poNo": "PO-2026-0044"
+      },
+      "health": {
+       "overall": "R",
+       "sched": "R",
+       "cost": "R",
+       "risk": "R",
+       "issue": "R",
+       "reasons": [
+        "1 milestone(s) past due and not achieved",
+        "Forecast cost at 106.1% of budget",
+        "2 high/critical risk(s)",
+        "1 critical/escalated issue(s)"
+       ]
+      },
+      "sched": {
+       "base": "2026-12-29",
+       "fore": "2027-04-06",
+       "var": 67,
+       "complete": 42.72727272727273,
+       "expected": 73.18181818181819
+      },
+      "milestones": [
+       {
+        "id": "N1",
+        "name": "Milestone 1 – Equipment delivered",
+        "ms": true,
+        "pct": 0,
+        "bFinish": "2026-07-15",
+        "fFinish": "2026-10-20",
+        "st": "Behind"
+       },
+       {
+        "id": "N2",
+        "name": "Milestone 2 – Rollout complete",
+        "ms": true,
+        "pct": 0,
+        "bFinish": "2026-12-10",
+        "fFinish": "2027-03-22",
+        "st": "Behind"
+       },
+       {
+        "id": "N3",
+        "name": "Milestone 3 – Final acceptance",
+        "ms": true,
+        "pct": 0,
+        "bFinish": "2026-12-29",
+        "fFinish": "2027-04-06",
+        "st": "Behind"
+       }
+      ],
+      "behind": [
+       {
+        "id": "B4",
+        "name": "Equipment delivery",
+        "ms": false,
+        "pct": 60,
+        "bFinish": "2026-07-14",
+        "fFinish": "2026-10-19",
+        "st": "Behind"
+       },
+       {
+        "id": "B5",
+        "name": "Pilot deployment – 10 branches",
+        "ms": false,
+        "pct": 0,
+        "bFinish": "2026-08-05",
+        "fFinish": "2026-11-11",
+        "st": "Behind"
+       },
+       {
+        "id": "B6",
+        "name": "Wave 1 rollout – 50 branches",
+        "ms": false,
+        "pct": 0,
+        "bFinish": "2026-10-02",
+        "fFinish": "2027-01-15",
+        "st": "Behind"
+       },
+       {
+        "id": "B7",
+        "name": "Wave 2 rollout – 60 branches",
+        "ms": false,
+        "pct": 0,
+        "bFinish": "2026-12-09",
+        "fFinish": "2027-03-19",
+        "st": "Behind"
+       },
+       {
+        "id": "B8",
+        "name": "Acceptance testing",
+        "ms": false,
+        "pct": 0,
+        "bFinish": "2026-12-28",
+        "fFinish": "2027-04-05",
+        "st": "Behind"
+       }
+      ],
+      "ahead": [],
+      "next": [
+       {
+        "id": "B4",
+        "name": "Equipment delivery",
+        "fStart": "2026-06-08",
+        "fFinish": "2026-10-19",
+        "ms": false
+       },
+       {
+        "id": "N1",
+        "name": "Milestone 1 – Equipment delivered",
+        "fStart": "2026-10-20",
+        "fFinish": "2026-10-20",
+        "ms": true
+       },
+       {
+        "id": "B5",
+        "name": "Pilot deployment – 10 branches",
+        "fStart": "2026-10-21",
+        "fFinish": "2026-11-11",
+        "ms": false
+       }
+      ],
+      "issues": [
+       {
+        "id": "I-021-01",
+        "title": "Router shipment held at customs",
+        "pri": "Critical",
+        "owner": "Marites Cruz",
+        "target": "2026-09-15",
+        "esc": true
+       },
+       {
+        "id": "I-021-02",
+        "title": "Three branches refused after-hours access",
+        "pri": "Medium",
+        "owner": "Elena Mendoza",
+        "target": "2026-10-05",
+        "esc": false
+       }
+      ],
+      "risks": [
+       {
+        "id": "R-021-01",
+        "title": "Global shortage of edge routers delays delivery",
+        "lvl": "Critical",
+        "score": 25,
+        "owner": "Marites Cruz",
+        "mit": "Vendor to source alternate SKU; split delivery into two lots"
+       },
+       {
+        "id": "R-021-02",
+        "title": "Telco last-mile circuits not ready for Wave 1 branches",
+        "lvl": "High",
+        "score": 16,
+        "owner": "Elena Mendoza",
+        "mit": "Weekly telco readiness tracker; re-sequence branches by circuit readiness"
+       }
+      ],
+      "actions": [
+       {
+        "text": "Vendor to submit complete import documents",
+        "who": "Marites Cruz",
+        "due": "2026-09-10",
+        "overdue": true
+       },
+       {
+        "text": "Issue formal notice of delay to vendor",
+        "who": "Marites Cruz",
+        "due": "2026-09-30",
+        "overdue": false
+       }
+      ],
+      "fin": {
+       "current": 38000000,
+       "actual": 19600000,
+       "committed": 14100000,
+       "eac": 40300000,
+       "eacPct": 106.05263157894737,
+       "remaining": 4300000,
+       "cont": 1900000,
+       "contUsed": 400000,
+       "contPct": 21.052631578947366,
+       "contLeft": 1500000
+      },
+      "decisions": []
+     },
+     "narrative": {
+      "acc": "Pilot preparation completed for 10 branches using demo-pool routers. Site survey and design fully closed.",
+      "next": "Clear customs hold; start pilot deployment; confirm Wave 1 telco readiness.",
+      "issues": "Router shipment still held at customs. Formal notice of delay to be issued to vendor. LD exposure on Milestone 1 is increasing daily."
+     },
+     "attachments": [],
+     "history": [
+      {
+       "at": "2026-09-25 17:42:10",
+       "who": "U02",
+       "action": "Submitted",
+       "comment": ""
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "P3",
+   "code": "PRJ-2026-027",
+   "name": "Data Center UPS Replacement",
+   "bu": "IT Operations",
+   "portfolio": "Infrastructure",
+   "pm": "U01",
+   "dh": "U03",
+   "ps": "U04",
+   "psRequired": false,
+   "vendor": "Crestline Power Solutions",
+   "contract": 12900000,
+   "noa": "2026-04-27",
+   "po": "2026-05-11",
+   "poNo": "PO-2026-0301",
+   "ntp": "2026-06-01",
+   "expiry": "2026-12-29",
+   "start": "2026-06-01",
+   "fin": {
+    "budget": 14000000,
+    "changes": [],
+    "contingency": 700000,
+    "draws": [],
+    "actual": 6100000,
+    "committed": 7200000,
+    "eac": 13400000,
+    "invoices": [
+     {
+      "no": "CPS-2026-118",
+      "date": "2026-08-03",
+      "doNo": "DO-26-0712",
+      "doDate": "2026-07-29",
+      "vendor": "Crestline Power Solutions",
+      "amt": 7740000,
+      "paid": "",
+      "status": "For payment",
+      "remarks": "Milestone 1 billing"
+     }
+    ]
+   },
+   "risks": [
+    {
+     "id": "R-027-01",
+     "title": "Shutdown window not approved by Operations",
+     "cat": "Operations",
+     "p": 2,
+     "i": 4,
+     "owner": "U01",
+     "resp": "Mitigate",
+     "mit": "Book windows 4 weeks ahead with CAB",
+     "rp": 1,
+     "ri": 4,
+     "status": "Open",
+     "raised": "2026-06-08"
+    }
+   ],
+   "issues": [
+    {
+     "id": "I-027-01",
+     "title": "Generator test clashes with month-end batch",
+     "cat": "Schedule",
+     "pri": "Low",
+     "owner": "U09",
+     "raised": "2026-08-25",
+     "target": "2026-09-04",
+     "status": "Resolved",
+     "escalated": false,
+     "actions": []
+    }
+   ],
+   "decisions": [],
+   "activities": [
+    {
+     "id": "C1",
+     "name": "Kick-off",
+     "dur": 3,
+     "preds": [],
+     "pct": 100,
+     "owner": "U01",
+     "ms": false,
+     "price": 0,
+     "manualFinish": "",
+     "bStart": "2026-06-01",
+     "bFinish": "2026-06-03",
+     "pStart": "2026-06-01",
+     "pFinish": "2026-06-03",
+     "aStart": "2026-06-01",
+     "aFinish": "2026-06-03",
+     "fStart": "2026-06-01",
+     "fFinish": "2026-06-03"
+    },
+    {
+     "id": "C2",
+     "name": "Site assessment",
+     "dur": 10,
+     "preds": [
+      "C1"
+     ],
+     "pct": 100,
+     "owner": "U09",
+     "ms": false,
+     "price": 0,
+     "manualFinish": "",
+     "bStart": "2026-06-04",
+     "bFinish": "2026-06-18",
+     "pStart": "2026-06-04",
+     "pFinish": "2026-06-18",
+     "aStart": "2026-06-04",
+     "aFinish": "2026-06-18",
+     "fStart": "2026-06-04",
+     "fFinish": "2026-06-18"
+    },
+    {
+     "id": "C3",
+     "name": "Equipment delivery",
+     "dur": 25,
+     "preds": [
+      "C2"
+     ],
+     "pct": 100,
+     "owner": "U01",
+     "ms": false,
+     "price": 0,
+     "manualFinish": "",
+     "bStart": "2026-06-19",
+     "bFinish": "2026-07-23",
+     "pStart": "2026-06-19",
+     "pFinish": "2026-07-23",
+     "aStart": "2026-06-19",
+     "aFinish": "2026-07-21",
+     "fStart": "2026-06-19",
+     "fFinish": "2026-07-21"
+    },
+    {
+     "id": "K1",
+     "name": "Milestone 1 – Equipment delivered",
+     "dur": 1,
+     "preds": [
+      "C3"
+     ],
+     "pct": 100,
+     "owner": "U01",
+     "ms": true,
+     "price": 7740000,
+     "manualFinish": "",
+     "bStart": "2026-07-24",
+     "bFinish": "2026-07-24",
+     "pStart": "2026-07-24",
+     "pFinish": "2026-07-24",
+     "aStart": "2026-07-22",
+     "aFinish": "2026-07-22",
+     "fStart": "2026-07-22",
+     "fFinish": "2026-07-22"
+    },
+    {
+     "id": "C4",
+     "name": "Installation (weekend windows)",
+     "dur": 50,
+     "preds": [
+      "K1"
+     ],
+     "pct": 90,
+     "owner": "U09",
+     "ms": false,
+     "price": 0,
+     "manualFinish": "",
+     "bStart": "2026-07-27",
+     "bFinish": "2026-10-06",
+     "pStart": "2026-07-27",
+     "pFinish": "2026-10-06",
+     "aStart": "2026-07-23",
+     "aFinish": "",
+     "fStart": "2026-07-23",
+     "fFinish": "2026-10-02"
+    },
+    {
+     "id": "C5",
+     "name": "Load and failover testing",
+     "dur": 5,
+     "preds": [
+      "C4"
+     ],
+     "pct": 0,
+     "owner": "U09",
+     "ms": false,
+     "price": 0,
+     "manualFinish": "",
+     "bStart": "2026-10-07",
+     "bFinish": "2026-10-13",
+     "pStart": "2026-10-07",
+     "pFinish": "2026-10-13",
+     "aStart": "",
+     "aFinish": "",
+     "fStart": "2026-10-07",
+     "fFinish": "2026-10-13"
+    },
+    {
+     "id": "K2",
+     "name": "Milestone 2 – Final acceptance",
+     "dur": 1,
+     "preds": [
+      "C5"
+     ],
+     "pct": 0,
+     "owner": "U01",
+     "ms": true,
+     "price": 5160000,
+     "manualFinish": "",
+     "bStart": "2026-10-14",
+     "bFinish": "2026-10-14",
+     "pStart": "2026-10-14",
+     "pFinish": "2026-10-14",
+     "aStart": "",
+     "aFinish": "",
+     "fStart": "2026-10-14",
+     "fFinish": "2026-10-14"
+    }
+   ],
+   "baselines": [
+    {
+     "v": 1,
+     "date": "2026-06-01",
+     "by": "U01",
+     "note": "Initial approved baseline"
+    }
+   ],
+   "schedHistory": [],
+   "psrs": []
+  },
+  {
+   "id": "P4",
+   "code": "PRJ-2026-019",
+   "name": "Enterprise Document Management",
+   "bu": "Operations",
+   "portfolio": "Digital Workplace",
+   "pm": "U02",
+   "dh": "U03",
+   "ps": "U04",
+   "psRequired": false,
+   "vendor": "Silverleaf Information Systems",
+   "contract": 22400000,
+   "noa": "2026-03-30",
+   "po": "2026-04-13",
+   "poNo": "PO-2026-0233",
+   "ntp": "2026-05-04",
+   "expiry": "2027-01-29",
+   "start": "2026-05-04",
+   "fin": {
+    "budget": 24000000,
+    "changes": [],
+    "contingency": 1200000,
+    "draws": [
+     {
+      "id": "CD4",
+      "amt": 550000,
+      "date": "2026-07-20",
+      "reason": "OCR engine upgrade"
+     },
+     {
+      "id": "CD5",
+      "amt": 400000,
+      "date": "2026-09-01",
+      "reason": "Extra scanning operators"
+     }
+    ],
+    "actual": 9800000,
+    "committed": 12300000,
+    "eac": 24600000,
+    "invoices": []
+   },
+   "risks": [
+    {
+     "id": "R-019-01",
+     "title": "Poor OCR accuracy on scanned archives pre-2010",
+     "cat": "Technical",
+     "p": 3,
+     "i": 4,
+     "owner": "U10",
+     "resp": "Mitigate",
+     "mit": "Manual indexing lane for low-confidence batches",
+     "rp": 2,
+     "ri": 3,
+     "status": "Open",
+     "raised": "2026-07-06"
+    },
+    {
+     "id": "R-019-02",
+     "title": "Low user adoption in branches",
+     "cat": "Change",
+     "p": 3,
+     "i": 3,
+     "owner": "U02",
+     "resp": "Mitigate",
+     "mit": "Champions network; short video guides",
+     "rp": 2,
+     "ri": 2,
+     "status": "Open",
+     "raised": "2026-06-01"
+    }
+   ],
+   "issues": [
+    {
+     "id": "I-019-01",
+     "title": "Index files missing for 2015–2017 archives",
+     "cat": "Data",
+     "pri": "High",
+     "owner": "U10",
+     "raised": "2026-09-10",
+     "target": "2026-10-02",
+     "status": "Open",
+     "escalated": false,
+     "actions": [
+      {
+       "id": "AC6",
+       "text": "Retrieve backups from offsite storage",
+       "who": "U10",
+       "due": "2026-09-26",
+       "status": "Open"
+      }
+     ]
+    }
+   ],
+   "decisions": [],
+   "activities": [
+    {
+     "id": "D1",
+     "name": "Kick-off",
+     "dur": 5,
+     "preds": [],
+     "pct": 100,
+     "owner": "U02",
+     "ms": false,
+     "price": 0,
+     "manualFinish": "",
+     "bStart": "2026-05-04",
+     "bFinish": "2026-05-08",
+     "pStart": "2026-05-04",
+     "pFinish": "2026-05-08",
+     "aStart": "2026-05-04",
+     "aFinish": "2026-05-08",
+     "fStart": "2026-05-04",
+     "fFinish": "2026-05-08"
+    },
+    {
+     "id": "D2",
+     "name": "Requirements and records taxonomy",
+     "dur": 20,
+     "preds": [
+      "D1"
+     ],
+     "pct": 100,
+     "owner": "U10",
+     "ms": false,
+     "price": 0,
+     "manualFinish": "",
+     "bStart": "2026-05-11",
+     "bFinish": "2026-06-05",
+     "pStart": "2026-05-11",
+     "pFinish": "2026-06-05",
+     "aStart": "2026-05-11",
+     "aFinish": "2026-06-09",
+     "fStart": "2026-05-11",
+     "fFinish": "2026-06-09"
+    },
+    {
+     "id": "D3",
+     "name": "Platform configuration",
+     "dur": 30,
+     "preds": [
+      "D2"
+     ],
+     "pct": 100,
+     "owner": "U10",
+     "ms": false,
+     "price": 0,
+     "manualFinish": "",
+     "bStart": "2026-06-08",
+     "bFinish": "2026-07-20",
+     "pStart": "2026-06-08",
+     "pFinish": "2026-07-20",
+     "aStart": "2026-06-10",
+     "aFinish": "2026-07-22",
+     "fStart": "2026-06-10",
+     "fFinish": "2026-07-22"
+    },
+    {
+     "id": "Q1",
+     "name": "Milestone 1 – Configuration accepted",
+     "dur": 1,
+     "preds": [
+      "D3"
+     ],
+     "pct": 100,
+     "owner": "U02",
+     "ms": true,
+     "price": 7840000,
+     "manualFinish": "",
+     "bStart": "2026-07-21",
+     "bFinish": "2026-07-21",
+     "pStart": "2026-07-21",
+     "pFinish": "2026-07-21",
+     "aStart": "2026-07-23",
+     "aFinish": "2026-07-23",
+     "fStart": "2026-07-23",
+     "fFinish": "2026-07-23"
+    },
+    {
+     "id": "D4",
+     "name": "Legacy archive migration",
+     "dur": 60,
+     "preds": [
+      "Q1"
+     ],
+     "pct": 70,
+     "owner": "U10",
+     "ms": false,
+     "price": 0,
+     "manualFinish": "",
+     "bStart": "2026-07-22",
+     "bFinish": "2026-10-15",
+     "pStart": "2026-07-22",
+     "pFinish": "2026-10-15",
+     "aStart": "2026-07-24",
+     "aFinish": "",
+     "fStart": "2026-07-24",
+     "fFinish": "2026-10-22"
+    },
+    {
+     "id": "D5",
+     "name": "User acceptance testing",
+     "dur": 15,
+     "preds": [
+      "D4"
+     ],
+     "pct": 0,
+     "owner": "U02",
+     "ms": false,
+     "price": 0,
+     "manualFinish": "",
+     "bStart": "2026-10-16",
+     "bFinish": "2026-11-06",
+     "pStart": "2026-10-16",
+     "pFinish": "2026-11-06",
+     "aStart": "",
+     "aFinish": "",
+     "fStart": "2026-10-23",
+     "fFinish": "2026-11-13"
+    },
+    {
+     "id": "Q2",
+     "name": "Milestone 2 – Go-live",
+     "dur": 1,
+     "preds": [
+      "D5"
+     ],
+     "pct": 0,
+     "owner": "U02",
+     "ms": true,
+     "price": 11200000,
+     "manualFinish": "",
+     "bStart": "2026-11-09",
+     "bFinish": "2026-11-09",
+     "pStart": "2026-11-09",
+     "pFinish": "2026-11-09",
+     "aStart": "",
+     "aFinish": "",
+     "fStart": "2026-11-16",
+     "fFinish": "2026-11-16"
+    },
+    {
+     "id": "D6",
+     "name": "Hypercare",
+     "dur": 10,
+     "preds": [
+      "Q2"
+     ],
+     "pct": 0,
+     "owner": "U10",
+     "ms": false,
+     "price": 0,
+     "manualFinish": "",
+     "bStart": "2026-11-10",
+     "bFinish": "2026-11-23",
+     "pStart": "2026-11-10",
+     "pFinish": "2026-11-23",
+     "aStart": "",
+     "aFinish": "",
+     "fStart": "2026-11-17",
+     "fFinish": "2026-12-01"
+    },
+    {
+     "id": "Q3",
+     "name": "Milestone 3 – Final acceptance",
+     "dur": 1,
+     "preds": [
+      "D6"
+     ],
+     "pct": 0,
+     "owner": "U02",
+     "ms": true,
+     "price": 3360000,
+     "manualFinish": "",
+     "bStart": "2026-11-24",
+     "bFinish": "2026-11-24",
+     "pStart": "2026-11-24",
+     "pFinish": "2026-11-24",
+     "aStart": "",
+     "aFinish": "",
+     "fStart": "2026-12-02",
+     "fFinish": "2026-12-02"
+    }
+   ],
+   "baselines": [
+    {
+     "v": 1,
+     "date": "2026-05-04",
+     "by": "U02",
+     "note": "Initial approved baseline"
+    }
+   ],
+   "schedHistory": [],
+   "psrs": [
+    {
+     "id": "PSR-P5LT3",
+     "period": {
+      "y": 2026,
+      "m": 8
+     },
+     "status": "Approved",
+     "created": "2026-09-28",
+     "createdBy": "U02",
+     "historic": true,
+     "snap": {
+      "master": {
+       "code": "PRJ-2026-019",
+       "name": "Enterprise Document Management",
+       "bu": "Operations",
+       "vendor": "Silverleaf Information Systems",
+       "contract": 22400000,
+       "pm": "Marites Cruz",
+       "ps": "Ana Santos",
+       "ntp": "2026-05-04",
+       "expiry": "2027-01-29",
+       "poNo": "PO-2026-0233"
+      },
+      "health": {
+       "overall": "A",
+       "sched": "A",
+       "cost": "A",
+       "risk": "A",
+       "issue": "A",
+       "reasons": [
+        "Forecast finish 5 working days after baseline",
+        "Forecast cost at 102.5% of budget",
+        "1 high/critical risk(s)",
+        "1 critical/escalated issue(s)"
+       ]
+      },
+      "sched": {
+       "base": "2026-11-24",
+       "fore": "2026-12-02",
+       "var": 5,
+       "complete": 69.28571428571428,
+       "expected": 72.85714285714285
+      },
+      "milestones": [
+       {
+        "id": "Q1",
+        "name": "Milestone 1 – Configuration accepted",
+        "ms": true,
+        "pct": 100,
+        "bFinish": "2026-07-21",
+        "fFinish": "2026-07-23",
+        "st": "Complete"
+       },
+       {
+        "id": "Q2",
+        "name": "Milestone 2 – Go-live",
+        "ms": true,
+        "pct": 0,
+        "bFinish": "2026-11-09",
+        "fFinish": "2026-11-16",
+        "st": "Behind"
+       },
+       {
+        "id": "Q3",
+        "name": "Milestone 3 – Final acceptance",
+        "ms": true,
+        "pct": 0,
+        "bFinish": "2026-11-24",
+        "fFinish": "2026-12-02",
+        "st": "Behind"
+       }
+      ],
+      "behind": [
+       {
+        "id": "D4",
+        "name": "Legacy archive migration",
+        "ms": false,
+        "pct": 70,
+        "bFinish": "2026-10-15",
+        "fFinish": "2026-10-22",
+        "st": "Behind"
+       },
+       {
+        "id": "D5",
+        "name": "User acceptance testing",
+        "ms": false,
+        "pct": 0,
+        "bFinish": "2026-11-06",
+        "fFinish": "2026-11-13",
+        "st": "Behind"
+       },
+       {
+        "id": "D6",
+        "name": "Hypercare",
+        "ms": false,
+        "pct": 0,
+        "bFinish": "2026-11-23",
+        "fFinish": "2026-12-01",
+        "st": "Behind"
+       }
+      ],
+      "ahead": [],
+      "next": [
+       {
+        "id": "D4",
+        "name": "Legacy archive migration",
+        "fStart": "2026-07-24",
+        "fFinish": "2026-10-22",
+        "ms": false
+       }
+      ],
+      "issues": [
+       {
+        "id": "I-019-01",
+        "title": "Index files missing for 2015–2017 archives",
+        "pri": "High",
+        "owner": "Elena Mendoza",
+        "target": "2026-10-02",
+        "esc": false
+       }
+      ],
+      "risks": [
+       {
+        "id": "R-019-01",
+        "title": "Poor OCR accuracy on scanned archives pre-2010",
+        "lvl": "High",
+        "score": 12,
+        "owner": "Elena Mendoza",
+        "mit": "Manual indexing lane for low-confidence batches"
+       }
+      ],
+      "actions": [
+       {
+        "text": "Retrieve backups from offsite storage",
+        "who": "Elena Mendoza",
+        "due": "2026-09-26",
+        "overdue": true
+       }
+      ],
+      "fin": {
+       "current": 24000000,
+       "actual": 9800000,
+       "committed": 12300000,
+       "eac": 24600000,
+       "eacPct": 102.49999999999999,
+       "remaining": 1900000,
+       "cont": 1200000,
+       "contUsed": 950000,
+       "contPct": 79.16666666666666,
+       "contLeft": 250000
+      },
+      "decisions": []
+     },
+     "narrative": {
+      "acc": "Activities progressed as reported in the schedule section.",
+      "next": "Continue planned activities for the next period.",
+      "issues": ""
+     },
+     "attachments": [],
+     "history": [
+      {
+       "at": "2026-09-07 16:20:11",
+       "who": "U02",
+       "action": "Submitted",
+       "comment": ""
+      },
+      {
+       "at": "2026-09-08 10:05:42",
+       "who": "U03",
+       "action": "Approved (DH)",
+       "comment": ""
+      }
+     ]
+    }
+   ]
+  }
+ ],
+ "audit": [
+  {
+   "at": "2026-09-15 10:30:00",
+   "u": "U07",
+   "ev": "Modify",
+   "res": "Security parameter: idle timeout = 15 min",
+   "ok": "Success",
+   "ip": "10.21.4.57"
+  },
+  {
+   "at": "2026-09-21 11:02:40",
+   "u": "U02",
+   "ev": "Modify",
+   "res": "Activity B4 (PRJ-2026-021)",
+   "ok": "Success",
+   "ip": "10.21.4.57"
+  },
+  {
+   "at": "2026-09-24 15:18:09",
+   "u": "U01",
+   "ev": "Modify",
+   "res": "Activity A5 (PRJ-2026-014)",
+   "ok": "Success",
+   "ip": "10.21.4.57"
+  },
+  {
+   "at": "2026-09-25 17:42:10",
+   "u": "U02",
+   "ev": "Submit",
+   "res": "PSR PRJ-2026-021 September 2026",
+   "ok": "Success",
+   "ip": "10.21.4.57"
+  },
+  {
+   "at": "2026-09-27 21:15:41",
+   "u": "U10",
+   "ev": "Lock",
+   "res": "User ID emendoza (3 failed attempts)",
+   "ok": "Success",
+   "ip": "10.21.8.112"
+  },
+  {
+   "at": "2026-09-27 21:15:41",
+   "u": "U10",
+   "ev": "Login",
+   "res": "Session",
+   "ok": "Failed",
+   "ip": "10.21.8.112"
+  },
+  {
+   "at": "2026-09-27 21:15:20",
+   "u": "U10",
+   "ev": "Login",
+   "res": "Session",
+   "ok": "Failed",
+   "ip": "10.21.8.112"
+  },
+  {
+   "at": "2026-09-27 21:14:55",
+   "u": "U10",
+   "ev": "Login",
+   "res": "Session",
+   "ok": "Failed",
+   "ip": "10.21.8.112"
+  },
+  {
+   "at": "2026-09-28 08:05:40",
+   "u": "U01",
+   "ev": "Login",
+   "res": "Session",
+   "ok": "Success",
+   "ip": "10.21.4.57"
+  },
+  {
+   "at": "2026-09-28 08:02:13",
+   "u": "U08",
+   "ev": "Login",
+   "res": "Session",
+   "ok": "Success",
+   "ip": "10.21.4.57"
+  }
+ ],
+ "config": {
+  "schedAmber": 1,
+  "schedRed": 10,
+  "costAmber": 100,
+  "costRed": 105,
+  "contAmber": 75,
+  "ldRate": 0.001,
+  "ldWarn": 8,
+  "ldCap": 10,
+  "escalateDays": 5,
+  "riskEscalate": "High",
+  "pwdMin": 12,
+  "pwdExpiry": 90,
+  "pwdHistory": 1,
+  "lockAttempts": 3,
+  "lockMinutes": 30,
+  "idleMinutes": 15,
+  "mfa": true,
+  "singleSession": true
+ },
+ "notes": [
+  {
+   "to": "U09",
+   "m": "You were assigned A6 System integration testing",
+   "s": "PRJ-2026-014 · by Ramon Villanueva",
+   "go": [
+    "mytasks"
+   ],
+   "at": "2026-09-26 10:14:00",
+   "read": false
+  }
+ ],
+ "chat": {
+  "P1": [
+   {
+    "id": "MPCGFS",
+    "who": "U01",
+    "at": "2026-09-24 09:12:40",
+    "text": "Team, A5 is now at 88%. @pgarcia are the credit scoring mock responses enough to start the SIT pre-checks?",
+    "ref": "act:A5"
+   },
+   {
+    "id": "MFF5Y9",
+    "who": "U09",
+    "at": "2026-09-24 09:40:05",
+    "text": "Yes, the mocks cover 14 of 16 endpoints. The last 2 need the bureau sandbox, tracked under the issue.",
+    "ref": "issue:I-014-01"
+   },
+   {
+    "id": "MODL0D",
+    "who": "U09",
+    "at": "2026-09-24 09:41:30",
+    "text": "I can start SIT prep on 1 Oct if the sandbox is up by then.",
+    "ref": ""
+   },
+   {
+    "id": "MQXJRB",
+    "who": "U03",
+    "at": "2026-09-25 14:05:12",
+    "text": "Noted. Please reflect the sandbox dependency in the September PSR narrative. @rvillanueva",
+    "ref": ""
+   },
+   {
+    "id": "MG7X7C",
+    "who": "U01",
+    "at": "2026-09-25 14:20:44",
+    "text": "Will do, Sir. Target to submit the PSR by 5 Oct.",
+    "ref": ""
+   }
+  ],
+  "P2": [
+   {
+    "id": "M53QR4",
+    "who": "U02",
+    "at": "2026-09-22 16:02:10",
+    "text": "Customs released partial documents today. Vendor says 40 routers can clear by 2 Oct.",
+    "ref": "act:B4"
+   },
+   {
+    "id": "MK8GQZ",
+    "who": "U05",
+    "at": "2026-09-23 08:30:51",
+    "text": "@mcruz please prepare a delivery recovery plan for the PSC meeting on 1 Oct.",
+    "ref": ""
+   },
+   {
+    "id": "M7KV2A",
+    "who": "U02",
+    "at": "2026-09-23 09:02:37",
+    "text": "Noted, Ma'am. Draft plan will be attached to the September PSR.",
+    "ref": ""
+   }
+  ],
+  "P3": [
+   {
+    "id": "MWTEJJ",
+    "who": "U09",
+    "at": "2026-09-21 18:40:00",
+    "text": "Weekend window 2 done. Installation at 90%. Load testing can start 5 Oct.",
+    "ref": "act:C4"
+   }
+  ],
+  "P4": [
+   {
+    "id": "MWST04",
+    "who": "U02",
+    "at": "2026-09-18 11:12:00",
+    "text": "Offsite backup retrieval for the 2015–2017 index files is scheduled 30 Sep.",
+    "ref": "issue:I-019-01"
+   }
+  ]
+ },
+ "reads": {
+  "U01": {
+   "P1": 4,
+   "P2": 3,
+   "P3": 1,
+   "P4": 1
+  },
+  "U02": {
+   "P1": 5,
+   "P2": 2,
+   "P3": 1,
+   "P4": 1
+  },
+  "U03": {
+   "P1": 5,
+   "P2": 3,
+   "P3": 1,
+   "P4": 1
+  },
+  "U04": {
+   "P1": 5,
+   "P2": 3,
+   "P3": 1,
+   "P4": 1
+  },
+  "U05": {
+   "P1": 5,
+   "P2": 3,
+   "P3": 1,
+   "P4": 1
+  },
+  "U06": {
+   "P1": 5,
+   "P2": 3,
+   "P3": 1,
+   "P4": 1
+  },
+  "U07": {
+   "P1": 5,
+   "P2": 3,
+   "P3": 1,
+   "P4": 1
+  },
+  "U08": {
+   "P1": 5,
+   "P2": 3,
+   "P3": 1,
+   "P4": 1
+  },
+  "U09": {
+   "P1": 3,
+   "P2": 3,
+   "P3": 1,
+   "P4": 1
+  },
+  "U10": {
+   "P1": 5,
+   "P2": 3,
+   "P3": 1,
+   "P4": 1
+  }
+ }
+}

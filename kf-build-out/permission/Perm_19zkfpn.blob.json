@@ -1,0 +1,56 @@
+{
+  "Root": "Perm_19zkfpn",
+  "Perm_19zkfpn": {
+    "Id": "Perm_19zkfpn",
+    "Kind": "FlowPermission",
+    "Role": "hub_administrator",
+    "RoleName": "Hub Administrator",
+    "Model": "itpmd_hub_settings",
+    "Level": "Editable",
+    "Scope": "all",
+    "FlowPermission::Permission": [
+      "Permission_v5a137",
+      "Permission_1ec06vo",
+      "Permission_nmmk7l",
+      "Permission_ykmxev",
+      "Permission_1rjrgyt",
+      "Permission_12awe59"
+    ]
+  },
+  "Permission_v5a137": {
+    "Id": "Permission_v5a137",
+    "Kind": "Permission",
+    "Column": "setting_name",
+    "Permission": "Editable"
+  },
+  "Permission_1ec06vo": {
+    "Id": "Permission_1ec06vo",
+    "Kind": "Permission",
+    "Column": "psr_due_working_day",
+    "Permission": "Editable"
+  },
+  "Permission_nmmk7l": {
+    "Id": "Permission_nmmk7l",
+    "Kind": "Permission",
+    "Column": "psr_reminder_days_before",
+    "Permission": "Editable"
+  },
+  "Permission_ykmxev": {
+    "Id": "Permission_ykmxev",
+    "Kind": "Permission",
+    "Column": "psr_reminder_final_day_before",
+    "Permission": "Editable"
+  },
+  "Permission_1rjrgyt": {
+    "Id": "Permission_1rjrgyt",
+    "Kind": "Permission",
+    "Column": "issue_aging_period_days",
+    "Permission": "Editable"
+  },
+  "Permission_12awe59": {
+    "Id": "Permission_12awe59",
+    "Kind": "Permission",
+    "Column": "escalation_recipients",
+    "Permission": "Editable"
+  }
+}

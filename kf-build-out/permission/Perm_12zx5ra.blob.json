@@ -1,0 +1,56 @@
+{
+  "Root": "Perm_12zx5ra",
+  "Perm_12zx5ra": {
+    "Id": "Perm_12zx5ra",
+    "Kind": "FlowPermission",
+    "Role": "psc_member",
+    "RoleName": "PSC Member",
+    "Model": "itpmd_action_item",
+    "Level": "ReadOnly",
+    "Scope": "all",
+    "FlowPermission::Permission": [
+      "Permission_1y67v5c",
+      "Permission_1exusqu",
+      "Permission_1d6o6zc",
+      "Permission_bcyc7y",
+      "Permission_sdtb1m",
+      "Permission_svwn5u"
+    ]
+  },
+  "Permission_1y67v5c": {
+    "Id": "Permission_1y67v5c",
+    "Kind": "Permission",
+    "Column": "action_description",
+    "Permission": "ReadOnly"
+  },
+  "Permission_1exusqu": {
+    "Id": "Permission_1exusqu",
+    "Kind": "Permission",
+    "Column": "project",
+    "Permission": "ReadOnly"
+  },
+  "Permission_1d6o6zc": {
+    "Id": "Permission_1d6o6zc",
+    "Kind": "Permission",
+    "Column": "related_issue",
+    "Permission": "ReadOnly"
+  },
+  "Permission_bcyc7y": {
+    "Id": "Permission_bcyc7y",
+    "Kind": "Permission",
+    "Column": "assignee",
+    "Permission": "ReadOnly"
+  },
+  "Permission_sdtb1m": {
+    "Id": "Permission_sdtb1m",
+    "Kind": "Permission",
+    "Column": "due_date",
+    "Permission": "ReadOnly"
+  },
+  "Permission_svwn5u": {
+    "Id": "Permission_svwn5u",
+    "Kind": "Permission",
+    "Column": "overdue_flag",
+    "Permission": "ReadOnly"
+  }
+}

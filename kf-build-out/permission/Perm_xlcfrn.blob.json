@@ -1,0 +1,56 @@
+{
+  "Root": "Perm_xlcfrn",
+  "Perm_xlcfrn": {
+    "Id": "Perm_xlcfrn",
+    "Kind": "FlowPermission",
+    "Role": "project_sponsor",
+    "RoleName": "Project Sponsor",
+    "Model": "itpmd_action_item",
+    "Level": "ReadOnly",
+    "Scope": "my-team",
+    "FlowPermission::Permission": [
+      "Permission_1926cjk",
+      "Permission_2n9rpy",
+      "Permission_13lz9pk",
+      "Permission_1fd9nu6",
+      "Permission_1we4mnu",
+      "Permission_4x39hu"
+    ]
+  },
+  "Permission_1926cjk": {
+    "Id": "Permission_1926cjk",
+    "Kind": "Permission",
+    "Column": "action_description",
+    "Permission": "ReadOnly"
+  },
+  "Permission_2n9rpy": {
+    "Id": "Permission_2n9rpy",
+    "Kind": "Permission",
+    "Column": "project",
+    "Permission": "ReadOnly"
+  },
+  "Permission_13lz9pk": {
+    "Id": "Permission_13lz9pk",
+    "Kind": "Permission",
+    "Column": "related_issue",
+    "Permission": "ReadOnly"
+  },
+  "Permission_1fd9nu6": {
+    "Id": "Permission_1fd9nu6",
+    "Kind": "Permission",
+    "Column": "assignee",
+    "Permission": "ReadOnly"
+  },
+  "Permission_1we4mnu": {
+    "Id": "Permission_1we4mnu",
+    "Kind": "Permission",
+    "Column": "due_date",
+    "Permission": "ReadOnly"
+  },
+  "Permission_4x39hu": {
+    "Id": "Permission_4x39hu",
+    "Kind": "Permission",
+    "Column": "overdue_flag",
+    "Permission": "ReadOnly"
+  }
+}

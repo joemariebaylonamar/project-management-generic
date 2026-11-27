@@ -1,0 +1,98 @@
+{
+  "Root": "Perm_1y1z7ac",
+  "Perm_1y1z7ac": {
+    "Id": "Perm_1y1z7ac",
+    "Kind": "FlowPermission",
+    "Role": "team_member",
+    "RoleName": "Team Member",
+    "Model": "itpmd_issue",
+    "Level": "Editable",
+    "Scope": "my",
+    "FlowPermission::Permission": [
+      "Permission_3rlf9o",
+      "Permission_15ebny1",
+      "Permission_113lfag",
+      "Permission_crkb7o",
+      "Permission_3ocyyd",
+      "Permission_1h16hi1",
+      "Permission_17njfra",
+      "Permission_3hip1t",
+      "Permission_bfysiq",
+      "Permission_18bajxg",
+      "Permission_kjlahy",
+      "Permission_jdizxa"
+    ]
+  },
+  "Permission_3rlf9o": {
+    "Id": "Permission_3rlf9o",
+    "Kind": "Permission",
+    "Column": "issue_title",
+    "Permission": "Editable"
+  },
+  "Permission_15ebny1": {
+    "Id": "Permission_15ebny1",
+    "Kind": "Permission",
+    "Column": "project",
+    "Permission": "Editable"
+  },
+  "Permission_113lfag": {
+    "Id": "Permission_113lfag",
+    "Kind": "Permission",
+    "Column": "issue_category",
+    "Permission": "Editable"
+  },
+  "Permission_crkb7o": {
+    "Id": "Permission_crkb7o",
+    "Kind": "Permission",
+    "Column": "priority",
+    "Permission": "Editable"
+  },
+  "Permission_3ocyyd": {
+    "Id": "Permission_3ocyyd",
+    "Kind": "Permission",
+    "Column": "issue_owner",
+    "Permission": "Editable"
+  },
+  "Permission_1h16hi1": {
+    "Id": "Permission_1h16hi1",
+    "Kind": "Permission",
+    "Column": "target_resolution_date",
+    "Permission": "Editable"
+  },
+  "Permission_17njfra": {
+    "Id": "Permission_17njfra",
+    "Kind": "Permission",
+    "Column": "description",
+    "Permission": "Editable"
+  },
+  "Permission_3hip1t": {
+    "Id": "Permission_3hip1t",
+    "Kind": "Permission",
+    "Column": "hub_settings",
+    "Permission": "Editable"
+  },
+  "Permission_bfysiq": {
+    "Id": "Permission_bfysiq",
+    "Kind": "Permission",
+    "Column": "issue_aging_period_days",
+    "Permission": "Editable"
+  },
+  "Permission_18bajxg": {
+    "Id": "Permission_18bajxg",
+    "Kind": "Permission",
+    "Column": "days_open",
+    "Permission": "Editable"
+  },
+  "Permission_kjlahy": {
+    "Id": "Permission_kjlahy",
+    "Kind": "Permission",
+    "Column": "critical_flag",
+    "Permission": "Editable"
+  },
+  "Permission_jdizxa": {
+    "Id": "Permission_jdizxa",
+    "Kind": "Permission",
+    "Column": "escalation_flag",
+    "Permission": "Editable"
+  }
+}

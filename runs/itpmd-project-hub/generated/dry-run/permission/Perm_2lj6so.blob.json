@@ -1,0 +1,175 @@
+{
+  "Root": "Perm_2lj6so",
+  "Perm_2lj6so": {
+    "Id": "Perm_2lj6so",
+    "Kind": "FlowPermission",
+    "Role": "team_member",
+    "RoleName": "Team Member",
+    "Model": "itpmd_activity",
+    "Level": "Editable",
+    "Scope": "my",
+    "FlowPermission::Permission": [
+      "Permission_1ciq76n",
+      "Permission_19fwo4p",
+      "Permission_1kepjp4",
+      "Permission_3v9ymz",
+      "Permission_9zk7a5",
+      "Permission_ugy766",
+      "Permission_l7v7kq",
+      "Permission_l7v7jo",
+      "Permission_1p6x1a9",
+      "Permission_luqck4",
+      "Permission_1fj2ma1",
+      "Permission_c4kwma",
+      "Permission_10f7c0l",
+      "Permission_15sr6ja",
+      "Permission_l5dnm1",
+      "Permission_1linfeh",
+      "Permission_16o5edo",
+      "Permission_p5rb17",
+      "Permission_1acq9x3",
+      "Permission_1l68ehr",
+      "Permission_1ad5imv",
+      "Permission_1sdq86o",
+      "Permission_byjnme"
+    ]
+  },
+  "Permission_1ciq76n": {
+    "Id": "Permission_1ciq76n",
+    "Kind": "Permission",
+    "Column": "activity_name",
+    "Permission": "Editable"
+  },
+  "Permission_19fwo4p": {
+    "Id": "Permission_19fwo4p",
+    "Kind": "Permission",
+    "Column": "project",
+    "Permission": "Editable"
+  },
+  "Permission_1kepjp4": {
+    "Id": "Permission_1kepjp4",
+    "Kind": "Permission",
+    "Column": "wbs_code",
+    "Permission": "Editable"
+  },
+  "Permission_3v9ymz": {
+    "Id": "Permission_3v9ymz",
+    "Kind": "Permission",
+    "Column": "is_summary",
+    "Permission": "Editable"
+  },
+  "Permission_9zk7a5": {
+    "Id": "Permission_9zk7a5",
+    "Kind": "Permission",
+    "Column": "is_milestone",
+    "Permission": "Editable"
+  },
+  "Permission_ugy766": {
+    "Id": "Permission_ugy766",
+    "Kind": "Permission",
+    "Column": "responsible_person",
+    "Permission": "Editable"
+  },
+  "Permission_l7v7kq": {
+    "Id": "Permission_l7v7kq",
+    "Kind": "Permission",
+    "Column": "assigned_by",
+    "Permission": "Editable"
+  },
+  "Permission_l7v7jo": {
+    "Id": "Permission_l7v7jo",
+    "Kind": "Permission",
+    "Column": "assigned_at",
+    "Permission": "Editable"
+  },
+  "Permission_1p6x1a9": {
+    "Id": "Permission_1p6x1a9",
+    "Kind": "Permission",
+    "Column": "planned_start",
+    "Permission": "Editable"
+  },
+  "Permission_luqck4": {
+    "Id": "Permission_luqck4",
+    "Kind": "Permission",
+    "Column": "planned_finish",
+    "Permission": "Editable"
+  },
+  "Permission_1fj2ma1": {
+    "Id": "Permission_1fj2ma1",
+    "Kind": "Permission",
+    "Column": "planned_duration_days",
+    "Permission": "Editable"
+  },
+  "Permission_c4kwma": {
+    "Id": "Permission_c4kwma",
+    "Kind": "Permission",
+    "Column": "baseline_start",
+    "Permission": "Editable"
+  },
+  "Permission_10f7c0l": {
+    "Id": "Permission_10f7c0l",
+    "Kind": "Permission",
+    "Column": "baseline_finish",
+    "Permission": "Editable"
+  },
+  "Permission_15sr6ja": {
+    "Id": "Permission_15sr6ja",
+    "Kind": "Permission",
+    "Column": "forecast_start",
+    "Permission": "Editable"
+  },
+  "Permission_l5dnm1": {
+    "Id": "Permission_l5dnm1",
+    "Kind": "Permission",
+    "Column": "forecast_finish",
+    "Permission": "Editable"
+  },
+  "Permission_1linfeh": {
+    "Id": "Permission_1linfeh",
+    "Kind": "Permission",
+    "Column": "actual_start",
+    "Permission": "Editable"
+  },
+  "Permission_16o5edo": {
+    "Id": "Permission_16o5edo",
+    "Kind": "Permission",
+    "Column": "actual_finish",
+    "Permission": "Editable"
+  },
+  "Permission_p5rb17": {
+    "Id": "Permission_p5rb17",
+    "Kind": "Permission",
+    "Column": "percent_complete",
+    "Permission": "Editable"
+  },
+  "Permission_1acq9x3": {
+    "Id": "Permission_1acq9x3",
+    "Kind": "Permission",
+    "Column": "weighted_complete_value",
+    "Permission": "Editable"
+  },
+  "Permission_1l68ehr": {
+    "Id": "Permission_1l68ehr",
+    "Kind": "Permission",
+    "Column": "missed_milestone_flag",
+    "Permission": "Editable"
+  },
+  "Permission_1ad5imv": {
+    "Id": "Permission_1ad5imv",
+    "Kind": "Permission",
+    "Column": "schedule_variance_days",
+    "Permission": "Editable"
+  },
+  "Permission_1sdq86o": {
+    "Id": "Permission_1sdq86o",
+    "Kind": "Permission",
+    "Column": "status_code",
+    "Permission": "Editable"
+  },
+  "Permission_byjnme": {
+    "Id": "Permission_byjnme",
+    "Kind": "Permission",
+    "Column": "status",
+    "Permission": "Editable"
+  }
+}

@@ -1,0 +1,125 @@
+{
+  "forms": [
+    {
+      "id": "itpmd_psr",
+      "workflow": {
+        "steps": [
+          {
+            "name": "Draft",
+            "actor": "Project Manager",
+            "type": "task",
+            "entry_condition": "start (PM initiates a new PSR for the reporting period)",
+            "on_complete": "Department Head Review"
+          },
+          {
+            "name": "Department Head Review",
+            "actor": "Department Head",
+            "type": "approval",
+            "decision": ["Approve", "Return"],
+            "entry_condition": "PM submits the Draft",
+            "on_complete": "Approve -> Sponsor Approval (skipped when condition false, falling through to Approved); Return -> native send-back to PM Draft with mandatory comment (BR-25)"
+          },
+          {
+            "name": "Sponsor Approval",
+            "actor": "Project Sponsor",
+            "type": "approval",
+            "condition": "Sponsor_Approval_Required = \"Yes\"",
+            "decision": ["Approve", "Return"],
+            "entry_condition": "Department Head approved AND BR-10 routing rule applies (Sponsor_Approval_Required = Yes)",
+            "on_complete": "Approve -> Approved; Return -> native send-back to PM Draft with mandatory comment (BR-25)"
+          },
+          {
+            "name": "Approved",
+            "type": "automation",
+            "entry_condition": "Department Head approved and Sponsor Approval was skipped (not required), or Project Sponsor approved",
+            "on_complete": "terminal — locked read-only snapshot (BR-13); rolls into PSR history and the Portfolio PSR"
+          }
+        ]
+      },
+      "_workflow_notes": "Assignee-per-record: Department Head Review and Sponsor Approval are performed by the role, but the SPECIFIC person is the one named on the PSR's own Department_Head / Project_Sponsor user fields (populated from the Project's DH/PS at PSR-creation time) — kf-security-designer should scope each role's process access to 'assigned records only' (BR-23) rather than 'all PSRs'. Project_Manager (user field) identifies the initiator/PM for notifications and My Items; the process actor role for Draft is Project Manager. Rejection/return is the native default (LESSONS-confirmed): no 'Returned' step is modeled — a Return decision on either approval step sends the item back to Draft with the platform's own mandatory-comment prompt, satisfying BR-25 without a second terminal."
+    },
+    {
+      "id": "itpmd_issue",
+      "caseflow": {
+        "statuses": [
+          { "id": "open", "name": "Open", "is_initial": true, "category": "NotStarted" },
+          { "id": "in_progress", "name": "In Progress", "category": "InProgress" },
+          { "id": "escalated", "name": "Escalated", "category": "InProgress" },
+          { "id": "resolved", "name": "Resolved", "category": "InProgress" },
+          { "id": "closed", "name": "Closed", "is_terminal": true, "category": "Closed" }
+        ],
+        "transitions": [
+          { "from": "Open", "to": "In Progress", "trigger": "manual", "guard": "Issue owner starts work" },
+          { "from": "Open", "to": "Escalated", "trigger": "auto", "guard": "BR-21: Priority = Critical, or Target_Resolution_Date passed by the configured aging period, while still Open" },
+          { "from": "In Progress", "to": "Escalated", "trigger": "auto", "guard": "BR-21: Priority = Critical, or Target_Resolution_Date passed by the configured aging period, while still In Progress" },
+          { "from": "In Progress", "to": "Resolved", "trigger": "manual", "guard": "PM/owner marks the issue resolved" },
+          { "from": "Escalated", "to": "In Progress", "trigger": "manual", "guard": "Owner takes corrective action, de-escalating" },
+          { "from": "Escalated", "to": "Resolved", "trigger": "manual", "guard": "PM/owner marks the escalated issue resolved" },
+          { "from": "Resolved", "to": "Closed", "trigger": "manual", "guard": "PM confirms closure (e.g. after related Action Items are Done)" },
+          { "from": "Resolved", "to": "In Progress", "trigger": "manual", "guard": "Resolution rejected / issue recurs — reopened for further work" }
+        ]
+      },
+      "_workflow_notes": "Issue is a Board (unstructured, user-moved) per D16 — the PM/owner drags cards; Open->Escalated and In Progress->Escalated are the one AUTOMATIC transition pair (BR-21/§6.3), fired by a scheduled check (kf-integration-analyst owns the actual automation) rather than a person's click. Every non-initial status reachable (In Progress, Escalated, Resolved, Closed); every non-terminal status has an outward move; Closed is the only terminal."
+    },
+    {
+      "id": "itpmd_action_item",
+      "caseflow": {
+        "statuses": [
+          { "id": "open", "name": "Open", "is_initial": true, "category": "NotStarted" },
+          { "id": "in_progress", "name": "In Progress", "category": "InProgress" },
+          { "id": "overdue", "name": "Overdue", "category": "InProgress" },
+          { "id": "done", "name": "Done", "is_terminal": true, "category": "Closed" }
+        ],
+        "transitions": [
+          { "from": "Open", "to": "In Progress", "trigger": "manual", "guard": "Assignee starts work" },
+          { "from": "Open", "to": "Overdue", "trigger": "auto", "guard": "Due date has passed while still Open (ITPH-0037/00155)" },
+          { "from": "In Progress", "to": "Overdue", "trigger": "auto", "guard": "Due date has passed while still In Progress (ITPH-0037/00155)" },
+          { "from": "In Progress", "to": "Done", "trigger": "manual", "guard": "Assignee completes the action" },
+          { "from": "Overdue", "to": "In Progress", "trigger": "manual", "guard": "Assignee resumes work on a now-overdue item" },
+          { "from": "Overdue", "to": "Done", "trigger": "manual", "guard": "Assignee completes a previously-overdue action" }
+        ]
+      },
+      "_workflow_notes": "Action Item is a Board, standalone from Issue per D16 (so it surfaces on each assignee's My Tasks across every project — ITPH-00258 — independent of any Issue). Overdue is reached automatically (a scheduled check against the due date), never dragged there by a person; every status has an outward move except the terminal Done, and every status is reachable from Open."
+    }
+  ],
+  "workflow_meta": {
+    "slas": [
+      {
+        "applies_to": "step:itpmd_psr.Draft",
+        "duration": "PSR due by working day 5 of the following month (BR-11)",
+        "on_breach": "notify — reminder to Project Manager 3 days before due, 1 day before due, and daily while overdue"
+      },
+      {
+        "applies_to": "step:itpmd_psr.Department Head Review",
+        "duration": "no fixed BRD duration; reminder cadence configured centrally (Configuration/ITPMD Hub Settings)",
+        "on_breach": "notify — reminder to Department Head; escalate to PSC visibility if the PSR stays un-actioned past the configured aging period, mirroring BR-21's aging-based escalation pattern"
+      },
+      {
+        "applies_to": "step:itpmd_psr.Sponsor Approval",
+        "duration": "no fixed BRD duration; reminder cadence configured centrally",
+        "on_breach": "notify — reminder to Project Sponsor"
+      },
+      {
+        "applies_to": "status:itpmd_issue.Open/In Progress",
+        "duration": "configured issue aging period (ITPMD Hub Settings) measured against Target_Resolution_Date, or immediate for Priority = Critical (BR-21)",
+        "on_breach": "escalate — auto-transition to Escalated; notify PM/issue owner and PSC Member"
+      },
+      {
+        "applies_to": "status:itpmd_action_item.Open/In Progress",
+        "duration": "past the item's own due date (ITPH-0037)",
+        "on_breach": "escalate — auto-transition to Overdue; notify assignee and PM (ITPH-00155)"
+      }
+    ],
+    "notifications": [
+      { "on": "step-entry", "to": "role:Department Head", "template": "A Project Status Report for {{Project}} ({{Reporting_Period}}) has been submitted by {{Project_Manager}} and is awaiting your review. (ITPH-00149)" },
+      { "on": "step-entry", "to": "role:Project Sponsor", "template": "A Department-Head-approved PSR for {{Project}} ({{Reporting_Period}}) requires your sign-off (BR-10 routing applied). (ITPH-00157)" },
+      { "on": "status-change", "to": "field-user:Project_Manager", "template": "Your PSR for {{Project}} ({{Reporting_Period}}) was returned by {{Returned_By}}. Reason: {{Return_Comment}}. Please revise and resubmit. (ITPH-00121, BR-25)" },
+      { "on": "status-change", "to": "field-user:Project_Manager", "template": "Your PSR for {{Project}} ({{Reporting_Period}}) is Approved and locked (BR-13)." },
+      { "on": "SLA-breach", "to": "role:Project Manager", "template": "Reminder: the PSR for {{Project}} is due on working day 5 — {{Days_Remaining}} day(s) remaining / overdue. (BR-11)" },
+      { "on": "status-change", "to": "field-user:Assignee", "template": "An activity or action item has been assigned to you on {{Project}}. (ITPH-00255)" },
+      { "on": "status-change", "to": "role:PSC Member", "template": "Issue \"{{Issue_Title}}\" on {{Project}} has escalated (Critical or overdue past the aging period). (BR-21, ITPH-0039/0040)" },
+      { "on": "status-change", "to": "field-user:Owner", "template": "Action item \"{{Description}}\" on {{Project}} is now Overdue. (ITPH-0037/00155)" }
+    ]
+  },
+  "fieldRequests": []
+}

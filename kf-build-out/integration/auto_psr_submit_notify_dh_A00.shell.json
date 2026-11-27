@@ -1,0 +1,4 @@
+{
+  "Name": "PSR submitted → notify Department Head",
+  "Description": "workflow_meta.notifications step-entry → role:Department Head (ITPH-00149, BR-24 Draft→DH Review transition): 'A Project Status Report for {{Project}} ({{Reporting_Period}}) has been submitted ... awaiting your review.' IsActive:false pending step wiring."
+}

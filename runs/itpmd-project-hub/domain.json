@@ -1,0 +1,925 @@
+{
+  "summary": "ITPMD Project Hub, MVP (Phase 1) scope only, per BRD v1.1 §4.3 and the orchestrator's scope decision. The domain centers on the monthly PSR cycle: a Project Manager builds and baselines a schedule, assigns activities to team members who update only their own work (My Tasks), tracks issues/risks/financials during the period, generates a Project Status Report from live data, and routes it PM -> Department Head -> (Project Sponsor, when the routing rule applies) for approval; approved PSRs lock as snapshots and roll up into a PSC portfolio view and Portfolio PSR. Deferred entirely (Phase 2/3, out of this build): Liquidated Damages, Change Requests, forecast validation/approval workflow and automatic forecast recalculation, MoM and Lessons Learned, Project Discussions, the LEAF AI assistant (Basic/Advanced/governance), SIEM/AD-LDAP integration, and the drag-and-drop Gantt. Platform-level NFRs that Kissflow provides natively or that are infra/ops concerns (password/lockout policy specifics, MFA mechanism, session timeout, HTTPS, SIEM transport, backup/DR) are noted as platform/not-authored and are not modeled as domain entities or rules.",
+  "personas": [
+    {
+      "id": "P-01",
+      "name": "Project Manager (PM)",
+      "description": "ITPMD project manager who runs the day-to-day of an assigned IT project: schedule, issues, risks and financials, and prepares/submits the monthly PSR.",
+      "goals": [
+        "One system of record for the project instead of scattered schedules, spreadsheets and documents (BRD §2.1, objective O1)",
+        "Cut PSR preparation time by generating the report from live system data instead of re-typing it (objective O2)",
+        "Get an early warning on schedule slippage and cost overruns before they become critical (objective O4)"
+      ],
+      "pain_points": [
+        "Project information today is spread across separate schedules, spreadsheets and documents (BRD §2.1)",
+        "Status reports are compiled by hand each period (BRD §2.1)",
+        "No systemic early warning today when a forecast passes the baseline or a budget/contingency threshold is crossed (BRD §2.1, objective O4)"
+      ],
+      "evidence": "BRD §5 Stakeholders and User Roles (Project Manager row); §2.1; §2.2 O1/O2/O4"
+    },
+    {
+      "id": "P-02",
+      "name": "Project Team Member / Responsible Person",
+      "description": "A team member assigned specific activities and/or action items; updates only the work assigned to them.",
+      "goals": [
+        "See everything assigned to me, across every project I'm on, in one place (My Tasks) (ITPH-00258)",
+        "Update my own progress directly, without waiting on the PM to relay it (ITPH-00256)"
+      ],
+      "pain_points": [
+        "No single place today to see assigned work across projects (BRD §1.4 'My Tasks' definition implies the gap this closes)",
+        "Without a control, anyone could edit anyone else's activity; the business explicitly restricts this (BRD BR-15 / ITPH-00257)"
+      ],
+      "evidence": "BRD §5 (Project Team Member / Responsible Person row); §8.14 (ITPH-00253–00259); BR-15"
+    },
+    {
+      "id": "P-03",
+      "name": "Department Head (DH)",
+      "description": "Head of the unit that owns the project; reviews, approves or returns PSRs, limited to the projects under their own responsibility.",
+      "goals": [
+        "Validate the accuracy and completeness of a project's status before it moves forward (ITPH-00114)",
+        "Controlled, fully traceable approvals with a complete history (objective O3)"
+      ],
+      "pain_points": [
+        "Approvals and their history are not consistently tracked in one system today, motivating objective O3 (all approvals in-system with full history)"
+      ],
+      "evidence": "BRD §5 (Department Head row); §8.9 (ITPH-00113–00123); §2.2 O3"
+    },
+    {
+      "id": "P-04",
+      "name": "Project Sponsor (PS)",
+      "description": "Business sponsor who gives final approval on a PSR only when the PS routing rule requires it.",
+      "goals": [
+        "See and approve only the PSRs that actually require sponsor sign-off, not every report (BR-10)"
+      ],
+      "pain_points": [
+        "There is no confirmed, consistent rule today for when sponsor approval is even needed (BRD §15 open question #3; BR-10 is explicitly 'proposed')"
+      ],
+      "evidence": "BRD §5 (Project Sponsor row); §6.1; BR-10; §15 item 3"
+    },
+    {
+      "id": "P-05",
+      "name": "PSC Member",
+      "description": "Project Steering Committee member with portfolio-wide oversight; views dashboards, critical risks/issues, and generates the Portfolio PSR (PPSR).",
+      "goals": [
+        "Portfolio visibility without having to request ad-hoc reports (objective O5)",
+        "See at a glance which projects need management attention (BR-06)"
+      ],
+      "pain_points": [
+        "The PSC has limited cross-project visibility today (BRD §2.1)"
+      ],
+      "evidence": "BRD §5 (PSC Member row); §2.1; §2.2 O5; §8.10"
+    },
+    {
+      "id": "P-06",
+      "name": "QA",
+      "description": "ITPMD quality assurance. The BRD's proposed access matrix (§5.1) gives QA create/edit access to the risk register, but QA's dedicated work described in the requirements -- the cross-project risk and lessons-learned repositories (ITPH-0052, ITPH-00112) -- is explicitly Phase 2. QA has no distinct MVP journey in this domain model (see open-questions.md); flagged rather than invented.",
+      "goals": [
+        "Reuse past risks and lessons across projects instead of rediscovering them on every new project (BRD §2.1; ITPH-0052)"
+      ],
+      "pain_points": [
+        "Lessons learned and past risks are not reused across projects today (BRD §2.1)"
+      ],
+      "evidence": "BRD §5 (QA row); §5.1 access matrix (Risk register column); ITPH-0052, ITPH-00112 (both Phase 2)"
+    },
+    {
+      "id": "P-07",
+      "name": "BA / Application Administrator",
+      "description": "ITPMD system owner who maintains the working calendar and alert thresholds/recipients (and, later, LEAF settings -- Phase 2, out of this build).",
+      "goals": [
+        "Change working-calendar and alert policy without needing a code change (ITPH-001, ITPH-003)"
+      ],
+      "pain_points": [
+        "Configuration parameters like holidays and thresholds are not centrally, self-service maintained today (implied by BRD §2.1's general 'spread across tools' finding and by ITPH-001/003 asking for admin-maintained config)"
+      ],
+      "evidence": "BRD §5 (BA / Application Administrator row); §8.1 (ITPH-001–003)"
+    },
+    {
+      "id": "P-08",
+      "name": "System / Security Administrator",
+      "description": "IT operations/security staff who manage user accounts, roles, permissions, unlocks/resets and audit review.",
+      "goals": [
+        "Every user's access matches their current responsibility and only their assigned projects, deny-all by default (ITPH-00225)",
+        "Every action in the system traceable to a responsible user (objective O6, ITPH-00147)"
+      ],
+      "pain_points": [
+        "Passing IT Security review and VAPT with a full audit trail before go-live is an explicit, hard MVP exit gate (BRD §4.5, objective O6)"
+      ],
+      "evidence": "BRD §5 (System / Security Administrator row); §8.11 (ITPH-00135–00147); §4.5; objective O6"
+    }
+  ],
+  "journeys": [
+    {
+      "id": "J-01",
+      "persona": "P-01",
+      "name": "Set up a project from approved master data",
+      "trigger": "A new IT project is approved / kicks off in ITPMD.",
+      "steps": [
+        "PM creates the project record: code, name, business unit, portfolio, assigned DH/PS.",
+        "PM records the procurement/contract details: vendor, NOA/PO/NTP dates, contract value, expiry.",
+        "PM records the approved budget and the approved contingency fund.",
+        "PM sets up the initial project team (who is assigned to this project)."
+      ],
+      "outcome": "The project exists as the single source of truth that scheduling, financials and later PSRs all build on.",
+      "frequency": "Once per project (edited as master data changes are approved).",
+      "success_criteria": [
+        "Project appears correctly in the portfolio list (ITPH-00124)",
+        "Changes to approved master data flow through to later PSRs and project records automatically (BR-13)"
+      ],
+      "evidence": "BRD §6.1 (first two bullets); §12 (Project, Procurement/Contract entities); BR-13; ITPH-008"
+    },
+    {
+      "id": "J-02",
+      "persona": "P-01",
+      "name": "Build and baseline the project schedule",
+      "trigger": "Project master data exists and the project is ready to be scheduled.",
+      "steps": [
+        "PM creates, edits and deletes project activities (ITPH-004).",
+        "PM defines planned start/end dates for each activity (ITPH-005).",
+        "PM defines dependencies between activities (ITPH-006).",
+        "PM identifies and maintains project milestones (ITPH-007).",
+        "PM establishes the approved schedule baseline (ITPH-009).",
+        "PM generates and views the Gantt chart (ITPH-0024)."
+      ],
+      "outcome": "An approved, dependency-consistent schedule with a locked baseline that later progress is measured against.",
+      "frequency": "Once at project start; revisited whenever a re-baseline is approved.",
+      "success_criteria": [
+        "A baseline is established and stays fixed once approved (BRD §1.4 'Baseline' definition)",
+        "Every change to the schedule is captured in schedule history (ITPH-0014)"
+      ],
+      "evidence": "BRD §8.2 (ITPH-004–0009, 0014, 0024, 0030); §6.1"
+    },
+    {
+      "id": "J-03",
+      "persona": "P-01",
+      "name": "Assign and reassign activities to team members",
+      "trigger": "The schedule is built, or work needs to be rebalanced across the team.",
+      "steps": [
+        "PM assigns each activity and milestone to a responsible team member (ITPH-00253).",
+        "The assignee is notified (ITPH-00255).",
+        "PM reassigns an activity to another team member at any time; the change is recorded in schedule history (ITPH-00254).",
+        "PM (or team member) filters the schedule to just their own assigned activities (ITPH-00259)."
+      ],
+      "outcome": "Every activity has a single clear owner, and every reassignment is traceable.",
+      "frequency": "Ongoing, throughout the life of the project.",
+      "success_criteria": [
+        "Every open activity has an assignee",
+        "Reassignments are visible in schedule history, not silently overwritten"
+      ],
+      "evidence": "BRD §8.14 (ITPH-00253, 00254, 00255, 00259); §6.4"
+    },
+    {
+      "id": "J-04",
+      "persona": "P-01",
+      "name": "Track progress, actuals and forecast during the period",
+      "trigger": "Work is underway during the reporting period.",
+      "steps": [
+        "Assignees record % complete, actual start and actual finish for their own activities (ITPH-0010, ITPH-0011, ITPH-00256; see also journey J-11).",
+        "PM manually updates forecast start/finish dates when their assessment of progress changes (ITPH-0013).",
+        "PM views planned vs. actual schedules to spot variance (ITPH-0012, ITPH-0016).",
+        "PM is alerted when the forecast finish passes the baseline finish or a schedule-risk threshold (ITPH-0022)."
+      ],
+      "outcome": "The schedule reflects true current status, with schedule health computed and an early warning raised on slippage.",
+      "frequency": "Continuous; at minimum before each monthly PSR is generated.",
+      "success_criteria": [
+        "Schedule health (Green/Amber/Red) is computed per BR-03",
+        "An alert fires the moment forecast finish exceeds baseline finish"
+      ],
+      "evidence": "BRD §8.2 (ITPH-0010–0013, 0016, 0022); BR-03; BR-15. Note: automatic forecast recalculation (ITPH-0017) and forecast validation/approval (ITPH-0019–0021) are Phase 2 -- the MVP forecast is manually updated by the PM only."
+    },
+    {
+      "id": "J-05",
+      "persona": "P-01",
+      "name": "Manage issues, action items and decisions",
+      "trigger": "A problem, blocker or open question is identified during project execution.",
+      "steps": [
+        "PM creates and maintains an issue: category, priority (ITPH-0031, 0032).",
+        "PM assigns an issue owner and a target resolution date (ITPH-0033, 0034).",
+        "PM records the actions required to resolve the issue and assigns action items to team members (ITPH-0035, 0036).",
+        "PM tracks action item status so overdue actions are visible (ITPH-0037).",
+        "PM records project decisions and their rationale (ITPH-0038).",
+        "The issue escalates automatically when Critical or overdue past the configured aging period (ITPH-0039, §6.3)."
+      ],
+      "outcome": "Issues are tracked to resolution or escalated, with owners and action items clearly assigned.",
+      "frequency": "Ongoing, as issues arise.",
+      "success_criteria": [
+        "Critical or aged-overdue issues escalate and appear on the PSC view (ITPH-0040, BR-21)",
+        "Every action item has a status and an owner"
+      ],
+      "evidence": "BRD §8.3 (ITPH-0031–0040); §6.3; BR-21"
+    },
+    {
+      "id": "J-06",
+      "persona": "P-01",
+      "name": "Manage the project risk register",
+      "trigger": "A potential threat to the project is identified.",
+      "steps": [
+        "PM creates and maintains a risk register entry (ITPH-0041).",
+        "PM categorizes the risk (ITPH-0042).",
+        "PM assesses probability and impact; the overall risk rating is computed per BR-04 (ITPH-0043).",
+        "PM assigns a risk owner (ITPH-0044).",
+        "PM defines mitigation actions and a response strategy (ITPH-0045, 0046).",
+        "PM monitors residual risk after mitigation (ITPH-0047).",
+        "The risk escalates automatically when rated High or Critical (ITPH-0048, §6.3).",
+        "PM maintains risk history/status over time (ITPH-0050)."
+      ],
+      "outcome": "Every risk has a current rating, an owner and a mitigation plan; High/Critical risks are visible to governance.",
+      "frequency": "Ongoing, as risks are identified or reassessed.",
+      "success_criteria": [
+        "Risk rating always follows the 5x5 probability x impact matrix (BR-04)",
+        "High/Critical risks appear on the PSC view (ITPH-0049)"
+      ],
+      "evidence": "BRD §8.4 (ITPH-0041–0050); §6.3; BR-04; BR-22"
+    },
+    {
+      "id": "J-07",
+      "persona": "P-01",
+      "name": "Manage project financials",
+      "trigger": "A budget is approved for the project, or costs/invoices are incurred during execution.",
+      "steps": [
+        "PM records the approved project budget (ITPH-0053).",
+        "PM records approved changes to the budget with amount, effective date and reason (ITPH-0054); views the current approved budget after changes (ITPH-0055).",
+        "PM records the approved contingency fund (ITPH-0056) and monitors its utilization (ITPH-0065) and remaining balance (ITPH-0066).",
+        "PM records invoices with invoice/DO number and date, vendor, date paid, status and remarks (ITPH-0057).",
+        "PM records actual and committed project costs (ITPH-0058, 0059).",
+        "PM compares approved budget, actual cost, committed cost and forecast cost to spot variances (ITPH-0062); views the remaining budget/forecast balance (ITPH-0064)."
+      ],
+      "outcome": "An up-to-date financial position that feeds cost health (BR-05) and the PSR's financial summary.",
+      "frequency": "Ongoing; reconciled at least once per reporting period.",
+      "success_criteria": [
+        "Budget vs actual vs committed vs forecast reconciles for the PSR (ITPH-0068, 0069)",
+        "Cost health (Green/Amber/Red) is computed per BR-05"
+      ],
+      "evidence": "BRD §8.5 (ITPH-0053–0059, 0062, 0064, 0068, 0069); BR-05. Note: reforecasting workflow, variance-reason capture and vendor man-day rates (ITPH-0060, 0061, 0063, 0072) are Phase 2."
+    },
+    {
+      "id": "J-08",
+      "persona": "P-01",
+      "name": "Generate, preview and submit the monthly PSR",
+      "trigger": "The monthly reporting period deadline is approaching (PSR due working day 5 of the next month, BR-11).",
+      "steps": [
+        "The Hub reminds the PM before the deadline (ITPH-00148, BR-11).",
+        "PM generates the PSR; static and computed sections (schedule, milestone, issue, risk, financial, action data) auto-populate from live data (ITPH-0094, 0095, 0027–0029).",
+        "PM adds a narrative update (ITPH-0096) and defines/confirms the reporting period (ITPH-0097).",
+        "PM attaches supporting documents (ITPH-0098).",
+        "PM identifies activities behind/ahead of schedule and milestones missed or forecast to be missed (ITPH-0106–0108), and plans the next period's activities/milestones (ITPH-0104).",
+        "PM previews the PSR before submission (ITPH-0099) and submits it to the DH (ITPH-00113)."
+      ],
+      "outcome": "A complete, accurate PSR -- built from system data, not re-typed -- submitted for approval on time.",
+      "frequency": "Monthly, per project.",
+      "success_criteria": [
+        "PSR is submitted by the working-day-5 deadline (BR-11)",
+        "Auto-populated static fields match approved project master data and are never edited on an approved PSR (BR-13)"
+      ],
+      "evidence": "BRD §6.1; §8.8 (ITPH-0094–0099, 0104, 0106–0108); §8.9 (ITPH-00113); BR-11; BR-13; objective O2"
+    },
+    {
+      "id": "J-09",
+      "persona": "P-01",
+      "name": "Revise and resubmit a returned PSR",
+      "trigger": "The DH (or PS) returns the PSR with comments.",
+      "steps": [
+        "PM is notified that the PSR was returned (ITPH-00121).",
+        "PM reviews the mandatory comments explaining what needs correction (ITPH-00116, BR-25).",
+        "PM revises the PSR.",
+        "PM resubmits the PSR for approval (ITPH-00117)."
+      ],
+      "outcome": "A corrected PSR re-enters the approval flow; nothing is lost from the original submission.",
+      "frequency": "As needed, once per return cycle.",
+      "success_criteria": [
+        "The full return -> revise -> resubmit history is retained and auditable (ITPH-00146)"
+      ],
+      "evidence": "BRD §6.2; §8.9 (ITPH-00116, 00117, 00121); §8.11 (ITPH-00146); BR-24; BR-25"
+    },
+    {
+      "id": "J-10",
+      "persona": "P-01",
+      "name": "Monitor schedule performance via the S-curve",
+      "trigger": "Any time during execution, especially while preparing the PSR narrative.",
+      "steps": [
+        "PM views the cumulative planned vs actual vs forecast S-curve for the project (ITPH-00266).",
+        "PM sees planned % to date, actual % to date, variance in percentage points and SPI (ITPH-00267).",
+        "PM hovers over the curve for exact weekly values, or views the same data as a table (ITPH-00268).",
+        "The S-curve is included when the PSR is generated (ITPH-00269)."
+      ],
+      "outcome": "Schedule performance trend is visible at a glance, quantified with SPI, and carried into the PSR.",
+      "frequency": "Ongoing; at minimum, each time a PSR is generated.",
+      "success_criteria": [
+        "S-curve points are computed per BR-17 (weekly, weighted by activity duration, planned from baseline / actual from actuals / forecast from today to forecast finish)"
+      ],
+      "evidence": "BRD §8.16 (ITPH-00266–00269); BR-17"
+    },
+    {
+      "id": "J-11",
+      "persona": "P-02",
+      "name": "Work my assigned tasks (My Tasks)",
+      "trigger": "An activity or action item is assigned to me.",
+      "steps": [
+        "I receive a notification that an activity has been assigned to me (ITPH-00255).",
+        "I see it on my My Tasks page, alongside every other open activity and action item assigned to me across all my projects, with status and due dates (ITPH-00258).",
+        "I update % complete, actual start and actual finish for MY OWN activities only (ITPH-00256).",
+        "If I try to edit an activity that is not assigned to me, I am blocked (ITPH-00257).",
+        "I can filter the schedule view to show only my own assigned activities (ITPH-00259)."
+      ],
+      "outcome": "My work is visible and updatable from one place, without my being able to touch anyone else's schedule items.",
+      "frequency": "Continuous, as work progresses.",
+      "success_criteria": [
+        "Entering % complete > 0 sets the actual start if blank; entering 100% sets the actual finish to today (BR-15)",
+        "An assignee can never edit an activity not assigned to them (BR-15, ITPH-00257)"
+      ],
+      "evidence": "BRD §8.14 (ITPH-00253–00259); §6.4; BR-15"
+    },
+    {
+      "id": "J-12",
+      "persona": "P-03",
+      "name": "Review and approve/return a PSR",
+      "trigger": "A PM submits a PSR (status moves to Submitted -- For DH Review).",
+      "steps": [
+        "DH is notified that a PSR requires approval (ITPH-00149).",
+        "DH reviews the submitted PSR's schedule, issue, risk, financial and action content (ITPH-00114).",
+        "DH approves the PSR, or returns it with mandatory comments (ITPH-00115, 00116, BR-25).",
+        "If approved, the system checks the PS routing rule (BR-10) and either routes the PSR to the PS or finalizes it.",
+        "DH can view the PSR's approval status and full history at any time (ITPH-00120, 00123)."
+      ],
+      "outcome": "Only validated PSRs advance; every return carries an actionable, recorded comment.",
+      "frequency": "Monthly, per project the DH is responsible for.",
+      "success_criteria": [
+        "No PSR advances to Approved without an explicit DH action",
+        "A returned PSR always carries a comment (BR-25)"
+      ],
+      "evidence": "BRD §6.1; §6.2; §8.9 (ITPH-00114–00116, 00120, 00123, 00149); BR-10; BR-24; BR-25"
+    },
+    {
+      "id": "J-13",
+      "persona": "P-04",
+      "name": "Approve a PSR requiring Sponsor sign-off",
+      "trigger": "A DH-approved PSR meets the PS routing rule (BR-10: overall health Red, or a baseline/budget change is requested, or the project is flagged 'PS approval required').",
+      "steps": [
+        "PS is notified of a PSR pending approval (ITPH-00157).",
+        "PS reviews the DH-approved PSR.",
+        "PS approves or returns the PSR (ITPH-00119)."
+      ],
+      "outcome": "The PSR receives the Bank's full governance sign-off, or is sent back for correction, per the routing rule.",
+      "frequency": "Only for PSRs that meet the PS routing rule (not every monthly PSR).",
+      "success_criteria": [
+        "PS only ever sees PSRs that actually meet BR-10's routing conditions"
+      ],
+      "evidence": "BRD §6.1; §8.9 (ITPH-00119); §8.12 (ITPH-00157); BR-10"
+    },
+    {
+      "id": "J-14",
+      "persona": "P-05",
+      "name": "Monitor portfolio health and identify projects needing attention",
+      "trigger": "Ongoing governance oversight, ad hoc or aligned to the monthly PSR cadence.",
+      "steps": [
+        "PSC views all projects under the portfolio (ITPH-00124).",
+        "PSC filters projects by status, health, risk, business unit and other criteria (ITPH-00125).",
+        "PSC views dashboards of project status, risk, issue, milestone and financial performance (ITPH-00126).",
+        "PSC monitors project health indicators (ITPH-00132) and identifies projects requiring management attention per BR-06 (ITPH-00130).",
+        "PSC views critical issues and overdue actions (ITPH-0040), and high/critical risks (ITPH-0049)."
+      ],
+      "outcome": "The PSC directs its attention to the projects that need it, without requesting ad-hoc reports.",
+      "frequency": "Continuous, aligned to the monthly PSR cycle.",
+      "success_criteria": [
+        "'Needs management attention' is computed consistently per BR-06 (overall Red, or any Critical risk/issue, or any overdue escalation)"
+      ],
+      "evidence": "BRD §8.10 (ITPH-00124–00126, 00130, 00132); §8.3 (ITPH-0040); §8.4 (ITPH-0049); BR-06; objective O5"
+    },
+    {
+      "id": "J-15",
+      "persona": "P-05",
+      "name": "Generate the Portfolio PSR (PPSR) and view PSR history",
+      "trigger": "After the period's project PSRs have moved through approval.",
+      "steps": [
+        "PSC views consolidated project status information across the portfolio (ITPH-00100).",
+        "PSC generates the Portfolio Project Status Report (PPSR) (ITPH-00101).",
+        "PSC (and PM) view historical PSRs to review performance and status trends over time (ITPH-00102).",
+        "PSC views the approval status of PSRs across the portfolio (ITPH-00122)."
+      ],
+      "outcome": "A consolidated, board-ready portfolio status report and a browsable PSR history.",
+      "frequency": "Monthly, aligned to the PSR cycle.",
+      "success_criteria": [
+        "The PPSR only rolls up PSRs that have reached Approved (locked snapshot), per BR-24"
+      ],
+      "evidence": "BRD §8.8 (ITPH-00100–00102); §8.9 (ITPH-00122); BR-24"
+    },
+    {
+      "id": "J-16",
+      "persona": "P-07",
+      "name": "Configure the working calendar and alert settings",
+      "trigger": "Onboarding, an announced holiday schedule, or a change in the Bank's threshold/escalation policy.",
+      "steps": [
+        "Admin adds, edits or removes holidays and special non-working days, including dates and coverage (ITPH-001).",
+        "Admin configures alert thresholds, contract-expiration notification periods, aging periods and recipients for reminders and escalations (ITPH-003)."
+      ],
+      "outcome": "Schedule calculations (working-day logic) and escalation/reminder timing reflect current Bank policy without any code change.",
+      "frequency": "Periodic (yearly holiday update; ad hoc threshold/policy changes).",
+      "success_criteria": [
+        "Working-day-dependent calculations (durations, dependencies, forecasts, PSR deadline) respect the configured calendar (BR-01)"
+      ],
+      "evidence": "BRD §8.1 (ITPH-001, 003); BR-01"
+    },
+    {
+      "id": "J-17",
+      "persona": "P-08",
+      "name": "Administer users, roles and project access",
+      "trigger": "Staff onboarding/offboarding or a change in someone's responsibilities.",
+      "steps": [
+        "Admin creates and maintains user accounts (ITPH-00135).",
+        "Admin assigns users to appropriate roles (ITPH-00136).",
+        "Admin activates, deactivates or modifies user access (ITPH-00137).",
+        "Admin assigns users to specific projects, so each user can access only the projects relevant to their responsibilities (ITPH-00138); access defaults to deny-all otherwise (ITPH-00225).",
+        "Admin maintains role permissions centrally (ITPH-00145)."
+      ],
+      "outcome": "Every user's access matches their current responsibility and their current project assignments; no orphaned or over-privileged accounts.",
+      "frequency": "Ongoing, as staffing or responsibilities change.",
+      "success_criteria": [
+        "A user with no project assignment sees no project data (BR-23)"
+      ],
+      "evidence": "BRD §8.11 (ITPH-00135–00138, 00145); ITPH-00225; BR-23"
+    },
+    {
+      "id": "J-18",
+      "persona": "P-08",
+      "name": "Review the audit trail",
+      "trigger": "Periodic security/compliance review, or an investigation into a specific change.",
+      "steps": [
+        "Admin views all system transactions and user actions recorded in the audit trail (ITPH-00147).",
+        "Admin (or any authorized user) traces a specific PSR's full lifecycle history -- creation, modification, submission, approval, return, comments, responsible users, timestamps (ITPH-00146)."
+      ],
+      "outcome": "Any change to project data, reports, approvals, configuration or access can be traced to the responsible user.",
+      "frequency": "Ongoing / on demand.",
+      "success_criteria": [
+        "Every one of the confirmed audit log event types is captured (open question: the exact '7 identified log events' of ITPH-00213 are unconfirmed by LANDBANK -- see open-questions.md)"
+      ],
+      "evidence": "BRD §8.11 (ITPH-00146, 00147); §4.5 exit criteria; ITPH-00213; objective O6"
+    }
+  ],
+  "entities": [
+    {
+      "id": "E-01",
+      "name": "Project",
+      "description": "An IT project managed end-to-end in the Hub: master data, ownership and current health.",
+      "key_attributes": [
+        "code",
+        "name",
+        "business unit",
+        "portfolio",
+        "PM",
+        "DH",
+        "PS",
+        "status",
+        "overall health (Green/Amber/Red)",
+        "approved budget",
+        "contingency fund",
+        "contract value"
+      ],
+      "lifecycle": "Set up from approved master data -> active (scheduled, monitored, monthly PSR cycle) -> closed. Master data changes apply going forward only; approved PSRs already issued are never retroactively changed (BR-13).",
+      "relationships": [
+        "a Project has one or more Procurement/Contract records",
+        "a Project has many Activities, Milestones, Dependencies and one active Baseline",
+        "a Project has many Issues, Risks, Budget Changes/Contingency Draws, Cost Entries and Invoices",
+        "a Project has many PSRs (one per reporting period)",
+        "a Project has many Project Assignments (its team)"
+      ],
+      "evidence": "BRD §12 (Project row); §6.1; §8.1"
+    },
+    {
+      "id": "E-02",
+      "name": "Procurement / Contract",
+      "description": "The procurement and contract record behind a project -- vendor and key procurement dates.",
+      "key_attributes": [
+        "vendor",
+        "NOA date",
+        "PO number/date",
+        "NTP date",
+        "contract start/expiry date",
+        "contract price"
+      ],
+      "lifecycle": "Recorded at project set-up; procurement dates feed the schedule and contract-expiry information (the expiry ALERT itself is Phase 2, ITPH-00154).",
+      "relationships": [
+        "belongs to a Project"
+      ],
+      "evidence": "BRD §12 (Procurement/Contract row); §8.2 (ITPH-008)"
+    },
+    {
+      "id": "E-03",
+      "name": "Activity",
+      "description": "A unit of scheduled work within a project's schedule.",
+      "key_attributes": [
+        "WBS code",
+        "name",
+        "parent activity (for WBS hierarchy)",
+        "planned start/finish",
+        "baseline start/finish",
+        "forecast start/finish",
+        "actual start/finish",
+        "% complete",
+        "responsible person"
+      ],
+      "lifecycle": "Created by the PM -> scheduled (planned dates, dependencies) -> baselined -> in progress (assignee updates % complete/actuals) -> forecast adjusted by PM as needed -> complete (100%, actual finish set). Only the PM can create, delete, move or re-baseline an activity; the assignee may only change their own activity's % complete and actual dates (BR-15).",
+      "relationships": [
+        "belongs to a Project",
+        "may have a parent Activity (WBS hierarchy)",
+        "participates in Dependencies as predecessor and/or successor",
+        "has one current Activity Assignment (plus history)",
+        "a Milestone may reference an Activity it depends on or represent a deliverable date in its own right"
+      ],
+      "evidence": "BRD §12 (Activity row); §8.2 (ITPH-004–0016); BR-15; BR-16 (drag rules noted as Phase 2, not modeled)"
+    },
+    {
+      "id": "E-04",
+      "name": "Dependency",
+      "description": "A logical link between two activities in the same project's schedule.",
+      "key_attributes": [
+        "predecessor activity",
+        "successor activity",
+        "type (FS/SS/FF/SF)",
+        "lag"
+      ],
+      "lifecycle": "Defined by the PM when building the schedule; used to sequence activities and to prevent an activity from starting before its predecessors finish.",
+      "relationships": [
+        "links two Activities within the same Project"
+      ],
+      "evidence": "BRD §12 (Dependency row); §8.2 (ITPH-006)"
+    },
+    {
+      "id": "E-05",
+      "name": "Milestone",
+      "description": "A key deliverable date in the project schedule.",
+      "key_attributes": [
+        "name",
+        "due date",
+        "deliverable description",
+        "delivered date",
+        "status (achieved / missed / forecast late)"
+      ],
+      "lifecycle": "Identified by the PM during schedule build -> tracked against baseline date -> achieved, or flagged missed/forecast-late per BR-03.",
+      "relationships": [
+        "belongs to a Project"
+      ],
+      "evidence": "BRD §12 (Milestone row); §8.2 (ITPH-007); BR-03. Note: the 'price of deliverable' attribute in §12 exists solely to feed Liquidated Damages (Phase 2) and is dropped from this MVP entity."
+    },
+    {
+      "id": "E-06",
+      "name": "Baseline",
+      "description": "The approved, locked-in snapshot of a project's schedule (and budget) used to measure variance.",
+      "key_attributes": [
+        "version",
+        "approval date",
+        "approver",
+        "snapshot of activities' planned dates",
+        "snapshot of approved budget"
+      ],
+      "lifecycle": "Established once the PM's schedule is approved (ITPH-009); becomes the fixed reference for schedule/cost variance until a controlled re-baseline is approved.",
+      "relationships": [
+        "belongs to a Project; a Project has one active Baseline at a time, and a history of prior baselines"
+      ],
+      "evidence": "BRD §12 (Baseline row); §8.2 (ITPH-009); §1.4 ('Baseline' definition)"
+    },
+    {
+      "id": "E-07",
+      "name": "Issue",
+      "description": "A tracked problem affecting the project.",
+      "key_attributes": [
+        "category",
+        "priority",
+        "owner",
+        "target resolution date",
+        "status",
+        "escalation flag"
+      ],
+      "lifecycle": "Created and categorized by PM -> owner and target date assigned -> tracked -> escalates automatically when Critical or overdue past the aging period (BR-21) -> resolved/closed.",
+      "relationships": [
+        "belongs to a Project",
+        "has many Action Items",
+        "may reference the Decision(s) that resolved it"
+      ],
+      "evidence": "BRD §12 (Issue/Action/Decision row); §8.3 (ITPH-0031–0034, 0039); BR-21"
+    },
+    {
+      "id": "E-08",
+      "name": "Action Item",
+      "description": "A follow-up action needed to resolve an issue (or, more broadly, a tracked to-do assigned to a team member).",
+      "key_attributes": [
+        "description",
+        "assignee",
+        "due date",
+        "status (open/overdue/done)"
+      ],
+      "lifecycle": "Recorded by PM as part of resolving an Issue -> assigned to a team member -> tracked to done, or flagged overdue and reminded (ITPH-00155).",
+      "relationships": [
+        "typically belongs to an Issue, but can stand alone as a follow-up",
+        "assigned to a Team Member (Project Assignment) and surfaced on that member's My Tasks"
+      ],
+      "evidence": "BRD §12 (Issue/Action/Decision row); §8.3 (ITPH-0035–0037); §8.14 (ITPH-00258); §8.12 (ITPH-00155)"
+    },
+    {
+      "id": "E-09",
+      "name": "Decision",
+      "description": "A recorded project decision and its rationale.",
+      "key_attributes": [
+        "description/rationale",
+        "date",
+        "related issue (optional)"
+      ],
+      "lifecycle": "Recorded by the PM when a decision is made during project execution.",
+      "relationships": [
+        "belongs to a Project",
+        "may reference the Issue it resolves"
+      ],
+      "evidence": "BRD §12 (Issue/Action/Decision row); §8.3 (ITPH-0038)"
+    },
+    {
+      "id": "E-10",
+      "name": "Risk",
+      "description": "A potential threat to the project, tracked in the project's risk register.",
+      "key_attributes": [
+        "category",
+        "probability",
+        "impact",
+        "rating (computed, BR-04)",
+        "owner",
+        "mitigation actions",
+        "response strategy",
+        "residual rating",
+        "status history"
+      ],
+      "lifecycle": "Created and categorized by PM -> probability/impact assessed, rating computed (BR-04) -> owner and mitigation/response assigned -> residual risk monitored -> escalates automatically when High/Critical (BR-22) -> status/history maintained over time.",
+      "relationships": [
+        "belongs to a Project"
+      ],
+      "evidence": "BRD §12 (Risk row); §8.4 (ITPH-0041–0050); BR-04; BR-22"
+    },
+    {
+      "id": "E-11",
+      "name": "Budget Change / Contingency Draw",
+      "description": "An approved adjustment to the project's budget, or an approved draw against its contingency fund.",
+      "key_attributes": [
+        "amount",
+        "effective date",
+        "reason",
+        "approver",
+        "type (budget change vs contingency draw)"
+      ],
+      "lifecycle": "Recorded by PM once approved; a budget change adjusts the project's current approved budget; a contingency draw reduces the available contingency balance.",
+      "relationships": [
+        "belongs to a Project"
+      ],
+      "evidence": "BRD §12 (Budget change/Contingency draw row); §8.5 (ITPH-0054, 0056, 0065, 0066)"
+    },
+    {
+      "id": "E-12",
+      "name": "Cost Entry",
+      "description": "An actual, committed or forecast cost recorded against the project.",
+      "key_attributes": [
+        "type (actual/committed/forecast)",
+        "amount",
+        "date"
+      ],
+      "lifecycle": "Recorded by the PM as costs are incurred or committed; aggregated to produce the project's actual/committed/forecast totals used in cost health (BR-05) and the PSR financial summary.",
+      "relationships": [
+        "belongs to a Project",
+        "may relate to an Invoice (an invoice's amount becomes an actual Cost Entry)"
+      ],
+      "evidence": "BRD §12 (Cost/Invoice row); §8.5 (ITPH-0058, 0059, 0062, 0064, 0068); BR-05"
+    },
+    {
+      "id": "E-13",
+      "name": "Invoice",
+      "description": "A vendor invoice recorded against the project.",
+      "key_attributes": [
+        "invoice number",
+        "invoice date",
+        "DO number",
+        "DO date",
+        "vendor name",
+        "date paid",
+        "status",
+        "remarks"
+      ],
+      "lifecycle": "Recorded by the PM as invoices are received/paid.",
+      "relationships": [
+        "belongs to a Project"
+      ],
+      "evidence": "BRD §12 (Cost/Invoice row); §8.5 (ITPH-0057)"
+    },
+    {
+      "id": "E-14",
+      "name": "Project Status Report (PSR)",
+      "description": "The monthly report of a project's schedule, milestone, issue, risk, financial and action status, routed for approval.",
+      "key_attributes": [
+        "reporting period",
+        "status",
+        "snapshot of schedule/issue/risk/financial/action data",
+        "narrative",
+        "attachments",
+        "approval steps and comments"
+      ],
+      "lifecycle": "Draft (PM, editable) -> Submitted -- For DH Review (locked) -> [Returned with mandatory comments -> Draft] -> DH Approved -- For PS Approval (only when BR-10's routing rule applies) -> Approved (final, read-only snapshot; rolls into the PPSR and PSR history). Per BR-13, an Approved PSR is never changed.",
+      "relationships": [
+        "belongs to a Project; a Project accumulates a history of PSRs, one per reporting period"
+      ],
+      "evidence": "BRD §12 (PSR row); §6.1; §6.2; §8.8; §8.9; BR-11; BR-13; BR-24; BR-25"
+    },
+    {
+      "id": "E-15",
+      "name": "Configuration",
+      "description": "App-wide administrative settings that drive schedule and escalation calculations.",
+      "key_attributes": [
+        "holidays and non-working days",
+        "PSR deadline rule (working day 5)",
+        "reminder offsets (3-day, 1-day, overdue)",
+        "issue/risk aging periods and escalation levels",
+        "alert recipients"
+      ],
+      "lifecycle": "Maintained by the Application Administrator; changes take effect for future calculations.",
+      "relationships": [
+        "referenced by every Project's schedule (working-day calculations, BR-01) and by every Issue/Risk's escalation logic (BR-21, BR-22)"
+      ],
+      "evidence": "BRD §12 (Configuration row); §8.1 (ITPH-001, 003); BR-01. Note: LD rate/cap and password-policy parameters are excluded here -- LD is Phase 2, and password policy is a platform/not-authored NFR."
+    },
+    {
+      "id": "E-16",
+      "name": "Activity Assignment",
+      "description": "The record of who is (or was) responsible for a given activity.",
+      "key_attributes": [
+        "activity",
+        "assignee",
+        "assigned by",
+        "assigned at",
+        "previous assignee (history)"
+      ],
+      "lifecycle": "Created when the PM assigns an activity; superseded (with history preserved) each time the PM reassigns it.",
+      "relationships": [
+        "an Activity has many Activity Assignments over time; the latest one is the current responsible person; feeds the assignee's My Tasks"
+      ],
+      "evidence": "BRD §12 (Activity assignment row); §8.14 (ITPH-00253, 00254)"
+    },
+    {
+      "id": "E-17",
+      "name": "Notification",
+      "description": "An in-app (and emailed) alert to a user about an event relevant to them.",
+      "key_attributes": [
+        "recipient",
+        "type (assignment / approval / alert / reminder)",
+        "message",
+        "link",
+        "read status"
+      ],
+      "lifecycle": "Raised automatically by an event (assignment made, PSR routed for approval, threshold crossed, deadline approaching) and read/dismissed by the recipient.",
+      "relationships": [
+        "issued to a User Account, in the context of a Project, Activity, Issue, Risk or PSR"
+      ],
+      "evidence": "BRD §12 (Notification row); §8.12 (ITPH-00148–00155, 00157); §8.14 (ITPH-00255). Note: the 'mention' notification type belongs to Project Discussions (Phase 2) and is excluded here."
+    },
+    {
+      "id": "E-18",
+      "name": "User Account",
+      "description": "A person who logs into the Hub.",
+      "key_attributes": [
+        "name",
+        "login/username",
+        "role(s)",
+        "status (active/inactive)",
+        "contact/email"
+      ],
+      "lifecycle": "Created and maintained by the System Administrator; activated, deactivated or modified as responsibilities change.",
+      "relationships": [
+        "granted one or more Roles; linked to Projects via Project Assignment"
+      ],
+      "evidence": "BRD §12 (User/Role/Permission/Audit log row); §8.11 (ITPH-00135–00137, 00145)"
+    },
+    {
+      "id": "E-19",
+      "name": "Project Assignment",
+      "description": "The link between a User Account and a Project, in a given role, that governs what that user can see and do on that project.",
+      "key_attributes": [
+        "user",
+        "project",
+        "role on this project",
+        "assigned by",
+        "assigned at"
+      ],
+      "lifecycle": "Created by the System Administrator (or the PM, for team membership) when a user needs project access; the default is deny-all -- a user has no access to a project until assigned (BR-23).",
+      "relationships": [
+        "links a User Account to a Project"
+      ],
+      "evidence": "BRD §12 implied by §5.1's 'access to project data is further limited to assigned projects'; §8.11 (ITPH-00138, 00139); ITPH-00225; BR-23"
+    },
+    {
+      "id": "E-20",
+      "name": "Audit Log Entry",
+      "description": "A record of a system transaction or user action, for traceability.",
+      "key_attributes": [
+        "actor (user)",
+        "action",
+        "entity/record affected",
+        "detail (before/after where applicable)",
+        "timestamp"
+      ],
+      "lifecycle": "Written automatically whenever a tracked action occurs across the Hub's MVP entities.",
+      "relationships": [
+        "references the User Account that performed the action and the Project/PSR/entity it affected"
+      ],
+      "evidence": "BRD §12 (User/Role/Permission/Audit log row); §8.11 (ITPH-00146, 00147); §4.5 exit criteria. Note: the exact set of the '7 identified log events' referenced by ITPH-00213 is unconfirmed by LANDBANK -- see open-questions.md."
+    }
+  ],
+  "business_rules": [
+    {
+      "id": "BR-01",
+      "statement": "Working days exclude Saturdays, Sundays and configured holidays. Activity durations, dependencies and forecasts all use working days.",
+      "applies_to": "Activity, Configuration / journeys J-02, J-04, J-16",
+      "evidence": "BRD §7 BR-01; ITPH-001, ITPH-0030"
+    },
+    {
+      "id": "BR-02",
+      "statement": "Overall project completion % is the weighted average of leaf-activity % complete, weighted by planned duration. The PM may override with a recorded reason.",
+      "applies_to": "Project, Activity / journey J-04",
+      "evidence": "BRD §7 BR-02; ITPH-00105"
+    },
+    {
+      "id": "BR-03",
+      "statement": "Schedule health variance = forecast finish minus baseline finish (working days). Green if variance <= 0; Amber if 1-10 days; Red if > 10 days or any missed milestone (a milestone past its baseline date and not yet achieved). A milestone that is only forecast late counts through the variance, not as missed.",
+      "applies_to": "Project, Activity, Milestone / journeys J-04, J-14",
+      "evidence": "BRD §7 BR-03; ITPH-0016, ITPH-0022. Uses the PM's manually-updated forecast (ITPH-0013, MVP) -- automatic forecast recalculation (ITPH-0017) is Phase 2."
+    },
+    {
+      "id": "BR-04",
+      "statement": "Risk rating is 5x5 probability x impact score: 1-4 Low, 5-9 Medium, 10-16 High, 20-25 Critical. High and Critical risks escalate.",
+      "applies_to": "Risk / journeys J-06, J-14",
+      "evidence": "BRD §7 BR-04; ITPH-0025, ITPH-0026, ITPH-0043"
+    },
+    {
+      "id": "BR-05",
+      "statement": "Cost health = forecast at completion divided by current approved budget. Green if <= 100%; Amber if > 100-105% or contingency use >= 75%; Red if > 105% or contingency exhausted.",
+      "applies_to": "Project, Cost Entry, Budget Change/Contingency Draw / journeys J-07, J-14",
+      "evidence": "BRD §7 BR-05; ITPH-0062. The threshold ALERT itself (ITPH-00152) is Phase 2; the health computation that budget/contingency tracking feeds is MVP."
+    },
+    {
+      "id": "BR-06",
+      "statement": "Overall project health is the worst of schedule, cost, risk and issue health. 'Needs management attention' means overall Red, or any Critical risk/issue, or any overdue escalation.",
+      "applies_to": "Project / journey J-14",
+      "evidence": "BRD §7 BR-06; ITPH-00130, ITPH-00132"
+    },
+    {
+      "id": "BR-10",
+      "statement": "A PSR routes to the Project Sponsor when any of: overall health is Red, a baseline or budget change is requested, or the project is flagged 'PS approval required'.",
+      "applies_to": "PSR / journeys J-08, J-12, J-13",
+      "evidence": "BRD §7 BR-10; ITPH-00118"
+    },
+    {
+      "id": "BR-11",
+      "statement": "The PSR reporting period is monthly; the PSR is due on working day 5 of the following month. Reminders fire 3 days before, 1 day before, and on each overdue day.",
+      "applies_to": "PSR / journey J-08",
+      "evidence": "BRD §7 BR-11; ITPH-0097, ITPH-00148"
+    },
+    {
+      "id": "BR-13",
+      "statement": "Static PSR fields (project name, vendor, contract value, sponsor, dates) come from project master data. Changes to master data apply to later PSRs only; approved PSRs are never changed.",
+      "applies_to": "PSR, Project, Procurement/Contract / journeys J-01, J-08, J-09",
+      "evidence": "BRD §7 BR-13; ITPH-0027, ITPH-0028, ITPH-0029"
+    },
+    {
+      "id": "BR-15",
+      "statement": "Only the PM can create, delete, assign, move or re-baseline activities. An assignee can change only the % complete, actual start and actual finish of their own assigned activities. Entering % > 0 sets the actual start if blank; entering 100% sets the actual finish to today.",
+      "applies_to": "Activity, Activity Assignment / journeys J-03, J-04, J-11",
+      "evidence": "BRD §7 BR-15; ITPH-00253–00257"
+    },
+    {
+      "id": "BR-17",
+      "statement": "S-curve points are computed weekly from project start to the later of baseline and forecast finish. Planned uses baseline dates; actual uses actual dates and % complete up to today; forecast runs from today to the forecast finish. All points are weighted by activity duration (BR-02). SPI = actual divided by planned, to date.",
+      "applies_to": "Project, Activity, Baseline / journey J-10",
+      "evidence": "BRD §7 BR-17; ITPH-00266–00268"
+    },
+    {
+      "id": "BR-21",
+      "statement": "An issue escalates automatically when it is Critical, or when it passes its target resolution date by the configured aging period. Escalated issues appear on the PSC view and trigger notifications.",
+      "applies_to": "Issue / journeys J-05, J-14",
+      "evidence": "BRD §6.3; ITPH-0039, ITPH-0040"
+    },
+    {
+      "id": "BR-22",
+      "statement": "A risk escalates automatically when its rating is High or Critical. Escalated risks appear on the PSC view and trigger notifications.",
+      "applies_to": "Risk / journeys J-06, J-14",
+      "evidence": "BRD §6.3; ITPH-0048, ITPH-0049"
+    },
+    {
+      "id": "BR-23",
+      "statement": "Access to project data is restricted on a need-to-know basis and defaults to deny-all: a user sees and acts on only the projects they are explicitly assigned to.",
+      "applies_to": "Project, Project Assignment, User Account / journeys J-17 and every project-scoped PM/Team/DH/PS journey",
+      "evidence": "BRD §5.1 access matrix note; ITPH-00225"
+    },
+    {
+      "id": "BR-24",
+      "statement": "A PSR moves Draft (PM, editable) -> Submitted -- For DH Review (locked) -> [Returned -> Draft] -> DH Approved -- For PS Approval (only when BR-10 applies) -> Approved (final, read-only snapshot; rolls into the PPSR and PSR history).",
+      "applies_to": "PSR / journeys J-08, J-09, J-12, J-13, J-15",
+      "evidence": "BRD §6.2 PSR status model"
+    },
+    {
+      "id": "BR-25",
+      "statement": "A Department Head (or Project Sponsor) returning a PSR must provide comments explaining what needs to be corrected.",
+      "applies_to": "PSR / journeys J-09, J-12",
+      "evidence": "BRD §8.9; ITPH-00116"
+    }
+  ]
+}

@@ -1,0 +1,251 @@
+{
+  "Root": "itpmd_cost_entry",
+  "itpmd_cost_entry": {
+    "Id": "itpmd_cost_entry",
+    "Name": "ITPMD Cost Entry",
+    "Kind": "Model",
+    "FlowType": "Form",
+    "Description": "",
+    "Model::Row": [
+      "Row_1l4omp"
+    ],
+    "Model::Field": [
+      "cost_entry_title",
+      "project",
+      "entry_date",
+      "cost_description",
+      "actual_amount",
+      "committed_amount",
+      "forecast_amount"
+    ]
+  },
+  "Row_1l4omp": {
+    "Id": "Row_1l4omp",
+    "Kind": "Row",
+    "Model": "itpmd_cost_entry",
+    "Row::Column": [
+      "Column_1l4omp"
+    ]
+  },
+  "Column_1l4omp": {
+    "Id": "Column_1l4omp",
+    "Kind": "Column",
+    "Type": "Section",
+    "Name": "Details",
+    "Start": 0,
+    "End": 6,
+    "Row": "Row_1l4omp",
+    "Column::Row": [
+      "Row_1l3gh7",
+      "Row_1l3gh8",
+      "Row_1l3gh9",
+      "Row_1l3gha",
+      "Row_1l3ghb"
+    ]
+  },
+  "Row_1l3gh7": {
+    "Id": "Row_1l3gh7",
+    "Kind": "Row",
+    "Column": "Column_1l4omp",
+    "Row::Column": [
+      "Column_zbloq9",
+      "Column_7ylzod"
+    ]
+  },
+  "Column_zbloq9": {
+    "Id": "Column_zbloq9",
+    "Kind": "Column",
+    "Type": "Field",
+    "Start": 0,
+    "End": 3,
+    "Row": "Row_1l3gh7",
+    "Column::Field": [
+      "cost_entry_title"
+    ]
+  },
+  "Column_7ylzod": {
+    "Id": "Column_7ylzod",
+    "Kind": "Column",
+    "Type": "Field",
+    "Start": 3,
+    "End": 6,
+    "Row": "Row_1l3gh7",
+    "Column::Field": [
+      "project"
+    ]
+  },
+  "Row_1l3gh8": {
+    "Id": "Row_1l3gh8",
+    "Kind": "Row",
+    "Column": "Column_1l4omp",
+    "Row::Column": [
+      "Column_biqmnp"
+    ]
+  },
+  "Column_biqmnp": {
+    "Id": "Column_biqmnp",
+    "Kind": "Column",
+    "Type": "Field",
+    "Start": 0,
+    "End": 3,
+    "Row": "Row_1l3gh8",
+    "Column::Field": [
+      "entry_date"
+    ]
+  },
+  "Row_1l3gh9": {
+    "Id": "Row_1l3gh9",
+    "Kind": "Row",
+    "Column": "Column_1l4omp",
+    "Row::Column": [
+      "Column_11105uq"
+    ]
+  },
+  "Column_11105uq": {
+    "Id": "Column_11105uq",
+    "Kind": "Column",
+    "Type": "Field",
+    "Start": 0,
+    "End": 6,
+    "Row": "Row_1l3gh9",
+    "Column::Field": [
+      "cost_description"
+    ]
+  },
+  "Row_1l3gha": {
+    "Id": "Row_1l3gha",
+    "Kind": "Row",
+    "Column": "Column_1l4omp",
+    "Row::Column": [
+      "Column_1tcm2cz",
+      "Column_f20owv"
+    ]
+  },
+  "Column_1tcm2cz": {
+    "Id": "Column_1tcm2cz",
+    "Kind": "Column",
+    "Type": "Field",
+    "Start": 0,
+    "End": 3,
+    "Row": "Row_1l3gha",
+    "Column::Field": [
+      "actual_amount"
+    ]
+  },
+  "Column_f20owv": {
+    "Id": "Column_f20owv",
+    "Kind": "Column",
+    "Type": "Field",
+    "Start": 3,
+    "End": 6,
+    "Row": "Row_1l3gha",
+    "Column::Field": [
+      "committed_amount"
+    ]
+  },
+  "Row_1l3ghb": {
+    "Id": "Row_1l3ghb",
+    "Kind": "Row",
+    "Column": "Column_1l4omp",
+    "Row::Column": [
+      "Column_plkwts"
+    ]
+  },
+  "Column_plkwts": {
+    "Id": "Column_plkwts",
+    "Kind": "Column",
+    "Type": "Field",
+    "Start": 0,
+    "End": 3,
+    "Row": "Row_1l3ghb",
+    "Column::Field": [
+      "forecast_amount"
+    ]
+  },
+  "cost_entry_title": {
+    "Id": "cost_entry_title",
+    "Kind": "Field",
+    "Type": "Text",
+    "Name": "Cost_Entry_Title",
+    "Model": "itpmd_cost_entry",
+    "Column": "Column_zbloq9",
+    "Required": true
+  },
+  "QueryDefinition_7ylzod": {
+    "Id": "QueryDefinition_7ylzod",
+    "Kind": "QueryDefinition",
+    "Field": "project",
+    "LHSModel": "itpmd_project",
+    "FlowType": "Form",
+    "LookupField": [
+      {
+        "Id": "Project_Name",
+        "Name": "Project_Name",
+        "Type": "Text"
+      }
+    ],
+    "HiddenField": []
+  },
+  "project": {
+    "Id": "project",
+    "Kind": "Field",
+    "Type": "Reference",
+    "Name": "Project",
+    "Model": "itpmd_cost_entry",
+    "Column": "Column_7ylzod",
+    "Required": true,
+    "Field::QueryDefinition": [
+      "QueryDefinition_7ylzod"
+    ]
+  },
+  "entry_date": {
+    "Id": "entry_date",
+    "Kind": "Field",
+    "Type": "Date",
+    "Name": "Entry_Date",
+    "Model": "itpmd_cost_entry",
+    "Column": "Column_biqmnp",
+    "Required": true
+  },
+  "cost_description": {
+    "Id": "cost_description",
+    "Kind": "Field",
+    "Type": "Textarea",
+    "Name": "Cost_Description",
+    "Model": "itpmd_cost_entry",
+    "Column": "Column_11105uq"
+  },
+  "actual_amount": {
+    "Id": "actual_amount",
+    "Kind": "Field",
+    "Type": "Currency",
+    "Name": "Actual_Amount",
+    "Model": "itpmd_cost_entry",
+    "Column": "Column_1tcm2cz",
+    "CurrencyTypes": [
+      "USD"
+    ]
+  },
+  "committed_amount": {
+    "Id": "committed_amount",
+    "Kind": "Field",
+    "Type": "Currency",
+    "Name": "Committed_Amount",
+    "Model": "itpmd_cost_entry",
+    "Column": "Column_f20owv",
+    "CurrencyTypes": [
+      "USD"
+    ]
+  },
+  "forecast_amount": {
+    "Id": "forecast_amount",
+    "Kind": "Field",
+    "Type": "Currency",
+    "Name": "Forecast_Amount",
+    "Model": "itpmd_cost_entry",
+    "Column": "Column_plkwts",
+    "CurrencyTypes": [
+      "USD"
+    ]
+  }
+}

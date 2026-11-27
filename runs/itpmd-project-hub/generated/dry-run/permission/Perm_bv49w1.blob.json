@@ -1,0 +1,63 @@
+{
+  "Root": "Perm_bv49w1",
+  "Perm_bv49w1": {
+    "Id": "Perm_bv49w1",
+    "Kind": "FlowPermission",
+    "Role": "project_sponsor",
+    "RoleName": "Project Sponsor",
+    "Model": "itpmd_cost_entry",
+    "Level": "ReadOnly",
+    "Scope": "my-team",
+    "FlowPermission::Permission": [
+      "Permission_qyaeui",
+      "Permission_1uodjw6",
+      "Permission_xx541a",
+      "Permission_snovyz",
+      "Permission_1r6h4r0",
+      "Permission_6opf14",
+      "Permission_5z20cp"
+    ]
+  },
+  "Permission_qyaeui": {
+    "Id": "Permission_qyaeui",
+    "Kind": "Permission",
+    "Column": "cost_entry_title",
+    "Permission": "ReadOnly"
+  },
+  "Permission_1uodjw6": {
+    "Id": "Permission_1uodjw6",
+    "Kind": "Permission",
+    "Column": "project",
+    "Permission": "ReadOnly"
+  },
+  "Permission_xx541a": {
+    "Id": "Permission_xx541a",
+    "Kind": "Permission",
+    "Column": "entry_date",
+    "Permission": "ReadOnly"
+  },
+  "Permission_snovyz": {
+    "Id": "Permission_snovyz",
+    "Kind": "Permission",
+    "Column": "cost_description",
+    "Permission": "ReadOnly"
+  },
+  "Permission_1r6h4r0": {
+    "Id": "Permission_1r6h4r0",
+    "Kind": "Permission",
+    "Column": "actual_amount",
+    "Permission": "ReadOnly"
+  },
+  "Permission_6opf14": {
+    "Id": "Permission_6opf14",
+    "Kind": "Permission",
+    "Column": "committed_amount",
+    "Permission": "ReadOnly"
+  },
+  "Permission_5z20cp": {
+    "Id": "Permission_5z20cp",
+    "Kind": "Permission",
+    "Column": "forecast_amount",
+    "Permission": "ReadOnly"
+  }
+}

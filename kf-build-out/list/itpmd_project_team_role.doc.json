@@ -1,0 +1,20 @@
+{
+  "_id": "itpmd_project_team_role",
+  "Name": "ITPMD Project Team Role",
+  "Description": "",
+  "Type": "List",
+  "Status": "Live",
+  "ListItems": [
+    "Project Manager",
+    "Team Member",
+    "Department Head",
+    "Project Sponsor",
+    "PSC Member",
+    "Observer"
+  ],
+  "_application_id": "itpmd_project_hub_A00",
+  "Security": {
+    "AllowAllFlows": true,
+    "AllowedFlows": []
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "_id": "itpmd_holiday_coverage",
+  "Name": "ITPMD Holiday Coverage",
+  "Description": "",
+  "Type": "List",
+  "Status": "Live",
+  "ListItems": [
+    "All Locations",
+    "Head Office",
+    "Branch Offices",
+    "Nationwide"
+  ],
+  "_application_id": "itpmd_project_hub_A00",
+  "Security": {
+    "AllowAllFlows": true,
+    "AllowedFlows": []
+  }
+}

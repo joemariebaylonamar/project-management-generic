@@ -1,0 +1,497 @@
+{
+ "Root": "ITPMD_Cost_Entry_A00",
+ "ITPMD_Cost_Entry_A00": {
+  "Id": "ITPMD_Cost_Entry_A00",
+  "Name": "ITPMD Cost Entry",
+  "Kind": "Model",
+  "FlowType": "Form",
+  "Description": "",
+  "_application_id": "ITPMD_Project_Hub_A00",
+  "Model::Row": [
+   "Row_1l4omp",
+   "Row_18xv1ks"
+  ],
+  "Model::Field": [
+   "cost_entry_title",
+   "project",
+   "entry_date",
+   "cost_description",
+   "actual_amount",
+   "committed_amount",
+   "forecast_amount"
+  ],
+  "Model::Model": [
+   "ITPMD_Cost_Entry_A00__invoices"
+  ]
+ },
+ "Row_1l4omp": {
+  "Id": "Row_1l4omp",
+  "Kind": "Row",
+  "Model": "ITPMD_Cost_Entry_A00",
+  "Row::Column": [
+   "Column_1l4omp"
+  ]
+ },
+ "Column_1l4omp": {
+  "Id": "Column_1l4omp",
+  "Kind": "Column",
+  "Type": "Section",
+  "Name": "Details",
+  "Start": 0,
+  "End": 6,
+  "Row": "Row_1l4omp",
+  "Column::Row": [
+   "Row_1l3gh7",
+   "Row_1l3gh8",
+   "Row_1l3gh9",
+   "Row_1l3gha",
+   "Row_1l3ghb"
+  ]
+ },
+ "Row_1l3gh7": {
+  "Id": "Row_1l3gh7",
+  "Kind": "Row",
+  "Column": "Column_1l4omp",
+  "Row::Column": [
+   "Column_zbloq9",
+   "Column_7ylzod"
+  ]
+ },
+ "Column_zbloq9": {
+  "Id": "Column_zbloq9",
+  "Kind": "Column",
+  "Type": "Field",
+  "Start": 0,
+  "End": 3,
+  "Row": "Row_1l3gh7",
+  "Column::Field": [
+   "cost_entry_title"
+  ]
+ },
+ "Column_7ylzod": {
+  "Id": "Column_7ylzod",
+  "Kind": "Column",
+  "Type": "Field",
+  "Start": 3,
+  "End": 6,
+  "Row": "Row_1l3gh7",
+  "Column::Field": [
+   "project"
+  ]
+ },
+ "Row_1l3gh8": {
+  "Id": "Row_1l3gh8",
+  "Kind": "Row",
+  "Column": "Column_1l4omp",
+  "Row::Column": [
+   "Column_biqmnp"
+  ]
+ },
+ "Column_biqmnp": {
+  "Id": "Column_biqmnp",
+  "Kind": "Column",
+  "Type": "Field",
+  "Start": 0,
+  "End": 3,
+  "Row": "Row_1l3gh8",
+  "Column::Field": [
+   "entry_date"
+  ]
+ },
+ "Row_1l3gh9": {
+  "Id": "Row_1l3gh9",
+  "Kind": "Row",
+  "Column": "Column_1l4omp",
+  "Row::Column": [
+   "Column_11105uq"
+  ]
+ },
+ "Column_11105uq": {
+  "Id": "Column_11105uq",
+  "Kind": "Column",
+  "Type": "Field",
+  "Start": 0,
+  "End": 6,
+  "Row": "Row_1l3gh9",
+  "Column::Field": [
+   "cost_description"
+  ]
+ },
+ "Row_1l3gha": {
+  "Id": "Row_1l3gha",
+  "Kind": "Row",
+  "Column": "Column_1l4omp",
+  "Row::Column": [
+   "Column_1tcm2cz",
+   "Column_f20owv"
+  ]
+ },
+ "Column_1tcm2cz": {
+  "Id": "Column_1tcm2cz",
+  "Kind": "Column",
+  "Type": "Field",
+  "Start": 0,
+  "End": 3,
+  "Row": "Row_1l3gha",
+  "Column::Field": [
+   "actual_amount"
+  ]
+ },
+ "Column_f20owv": {
+  "Id": "Column_f20owv",
+  "Kind": "Column",
+  "Type": "Field",
+  "Start": 3,
+  "End": 6,
+  "Row": "Row_1l3gha",
+  "Column::Field": [
+   "committed_amount"
+  ]
+ },
+ "Row_1l3ghb": {
+  "Id": "Row_1l3ghb",
+  "Kind": "Row",
+  "Column": "Column_1l4omp",
+  "Row::Column": [
+   "Column_plkwts"
+  ]
+ },
+ "Column_plkwts": {
+  "Id": "Column_plkwts",
+  "Kind": "Column",
+  "Type": "Field",
+  "Start": 0,
+  "End": 3,
+  "Row": "Row_1l3ghb",
+  "Column::Field": [
+   "forecast_amount"
+  ]
+ },
+ "cost_entry_title": {
+  "Id": "cost_entry_title",
+  "Kind": "Field",
+  "Type": "Text",
+  "Name": "Cost_Entry_Title",
+  "Model": "ITPMD_Cost_Entry_A00",
+  "Column": "Column_zbloq9",
+  "Required": true
+ },
+ "QueryDefinition_7ylzod": {
+  "Id": "QueryDefinition_7ylzod",
+  "Kind": "QueryDefinition",
+  "Field": "project",
+  "LHSModel": "ITPMD_Project_A00",
+  "FlowType": "Form",
+  "LookupField": [
+   {
+    "Id": "project_name",
+    "Name": "Project_Name",
+    "Type": "Text"
+   }
+  ],
+  "HiddenField": []
+ },
+ "project": {
+  "Id": "project",
+  "Kind": "Field",
+  "Type": "Reference",
+  "Name": "Project",
+  "Model": "ITPMD_Cost_Entry_A00",
+  "Column": "Column_7ylzod",
+  "Required": true,
+  "Field::QueryDefinition": [
+   "QueryDefinition_7ylzod"
+  ]
+ },
+ "entry_date": {
+  "Id": "entry_date",
+  "Kind": "Field",
+  "Type": "Date",
+  "Name": "Entry_Date",
+  "Model": "ITPMD_Cost_Entry_A00",
+  "Column": "Column_biqmnp",
+  "Required": true
+ },
+ "cost_description": {
+  "Id": "cost_description",
+  "Kind": "Field",
+  "Type": "Textarea",
+  "Name": "Cost_Description",
+  "Model": "ITPMD_Cost_Entry_A00",
+  "Column": "Column_11105uq"
+ },
+ "actual_amount": {
+  "Id": "actual_amount",
+  "Kind": "Field",
+  "Type": "Currency",
+  "Name": "Actual_Amount",
+  "Model": "ITPMD_Cost_Entry_A00",
+  "Column": "Column_1tcm2cz",
+  "CurrencyTypes": [
+   "PHP"
+  ]
+ },
+ "committed_amount": {
+  "Id": "committed_amount",
+  "Kind": "Field",
+  "Type": "Currency",
+  "Name": "Committed_Amount",
+  "Model": "ITPMD_Cost_Entry_A00",
+  "Column": "Column_f20owv",
+  "CurrencyTypes": [
+   "PHP"
+  ]
+ },
+ "forecast_amount": {
+  "Id": "forecast_amount",
+  "Kind": "Field",
+  "Type": "Currency",
+  "Name": "Forecast_Amount",
+  "Model": "ITPMD_Cost_Entry_A00",
+  "Column": "Column_plkwts",
+  "CurrencyTypes": [
+   "PHP"
+  ]
+ },
+ "Row_18xv1ks": {
+  "Id": "Row_18xv1ks",
+  "Kind": "Row",
+  "Model": "ITPMD_Cost_Entry_A00",
+  "Row::Column": [
+   "Column_18xv1ks"
+  ]
+ },
+ "Column_18xv1ks": {
+  "Id": "Column_18xv1ks",
+  "Kind": "Column",
+  "Type": "Model",
+  "Name": "Invoices",
+  "Start": 0,
+  "End": 6,
+  "AllowImport": false,
+  "Row": "Row_18xv1ks",
+  "Column::Model": [
+   "ITPMD_Cost_Entry_A00__invoices"
+  ]
+ },
+ "ITPMD_Cost_Entry_A00__invoices": {
+  "Id": "ITPMD_Cost_Entry_A00__invoices",
+  "Kind": "Model",
+  "Name": "ITPMD Cost Entry Invoices",
+  "Model": "ITPMD_Cost_Entry_A00",
+  "Column": "Column_18xv1ks",
+  "Model::Row": [
+   "Row_1gs3gt8"
+  ],
+  "Model::Field": [
+   "invoice_number",
+   "invoice_date",
+   "do_number",
+   "do_date",
+   "vendor_name",
+   "invoice_amount",
+   "date_paid",
+   "invoice_status",
+   "remarks"
+  ]
+ },
+ "Row_1gs3gt8": {
+  "Id": "Row_1gs3gt8",
+  "Kind": "Row",
+  "Model": "ITPMD_Cost_Entry_A00__invoices",
+  "Row::Column": [
+   "Column_1fajfa1",
+   "Column_glw65q",
+   "Column_a33wxr",
+   "Column_2xrt3o",
+   "Column_1da7zaq",
+   "Column_16q1kmc",
+   "Column_vu2ilb",
+   "Column_1ii38b8",
+   "Column_bmuf7d"
+  ]
+ },
+ "Column_1fajfa1": {
+  "Id": "Column_1fajfa1",
+  "Kind": "Column",
+  "Type": "Field",
+  "Start": 0,
+  "End": 0,
+  "Row": "Row_1gs3gt8",
+  "Column::Field": [
+   "invoice_number"
+  ]
+ },
+ "invoice_number": {
+  "Id": "invoice_number",
+  "Kind": "Field",
+  "Type": "Text",
+  "Name": "Invoice_Number",
+  "Model": "ITPMD_Cost_Entry_A00__invoices",
+  "Column": "Column_1fajfa1",
+  "Required": true
+ },
+ "Column_glw65q": {
+  "Id": "Column_glw65q",
+  "Kind": "Column",
+  "Type": "Field",
+  "Start": 0,
+  "End": 0,
+  "Row": "Row_1gs3gt8",
+  "Column::Field": [
+   "invoice_date"
+  ]
+ },
+ "invoice_date": {
+  "Id": "invoice_date",
+  "Kind": "Field",
+  "Type": "Date",
+  "Name": "Invoice_Date",
+  "Model": "ITPMD_Cost_Entry_A00__invoices",
+  "Column": "Column_glw65q"
+ },
+ "Column_a33wxr": {
+  "Id": "Column_a33wxr",
+  "Kind": "Column",
+  "Type": "Field",
+  "Start": 0,
+  "End": 0,
+  "Row": "Row_1gs3gt8",
+  "Column::Field": [
+   "do_number"
+  ]
+ },
+ "do_number": {
+  "Id": "do_number",
+  "Kind": "Field",
+  "Type": "Text",
+  "Name": "DO_Number",
+  "Model": "ITPMD_Cost_Entry_A00__invoices",
+  "Column": "Column_a33wxr"
+ },
+ "Column_2xrt3o": {
+  "Id": "Column_2xrt3o",
+  "Kind": "Column",
+  "Type": "Field",
+  "Start": 0,
+  "End": 0,
+  "Row": "Row_1gs3gt8",
+  "Column::Field": [
+   "do_date"
+  ]
+ },
+ "do_date": {
+  "Id": "do_date",
+  "Kind": "Field",
+  "Type": "Date",
+  "Name": "DO_Date",
+  "Model": "ITPMD_Cost_Entry_A00__invoices",
+  "Column": "Column_2xrt3o"
+ },
+ "Column_1da7zaq": {
+  "Id": "Column_1da7zaq",
+  "Kind": "Column",
+  "Type": "Field",
+  "Start": 0,
+  "End": 0,
+  "Row": "Row_1gs3gt8",
+  "Column::Field": [
+   "vendor_name"
+  ]
+ },
+ "vendor_name": {
+  "Id": "vendor_name",
+  "Kind": "Field",
+  "Type": "Text",
+  "Name": "Vendor_Name",
+  "Model": "ITPMD_Cost_Entry_A00__invoices",
+  "Column": "Column_1da7zaq"
+ },
+ "Column_16q1kmc": {
+  "Id": "Column_16q1kmc",
+  "Kind": "Column",
+  "Type": "Field",
+  "Start": 0,
+  "End": 0,
+  "Row": "Row_1gs3gt8",
+  "Column::Field": [
+   "invoice_amount"
+  ]
+ },
+ "invoice_amount": {
+  "Id": "invoice_amount",
+  "Kind": "Field",
+  "Type": "Currency",
+  "Name": "Invoice_Amount",
+  "Model": "ITPMD_Cost_Entry_A00__invoices",
+  "Column": "Column_16q1kmc",
+  "CurrencyTypes": [
+   "PHP"
+  ]
+ },
+ "Column_vu2ilb": {
+  "Id": "Column_vu2ilb",
+  "Kind": "Column",
+  "Type": "Field",
+  "Start": 0,
+  "End": 0,
+  "Row": "Row_1gs3gt8",
+  "Column::Field": [
+   "date_paid"
+  ]
+ },
+ "date_paid": {
+  "Id": "date_paid",
+  "Kind": "Field",
+  "Type": "Date",
+  "Name": "Date_Paid",
+  "Model": "ITPMD_Cost_Entry_A00__invoices",
+  "Column": "Column_vu2ilb"
+ },
+ "Column_1ii38b8": {
+  "Id": "Column_1ii38b8",
+  "Kind": "Column",
+  "Type": "Field",
+  "Start": 0,
+  "End": 0,
+  "Row": "Row_1gs3gt8",
+  "Column::Field": [
+   "invoice_status"
+  ]
+ },
+ "invoice_status": {
+  "Id": "invoice_status",
+  "Kind": "Field",
+  "Type": "Select",
+  "Name": "Invoice_Status",
+  "Model": "ITPMD_Cost_Entry_A00__invoices",
+  "Column": "Column_1ii38b8",
+  "ReferredList": "ITPMD_Invoice_Status_A00"
+ },
+ "Column_bmuf7d": {
+  "Id": "Column_bmuf7d",
+  "Kind": "Column",
+  "Type": "Field",
+  "Start": 0,
+  "End": 0,
+  "Row": "Row_1gs3gt8",
+  "Column::Field": [
+   "remarks"
+  ]
+ },
+ "remarks": {
+  "Id": "remarks",
+  "Kind": "Field",
+  "Type": "Textarea",
+  "Name": "Remarks",
+  "Model": "ITPMD_Cost_Entry_A00__invoices",
+  "Column": "Column_bmuf7d"
+ },
+ "PublishedAt": "2026-10-28T07:59:54Z",
+ "PublishedBy": {
+  "_id": "UsEEQe4PIDoK",
+  "Name": "Joms",
+  "Kind": "User"
+ },
+ "_meta_version": "1793174394711015"
+}

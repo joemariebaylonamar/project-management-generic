@@ -1,0 +1,35 @@
+{
+  "Root": "Perm_1aaupa3",
+  "Perm_1aaupa3": {
+    "Id": "Perm_1aaupa3",
+    "Kind": "FlowPermission",
+    "Role": "department_head",
+    "RoleName": "Department Head",
+    "Model": "itpmd_portfolio_report",
+    "Level": "ReadOnly",
+    "Scope": "all",
+    "FlowPermission::Permission": [
+      "Permission_1df624c",
+      "Permission_kxf3gn",
+      "Permission_1cmyez3"
+    ]
+  },
+  "Permission_1df624c": {
+    "Id": "Permission_1df624c",
+    "Kind": "Permission",
+    "Column": "report_period",
+    "Permission": "ReadOnly"
+  },
+  "Permission_kxf3gn": {
+    "Id": "Permission_kxf3gn",
+    "Kind": "Permission",
+    "Column": "portfolio_narrative",
+    "Permission": "ReadOnly"
+  },
+  "Permission_1cmyez3": {
+    "Id": "Permission_1cmyez3",
+    "Kind": "Permission",
+    "Column": "total_projects_reported",
+    "Permission": "ReadOnly"
+  }
+}

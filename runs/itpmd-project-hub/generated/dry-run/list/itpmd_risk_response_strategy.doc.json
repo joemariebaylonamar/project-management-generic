@@ -1,0 +1,18 @@
+{
+  "_id": "itpmd_risk_response_strategy",
+  "Name": "ITPMD Risk Response Strategy",
+  "Description": "",
+  "Type": "List",
+  "Status": "Live",
+  "ListItems": [
+    "Avoid",
+    "Mitigate",
+    "Transfer",
+    "Accept"
+  ],
+  "_application_id": "itpmd_project_hub_A00",
+  "Security": {
+    "AllowAllFlows": true,
+    "AllowedFlows": []
+  }
+}

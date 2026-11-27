@@ -1,0 +1,57 @@
+{
+  "Root": "auto_psr_approved_notify_pm_A00",
+  "auto_psr_approved_notify_pm_A00": {
+    "_id": "auto_psr_approved_notify_pm_A00",
+    "Id": "auto_psr_approved_notify_pm_A00",
+    "Kind": "Integration",
+    "Name": "PSR Approved (locked) → notify PM",
+    "Type": "Integration",
+    "Status": "Draft",
+    "IsActive": true,
+    "_application_id": "itpmd_project_hub_A00",
+    "Connectors": [
+      "Connector_rn4vly"
+    ],
+    "Integration::Trigger": [
+      "Trigger_1krx0tw"
+    ],
+    "Integration::Action": [
+      "Action_1krx0td"
+    ]
+  },
+  "Connector_rn4vly": {
+    "_id": "Connector_rn4vly",
+    "Id": "Connector_rn4vly",
+    "Kind": "Connector",
+    "Name": "PSR Approved (locked) → notify PM connector",
+    "Entities": [
+      "Trigger_1krx0tw",
+      "Action_1krx0td"
+    ]
+  },
+  "Trigger_1krx0tw": {
+    "_id": "Trigger_1krx0tw",
+    "Id": "Trigger_1krx0tw",
+    "Kind": "Trigger",
+    "Version": 1,
+    "Name": "itpmd_psr · completed",
+    "Flow": "itpmd_psr",
+    "On": "Approved",
+    "Event": "completed"
+  },
+  "Action_1krx0td": {
+    "_id": "Action_1krx0td",
+    "Id": "Action_1krx0td",
+    "Kind": "Action",
+    "Version": 1,
+    "Name": "notify → itpmd_psr",
+    "ActionType": "notify",
+    "TargetFlow": "itpmd_psr",
+    "FieldMap": {
+      "Project_Manager": "Project_Manager",
+      "Project": "Project",
+      "Reporting_Period_Month": "Reporting_Period_Month"
+    },
+    "Condition": null
+  }
+}

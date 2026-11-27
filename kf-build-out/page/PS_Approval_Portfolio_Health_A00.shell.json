@@ -1,0 +1,4 @@
+{
+  "Name": "PS Approval & Portfolio Health",
+  "Description": "Project Sponsor's PSR approval queue (Editable/my-team, the only flow this role may act on) plus the health of every project where they are the named Project Sponsor — read via the PSR's own health/cost snapshot fields (BR-13). Project/Activity/Risk/Cost Entry/Issue/Action Item are ReadOnly for this role and are not carded here — the client.mjs page-driven grant escalates ANY card (kpi/list/chart/action) on a ReadOnly-declared flow to Delete/InitiateItems, including Board flows (the gate's static check does not special-case Case/Board the way the live apply does) — residual gap, see decisions.md."
+}

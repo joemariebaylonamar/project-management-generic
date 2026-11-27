@@ -1,0 +1,336 @@
+{
+  "Root": "Perm_jyth3y",
+  "Perm_jyth3y": {
+    "Id": "Perm_jyth3y",
+    "Kind": "FlowPermission",
+    "Role": "project_sponsor",
+    "RoleName": "Project Sponsor",
+    "Model": "itpmd_project",
+    "Level": "ReadOnly",
+    "Scope": "my-team",
+    "FlowPermission::Permission": [
+      "Permission_1wzw0us",
+      "Permission_cehx9k",
+      "Permission_1axtyqj",
+      "Permission_19jqa3y",
+      "Permission_ukf2te",
+      "Permission_15dfucn",
+      "Permission_h12f50",
+      "Permission_8pmbcx",
+      "Permission_134dhh4",
+      "Permission_9zzl4a",
+      "Permission_m8oyke",
+      "Permission_ur7dxk",
+      "Permission_1wznvda",
+      "Permission_1cow6k7",
+      "Permission_g12qz7",
+      "Permission_1p0l6bl",
+      "Permission_1fqbs4a",
+      "Permission_tcq6zc",
+      "Permission_cyud15",
+      "Permission_s8o1fp",
+      "Permission_3xy1h5",
+      "Permission_1x4qp5e",
+      "Permission_w275tq",
+      "Permission_p9huxb",
+      "Permission_10c4bz7",
+      "Permission_1uqtq88",
+      "Permission_ofpipf",
+      "Permission_xhetbs",
+      "Permission_1wl8sfw",
+      "Permission_1oa0nx2",
+      "Permission_agd64i",
+      "Permission_xo9m56",
+      "Permission_ylibyv",
+      "Permission_i56acp",
+      "Permission_1gh3r87",
+      "Permission_lmrm6x",
+      "Permission_x9vkyn",
+      "Permission_10wscdh",
+      "Permission_bjte5n",
+      "Permission_17vhqyt",
+      "Permission_14xbmkr",
+      "Permission_5khvg5",
+      "Permission_1sr7ni3",
+      "Permission_1940i9t",
+      "Permission_1c0gk07",
+      "Permission_yna8l2"
+    ]
+  },
+  "Permission_1wzw0us": {
+    "Id": "Permission_1wzw0us",
+    "Kind": "Permission",
+    "Column": "project_name",
+    "Permission": "ReadOnly"
+  },
+  "Permission_cehx9k": {
+    "Id": "Permission_cehx9k",
+    "Kind": "Permission",
+    "Column": "business_unit",
+    "Permission": "ReadOnly"
+  },
+  "Permission_1axtyqj": {
+    "Id": "Permission_1axtyqj",
+    "Kind": "Permission",
+    "Column": "portfolio",
+    "Permission": "ReadOnly"
+  },
+  "Permission_19jqa3y": {
+    "Id": "Permission_19jqa3y",
+    "Kind": "Permission",
+    "Column": "project_manager",
+    "Permission": "ReadOnly"
+  },
+  "Permission_ukf2te": {
+    "Id": "Permission_ukf2te",
+    "Kind": "Permission",
+    "Column": "department_head",
+    "Permission": "ReadOnly"
+  },
+  "Permission_15dfucn": {
+    "Id": "Permission_15dfucn",
+    "Kind": "Permission",
+    "Column": "project_sponsor",
+    "Permission": "ReadOnly"
+  },
+  "Permission_h12f50": {
+    "Id": "Permission_h12f50",
+    "Kind": "Permission",
+    "Column": "ps_approval_required",
+    "Permission": "ReadOnly"
+  },
+  "Permission_8pmbcx": {
+    "Id": "Permission_8pmbcx",
+    "Kind": "Permission",
+    "Column": "status",
+    "Permission": "ReadOnly"
+  },
+  "Permission_134dhh4": {
+    "Id": "Permission_134dhh4",
+    "Kind": "Permission",
+    "Column": "approved_budget",
+    "Permission": "ReadOnly"
+  },
+  "Permission_9zzl4a": {
+    "Id": "Permission_9zzl4a",
+    "Kind": "Permission",
+    "Column": "contingency_fund",
+    "Permission": "ReadOnly"
+  },
+  "Permission_m8oyke": {
+    "Id": "Permission_m8oyke",
+    "Kind": "Permission",
+    "Column": "project_start_date",
+    "Permission": "ReadOnly"
+  },
+  "Permission_ur7dxk": {
+    "Id": "Permission_ur7dxk",
+    "Kind": "Permission",
+    "Column": "project_planned_end_date",
+    "Permission": "ReadOnly"
+  },
+  "Permission_1wznvda": {
+    "Id": "Permission_1wznvda",
+    "Kind": "Permission",
+    "Column": "project_code",
+    "Permission": "ReadOnly"
+  },
+  "Permission_1cow6k7": {
+    "Id": "Permission_1cow6k7",
+    "Kind": "Permission",
+    "Column": "contract_value",
+    "Permission": "ReadOnly"
+  },
+  "Permission_g12qz7": {
+    "Id": "Permission_g12qz7",
+    "Kind": "Permission",
+    "Column": "total_budget_changes",
+    "Permission": "ReadOnly"
+  },
+  "Permission_1p0l6bl": {
+    "Id": "Permission_1p0l6bl",
+    "Kind": "Permission",
+    "Column": "total_contingency_draws",
+    "Permission": "ReadOnly"
+  },
+  "Permission_1fqbs4a": {
+    "Id": "Permission_1fqbs4a",
+    "Kind": "Permission",
+    "Column": "sum_weighted_complete",
+    "Permission": "ReadOnly"
+  },
+  "Permission_tcq6zc": {
+    "Id": "Permission_tcq6zc",
+    "Kind": "Permission",
+    "Column": "sum_planned_duration",
+    "Permission": "ReadOnly"
+  },
+  "Permission_cyud15": {
+    "Id": "Permission_cyud15",
+    "Kind": "Permission",
+    "Column": "max_forecast_finish",
+    "Permission": "ReadOnly"
+  },
+  "Permission_s8o1fp": {
+    "Id": "Permission_s8o1fp",
+    "Kind": "Permission",
+    "Column": "max_baseline_finish",
+    "Permission": "ReadOnly"
+  },
+  "Permission_3xy1h5": {
+    "Id": "Permission_3xy1h5",
+    "Kind": "Permission",
+    "Column": "missed_milestone_count",
+    "Permission": "ReadOnly"
+  },
+  "Permission_1x4qp5e": {
+    "Id": "Permission_1x4qp5e",
+    "Kind": "Permission",
+    "Column": "total_actual_cost",
+    "Permission": "ReadOnly"
+  },
+  "Permission_w275tq": {
+    "Id": "Permission_w275tq",
+    "Kind": "Permission",
+    "Column": "total_committed_cost",
+    "Permission": "ReadOnly"
+  },
+  "Permission_p9huxb": {
+    "Id": "Permission_p9huxb",
+    "Kind": "Permission",
+    "Column": "total_forecast_cost",
+    "Permission": "ReadOnly"
+  },
+  "Permission_10c4bz7": {
+    "Id": "Permission_10c4bz7",
+    "Kind": "Permission",
+    "Column": "escalated_risk_count",
+    "Permission": "ReadOnly"
+  },
+  "Permission_1uqtq88": {
+    "Id": "Permission_1uqtq88",
+    "Kind": "Permission",
+    "Column": "critical_risk_count",
+    "Permission": "ReadOnly"
+  },
+  "Permission_ofpipf": {
+    "Id": "Permission_ofpipf",
+    "Kind": "Permission",
+    "Column": "escalated_issue_count",
+    "Permission": "ReadOnly"
+  },
+  "Permission_xhetbs": {
+    "Id": "Permission_xhetbs",
+    "Kind": "Permission",
+    "Column": "critical_issue_count",
+    "Permission": "ReadOnly"
+  },
+  "Permission_1wl8sfw": {
+    "Id": "Permission_1wl8sfw",
+    "Kind": "Permission",
+    "Column": "overdue_action_count",
+    "Permission": "ReadOnly"
+  },
+  "Permission_1oa0nx2": {
+    "Id": "Permission_1oa0nx2",
+    "Kind": "Permission",
+    "Column": "weighted_percent_complete",
+    "Permission": "ReadOnly"
+  },
+  "Permission_agd64i": {
+    "Id": "Permission_agd64i",
+    "Kind": "Permission",
+    "Column": "schedule_variance_days",
+    "Permission": "ReadOnly"
+  },
+  "Permission_xo9m56": {
+    "Id": "Permission_xo9m56",
+    "Kind": "Permission",
+    "Column": "current_approved_budget",
+    "Permission": "ReadOnly"
+  },
+  "Permission_ylibyv": {
+    "Id": "Permission_ylibyv",
+    "Kind": "Permission",
+    "Column": "contingency_remaining",
+    "Permission": "ReadOnly"
+  },
+  "Permission_i56acp": {
+    "Id": "Permission_i56acp",
+    "Kind": "Permission",
+    "Column": "contingency_utilization_percent",
+    "Permission": "ReadOnly"
+  },
+  "Permission_1gh3r87": {
+    "Id": "Permission_1gh3r87",
+    "Kind": "Permission",
+    "Column": "cost_performance_percent",
+    "Permission": "ReadOnly"
+  },
+  "Permission_lmrm6x": {
+    "Id": "Permission_lmrm6x",
+    "Kind": "Permission",
+    "Column": "schedule_health_code",
+    "Permission": "ReadOnly"
+  },
+  "Permission_x9vkyn": {
+    "Id": "Permission_x9vkyn",
+    "Kind": "Permission",
+    "Column": "schedule_health",
+    "Permission": "ReadOnly"
+  },
+  "Permission_10wscdh": {
+    "Id": "Permission_10wscdh",
+    "Kind": "Permission",
+    "Column": "cost_health_code",
+    "Permission": "ReadOnly"
+  },
+  "Permission_bjte5n": {
+    "Id": "Permission_bjte5n",
+    "Kind": "Permission",
+    "Column": "cost_health",
+    "Permission": "ReadOnly"
+  },
+  "Permission_17vhqyt": {
+    "Id": "Permission_17vhqyt",
+    "Kind": "Permission",
+    "Column": "risk_health_code",
+    "Permission": "ReadOnly"
+  },
+  "Permission_14xbmkr": {
+    "Id": "Permission_14xbmkr",
+    "Kind": "Permission",
+    "Column": "risk_health",
+    "Permission": "ReadOnly"
+  },
+  "Permission_5khvg5": {
+    "Id": "Permission_5khvg5",
+    "Kind": "Permission",
+    "Column": "issue_health_code",
+    "Permission": "ReadOnly"
+  },
+  "Permission_1sr7ni3": {
+    "Id": "Permission_1sr7ni3",
+    "Kind": "Permission",
+    "Column": "issue_health",
+    "Permission": "ReadOnly"
+  },
+  "Permission_1940i9t": {
+    "Id": "Permission_1940i9t",
+    "Kind": "Permission",
+    "Column": "overall_health_code",
+    "Permission": "ReadOnly"
+  },
+  "Permission_1c0gk07": {
+    "Id": "Permission_1c0gk07",
+    "Kind": "Permission",
+    "Column": "overall_health",
+    "Permission": "ReadOnly"
+  },
+  "Permission_yna8l2": {
+    "Id": "Permission_yna8l2",
+    "Kind": "Permission",
+    "Column": "needs_management_attention_flag",
+    "Permission": "ReadOnly"
+  }
+}

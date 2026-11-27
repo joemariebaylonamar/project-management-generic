@@ -1,0 +1,138 @@
+{
+  "Root": "itpmd_portfolio_report",
+  "itpmd_portfolio_report": {
+    "Id": "itpmd_portfolio_report",
+    "Name": "ITPMD Portfolio Status Report",
+    "Kind": "Model",
+    "FlowType": "Form",
+    "Description": "",
+    "Model::Row": [
+      "Row_1in3pi8"
+    ],
+    "Model::Field": [
+      "report_period",
+      "portfolio_narrative",
+      "total_projects_reported"
+    ]
+  },
+  "Row_1in3pi8": {
+    "Id": "Row_1in3pi8",
+    "Kind": "Row",
+    "Model": "itpmd_portfolio_report",
+    "Row::Column": [
+      "Column_1in3pi8"
+    ]
+  },
+  "Column_1in3pi8": {
+    "Id": "Column_1in3pi8",
+    "Kind": "Column",
+    "Type": "Section",
+    "Name": "Details",
+    "Start": 0,
+    "End": 6,
+    "Row": "Row_1in3pi8",
+    "Column::Row": [
+      "Row_1in2hcq",
+      "Row_1in2hcr",
+      "Row_1in2hcs"
+    ]
+  },
+  "Row_1in2hcq": {
+    "Id": "Row_1in2hcq",
+    "Kind": "Row",
+    "Column": "Column_1in3pi8",
+    "Row::Column": [
+      "Column_5526k3"
+    ]
+  },
+  "Column_5526k3": {
+    "Id": "Column_5526k3",
+    "Kind": "Column",
+    "Type": "Field",
+    "Start": 0,
+    "End": 3,
+    "Row": "Row_1in2hcq",
+    "Column::Field": [
+      "report_period"
+    ]
+  },
+  "Row_1in2hcr": {
+    "Id": "Row_1in2hcr",
+    "Kind": "Row",
+    "Column": "Column_1in3pi8",
+    "Row::Column": [
+      "Column_1gu65tq"
+    ]
+  },
+  "Column_1gu65tq": {
+    "Id": "Column_1gu65tq",
+    "Kind": "Column",
+    "Type": "Field",
+    "Start": 0,
+    "End": 6,
+    "Row": "Row_1in2hcr",
+    "Column::Field": [
+      "portfolio_narrative"
+    ]
+  },
+  "Row_1in2hcs": {
+    "Id": "Row_1in2hcs",
+    "Kind": "Row",
+    "Column": "Column_1in3pi8",
+    "Row::Column": [
+      "Column_llpk06"
+    ]
+  },
+  "Column_llpk06": {
+    "Id": "Column_llpk06",
+    "Kind": "Column",
+    "Type": "Field",
+    "Start": 0,
+    "End": 3,
+    "Row": "Row_1in2hcs",
+    "Column::Field": [
+      "total_projects_reported"
+    ]
+  },
+  "report_period": {
+    "Id": "report_period",
+    "Kind": "Field",
+    "Type": "Date",
+    "Name": "Report_Period",
+    "Model": "itpmd_portfolio_report",
+    "Column": "Column_5526k3",
+    "Required": true
+  },
+  "portfolio_narrative": {
+    "Id": "portfolio_narrative",
+    "Kind": "Field",
+    "Type": "Textarea",
+    "Name": "Portfolio_Narrative",
+    "Model": "itpmd_portfolio_report",
+    "Column": "Column_1gu65tq"
+  },
+  "total_projects_reported": {
+    "Id": "total_projects_reported",
+    "Kind": "Field",
+    "Type": "Number",
+    "Name": "Total_Projects_Reported",
+    "Model": "itpmd_portfolio_report",
+    "Column": "Column_llpk06",
+    "Field::QueryDefinition": [
+      "AggregateDefinition_llpk06"
+    ],
+    "Widget": "Aggregation",
+    "ReadOnly": true
+  },
+  "AggregateDefinition_llpk06": {
+    "Id": "AggregateDefinition_llpk06",
+    "Kind": "QueryDefinition",
+    "Field": "total_projects_reported",
+    "LHSModel": "itpmd_portfolio_report",
+    "FlowType": "Form",
+    "LookupField": [],
+    "AggregateType": "Count",
+    "LHSRootModel": "itpmd_portfolio_report",
+    "AggregateField": "report_period"
+  }
+}

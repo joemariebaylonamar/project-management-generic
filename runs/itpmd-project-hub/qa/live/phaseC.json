@@ -1,0 +1,218 @@
+{
+ "cases": {
+  "issue": {
+   "required": {
+    "issue_title": {
+     "status": 400,
+     "refused": true,
+     "created": false,
+     "msg": "Validation failed for the following fields: {'issue_title': ['Value is required']}.",
+     "errs": {
+      "issue_title": [
+       "Value is required"
+      ]
+     }
+    },
+    "project": {
+     "status": 400,
+     "refused": true,
+     "created": false,
+     "msg": "Validation failed for the following fields: {'project': ['Value is required']}.",
+     "errs": {
+      "project": [
+       "Value is required"
+      ]
+     }
+    },
+    "issue_category": {
+     "status": 400,
+     "refused": true,
+     "created": false,
+     "msg": "Validation failed for the following fields: {'issue_category': ['Value is required']}.",
+     "errs": {
+      "issue_category": [
+       "Value is required"
+      ]
+     }
+    },
+    "priority": {
+     "status": 400,
+     "refused": true,
+     "created": false,
+     "msg": "Validation failed for the following fields: {'priority': ['Value is required']}.",
+     "errs": {
+      "priority": [
+       "Value is required"
+      ]
+     }
+    },
+    "issue_owner": {
+     "status": 400,
+     "refused": true,
+     "created": false,
+     "msg": "Validation failed for the following fields: {'issue_owner': ['Value is required']}.",
+     "errs": {
+      "issue_owner": [
+       "Value is required"
+      ]
+     }
+    }
+   },
+   "create": {
+    "status": 200,
+    "id": "ITP-0009",
+    "msg": ""
+   },
+   "readback": {
+    "_id": "ITP-0009",
+    "_created_by": {
+     "_id": "UsEEQe4PIDoK",
+     "Name": "Joms",
+     "Kind": "User"
+    },
+    "_modified_by": {
+     "_id": "UsEEQe4PIDoK",
+     "Name": "Joms",
+     "Kind": "User"
+    },
+    "_created_at": "2026-10-30T06:39:02Z",
+    "_modified_at": "2026-10-30T06:39:02Z",
+    "_flow_name": "ITPMD Issue",
+    "_doc_version": "225973939814142240",
+    "_item_id": "ITP-0009",
+    "_estimated_time": 0,
+    "_lifecycle_status": "Live",
+    "_category": "NotStarted",
+    "_status_name": "Open",
+    "_status_id": "Status_l3jjzr",
+    "_priority_name": "Low",
+    "_priority_id": "Low",
+    "Requester": {
+     "_id": "UsEEQe4PIDoK",
+     "Name": "Joms",
+     "Kind": "User"
+    },
+    "ItemType": "Item",
+    "issue_title": "QA-Issue 1",
+    "project": {
+     "project_name": "QA-Project Alpha",
+     "_id": "PkESbS8pgLYd",
+     "Name": "ITPMD Project from Joms"
+    },
+    "issue_category": "Technical",
+    "priority": "Critical",
+    "issue_owner": {
+     "_id": "UsEEQe4PIDoK",
+     "Name": "Joms",
+     "Kind": "User"
+    },
+    "target_resolution_date": "2026-10-01",
+    "hub_settings": {
+     "setting_name": "Default",
+     "issue_aging_period_days": 5,
+     "_id": "PkERu4fYPxyA",
+     "Name": "ITPMD Hub Settings from Joms"
+    },
+    "critical_flag": 1,
+    "_watchers": [],
+    "_is_draft": false
+   },
+   "readStatus": 200
+  },
+  "action": {
+   "required": {
+    "action_description": {
+     "status": 400,
+     "refused": true,
+     "created": false,
+     "msg": "Validation failed for the following fields: {'action_description': ['Value is required']}.",
+     "errs": {
+      "action_description": [
+       "Value is required"
+      ]
+     }
+    },
+    "project": {
+     "status": 400,
+     "refused": true,
+     "created": false,
+     "msg": "Validation failed for the following fields: {'project': ['Value is required']}.",
+     "errs": {
+      "project": [
+       "Value is required"
+      ]
+     }
+    },
+    "assignee": {
+     "status": 400,
+     "refused": true,
+     "created": false,
+     "msg": "Validation failed for the following fields: {'assignee': ['Value is required']}.",
+     "errs": {
+      "assignee": [
+       "Value is required"
+      ]
+     }
+    }
+   },
+   "create": {
+    "status": 200,
+    "id": "ITP-0008",
+    "msg": ""
+   },
+   "readback": {
+    "_id": "ITP-0008",
+    "_created_by": {
+     "_id": "UsEEQe4PIDoK",
+     "Name": "Joms",
+     "Kind": "User"
+    },
+    "_modified_by": {
+     "_id": "UsEEQe4PIDoK",
+     "Name": "Joms",
+     "Kind": "User"
+    },
+    "_created_at": "2026-10-30T06:39:06Z",
+    "_modified_at": "2026-10-30T06:39:06Z",
+    "_flow_name": "ITPMD Action Item",
+    "_doc_version": "225973944192464160",
+    "_item_id": "ITP-0008",
+    "_estimated_time": 0,
+    "_lifecycle_status": "Live",
+    "_category": "NotStarted",
+    "_status_name": "Open",
+    "_status_id": "Status_16bbge2",
+    "_priority_name": "Low",
+    "_priority_id": "Low",
+    "Requester": {
+     "_id": "UsEEQe4PIDoK",
+     "Name": "Joms",
+     "Kind": "User"
+    },
+    "ItemType": "Item",
+    "action_description": "QA-Action 1",
+    "project": {
+     "project_name": "QA-Project Alpha",
+     "_id": "PkESbS8pgLYd",
+     "Name": "ITPMD Project from Joms"
+    },
+    "related_issue": {
+     "issue_title": "QA-Issue 1",
+     "_id": "ITP-0009",
+     "Name": null
+    },
+    "assignee": {
+     "_id": "UsEEQe4PIDoK",
+     "Name": "Joms",
+     "Kind": "User"
+    },
+    "due_date": "2026-10-01",
+    "_watchers": [],
+    "_is_draft": false
+   },
+   "readStatus": 200
+  }
+ },
+ "psr": {},
+ "notes": []
+}

@@ -1,0 +1,350 @@
+[
+ {
+  "id": "ITPMD_Project_Hub_A00",
+  "name": "ITPMD Project Hub",
+  "type": "Application",
+  "status": "Live"
+ },
+ {
+  "id": "ITPMD_Action_Item_A00",
+  "name": "ITPMD Action Item",
+  "type": "Case",
+  "status": "Live"
+ },
+ {
+  "id": "ITPMD_Issue_A00",
+  "name": "ITPMD Issue",
+  "type": "Case",
+  "status": "Live"
+ },
+ {
+  "id": "ITPMD_Template_Type_A00",
+  "name": "ITPMD Template Type",
+  "type": "List",
+  "status": "Live"
+ },
+ {
+  "id": "ITPMD_Template_A00",
+  "name": "ITPMD Template",
+  "type": "Form",
+  "status": "Live"
+ },
+ {
+  "id": "ITPMD_Release_A00",
+  "name": "ITPMD Release",
+  "type": "Form",
+  "status": "Live"
+ },
+ {
+  "id": "ITPMD_Weekly_Report_A00",
+  "name": "ITPMD Weekly Report",
+  "type": "Form",
+  "status": "Live"
+ },
+ {
+  "id": "ITPMD_WSR_Status_A00",
+  "name": "ITPMD WSR Status",
+  "type": "List",
+  "status": "Live"
+ },
+ {
+  "id": "ITPMD_CR_Status_A00",
+  "name": "ITPMD CR Status",
+  "type": "List",
+  "status": "Live"
+ },
+ {
+  "id": "ITPMD_Binder_Item_A00",
+  "name": "ITPMD Binder Item",
+  "type": "Form",
+  "status": "Live"
+ },
+ {
+  "id": "ITPMD_CR_Kind_A00",
+  "name": "ITPMD CR Kind",
+  "type": "List",
+  "status": "Live"
+ },
+ {
+  "id": "ITPMD_Event_Category_A00",
+  "name": "ITPMD Event Category",
+  "type": "List",
+  "status": "Live"
+ },
+ {
+  "id": "ITPMD_Action_Item_Status_A00",
+  "name": "ITPMD Action Item Status",
+  "type": "List",
+  "status": "Live"
+ },
+ {
+  "id": "ITPMD_Binder_Status_A00",
+  "name": "ITPMD Binder Status",
+  "type": "List",
+  "status": "Live"
+ },
+ {
+  "id": "ITPMD_Binder_Item_Type_A00",
+  "name": "ITPMD Binder Item Type",
+  "type": "List",
+  "status": "Live"
+ },
+ {
+  "id": "ITPMD_Program_A00",
+  "name": "ITPMD Program",
+  "type": "Form",
+  "status": "Live"
+ },
+ {
+  "id": "ITPMD_Baseline_A00",
+  "name": "ITPMD Baseline",
+  "type": "Form",
+  "status": "Live"
+ },
+ {
+  "id": "Risk_escalated_High_Critical_notif_A00",
+  "name": "Risk escalated (High/Critical) → notify Risk Owner",
+  "type": "Integration",
+  "status": "Live"
+ },
+ {
+  "id": "Issue_Escalated_auto_notify_Issue__A00",
+  "name": "Issue Escalated (auto) → notify Issue Owner/PM and PSC Member",
+  "type": "Integration",
+  "status": "Live"
+ },
+ {
+  "id": "Action_item_Overdue_auto_notify_As_A00",
+  "name": "Action item Overdue (auto) → notify Assignee",
+  "type": "Integration",
+  "status": "Live"
+ },
+ {
+  "id": "Action_item_created_assigned_notif_A00",
+  "name": "Action item created/assigned → notify Assignee",
+  "type": "Integration",
+  "status": "Live"
+ },
+ {
+  "id": "Activity_forecast_past_baseline_Re_A00",
+  "name": "Activity forecast past baseline (Red) → notify Responsible Person",
+  "type": "Integration",
+  "status": "Live"
+ },
+ {
+  "id": "Activity_assigned_reassigned_notif_A00",
+  "name": "Activity assigned/reassigned → notify Responsible Person",
+  "type": "Integration",
+  "status": "Live"
+ },
+ {
+  "id": "PSR_deadline_reminders_3_day_1_day_A00",
+  "name": "PSR deadline reminders (3-day / 1-day / daily overdue)",
+  "type": "Integration",
+  "status": "Live"
+ },
+ {
+  "id": "PSR_Approved_locked_notify_PM_A00",
+  "name": "PSR Approved (locked) → notify PM",
+  "type": "Integration",
+  "status": "Live"
+ },
+ {
+  "id": "PSR_returned_at_Sponsor_Approval_n_A00",
+  "name": "PSR returned at Sponsor Approval → notify PM with comment",
+  "type": "Integration",
+  "status": "Live"
+ },
+ {
+  "id": "PSR_returned_at_DH_Review_notify_P_A00",
+  "name": "PSR returned at DH Review → notify PM with comment",
+  "type": "Integration",
+  "status": "Live"
+ },
+ {
+  "id": "PSR_DH_approved_sponsor_required_n_A00",
+  "name": "PSR DH-approved (sponsor required) → notify Project Sponsor",
+  "type": "Integration",
+  "status": "Live"
+ },
+ {
+  "id": "PSR_submitted_notify_Department_He_A00",
+  "name": "PSR submitted → notify Department Head",
+  "type": "Integration",
+  "status": "Live"
+ },
+ {
+  "id": "ITPMD_Discussion_Read_A00",
+  "name": "ITPMD Discussion Read",
+  "type": "Form",
+  "status": "Live"
+ },
+ {
+  "id": "ITPMD_Notification_A00",
+  "name": "ITPMD Notification",
+  "type": "Form",
+  "status": "Live"
+ },
+ {
+  "id": "ITPMD_Discussion_Message_A00",
+  "name": "ITPMD Discussion Message",
+  "type": "Form",
+  "status": "Live"
+ },
+ {
+  "id": "ITPMD_Portfolio_Status_Report_A00",
+  "name": "ITPMD Portfolio Status Report",
+  "type": "Form",
+  "status": "Live"
+ },
+ {
+  "id": "ITPMD_Project_Status_Report_A00",
+  "name": "ITPMD Project Status Report",
+  "type": "Process",
+  "status": "Live"
+ },
+ {
+  "id": "ITPMD_Cost_Entry_A00",
+  "name": "ITPMD Cost Entry",
+  "type": "Form",
+  "status": "Live"
+ },
+ {
+  "id": "ITPMD_Holiday_Calendar_A00",
+  "name": "ITPMD Holiday Calendar",
+  "type": "Form",
+  "status": "Live"
+ },
+ {
+  "id": "ITPMD_Risk_A00",
+  "name": "ITPMD Risk",
+  "type": "Form",
+  "status": "Live"
+ },
+ {
+  "id": "ITPMD_Activity_A00",
+  "name": "ITPMD Activity",
+  "type": "Form",
+  "status": "Live"
+ },
+ {
+  "id": "ITPMD_Project_A00",
+  "name": "ITPMD Project",
+  "type": "Form",
+  "status": "Live"
+ },
+ {
+  "id": "ITPMD_Hub_Settings_A00",
+  "name": "ITPMD Hub Settings",
+  "type": "Form",
+  "status": "Live"
+ },
+ {
+  "id": "ITPMD_WBS_Item_Type_A00",
+  "name": "ITPMD WBS Item Type",
+  "type": "List",
+  "status": "Live"
+ },
+ {
+  "id": "ITPMD_Notification_Type_A00",
+  "name": "ITPMD Notification Type",
+  "type": "List",
+  "status": "Live"
+ },
+ {
+  "id": "ITPMD_Discussion_Link_Type_A00",
+  "name": "ITPMD Discussion Link Type",
+  "type": "List",
+  "status": "Live"
+ },
+ {
+  "id": "ITPMD_Yes_No_A00",
+  "name": "ITPMD Yes No",
+  "type": "List",
+  "status": "Live"
+ },
+ {
+  "id": "ITPMD_Budget_Change_Type_A00",
+  "name": "ITPMD Budget Change Type",
+  "type": "List",
+  "status": "Live"
+ },
+ {
+  "id": "ITPMD_Holiday_Coverage_A00",
+  "name": "ITPMD Holiday Coverage",
+  "type": "List",
+  "status": "Live"
+ },
+ {
+  "id": "ITPMD_Schedule_Highlight_Type_A00",
+  "name": "ITPMD Schedule Highlight Type",
+  "type": "List",
+  "status": "Live"
+ },
+ {
+  "id": "ITPMD_Project_Team_Role_A00",
+  "name": "ITPMD Project Team Role",
+  "type": "List",
+  "status": "Live"
+ },
+ {
+  "id": "ITPMD_Invoice_Status_A00",
+  "name": "ITPMD Invoice Status",
+  "type": "List",
+  "status": "Live"
+ },
+ {
+  "id": "ITPMD_Priority_Level_A00",
+  "name": "ITPMD Priority Level",
+  "type": "List",
+  "status": "Live"
+ },
+ {
+  "id": "ITPMD_Risk_Response_Strategy_A00",
+  "name": "ITPMD Risk Response Strategy",
+  "type": "List",
+  "status": "Live"
+ },
+ {
+  "id": "ITPMD_Issue_Category_A00",
+  "name": "ITPMD Issue Category",
+  "type": "List",
+  "status": "Live"
+ },
+ {
+  "id": "ITPMD_Risk_Status_A00",
+  "name": "ITPMD Risk Status",
+  "type": "List",
+  "status": "Live"
+ },
+ {
+  "id": "ITPMD_Risk_Category_A00",
+  "name": "ITPMD Risk Category",
+  "type": "List",
+  "status": "Live"
+ },
+ {
+  "id": "ITPMD_Business_Unit_A00",
+  "name": "ITPMD Business Unit",
+  "type": "List",
+  "status": "Live"
+ },
+ {
+  "id": "ITPMD_Portfolio_List_A00",
+  "name": "ITPMD Portfolio List",
+  "type": "List",
+  "status": "Live"
+ },
+ {
+  "id": "ITPMD_Project_Status_A00",
+  "name": "ITPMD Project Status",
+  "type": "List",
+  "status": "Live"
+ },
+ {
+  "id": "ITPMD_Dependency_Type_A00",
+  "name": "ITPMD Dependency Type",
+  "type": "List",
+  "status": "Live"
+ }
+]

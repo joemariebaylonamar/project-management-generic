@@ -1,0 +1,4 @@
+{
+  "Name": "PSR returned at DH Review → notify PM with comment",
+  "Description": "BR-25/ITPH-00116: DH send-back carries the platform's native mandatory-comment prompt; workflow_meta status-change → field-user:Project_Manager (ITPH-00121): 'Your PSR ... was returned by {{Returned_By}}. Reason: {{Return_Comment}}.'"
+}

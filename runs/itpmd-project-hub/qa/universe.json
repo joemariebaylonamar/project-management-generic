@@ -1,0 +1,3015 @@
+{
+  "counts": {
+    "journey": 18,
+    "workflow": 6,
+    "permission": 114,
+    "scope": 114,
+    "denial": 96,
+    "automation": 12,
+    "field": 117,
+    "reference": 23
+  },
+  "total": 500,
+  "items": [
+    {
+      "id": "J:J-01",
+      "kind": "journey",
+      "desc": "journey 'Set up a project from approved master data' completes end-to-end",
+      "role": "P-01"
+    },
+    {
+      "id": "J:J-02",
+      "kind": "journey",
+      "desc": "journey 'Build and baseline the project schedule' completes end-to-end",
+      "role": "P-01"
+    },
+    {
+      "id": "J:J-03",
+      "kind": "journey",
+      "desc": "journey 'Assign and reassign activities to team members' completes end-to-end",
+      "role": "P-01"
+    },
+    {
+      "id": "J:J-04",
+      "kind": "journey",
+      "desc": "journey 'Track progress, actuals and forecast during the period' completes end-to-end",
+      "role": "P-01"
+    },
+    {
+      "id": "J:J-05",
+      "kind": "journey",
+      "desc": "journey 'Manage issues, action items and decisions' completes end-to-end",
+      "role": "P-01"
+    },
+    {
+      "id": "J:J-06",
+      "kind": "journey",
+      "desc": "journey 'Manage the project risk register' completes end-to-end",
+      "role": "P-01"
+    },
+    {
+      "id": "J:J-07",
+      "kind": "journey",
+      "desc": "journey 'Manage project financials' completes end-to-end",
+      "role": "P-01"
+    },
+    {
+      "id": "J:J-08",
+      "kind": "journey",
+      "desc": "journey 'Generate, preview and submit the monthly PSR' completes end-to-end",
+      "role": "P-01"
+    },
+    {
+      "id": "J:J-09",
+      "kind": "journey",
+      "desc": "journey 'Revise and resubmit a returned PSR' completes end-to-end",
+      "role": "P-01"
+    },
+    {
+      "id": "J:J-10",
+      "kind": "journey",
+      "desc": "journey 'Monitor schedule performance via the S-curve' completes end-to-end",
+      "role": "P-01"
+    },
+    {
+      "id": "J:J-11",
+      "kind": "journey",
+      "desc": "journey 'Work my assigned tasks (My Tasks)' completes end-to-end",
+      "role": "P-02"
+    },
+    {
+      "id": "J:J-12",
+      "kind": "journey",
+      "desc": "journey 'Review and approve/return a PSR' completes end-to-end",
+      "role": "P-03"
+    },
+    {
+      "id": "J:J-13",
+      "kind": "journey",
+      "desc": "journey 'Approve a PSR requiring Sponsor sign-off' completes end-to-end",
+      "role": "P-04"
+    },
+    {
+      "id": "J:J-14",
+      "kind": "journey",
+      "desc": "journey 'Monitor portfolio health and identify projects needing attention' completes end-to-end",
+      "role": "P-05"
+    },
+    {
+      "id": "J:J-15",
+      "kind": "journey",
+      "desc": "journey 'Generate the Portfolio PSR (PPSR) and view PSR history' completes end-to-end",
+      "role": "P-05"
+    },
+    {
+      "id": "J:J-16",
+      "kind": "journey",
+      "desc": "journey 'Configure the working calendar and alert settings' completes end-to-end",
+      "role": "P-07"
+    },
+    {
+      "id": "J:J-17",
+      "kind": "journey",
+      "desc": "journey 'Administer users, roles and project access' completes end-to-end",
+      "role": "P-08"
+    },
+    {
+      "id": "J:J-18",
+      "kind": "journey",
+      "desc": "journey 'Review the audit trail' completes end-to-end",
+      "role": "P-08"
+    },
+    {
+      "id": "W:ITPMD Project Status Report:Draft:advance",
+      "kind": "workflow",
+      "desc": "'ITPMD Project Status Report' at 'Draft' outcome 'advance' moves to the designed state",
+      "role": "Project Manager"
+    },
+    {
+      "id": "W:ITPMD Project Status Report:Department Head Review:Approve",
+      "kind": "workflow",
+      "desc": "'ITPMD Project Status Report' at 'Department Head Review' outcome 'Approve' moves to the designed state",
+      "role": "Department Head"
+    },
+    {
+      "id": "W:ITPMD Project Status Report:Department Head Review:Return",
+      "kind": "workflow",
+      "desc": "'ITPMD Project Status Report' at 'Department Head Review' outcome 'Return' moves to the designed state",
+      "role": "Department Head"
+    },
+    {
+      "id": "W:ITPMD Project Status Report:Sponsor Approval:Approve",
+      "kind": "workflow",
+      "desc": "'ITPMD Project Status Report' at 'Sponsor Approval' outcome 'Approve' moves to the designed state",
+      "role": "Project Sponsor"
+    },
+    {
+      "id": "W:ITPMD Project Status Report:Sponsor Approval:Return",
+      "kind": "workflow",
+      "desc": "'ITPMD Project Status Report' at 'Sponsor Approval' outcome 'Return' moves to the designed state",
+      "role": "Project Sponsor"
+    },
+    {
+      "id": "W:ITPMD Project Status Report:Approved:advance",
+      "kind": "workflow",
+      "desc": "'ITPMD Project Status Report' at 'Approved' outcome 'advance' moves to the designed state",
+      "role": null
+    },
+    {
+      "id": "P:Hub Administrator:itpmd_hub_settings:edit",
+      "kind": "permission",
+      "desc": "'Hub Administrator' CAN edit 'itpmd_hub_settings'",
+      "role": "Hub Administrator"
+    },
+    {
+      "id": "S:Hub Administrator:itpmd_hub_settings:all",
+      "kind": "scope",
+      "desc": "'Hub Administrator' on 'itpmd_hub_settings' sees exactly 'all' records",
+      "role": "Hub Administrator"
+    },
+    {
+      "id": "P:Hub Administrator:itpmd_holiday_calendar:edit",
+      "kind": "permission",
+      "desc": "'Hub Administrator' CAN edit 'itpmd_holiday_calendar'",
+      "role": "Hub Administrator"
+    },
+    {
+      "id": "S:Hub Administrator:itpmd_holiday_calendar:all",
+      "kind": "scope",
+      "desc": "'Hub Administrator' on 'itpmd_holiday_calendar' sees exactly 'all' records",
+      "role": "Hub Administrator"
+    },
+    {
+      "id": "P:Project Manager:itpmd_project:edit",
+      "kind": "permission",
+      "desc": "'Project Manager' CAN edit 'itpmd_project'",
+      "role": "Project Manager"
+    },
+    {
+      "id": "S:Project Manager:itpmd_project:my",
+      "kind": "scope",
+      "desc": "'Project Manager' on 'itpmd_project' sees exactly 'my' records",
+      "role": "Project Manager"
+    },
+    {
+      "id": "P:Team Member:itpmd_project:read",
+      "kind": "permission",
+      "desc": "'Team Member' CAN read 'itpmd_project'",
+      "role": "Team Member"
+    },
+    {
+      "id": "S:Team Member:itpmd_project:my",
+      "kind": "scope",
+      "desc": "'Team Member' on 'itpmd_project' sees exactly 'my' records",
+      "role": "Team Member"
+    },
+    {
+      "id": "P:Department Head:itpmd_project:read",
+      "kind": "permission",
+      "desc": "'Department Head' CAN read 'itpmd_project'",
+      "role": "Department Head"
+    },
+    {
+      "id": "S:Department Head:itpmd_project:my-team",
+      "kind": "scope",
+      "desc": "'Department Head' on 'itpmd_project' sees exactly 'my-team' records",
+      "role": "Department Head"
+    },
+    {
+      "id": "P:Project Sponsor:itpmd_project:read",
+      "kind": "permission",
+      "desc": "'Project Sponsor' CAN read 'itpmd_project'",
+      "role": "Project Sponsor"
+    },
+    {
+      "id": "S:Project Sponsor:itpmd_project:my-team",
+      "kind": "scope",
+      "desc": "'Project Sponsor' on 'itpmd_project' sees exactly 'my-team' records",
+      "role": "Project Sponsor"
+    },
+    {
+      "id": "P:PSC Member:itpmd_project:read",
+      "kind": "permission",
+      "desc": "'PSC Member' CAN read 'itpmd_project'",
+      "role": "PSC Member"
+    },
+    {
+      "id": "S:PSC Member:itpmd_project:all",
+      "kind": "scope",
+      "desc": "'PSC Member' on 'itpmd_project' sees exactly 'all' records",
+      "role": "PSC Member"
+    },
+    {
+      "id": "P:Project Manager:itpmd_activity:edit",
+      "kind": "permission",
+      "desc": "'Project Manager' CAN edit 'itpmd_activity'",
+      "role": "Project Manager"
+    },
+    {
+      "id": "S:Project Manager:itpmd_activity:my",
+      "kind": "scope",
+      "desc": "'Project Manager' on 'itpmd_activity' sees exactly 'my' records",
+      "role": "Project Manager"
+    },
+    {
+      "id": "P:Team Member:itpmd_activity:edit",
+      "kind": "permission",
+      "desc": "'Team Member' CAN edit 'itpmd_activity'",
+      "role": "Team Member"
+    },
+    {
+      "id": "S:Team Member:itpmd_activity:my",
+      "kind": "scope",
+      "desc": "'Team Member' on 'itpmd_activity' sees exactly 'my' records",
+      "role": "Team Member"
+    },
+    {
+      "id": "P:Department Head:itpmd_activity:read",
+      "kind": "permission",
+      "desc": "'Department Head' CAN read 'itpmd_activity'",
+      "role": "Department Head"
+    },
+    {
+      "id": "S:Department Head:itpmd_activity:my-team",
+      "kind": "scope",
+      "desc": "'Department Head' on 'itpmd_activity' sees exactly 'my-team' records",
+      "role": "Department Head"
+    },
+    {
+      "id": "P:Project Sponsor:itpmd_activity:read",
+      "kind": "permission",
+      "desc": "'Project Sponsor' CAN read 'itpmd_activity'",
+      "role": "Project Sponsor"
+    },
+    {
+      "id": "S:Project Sponsor:itpmd_activity:my-team",
+      "kind": "scope",
+      "desc": "'Project Sponsor' on 'itpmd_activity' sees exactly 'my-team' records",
+      "role": "Project Sponsor"
+    },
+    {
+      "id": "P:PSC Member:itpmd_activity:read",
+      "kind": "permission",
+      "desc": "'PSC Member' CAN read 'itpmd_activity'",
+      "role": "PSC Member"
+    },
+    {
+      "id": "S:PSC Member:itpmd_activity:all",
+      "kind": "scope",
+      "desc": "'PSC Member' on 'itpmd_activity' sees exactly 'all' records",
+      "role": "PSC Member"
+    },
+    {
+      "id": "P:Project Manager:itpmd_risk:edit",
+      "kind": "permission",
+      "desc": "'Project Manager' CAN edit 'itpmd_risk'",
+      "role": "Project Manager"
+    },
+    {
+      "id": "S:Project Manager:itpmd_risk:my",
+      "kind": "scope",
+      "desc": "'Project Manager' on 'itpmd_risk' sees exactly 'my' records",
+      "role": "Project Manager"
+    },
+    {
+      "id": "P:Team Member:itpmd_risk:read",
+      "kind": "permission",
+      "desc": "'Team Member' CAN read 'itpmd_risk'",
+      "role": "Team Member"
+    },
+    {
+      "id": "S:Team Member:itpmd_risk:my",
+      "kind": "scope",
+      "desc": "'Team Member' on 'itpmd_risk' sees exactly 'my' records",
+      "role": "Team Member"
+    },
+    {
+      "id": "P:Department Head:itpmd_risk:read",
+      "kind": "permission",
+      "desc": "'Department Head' CAN read 'itpmd_risk'",
+      "role": "Department Head"
+    },
+    {
+      "id": "S:Department Head:itpmd_risk:my-team",
+      "kind": "scope",
+      "desc": "'Department Head' on 'itpmd_risk' sees exactly 'my-team' records",
+      "role": "Department Head"
+    },
+    {
+      "id": "P:Project Sponsor:itpmd_risk:read",
+      "kind": "permission",
+      "desc": "'Project Sponsor' CAN read 'itpmd_risk'",
+      "role": "Project Sponsor"
+    },
+    {
+      "id": "S:Project Sponsor:itpmd_risk:my-team",
+      "kind": "scope",
+      "desc": "'Project Sponsor' on 'itpmd_risk' sees exactly 'my-team' records",
+      "role": "Project Sponsor"
+    },
+    {
+      "id": "P:PSC Member:itpmd_risk:read",
+      "kind": "permission",
+      "desc": "'PSC Member' CAN read 'itpmd_risk'",
+      "role": "PSC Member"
+    },
+    {
+      "id": "S:PSC Member:itpmd_risk:all",
+      "kind": "scope",
+      "desc": "'PSC Member' on 'itpmd_risk' sees exactly 'all' records",
+      "role": "PSC Member"
+    },
+    {
+      "id": "P:Project Manager:itpmd_issue:edit",
+      "kind": "permission",
+      "desc": "'Project Manager' CAN edit 'itpmd_issue'",
+      "role": "Project Manager"
+    },
+    {
+      "id": "S:Project Manager:itpmd_issue:my",
+      "kind": "scope",
+      "desc": "'Project Manager' on 'itpmd_issue' sees exactly 'my' records",
+      "role": "Project Manager"
+    },
+    {
+      "id": "P:Team Member:itpmd_issue:edit",
+      "kind": "permission",
+      "desc": "'Team Member' CAN edit 'itpmd_issue'",
+      "role": "Team Member"
+    },
+    {
+      "id": "S:Team Member:itpmd_issue:my",
+      "kind": "scope",
+      "desc": "'Team Member' on 'itpmd_issue' sees exactly 'my' records",
+      "role": "Team Member"
+    },
+    {
+      "id": "P:Department Head:itpmd_issue:read",
+      "kind": "permission",
+      "desc": "'Department Head' CAN read 'itpmd_issue'",
+      "role": "Department Head"
+    },
+    {
+      "id": "S:Department Head:itpmd_issue:my-team",
+      "kind": "scope",
+      "desc": "'Department Head' on 'itpmd_issue' sees exactly 'my-team' records",
+      "role": "Department Head"
+    },
+    {
+      "id": "P:Project Sponsor:itpmd_issue:read",
+      "kind": "permission",
+      "desc": "'Project Sponsor' CAN read 'itpmd_issue'",
+      "role": "Project Sponsor"
+    },
+    {
+      "id": "S:Project Sponsor:itpmd_issue:my-team",
+      "kind": "scope",
+      "desc": "'Project Sponsor' on 'itpmd_issue' sees exactly 'my-team' records",
+      "role": "Project Sponsor"
+    },
+    {
+      "id": "P:PSC Member:itpmd_issue:read",
+      "kind": "permission",
+      "desc": "'PSC Member' CAN read 'itpmd_issue'",
+      "role": "PSC Member"
+    },
+    {
+      "id": "S:PSC Member:itpmd_issue:all",
+      "kind": "scope",
+      "desc": "'PSC Member' on 'itpmd_issue' sees exactly 'all' records",
+      "role": "PSC Member"
+    },
+    {
+      "id": "P:Project Manager:itpmd_action_item:edit",
+      "kind": "permission",
+      "desc": "'Project Manager' CAN edit 'itpmd_action_item'",
+      "role": "Project Manager"
+    },
+    {
+      "id": "S:Project Manager:itpmd_action_item:my",
+      "kind": "scope",
+      "desc": "'Project Manager' on 'itpmd_action_item' sees exactly 'my' records",
+      "role": "Project Manager"
+    },
+    {
+      "id": "P:Team Member:itpmd_action_item:edit",
+      "kind": "permission",
+      "desc": "'Team Member' CAN edit 'itpmd_action_item'",
+      "role": "Team Member"
+    },
+    {
+      "id": "S:Team Member:itpmd_action_item:my",
+      "kind": "scope",
+      "desc": "'Team Member' on 'itpmd_action_item' sees exactly 'my' records",
+      "role": "Team Member"
+    },
+    {
+      "id": "P:Department Head:itpmd_action_item:read",
+      "kind": "permission",
+      "desc": "'Department Head' CAN read 'itpmd_action_item'",
+      "role": "Department Head"
+    },
+    {
+      "id": "S:Department Head:itpmd_action_item:my-team",
+      "kind": "scope",
+      "desc": "'Department Head' on 'itpmd_action_item' sees exactly 'my-team' records",
+      "role": "Department Head"
+    },
+    {
+      "id": "P:Project Sponsor:itpmd_action_item:read",
+      "kind": "permission",
+      "desc": "'Project Sponsor' CAN read 'itpmd_action_item'",
+      "role": "Project Sponsor"
+    },
+    {
+      "id": "S:Project Sponsor:itpmd_action_item:my-team",
+      "kind": "scope",
+      "desc": "'Project Sponsor' on 'itpmd_action_item' sees exactly 'my-team' records",
+      "role": "Project Sponsor"
+    },
+    {
+      "id": "P:PSC Member:itpmd_action_item:read",
+      "kind": "permission",
+      "desc": "'PSC Member' CAN read 'itpmd_action_item'",
+      "role": "PSC Member"
+    },
+    {
+      "id": "S:PSC Member:itpmd_action_item:all",
+      "kind": "scope",
+      "desc": "'PSC Member' on 'itpmd_action_item' sees exactly 'all' records",
+      "role": "PSC Member"
+    },
+    {
+      "id": "P:Project Manager:itpmd_cost_entry:edit",
+      "kind": "permission",
+      "desc": "'Project Manager' CAN edit 'itpmd_cost_entry'",
+      "role": "Project Manager"
+    },
+    {
+      "id": "S:Project Manager:itpmd_cost_entry:my",
+      "kind": "scope",
+      "desc": "'Project Manager' on 'itpmd_cost_entry' sees exactly 'my' records",
+      "role": "Project Manager"
+    },
+    {
+      "id": "P:Department Head:itpmd_cost_entry:read",
+      "kind": "permission",
+      "desc": "'Department Head' CAN read 'itpmd_cost_entry'",
+      "role": "Department Head"
+    },
+    {
+      "id": "S:Department Head:itpmd_cost_entry:my-team",
+      "kind": "scope",
+      "desc": "'Department Head' on 'itpmd_cost_entry' sees exactly 'my-team' records",
+      "role": "Department Head"
+    },
+    {
+      "id": "P:Project Sponsor:itpmd_cost_entry:read",
+      "kind": "permission",
+      "desc": "'Project Sponsor' CAN read 'itpmd_cost_entry'",
+      "role": "Project Sponsor"
+    },
+    {
+      "id": "S:Project Sponsor:itpmd_cost_entry:my-team",
+      "kind": "scope",
+      "desc": "'Project Sponsor' on 'itpmd_cost_entry' sees exactly 'my-team' records",
+      "role": "Project Sponsor"
+    },
+    {
+      "id": "P:PSC Member:itpmd_cost_entry:read",
+      "kind": "permission",
+      "desc": "'PSC Member' CAN read 'itpmd_cost_entry'",
+      "role": "PSC Member"
+    },
+    {
+      "id": "S:PSC Member:itpmd_cost_entry:all",
+      "kind": "scope",
+      "desc": "'PSC Member' on 'itpmd_cost_entry' sees exactly 'all' records",
+      "role": "PSC Member"
+    },
+    {
+      "id": "P:Project Manager:itpmd_psr:edit",
+      "kind": "permission",
+      "desc": "'Project Manager' CAN edit 'itpmd_psr'",
+      "role": "Project Manager"
+    },
+    {
+      "id": "S:Project Manager:itpmd_psr:my",
+      "kind": "scope",
+      "desc": "'Project Manager' on 'itpmd_psr' sees exactly 'my' records",
+      "role": "Project Manager"
+    },
+    {
+      "id": "P:Department Head:itpmd_psr:edit",
+      "kind": "permission",
+      "desc": "'Department Head' CAN edit 'itpmd_psr'",
+      "role": "Department Head"
+    },
+    {
+      "id": "S:Department Head:itpmd_psr:my-team",
+      "kind": "scope",
+      "desc": "'Department Head' on 'itpmd_psr' sees exactly 'my-team' records",
+      "role": "Department Head"
+    },
+    {
+      "id": "P:Project Sponsor:itpmd_psr:edit",
+      "kind": "permission",
+      "desc": "'Project Sponsor' CAN edit 'itpmd_psr'",
+      "role": "Project Sponsor"
+    },
+    {
+      "id": "S:Project Sponsor:itpmd_psr:my-team",
+      "kind": "scope",
+      "desc": "'Project Sponsor' on 'itpmd_psr' sees exactly 'my-team' records",
+      "role": "Project Sponsor"
+    },
+    {
+      "id": "P:Team Member:itpmd_psr:read",
+      "kind": "permission",
+      "desc": "'Team Member' CAN read 'itpmd_psr'",
+      "role": "Team Member"
+    },
+    {
+      "id": "S:Team Member:itpmd_psr:my",
+      "kind": "scope",
+      "desc": "'Team Member' on 'itpmd_psr' sees exactly 'my' records",
+      "role": "Team Member"
+    },
+    {
+      "id": "P:PSC Member:itpmd_psr:edit",
+      "kind": "permission",
+      "desc": "'PSC Member' CAN edit 'itpmd_psr'",
+      "role": "PSC Member"
+    },
+    {
+      "id": "S:PSC Member:itpmd_psr:all",
+      "kind": "scope",
+      "desc": "'PSC Member' on 'itpmd_psr' sees exactly 'all' records",
+      "role": "PSC Member"
+    },
+    {
+      "id": "P:PSC Member:itpmd_portfolio_report:edit",
+      "kind": "permission",
+      "desc": "'PSC Member' CAN edit 'itpmd_portfolio_report'",
+      "role": "PSC Member"
+    },
+    {
+      "id": "S:PSC Member:itpmd_portfolio_report:all",
+      "kind": "scope",
+      "desc": "'PSC Member' on 'itpmd_portfolio_report' sees exactly 'all' records",
+      "role": "PSC Member"
+    },
+    {
+      "id": "P:Department Head:itpmd_portfolio_report:read",
+      "kind": "permission",
+      "desc": "'Department Head' CAN read 'itpmd_portfolio_report'",
+      "role": "Department Head"
+    },
+    {
+      "id": "S:Department Head:itpmd_portfolio_report:all",
+      "kind": "scope",
+      "desc": "'Department Head' on 'itpmd_portfolio_report' sees exactly 'all' records",
+      "role": "Department Head"
+    },
+    {
+      "id": "P:Project Sponsor:itpmd_portfolio_report:read",
+      "kind": "permission",
+      "desc": "'Project Sponsor' CAN read 'itpmd_portfolio_report'",
+      "role": "Project Sponsor"
+    },
+    {
+      "id": "S:Project Sponsor:itpmd_portfolio_report:all",
+      "kind": "scope",
+      "desc": "'Project Sponsor' on 'itpmd_portfolio_report' sees exactly 'all' records",
+      "role": "Project Sponsor"
+    },
+    {
+      "id": "P:Project Manager:itpmd_discussion_message:edit",
+      "kind": "permission",
+      "desc": "'Project Manager' CAN edit 'itpmd_discussion_message'",
+      "role": "Project Manager"
+    },
+    {
+      "id": "S:Project Manager:itpmd_discussion_message:all",
+      "kind": "scope",
+      "desc": "'Project Manager' on 'itpmd_discussion_message' sees exactly 'all' records",
+      "role": "Project Manager"
+    },
+    {
+      "id": "P:Project Manager:itpmd_notification:edit",
+      "kind": "permission",
+      "desc": "'Project Manager' CAN edit 'itpmd_notification'",
+      "role": "Project Manager"
+    },
+    {
+      "id": "S:Project Manager:itpmd_notification:all",
+      "kind": "scope",
+      "desc": "'Project Manager' on 'itpmd_notification' sees exactly 'all' records",
+      "role": "Project Manager"
+    },
+    {
+      "id": "P:Project Manager:itpmd_discussion_read:edit",
+      "kind": "permission",
+      "desc": "'Project Manager' CAN edit 'itpmd_discussion_read'",
+      "role": "Project Manager"
+    },
+    {
+      "id": "S:Project Manager:itpmd_discussion_read:all",
+      "kind": "scope",
+      "desc": "'Project Manager' on 'itpmd_discussion_read' sees exactly 'all' records",
+      "role": "Project Manager"
+    },
+    {
+      "id": "P:Team Member:itpmd_discussion_message:edit",
+      "kind": "permission",
+      "desc": "'Team Member' CAN edit 'itpmd_discussion_message'",
+      "role": "Team Member"
+    },
+    {
+      "id": "S:Team Member:itpmd_discussion_message:all",
+      "kind": "scope",
+      "desc": "'Team Member' on 'itpmd_discussion_message' sees exactly 'all' records",
+      "role": "Team Member"
+    },
+    {
+      "id": "P:Team Member:itpmd_notification:edit",
+      "kind": "permission",
+      "desc": "'Team Member' CAN edit 'itpmd_notification'",
+      "role": "Team Member"
+    },
+    {
+      "id": "S:Team Member:itpmd_notification:all",
+      "kind": "scope",
+      "desc": "'Team Member' on 'itpmd_notification' sees exactly 'all' records",
+      "role": "Team Member"
+    },
+    {
+      "id": "P:Team Member:itpmd_discussion_read:edit",
+      "kind": "permission",
+      "desc": "'Team Member' CAN edit 'itpmd_discussion_read'",
+      "role": "Team Member"
+    },
+    {
+      "id": "S:Team Member:itpmd_discussion_read:all",
+      "kind": "scope",
+      "desc": "'Team Member' on 'itpmd_discussion_read' sees exactly 'all' records",
+      "role": "Team Member"
+    },
+    {
+      "id": "P:Department Head:itpmd_discussion_message:edit",
+      "kind": "permission",
+      "desc": "'Department Head' CAN edit 'itpmd_discussion_message'",
+      "role": "Department Head"
+    },
+    {
+      "id": "S:Department Head:itpmd_discussion_message:all",
+      "kind": "scope",
+      "desc": "'Department Head' on 'itpmd_discussion_message' sees exactly 'all' records",
+      "role": "Department Head"
+    },
+    {
+      "id": "P:Department Head:itpmd_notification:edit",
+      "kind": "permission",
+      "desc": "'Department Head' CAN edit 'itpmd_notification'",
+      "role": "Department Head"
+    },
+    {
+      "id": "S:Department Head:itpmd_notification:all",
+      "kind": "scope",
+      "desc": "'Department Head' on 'itpmd_notification' sees exactly 'all' records",
+      "role": "Department Head"
+    },
+    {
+      "id": "P:Department Head:itpmd_discussion_read:edit",
+      "kind": "permission",
+      "desc": "'Department Head' CAN edit 'itpmd_discussion_read'",
+      "role": "Department Head"
+    },
+    {
+      "id": "S:Department Head:itpmd_discussion_read:all",
+      "kind": "scope",
+      "desc": "'Department Head' on 'itpmd_discussion_read' sees exactly 'all' records",
+      "role": "Department Head"
+    },
+    {
+      "id": "P:Project Sponsor:itpmd_discussion_message:edit",
+      "kind": "permission",
+      "desc": "'Project Sponsor' CAN edit 'itpmd_discussion_message'",
+      "role": "Project Sponsor"
+    },
+    {
+      "id": "S:Project Sponsor:itpmd_discussion_message:all",
+      "kind": "scope",
+      "desc": "'Project Sponsor' on 'itpmd_discussion_message' sees exactly 'all' records",
+      "role": "Project Sponsor"
+    },
+    {
+      "id": "P:Project Sponsor:itpmd_notification:edit",
+      "kind": "permission",
+      "desc": "'Project Sponsor' CAN edit 'itpmd_notification'",
+      "role": "Project Sponsor"
+    },
+    {
+      "id": "S:Project Sponsor:itpmd_notification:all",
+      "kind": "scope",
+      "desc": "'Project Sponsor' on 'itpmd_notification' sees exactly 'all' records",
+      "role": "Project Sponsor"
+    },
+    {
+      "id": "P:Project Sponsor:itpmd_discussion_read:edit",
+      "kind": "permission",
+      "desc": "'Project Sponsor' CAN edit 'itpmd_discussion_read'",
+      "role": "Project Sponsor"
+    },
+    {
+      "id": "S:Project Sponsor:itpmd_discussion_read:all",
+      "kind": "scope",
+      "desc": "'Project Sponsor' on 'itpmd_discussion_read' sees exactly 'all' records",
+      "role": "Project Sponsor"
+    },
+    {
+      "id": "P:PSC Member:itpmd_discussion_message:edit",
+      "kind": "permission",
+      "desc": "'PSC Member' CAN edit 'itpmd_discussion_message'",
+      "role": "PSC Member"
+    },
+    {
+      "id": "S:PSC Member:itpmd_discussion_message:all",
+      "kind": "scope",
+      "desc": "'PSC Member' on 'itpmd_discussion_message' sees exactly 'all' records",
+      "role": "PSC Member"
+    },
+    {
+      "id": "P:PSC Member:itpmd_notification:edit",
+      "kind": "permission",
+      "desc": "'PSC Member' CAN edit 'itpmd_notification'",
+      "role": "PSC Member"
+    },
+    {
+      "id": "S:PSC Member:itpmd_notification:all",
+      "kind": "scope",
+      "desc": "'PSC Member' on 'itpmd_notification' sees exactly 'all' records",
+      "role": "PSC Member"
+    },
+    {
+      "id": "P:PSC Member:itpmd_discussion_read:edit",
+      "kind": "permission",
+      "desc": "'PSC Member' CAN edit 'itpmd_discussion_read'",
+      "role": "PSC Member"
+    },
+    {
+      "id": "S:PSC Member:itpmd_discussion_read:all",
+      "kind": "scope",
+      "desc": "'PSC Member' on 'itpmd_discussion_read' sees exactly 'all' records",
+      "role": "PSC Member"
+    },
+    {
+      "id": "P:Hub Administrator:itpmd_discussion_message:edit",
+      "kind": "permission",
+      "desc": "'Hub Administrator' CAN edit 'itpmd_discussion_message'",
+      "role": "Hub Administrator"
+    },
+    {
+      "id": "S:Hub Administrator:itpmd_discussion_message:all",
+      "kind": "scope",
+      "desc": "'Hub Administrator' on 'itpmd_discussion_message' sees exactly 'all' records",
+      "role": "Hub Administrator"
+    },
+    {
+      "id": "P:Hub Administrator:itpmd_notification:edit",
+      "kind": "permission",
+      "desc": "'Hub Administrator' CAN edit 'itpmd_notification'",
+      "role": "Hub Administrator"
+    },
+    {
+      "id": "S:Hub Administrator:itpmd_notification:all",
+      "kind": "scope",
+      "desc": "'Hub Administrator' on 'itpmd_notification' sees exactly 'all' records",
+      "role": "Hub Administrator"
+    },
+    {
+      "id": "P:Hub Administrator:itpmd_discussion_read:edit",
+      "kind": "permission",
+      "desc": "'Hub Administrator' CAN edit 'itpmd_discussion_read'",
+      "role": "Hub Administrator"
+    },
+    {
+      "id": "S:Hub Administrator:itpmd_discussion_read:all",
+      "kind": "scope",
+      "desc": "'Hub Administrator' on 'itpmd_discussion_read' sees exactly 'all' records",
+      "role": "Hub Administrator"
+    },
+    {
+      "id": "P:TPMO:itpmd_hub_settings:edit",
+      "kind": "permission",
+      "desc": "'TPMO' CAN edit 'itpmd_hub_settings'",
+      "role": "TPMO"
+    },
+    {
+      "id": "S:TPMO:itpmd_hub_settings:all",
+      "kind": "scope",
+      "desc": "'TPMO' on 'itpmd_hub_settings' sees exactly 'all' records",
+      "role": "TPMO"
+    },
+    {
+      "id": "P:TPMO:itpmd_holiday_calendar:edit",
+      "kind": "permission",
+      "desc": "'TPMO' CAN edit 'itpmd_holiday_calendar'",
+      "role": "TPMO"
+    },
+    {
+      "id": "S:TPMO:itpmd_holiday_calendar:all",
+      "kind": "scope",
+      "desc": "'TPMO' on 'itpmd_holiday_calendar' sees exactly 'all' records",
+      "role": "TPMO"
+    },
+    {
+      "id": "P:TPMO:itpmd_project:edit",
+      "kind": "permission",
+      "desc": "'TPMO' CAN edit 'itpmd_project'",
+      "role": "TPMO"
+    },
+    {
+      "id": "S:TPMO:itpmd_project:all",
+      "kind": "scope",
+      "desc": "'TPMO' on 'itpmd_project' sees exactly 'all' records",
+      "role": "TPMO"
+    },
+    {
+      "id": "P:TPMO:itpmd_activity:edit",
+      "kind": "permission",
+      "desc": "'TPMO' CAN edit 'itpmd_activity'",
+      "role": "TPMO"
+    },
+    {
+      "id": "S:TPMO:itpmd_activity:all",
+      "kind": "scope",
+      "desc": "'TPMO' on 'itpmd_activity' sees exactly 'all' records",
+      "role": "TPMO"
+    },
+    {
+      "id": "P:TPMO:itpmd_risk:edit",
+      "kind": "permission",
+      "desc": "'TPMO' CAN edit 'itpmd_risk'",
+      "role": "TPMO"
+    },
+    {
+      "id": "S:TPMO:itpmd_risk:all",
+      "kind": "scope",
+      "desc": "'TPMO' on 'itpmd_risk' sees exactly 'all' records",
+      "role": "TPMO"
+    },
+    {
+      "id": "P:TPMO:itpmd_issue:edit",
+      "kind": "permission",
+      "desc": "'TPMO' CAN edit 'itpmd_issue'",
+      "role": "TPMO"
+    },
+    {
+      "id": "S:TPMO:itpmd_issue:all",
+      "kind": "scope",
+      "desc": "'TPMO' on 'itpmd_issue' sees exactly 'all' records",
+      "role": "TPMO"
+    },
+    {
+      "id": "P:TPMO:itpmd_action_item:edit",
+      "kind": "permission",
+      "desc": "'TPMO' CAN edit 'itpmd_action_item'",
+      "role": "TPMO"
+    },
+    {
+      "id": "S:TPMO:itpmd_action_item:all",
+      "kind": "scope",
+      "desc": "'TPMO' on 'itpmd_action_item' sees exactly 'all' records",
+      "role": "TPMO"
+    },
+    {
+      "id": "P:TPMO:itpmd_cost_entry:edit",
+      "kind": "permission",
+      "desc": "'TPMO' CAN edit 'itpmd_cost_entry'",
+      "role": "TPMO"
+    },
+    {
+      "id": "S:TPMO:itpmd_cost_entry:all",
+      "kind": "scope",
+      "desc": "'TPMO' on 'itpmd_cost_entry' sees exactly 'all' records",
+      "role": "TPMO"
+    },
+    {
+      "id": "P:TPMO:itpmd_psr:edit",
+      "kind": "permission",
+      "desc": "'TPMO' CAN edit 'itpmd_psr'",
+      "role": "TPMO"
+    },
+    {
+      "id": "S:TPMO:itpmd_psr:all",
+      "kind": "scope",
+      "desc": "'TPMO' on 'itpmd_psr' sees exactly 'all' records",
+      "role": "TPMO"
+    },
+    {
+      "id": "P:TPMO:itpmd_portfolio_report:edit",
+      "kind": "permission",
+      "desc": "'TPMO' CAN edit 'itpmd_portfolio_report'",
+      "role": "TPMO"
+    },
+    {
+      "id": "S:TPMO:itpmd_portfolio_report:all",
+      "kind": "scope",
+      "desc": "'TPMO' on 'itpmd_portfolio_report' sees exactly 'all' records",
+      "role": "TPMO"
+    },
+    {
+      "id": "P:TPMO:itpmd_discussion_message:edit",
+      "kind": "permission",
+      "desc": "'TPMO' CAN edit 'itpmd_discussion_message'",
+      "role": "TPMO"
+    },
+    {
+      "id": "S:TPMO:itpmd_discussion_message:all",
+      "kind": "scope",
+      "desc": "'TPMO' on 'itpmd_discussion_message' sees exactly 'all' records",
+      "role": "TPMO"
+    },
+    {
+      "id": "P:TPMO:itpmd_notification:edit",
+      "kind": "permission",
+      "desc": "'TPMO' CAN edit 'itpmd_notification'",
+      "role": "TPMO"
+    },
+    {
+      "id": "S:TPMO:itpmd_notification:all",
+      "kind": "scope",
+      "desc": "'TPMO' on 'itpmd_notification' sees exactly 'all' records",
+      "role": "TPMO"
+    },
+    {
+      "id": "P:TPMO:itpmd_discussion_read:edit",
+      "kind": "permission",
+      "desc": "'TPMO' CAN edit 'itpmd_discussion_read'",
+      "role": "TPMO"
+    },
+    {
+      "id": "S:TPMO:itpmd_discussion_read:all",
+      "kind": "scope",
+      "desc": "'TPMO' on 'itpmd_discussion_read' sees exactly 'all' records",
+      "role": "TPMO"
+    },
+    {
+      "id": "P:Project Manager:itpmd_baseline:edit",
+      "kind": "permission",
+      "desc": "'Project Manager' CAN edit 'itpmd_baseline'",
+      "role": "Project Manager"
+    },
+    {
+      "id": "S:Project Manager:itpmd_baseline:all",
+      "kind": "scope",
+      "desc": "'Project Manager' on 'itpmd_baseline' sees exactly 'all' records",
+      "role": "Project Manager"
+    },
+    {
+      "id": "P:Project Manager:itpmd_program:edit",
+      "kind": "permission",
+      "desc": "'Project Manager' CAN edit 'itpmd_program'",
+      "role": "Project Manager"
+    },
+    {
+      "id": "S:Project Manager:itpmd_program:all",
+      "kind": "scope",
+      "desc": "'Project Manager' on 'itpmd_program' sees exactly 'all' records",
+      "role": "Project Manager"
+    },
+    {
+      "id": "P:Team Member:itpmd_baseline:edit",
+      "kind": "permission",
+      "desc": "'Team Member' CAN edit 'itpmd_baseline'",
+      "role": "Team Member"
+    },
+    {
+      "id": "S:Team Member:itpmd_baseline:all",
+      "kind": "scope",
+      "desc": "'Team Member' on 'itpmd_baseline' sees exactly 'all' records",
+      "role": "Team Member"
+    },
+    {
+      "id": "P:Team Member:itpmd_program:edit",
+      "kind": "permission",
+      "desc": "'Team Member' CAN edit 'itpmd_program'",
+      "role": "Team Member"
+    },
+    {
+      "id": "S:Team Member:itpmd_program:all",
+      "kind": "scope",
+      "desc": "'Team Member' on 'itpmd_program' sees exactly 'all' records",
+      "role": "Team Member"
+    },
+    {
+      "id": "P:Department Head:itpmd_baseline:edit",
+      "kind": "permission",
+      "desc": "'Department Head' CAN edit 'itpmd_baseline'",
+      "role": "Department Head"
+    },
+    {
+      "id": "S:Department Head:itpmd_baseline:all",
+      "kind": "scope",
+      "desc": "'Department Head' on 'itpmd_baseline' sees exactly 'all' records",
+      "role": "Department Head"
+    },
+    {
+      "id": "P:Department Head:itpmd_program:edit",
+      "kind": "permission",
+      "desc": "'Department Head' CAN edit 'itpmd_program'",
+      "role": "Department Head"
+    },
+    {
+      "id": "S:Department Head:itpmd_program:all",
+      "kind": "scope",
+      "desc": "'Department Head' on 'itpmd_program' sees exactly 'all' records",
+      "role": "Department Head"
+    },
+    {
+      "id": "P:Project Sponsor:itpmd_baseline:edit",
+      "kind": "permission",
+      "desc": "'Project Sponsor' CAN edit 'itpmd_baseline'",
+      "role": "Project Sponsor"
+    },
+    {
+      "id": "S:Project Sponsor:itpmd_baseline:all",
+      "kind": "scope",
+      "desc": "'Project Sponsor' on 'itpmd_baseline' sees exactly 'all' records",
+      "role": "Project Sponsor"
+    },
+    {
+      "id": "P:Project Sponsor:itpmd_program:edit",
+      "kind": "permission",
+      "desc": "'Project Sponsor' CAN edit 'itpmd_program'",
+      "role": "Project Sponsor"
+    },
+    {
+      "id": "S:Project Sponsor:itpmd_program:all",
+      "kind": "scope",
+      "desc": "'Project Sponsor' on 'itpmd_program' sees exactly 'all' records",
+      "role": "Project Sponsor"
+    },
+    {
+      "id": "P:PSC Member:itpmd_baseline:edit",
+      "kind": "permission",
+      "desc": "'PSC Member' CAN edit 'itpmd_baseline'",
+      "role": "PSC Member"
+    },
+    {
+      "id": "S:PSC Member:itpmd_baseline:all",
+      "kind": "scope",
+      "desc": "'PSC Member' on 'itpmd_baseline' sees exactly 'all' records",
+      "role": "PSC Member"
+    },
+    {
+      "id": "P:PSC Member:itpmd_program:edit",
+      "kind": "permission",
+      "desc": "'PSC Member' CAN edit 'itpmd_program'",
+      "role": "PSC Member"
+    },
+    {
+      "id": "S:PSC Member:itpmd_program:all",
+      "kind": "scope",
+      "desc": "'PSC Member' on 'itpmd_program' sees exactly 'all' records",
+      "role": "PSC Member"
+    },
+    {
+      "id": "P:Hub Administrator:itpmd_baseline:edit",
+      "kind": "permission",
+      "desc": "'Hub Administrator' CAN edit 'itpmd_baseline'",
+      "role": "Hub Administrator"
+    },
+    {
+      "id": "S:Hub Administrator:itpmd_baseline:all",
+      "kind": "scope",
+      "desc": "'Hub Administrator' on 'itpmd_baseline' sees exactly 'all' records",
+      "role": "Hub Administrator"
+    },
+    {
+      "id": "P:Hub Administrator:itpmd_program:edit",
+      "kind": "permission",
+      "desc": "'Hub Administrator' CAN edit 'itpmd_program'",
+      "role": "Hub Administrator"
+    },
+    {
+      "id": "S:Hub Administrator:itpmd_program:all",
+      "kind": "scope",
+      "desc": "'Hub Administrator' on 'itpmd_program' sees exactly 'all' records",
+      "role": "Hub Administrator"
+    },
+    {
+      "id": "P:TPMO:itpmd_baseline:edit",
+      "kind": "permission",
+      "desc": "'TPMO' CAN edit 'itpmd_baseline'",
+      "role": "TPMO"
+    },
+    {
+      "id": "S:TPMO:itpmd_baseline:all",
+      "kind": "scope",
+      "desc": "'TPMO' on 'itpmd_baseline' sees exactly 'all' records",
+      "role": "TPMO"
+    },
+    {
+      "id": "P:TPMO:itpmd_program:edit",
+      "kind": "permission",
+      "desc": "'TPMO' CAN edit 'itpmd_program'",
+      "role": "TPMO"
+    },
+    {
+      "id": "S:TPMO:itpmd_program:all",
+      "kind": "scope",
+      "desc": "'TPMO' on 'itpmd_program' sees exactly 'all' records",
+      "role": "TPMO"
+    },
+    {
+      "id": "P:Project Manager:itpmd_binder_item:edit",
+      "kind": "permission",
+      "desc": "'Project Manager' CAN edit 'itpmd_binder_item'",
+      "role": "Project Manager"
+    },
+    {
+      "id": "S:Project Manager:itpmd_binder_item:all",
+      "kind": "scope",
+      "desc": "'Project Manager' on 'itpmd_binder_item' sees exactly 'all' records",
+      "role": "Project Manager"
+    },
+    {
+      "id": "P:Team Member:itpmd_binder_item:edit",
+      "kind": "permission",
+      "desc": "'Team Member' CAN edit 'itpmd_binder_item'",
+      "role": "Team Member"
+    },
+    {
+      "id": "S:Team Member:itpmd_binder_item:all",
+      "kind": "scope",
+      "desc": "'Team Member' on 'itpmd_binder_item' sees exactly 'all' records",
+      "role": "Team Member"
+    },
+    {
+      "id": "P:Department Head:itpmd_binder_item:edit",
+      "kind": "permission",
+      "desc": "'Department Head' CAN edit 'itpmd_binder_item'",
+      "role": "Department Head"
+    },
+    {
+      "id": "S:Department Head:itpmd_binder_item:all",
+      "kind": "scope",
+      "desc": "'Department Head' on 'itpmd_binder_item' sees exactly 'all' records",
+      "role": "Department Head"
+    },
+    {
+      "id": "P:Project Sponsor:itpmd_binder_item:edit",
+      "kind": "permission",
+      "desc": "'Project Sponsor' CAN edit 'itpmd_binder_item'",
+      "role": "Project Sponsor"
+    },
+    {
+      "id": "S:Project Sponsor:itpmd_binder_item:all",
+      "kind": "scope",
+      "desc": "'Project Sponsor' on 'itpmd_binder_item' sees exactly 'all' records",
+      "role": "Project Sponsor"
+    },
+    {
+      "id": "P:PSC Member:itpmd_binder_item:edit",
+      "kind": "permission",
+      "desc": "'PSC Member' CAN edit 'itpmd_binder_item'",
+      "role": "PSC Member"
+    },
+    {
+      "id": "S:PSC Member:itpmd_binder_item:all",
+      "kind": "scope",
+      "desc": "'PSC Member' on 'itpmd_binder_item' sees exactly 'all' records",
+      "role": "PSC Member"
+    },
+    {
+      "id": "P:Hub Administrator:itpmd_binder_item:edit",
+      "kind": "permission",
+      "desc": "'Hub Administrator' CAN edit 'itpmd_binder_item'",
+      "role": "Hub Administrator"
+    },
+    {
+      "id": "S:Hub Administrator:itpmd_binder_item:all",
+      "kind": "scope",
+      "desc": "'Hub Administrator' on 'itpmd_binder_item' sees exactly 'all' records",
+      "role": "Hub Administrator"
+    },
+    {
+      "id": "P:TPMO:itpmd_binder_item:edit",
+      "kind": "permission",
+      "desc": "'TPMO' CAN edit 'itpmd_binder_item'",
+      "role": "TPMO"
+    },
+    {
+      "id": "S:TPMO:itpmd_binder_item:all",
+      "kind": "scope",
+      "desc": "'TPMO' on 'itpmd_binder_item' sees exactly 'all' records",
+      "role": "TPMO"
+    },
+    {
+      "id": "P:Project Manager:itpmd_weekly_report:edit",
+      "kind": "permission",
+      "desc": "'Project Manager' CAN edit 'itpmd_weekly_report'",
+      "role": "Project Manager"
+    },
+    {
+      "id": "S:Project Manager:itpmd_weekly_report:all",
+      "kind": "scope",
+      "desc": "'Project Manager' on 'itpmd_weekly_report' sees exactly 'all' records",
+      "role": "Project Manager"
+    },
+    {
+      "id": "P:Team Member:itpmd_weekly_report:edit",
+      "kind": "permission",
+      "desc": "'Team Member' CAN edit 'itpmd_weekly_report'",
+      "role": "Team Member"
+    },
+    {
+      "id": "S:Team Member:itpmd_weekly_report:all",
+      "kind": "scope",
+      "desc": "'Team Member' on 'itpmd_weekly_report' sees exactly 'all' records",
+      "role": "Team Member"
+    },
+    {
+      "id": "P:Department Head:itpmd_weekly_report:edit",
+      "kind": "permission",
+      "desc": "'Department Head' CAN edit 'itpmd_weekly_report'",
+      "role": "Department Head"
+    },
+    {
+      "id": "S:Department Head:itpmd_weekly_report:all",
+      "kind": "scope",
+      "desc": "'Department Head' on 'itpmd_weekly_report' sees exactly 'all' records",
+      "role": "Department Head"
+    },
+    {
+      "id": "P:Project Sponsor:itpmd_weekly_report:edit",
+      "kind": "permission",
+      "desc": "'Project Sponsor' CAN edit 'itpmd_weekly_report'",
+      "role": "Project Sponsor"
+    },
+    {
+      "id": "S:Project Sponsor:itpmd_weekly_report:all",
+      "kind": "scope",
+      "desc": "'Project Sponsor' on 'itpmd_weekly_report' sees exactly 'all' records",
+      "role": "Project Sponsor"
+    },
+    {
+      "id": "P:PSC Member:itpmd_weekly_report:edit",
+      "kind": "permission",
+      "desc": "'PSC Member' CAN edit 'itpmd_weekly_report'",
+      "role": "PSC Member"
+    },
+    {
+      "id": "S:PSC Member:itpmd_weekly_report:all",
+      "kind": "scope",
+      "desc": "'PSC Member' on 'itpmd_weekly_report' sees exactly 'all' records",
+      "role": "PSC Member"
+    },
+    {
+      "id": "P:Hub Administrator:itpmd_weekly_report:edit",
+      "kind": "permission",
+      "desc": "'Hub Administrator' CAN edit 'itpmd_weekly_report'",
+      "role": "Hub Administrator"
+    },
+    {
+      "id": "S:Hub Administrator:itpmd_weekly_report:all",
+      "kind": "scope",
+      "desc": "'Hub Administrator' on 'itpmd_weekly_report' sees exactly 'all' records",
+      "role": "Hub Administrator"
+    },
+    {
+      "id": "P:TPMO:itpmd_weekly_report:edit",
+      "kind": "permission",
+      "desc": "'TPMO' CAN edit 'itpmd_weekly_report'",
+      "role": "TPMO"
+    },
+    {
+      "id": "S:TPMO:itpmd_weekly_report:all",
+      "kind": "scope",
+      "desc": "'TPMO' on 'itpmd_weekly_report' sees exactly 'all' records",
+      "role": "TPMO"
+    },
+    {
+      "id": "P:Project Manager:itpmd_release:edit",
+      "kind": "permission",
+      "desc": "'Project Manager' CAN edit 'itpmd_release'",
+      "role": "Project Manager"
+    },
+    {
+      "id": "S:Project Manager:itpmd_release:all",
+      "kind": "scope",
+      "desc": "'Project Manager' on 'itpmd_release' sees exactly 'all' records",
+      "role": "Project Manager"
+    },
+    {
+      "id": "P:Team Member:itpmd_release:edit",
+      "kind": "permission",
+      "desc": "'Team Member' CAN edit 'itpmd_release'",
+      "role": "Team Member"
+    },
+    {
+      "id": "S:Team Member:itpmd_release:all",
+      "kind": "scope",
+      "desc": "'Team Member' on 'itpmd_release' sees exactly 'all' records",
+      "role": "Team Member"
+    },
+    {
+      "id": "P:Department Head:itpmd_release:edit",
+      "kind": "permission",
+      "desc": "'Department Head' CAN edit 'itpmd_release'",
+      "role": "Department Head"
+    },
+    {
+      "id": "S:Department Head:itpmd_release:all",
+      "kind": "scope",
+      "desc": "'Department Head' on 'itpmd_release' sees exactly 'all' records",
+      "role": "Department Head"
+    },
+    {
+      "id": "P:Project Sponsor:itpmd_release:edit",
+      "kind": "permission",
+      "desc": "'Project Sponsor' CAN edit 'itpmd_release'",
+      "role": "Project Sponsor"
+    },
+    {
+      "id": "S:Project Sponsor:itpmd_release:all",
+      "kind": "scope",
+      "desc": "'Project Sponsor' on 'itpmd_release' sees exactly 'all' records",
+      "role": "Project Sponsor"
+    },
+    {
+      "id": "P:PSC Member:itpmd_release:edit",
+      "kind": "permission",
+      "desc": "'PSC Member' CAN edit 'itpmd_release'",
+      "role": "PSC Member"
+    },
+    {
+      "id": "S:PSC Member:itpmd_release:all",
+      "kind": "scope",
+      "desc": "'PSC Member' on 'itpmd_release' sees exactly 'all' records",
+      "role": "PSC Member"
+    },
+    {
+      "id": "P:Hub Administrator:itpmd_release:edit",
+      "kind": "permission",
+      "desc": "'Hub Administrator' CAN edit 'itpmd_release'",
+      "role": "Hub Administrator"
+    },
+    {
+      "id": "S:Hub Administrator:itpmd_release:all",
+      "kind": "scope",
+      "desc": "'Hub Administrator' on 'itpmd_release' sees exactly 'all' records",
+      "role": "Hub Administrator"
+    },
+    {
+      "id": "P:TPMO:itpmd_release:edit",
+      "kind": "permission",
+      "desc": "'TPMO' CAN edit 'itpmd_release'",
+      "role": "TPMO"
+    },
+    {
+      "id": "S:TPMO:itpmd_release:all",
+      "kind": "scope",
+      "desc": "'TPMO' on 'itpmd_release' sees exactly 'all' records",
+      "role": "TPMO"
+    },
+    {
+      "id": "P:Project Manager:itpmd_template:edit",
+      "kind": "permission",
+      "desc": "'Project Manager' CAN edit 'itpmd_template'",
+      "role": "Project Manager"
+    },
+    {
+      "id": "S:Project Manager:itpmd_template:all",
+      "kind": "scope",
+      "desc": "'Project Manager' on 'itpmd_template' sees exactly 'all' records",
+      "role": "Project Manager"
+    },
+    {
+      "id": "P:Team Member:itpmd_template:edit",
+      "kind": "permission",
+      "desc": "'Team Member' CAN edit 'itpmd_template'",
+      "role": "Team Member"
+    },
+    {
+      "id": "S:Team Member:itpmd_template:all",
+      "kind": "scope",
+      "desc": "'Team Member' on 'itpmd_template' sees exactly 'all' records",
+      "role": "Team Member"
+    },
+    {
+      "id": "P:Department Head:itpmd_template:edit",
+      "kind": "permission",
+      "desc": "'Department Head' CAN edit 'itpmd_template'",
+      "role": "Department Head"
+    },
+    {
+      "id": "S:Department Head:itpmd_template:all",
+      "kind": "scope",
+      "desc": "'Department Head' on 'itpmd_template' sees exactly 'all' records",
+      "role": "Department Head"
+    },
+    {
+      "id": "P:Project Sponsor:itpmd_template:edit",
+      "kind": "permission",
+      "desc": "'Project Sponsor' CAN edit 'itpmd_template'",
+      "role": "Project Sponsor"
+    },
+    {
+      "id": "S:Project Sponsor:itpmd_template:all",
+      "kind": "scope",
+      "desc": "'Project Sponsor' on 'itpmd_template' sees exactly 'all' records",
+      "role": "Project Sponsor"
+    },
+    {
+      "id": "P:PSC Member:itpmd_template:edit",
+      "kind": "permission",
+      "desc": "'PSC Member' CAN edit 'itpmd_template'",
+      "role": "PSC Member"
+    },
+    {
+      "id": "S:PSC Member:itpmd_template:all",
+      "kind": "scope",
+      "desc": "'PSC Member' on 'itpmd_template' sees exactly 'all' records",
+      "role": "PSC Member"
+    },
+    {
+      "id": "P:Hub Administrator:itpmd_template:edit",
+      "kind": "permission",
+      "desc": "'Hub Administrator' CAN edit 'itpmd_template'",
+      "role": "Hub Administrator"
+    },
+    {
+      "id": "S:Hub Administrator:itpmd_template:all",
+      "kind": "scope",
+      "desc": "'Hub Administrator' on 'itpmd_template' sees exactly 'all' records",
+      "role": "Hub Administrator"
+    },
+    {
+      "id": "P:TPMO:itpmd_template:edit",
+      "kind": "permission",
+      "desc": "'TPMO' CAN edit 'itpmd_template'",
+      "role": "TPMO"
+    },
+    {
+      "id": "S:TPMO:itpmd_template:all",
+      "kind": "scope",
+      "desc": "'TPMO' on 'itpmd_template' sees exactly 'all' records",
+      "role": "TPMO"
+    },
+    {
+      "id": "P:Hub Administrator:itpmd_project:edit",
+      "kind": "permission",
+      "desc": "'Hub Administrator' CAN edit 'itpmd_project'",
+      "role": "Hub Administrator"
+    },
+    {
+      "id": "S:Hub Administrator:itpmd_project:all",
+      "kind": "scope",
+      "desc": "'Hub Administrator' on 'itpmd_project' sees exactly 'all' records",
+      "role": "Hub Administrator"
+    },
+    {
+      "id": "P:Hub Administrator:itpmd_activity:edit",
+      "kind": "permission",
+      "desc": "'Hub Administrator' CAN edit 'itpmd_activity'",
+      "role": "Hub Administrator"
+    },
+    {
+      "id": "S:Hub Administrator:itpmd_activity:all",
+      "kind": "scope",
+      "desc": "'Hub Administrator' on 'itpmd_activity' sees exactly 'all' records",
+      "role": "Hub Administrator"
+    },
+    {
+      "id": "D:Project Manager:ITPMD Hub Settings",
+      "kind": "denial",
+      "desc": "'Project Manager' must NOT access 'ITPMD Hub Settings' (no grant in the matrix)",
+      "role": "Project Manager"
+    },
+    {
+      "id": "D:Project Manager:ITPMD Holiday Calendar",
+      "kind": "denial",
+      "desc": "'Project Manager' must NOT access 'ITPMD Holiday Calendar' (no grant in the matrix)",
+      "role": "Project Manager"
+    },
+    {
+      "id": "D:Project Manager:ITPMD Portfolio Status Report",
+      "kind": "denial",
+      "desc": "'Project Manager' must NOT access 'ITPMD Portfolio Status Report' (no grant in the matrix)",
+      "role": "Project Manager"
+    },
+    {
+      "id": "D:Project Manager:ITPMD Project Contracts",
+      "kind": "denial",
+      "desc": "'Project Manager' must NOT access 'ITPMD Project Contracts' (no grant in the matrix)",
+      "role": "Project Manager"
+    },
+    {
+      "id": "D:Project Manager:ITPMD Project Project Team",
+      "kind": "denial",
+      "desc": "'Project Manager' must NOT access 'ITPMD Project Project Team' (no grant in the matrix)",
+      "role": "Project Manager"
+    },
+    {
+      "id": "D:Project Manager:ITPMD Project Budget Changes",
+      "kind": "denial",
+      "desc": "'Project Manager' must NOT access 'ITPMD Project Budget Changes' (no grant in the matrix)",
+      "role": "Project Manager"
+    },
+    {
+      "id": "D:Project Manager:ITPMD Project Baseline History",
+      "kind": "denial",
+      "desc": "'Project Manager' must NOT access 'ITPMD Project Baseline History' (no grant in the matrix)",
+      "role": "Project Manager"
+    },
+    {
+      "id": "D:Project Manager:ITPMD Project Decision Log",
+      "kind": "denial",
+      "desc": "'Project Manager' must NOT access 'ITPMD Project Decision Log' (no grant in the matrix)",
+      "role": "Project Manager"
+    },
+    {
+      "id": "D:Project Manager:ITPMD Activity Predecessors",
+      "kind": "denial",
+      "desc": "'Project Manager' must NOT access 'ITPMD Activity Predecessors' (no grant in the matrix)",
+      "role": "Project Manager"
+    },
+    {
+      "id": "D:Project Manager:ITPMD Cost Entry Invoices",
+      "kind": "denial",
+      "desc": "'Project Manager' must NOT access 'ITPMD Cost Entry Invoices' (no grant in the matrix)",
+      "role": "Project Manager"
+    },
+    {
+      "id": "D:Project Manager:ITPMD Project Status Report Schedule Highlights",
+      "kind": "denial",
+      "desc": "'Project Manager' must NOT access 'ITPMD Project Status Report Schedule Highlights' (no grant in the matrix)",
+      "role": "Project Manager"
+    },
+    {
+      "id": "D:Project Manager:ITPMD Project Status Report Next Period Plan",
+      "kind": "denial",
+      "desc": "'Project Manager' must NOT access 'ITPMD Project Status Report Next Period Plan' (no grant in the matrix)",
+      "role": "Project Manager"
+    },
+    {
+      "id": "D:Project Manager:ITPMD Project Status Report Key Issues and Risks",
+      "kind": "denial",
+      "desc": "'Project Manager' must NOT access 'ITPMD Project Status Report Key Issues and Risks' (no grant in the matrix)",
+      "role": "Project Manager"
+    },
+    {
+      "id": "D:Project Manager:ITPMD Portfolio Status Report Project Summaries",
+      "kind": "denial",
+      "desc": "'Project Manager' must NOT access 'ITPMD Portfolio Status Report Project Summaries' (no grant in the matrix)",
+      "role": "Project Manager"
+    },
+    {
+      "id": "D:Team Member:ITPMD Hub Settings",
+      "kind": "denial",
+      "desc": "'Team Member' must NOT access 'ITPMD Hub Settings' (no grant in the matrix)",
+      "role": "Team Member"
+    },
+    {
+      "id": "D:Team Member:ITPMD Holiday Calendar",
+      "kind": "denial",
+      "desc": "'Team Member' must NOT access 'ITPMD Holiday Calendar' (no grant in the matrix)",
+      "role": "Team Member"
+    },
+    {
+      "id": "D:Team Member:ITPMD Cost Entry",
+      "kind": "denial",
+      "desc": "'Team Member' must NOT access 'ITPMD Cost Entry' (no grant in the matrix)",
+      "role": "Team Member"
+    },
+    {
+      "id": "D:Team Member:ITPMD Portfolio Status Report",
+      "kind": "denial",
+      "desc": "'Team Member' must NOT access 'ITPMD Portfolio Status Report' (no grant in the matrix)",
+      "role": "Team Member"
+    },
+    {
+      "id": "D:Team Member:ITPMD Project Contracts",
+      "kind": "denial",
+      "desc": "'Team Member' must NOT access 'ITPMD Project Contracts' (no grant in the matrix)",
+      "role": "Team Member"
+    },
+    {
+      "id": "D:Team Member:ITPMD Project Project Team",
+      "kind": "denial",
+      "desc": "'Team Member' must NOT access 'ITPMD Project Project Team' (no grant in the matrix)",
+      "role": "Team Member"
+    },
+    {
+      "id": "D:Team Member:ITPMD Project Budget Changes",
+      "kind": "denial",
+      "desc": "'Team Member' must NOT access 'ITPMD Project Budget Changes' (no grant in the matrix)",
+      "role": "Team Member"
+    },
+    {
+      "id": "D:Team Member:ITPMD Project Baseline History",
+      "kind": "denial",
+      "desc": "'Team Member' must NOT access 'ITPMD Project Baseline History' (no grant in the matrix)",
+      "role": "Team Member"
+    },
+    {
+      "id": "D:Team Member:ITPMD Project Decision Log",
+      "kind": "denial",
+      "desc": "'Team Member' must NOT access 'ITPMD Project Decision Log' (no grant in the matrix)",
+      "role": "Team Member"
+    },
+    {
+      "id": "D:Team Member:ITPMD Activity Predecessors",
+      "kind": "denial",
+      "desc": "'Team Member' must NOT access 'ITPMD Activity Predecessors' (no grant in the matrix)",
+      "role": "Team Member"
+    },
+    {
+      "id": "D:Team Member:ITPMD Cost Entry Invoices",
+      "kind": "denial",
+      "desc": "'Team Member' must NOT access 'ITPMD Cost Entry Invoices' (no grant in the matrix)",
+      "role": "Team Member"
+    },
+    {
+      "id": "D:Team Member:ITPMD Project Status Report Schedule Highlights",
+      "kind": "denial",
+      "desc": "'Team Member' must NOT access 'ITPMD Project Status Report Schedule Highlights' (no grant in the matrix)",
+      "role": "Team Member"
+    },
+    {
+      "id": "D:Team Member:ITPMD Project Status Report Next Period Plan",
+      "kind": "denial",
+      "desc": "'Team Member' must NOT access 'ITPMD Project Status Report Next Period Plan' (no grant in the matrix)",
+      "role": "Team Member"
+    },
+    {
+      "id": "D:Team Member:ITPMD Project Status Report Key Issues and Risks",
+      "kind": "denial",
+      "desc": "'Team Member' must NOT access 'ITPMD Project Status Report Key Issues and Risks' (no grant in the matrix)",
+      "role": "Team Member"
+    },
+    {
+      "id": "D:Team Member:ITPMD Portfolio Status Report Project Summaries",
+      "kind": "denial",
+      "desc": "'Team Member' must NOT access 'ITPMD Portfolio Status Report Project Summaries' (no grant in the matrix)",
+      "role": "Team Member"
+    },
+    {
+      "id": "D:Department Head:ITPMD Hub Settings",
+      "kind": "denial",
+      "desc": "'Department Head' must NOT access 'ITPMD Hub Settings' (no grant in the matrix)",
+      "role": "Department Head"
+    },
+    {
+      "id": "D:Department Head:ITPMD Holiday Calendar",
+      "kind": "denial",
+      "desc": "'Department Head' must NOT access 'ITPMD Holiday Calendar' (no grant in the matrix)",
+      "role": "Department Head"
+    },
+    {
+      "id": "D:Department Head:ITPMD Project Contracts",
+      "kind": "denial",
+      "desc": "'Department Head' must NOT access 'ITPMD Project Contracts' (no grant in the matrix)",
+      "role": "Department Head"
+    },
+    {
+      "id": "D:Department Head:ITPMD Project Project Team",
+      "kind": "denial",
+      "desc": "'Department Head' must NOT access 'ITPMD Project Project Team' (no grant in the matrix)",
+      "role": "Department Head"
+    },
+    {
+      "id": "D:Department Head:ITPMD Project Budget Changes",
+      "kind": "denial",
+      "desc": "'Department Head' must NOT access 'ITPMD Project Budget Changes' (no grant in the matrix)",
+      "role": "Department Head"
+    },
+    {
+      "id": "D:Department Head:ITPMD Project Baseline History",
+      "kind": "denial",
+      "desc": "'Department Head' must NOT access 'ITPMD Project Baseline History' (no grant in the matrix)",
+      "role": "Department Head"
+    },
+    {
+      "id": "D:Department Head:ITPMD Project Decision Log",
+      "kind": "denial",
+      "desc": "'Department Head' must NOT access 'ITPMD Project Decision Log' (no grant in the matrix)",
+      "role": "Department Head"
+    },
+    {
+      "id": "D:Department Head:ITPMD Activity Predecessors",
+      "kind": "denial",
+      "desc": "'Department Head' must NOT access 'ITPMD Activity Predecessors' (no grant in the matrix)",
+      "role": "Department Head"
+    },
+    {
+      "id": "D:Department Head:ITPMD Cost Entry Invoices",
+      "kind": "denial",
+      "desc": "'Department Head' must NOT access 'ITPMD Cost Entry Invoices' (no grant in the matrix)",
+      "role": "Department Head"
+    },
+    {
+      "id": "D:Department Head:ITPMD Project Status Report Schedule Highlights",
+      "kind": "denial",
+      "desc": "'Department Head' must NOT access 'ITPMD Project Status Report Schedule Highlights' (no grant in the matrix)",
+      "role": "Department Head"
+    },
+    {
+      "id": "D:Department Head:ITPMD Project Status Report Next Period Plan",
+      "kind": "denial",
+      "desc": "'Department Head' must NOT access 'ITPMD Project Status Report Next Period Plan' (no grant in the matrix)",
+      "role": "Department Head"
+    },
+    {
+      "id": "D:Department Head:ITPMD Project Status Report Key Issues and Risks",
+      "kind": "denial",
+      "desc": "'Department Head' must NOT access 'ITPMD Project Status Report Key Issues and Risks' (no grant in the matrix)",
+      "role": "Department Head"
+    },
+    {
+      "id": "D:Department Head:ITPMD Portfolio Status Report Project Summaries",
+      "kind": "denial",
+      "desc": "'Department Head' must NOT access 'ITPMD Portfolio Status Report Project Summaries' (no grant in the matrix)",
+      "role": "Department Head"
+    },
+    {
+      "id": "D:Project Sponsor:ITPMD Hub Settings",
+      "kind": "denial",
+      "desc": "'Project Sponsor' must NOT access 'ITPMD Hub Settings' (no grant in the matrix)",
+      "role": "Project Sponsor"
+    },
+    {
+      "id": "D:Project Sponsor:ITPMD Holiday Calendar",
+      "kind": "denial",
+      "desc": "'Project Sponsor' must NOT access 'ITPMD Holiday Calendar' (no grant in the matrix)",
+      "role": "Project Sponsor"
+    },
+    {
+      "id": "D:Project Sponsor:ITPMD Project Contracts",
+      "kind": "denial",
+      "desc": "'Project Sponsor' must NOT access 'ITPMD Project Contracts' (no grant in the matrix)",
+      "role": "Project Sponsor"
+    },
+    {
+      "id": "D:Project Sponsor:ITPMD Project Project Team",
+      "kind": "denial",
+      "desc": "'Project Sponsor' must NOT access 'ITPMD Project Project Team' (no grant in the matrix)",
+      "role": "Project Sponsor"
+    },
+    {
+      "id": "D:Project Sponsor:ITPMD Project Budget Changes",
+      "kind": "denial",
+      "desc": "'Project Sponsor' must NOT access 'ITPMD Project Budget Changes' (no grant in the matrix)",
+      "role": "Project Sponsor"
+    },
+    {
+      "id": "D:Project Sponsor:ITPMD Project Baseline History",
+      "kind": "denial",
+      "desc": "'Project Sponsor' must NOT access 'ITPMD Project Baseline History' (no grant in the matrix)",
+      "role": "Project Sponsor"
+    },
+    {
+      "id": "D:Project Sponsor:ITPMD Project Decision Log",
+      "kind": "denial",
+      "desc": "'Project Sponsor' must NOT access 'ITPMD Project Decision Log' (no grant in the matrix)",
+      "role": "Project Sponsor"
+    },
+    {
+      "id": "D:Project Sponsor:ITPMD Activity Predecessors",
+      "kind": "denial",
+      "desc": "'Project Sponsor' must NOT access 'ITPMD Activity Predecessors' (no grant in the matrix)",
+      "role": "Project Sponsor"
+    },
+    {
+      "id": "D:Project Sponsor:ITPMD Cost Entry Invoices",
+      "kind": "denial",
+      "desc": "'Project Sponsor' must NOT access 'ITPMD Cost Entry Invoices' (no grant in the matrix)",
+      "role": "Project Sponsor"
+    },
+    {
+      "id": "D:Project Sponsor:ITPMD Project Status Report Schedule Highlights",
+      "kind": "denial",
+      "desc": "'Project Sponsor' must NOT access 'ITPMD Project Status Report Schedule Highlights' (no grant in the matrix)",
+      "role": "Project Sponsor"
+    },
+    {
+      "id": "D:Project Sponsor:ITPMD Project Status Report Next Period Plan",
+      "kind": "denial",
+      "desc": "'Project Sponsor' must NOT access 'ITPMD Project Status Report Next Period Plan' (no grant in the matrix)",
+      "role": "Project Sponsor"
+    },
+    {
+      "id": "D:Project Sponsor:ITPMD Project Status Report Key Issues and Risks",
+      "kind": "denial",
+      "desc": "'Project Sponsor' must NOT access 'ITPMD Project Status Report Key Issues and Risks' (no grant in the matrix)",
+      "role": "Project Sponsor"
+    },
+    {
+      "id": "D:Project Sponsor:ITPMD Portfolio Status Report Project Summaries",
+      "kind": "denial",
+      "desc": "'Project Sponsor' must NOT access 'ITPMD Portfolio Status Report Project Summaries' (no grant in the matrix)",
+      "role": "Project Sponsor"
+    },
+    {
+      "id": "D:PSC Member:ITPMD Hub Settings",
+      "kind": "denial",
+      "desc": "'PSC Member' must NOT access 'ITPMD Hub Settings' (no grant in the matrix)",
+      "role": "PSC Member"
+    },
+    {
+      "id": "D:PSC Member:ITPMD Holiday Calendar",
+      "kind": "denial",
+      "desc": "'PSC Member' must NOT access 'ITPMD Holiday Calendar' (no grant in the matrix)",
+      "role": "PSC Member"
+    },
+    {
+      "id": "D:PSC Member:ITPMD Project Contracts",
+      "kind": "denial",
+      "desc": "'PSC Member' must NOT access 'ITPMD Project Contracts' (no grant in the matrix)",
+      "role": "PSC Member"
+    },
+    {
+      "id": "D:PSC Member:ITPMD Project Project Team",
+      "kind": "denial",
+      "desc": "'PSC Member' must NOT access 'ITPMD Project Project Team' (no grant in the matrix)",
+      "role": "PSC Member"
+    },
+    {
+      "id": "D:PSC Member:ITPMD Project Budget Changes",
+      "kind": "denial",
+      "desc": "'PSC Member' must NOT access 'ITPMD Project Budget Changes' (no grant in the matrix)",
+      "role": "PSC Member"
+    },
+    {
+      "id": "D:PSC Member:ITPMD Project Baseline History",
+      "kind": "denial",
+      "desc": "'PSC Member' must NOT access 'ITPMD Project Baseline History' (no grant in the matrix)",
+      "role": "PSC Member"
+    },
+    {
+      "id": "D:PSC Member:ITPMD Project Decision Log",
+      "kind": "denial",
+      "desc": "'PSC Member' must NOT access 'ITPMD Project Decision Log' (no grant in the matrix)",
+      "role": "PSC Member"
+    },
+    {
+      "id": "D:PSC Member:ITPMD Activity Predecessors",
+      "kind": "denial",
+      "desc": "'PSC Member' must NOT access 'ITPMD Activity Predecessors' (no grant in the matrix)",
+      "role": "PSC Member"
+    },
+    {
+      "id": "D:PSC Member:ITPMD Cost Entry Invoices",
+      "kind": "denial",
+      "desc": "'PSC Member' must NOT access 'ITPMD Cost Entry Invoices' (no grant in the matrix)",
+      "role": "PSC Member"
+    },
+    {
+      "id": "D:PSC Member:ITPMD Project Status Report Schedule Highlights",
+      "kind": "denial",
+      "desc": "'PSC Member' must NOT access 'ITPMD Project Status Report Schedule Highlights' (no grant in the matrix)",
+      "role": "PSC Member"
+    },
+    {
+      "id": "D:PSC Member:ITPMD Project Status Report Next Period Plan",
+      "kind": "denial",
+      "desc": "'PSC Member' must NOT access 'ITPMD Project Status Report Next Period Plan' (no grant in the matrix)",
+      "role": "PSC Member"
+    },
+    {
+      "id": "D:PSC Member:ITPMD Project Status Report Key Issues and Risks",
+      "kind": "denial",
+      "desc": "'PSC Member' must NOT access 'ITPMD Project Status Report Key Issues and Risks' (no grant in the matrix)",
+      "role": "PSC Member"
+    },
+    {
+      "id": "D:PSC Member:ITPMD Portfolio Status Report Project Summaries",
+      "kind": "denial",
+      "desc": "'PSC Member' must NOT access 'ITPMD Portfolio Status Report Project Summaries' (no grant in the matrix)",
+      "role": "PSC Member"
+    },
+    {
+      "id": "D:Hub Administrator:ITPMD Risk",
+      "kind": "denial",
+      "desc": "'Hub Administrator' must NOT access 'ITPMD Risk' (no grant in the matrix)",
+      "role": "Hub Administrator"
+    },
+    {
+      "id": "D:Hub Administrator:ITPMD Issue",
+      "kind": "denial",
+      "desc": "'Hub Administrator' must NOT access 'ITPMD Issue' (no grant in the matrix)",
+      "role": "Hub Administrator"
+    },
+    {
+      "id": "D:Hub Administrator:ITPMD Action Item",
+      "kind": "denial",
+      "desc": "'Hub Administrator' must NOT access 'ITPMD Action Item' (no grant in the matrix)",
+      "role": "Hub Administrator"
+    },
+    {
+      "id": "D:Hub Administrator:ITPMD Cost Entry",
+      "kind": "denial",
+      "desc": "'Hub Administrator' must NOT access 'ITPMD Cost Entry' (no grant in the matrix)",
+      "role": "Hub Administrator"
+    },
+    {
+      "id": "D:Hub Administrator:ITPMD Project Status Report",
+      "kind": "denial",
+      "desc": "'Hub Administrator' must NOT access 'ITPMD Project Status Report' (no grant in the matrix)",
+      "role": "Hub Administrator"
+    },
+    {
+      "id": "D:Hub Administrator:ITPMD Portfolio Status Report",
+      "kind": "denial",
+      "desc": "'Hub Administrator' must NOT access 'ITPMD Portfolio Status Report' (no grant in the matrix)",
+      "role": "Hub Administrator"
+    },
+    {
+      "id": "D:Hub Administrator:ITPMD Project Contracts",
+      "kind": "denial",
+      "desc": "'Hub Administrator' must NOT access 'ITPMD Project Contracts' (no grant in the matrix)",
+      "role": "Hub Administrator"
+    },
+    {
+      "id": "D:Hub Administrator:ITPMD Project Project Team",
+      "kind": "denial",
+      "desc": "'Hub Administrator' must NOT access 'ITPMD Project Project Team' (no grant in the matrix)",
+      "role": "Hub Administrator"
+    },
+    {
+      "id": "D:Hub Administrator:ITPMD Project Budget Changes",
+      "kind": "denial",
+      "desc": "'Hub Administrator' must NOT access 'ITPMD Project Budget Changes' (no grant in the matrix)",
+      "role": "Hub Administrator"
+    },
+    {
+      "id": "D:Hub Administrator:ITPMD Project Baseline History",
+      "kind": "denial",
+      "desc": "'Hub Administrator' must NOT access 'ITPMD Project Baseline History' (no grant in the matrix)",
+      "role": "Hub Administrator"
+    },
+    {
+      "id": "D:Hub Administrator:ITPMD Project Decision Log",
+      "kind": "denial",
+      "desc": "'Hub Administrator' must NOT access 'ITPMD Project Decision Log' (no grant in the matrix)",
+      "role": "Hub Administrator"
+    },
+    {
+      "id": "D:Hub Administrator:ITPMD Activity Predecessors",
+      "kind": "denial",
+      "desc": "'Hub Administrator' must NOT access 'ITPMD Activity Predecessors' (no grant in the matrix)",
+      "role": "Hub Administrator"
+    },
+    {
+      "id": "D:Hub Administrator:ITPMD Cost Entry Invoices",
+      "kind": "denial",
+      "desc": "'Hub Administrator' must NOT access 'ITPMD Cost Entry Invoices' (no grant in the matrix)",
+      "role": "Hub Administrator"
+    },
+    {
+      "id": "D:Hub Administrator:ITPMD Project Status Report Schedule Highlights",
+      "kind": "denial",
+      "desc": "'Hub Administrator' must NOT access 'ITPMD Project Status Report Schedule Highlights' (no grant in the matrix)",
+      "role": "Hub Administrator"
+    },
+    {
+      "id": "D:Hub Administrator:ITPMD Project Status Report Next Period Plan",
+      "kind": "denial",
+      "desc": "'Hub Administrator' must NOT access 'ITPMD Project Status Report Next Period Plan' (no grant in the matrix)",
+      "role": "Hub Administrator"
+    },
+    {
+      "id": "D:Hub Administrator:ITPMD Project Status Report Key Issues and Risks",
+      "kind": "denial",
+      "desc": "'Hub Administrator' must NOT access 'ITPMD Project Status Report Key Issues and Risks' (no grant in the matrix)",
+      "role": "Hub Administrator"
+    },
+    {
+      "id": "D:Hub Administrator:ITPMD Portfolio Status Report Project Summaries",
+      "kind": "denial",
+      "desc": "'Hub Administrator' must NOT access 'ITPMD Portfolio Status Report Project Summaries' (no grant in the matrix)",
+      "role": "Hub Administrator"
+    },
+    {
+      "id": "D:TPMO:ITPMD Project Contracts",
+      "kind": "denial",
+      "desc": "'TPMO' must NOT access 'ITPMD Project Contracts' (no grant in the matrix)",
+      "role": "TPMO"
+    },
+    {
+      "id": "D:TPMO:ITPMD Project Project Team",
+      "kind": "denial",
+      "desc": "'TPMO' must NOT access 'ITPMD Project Project Team' (no grant in the matrix)",
+      "role": "TPMO"
+    },
+    {
+      "id": "D:TPMO:ITPMD Project Budget Changes",
+      "kind": "denial",
+      "desc": "'TPMO' must NOT access 'ITPMD Project Budget Changes' (no grant in the matrix)",
+      "role": "TPMO"
+    },
+    {
+      "id": "D:TPMO:ITPMD Project Baseline History",
+      "kind": "denial",
+      "desc": "'TPMO' must NOT access 'ITPMD Project Baseline History' (no grant in the matrix)",
+      "role": "TPMO"
+    },
+    {
+      "id": "D:TPMO:ITPMD Project Decision Log",
+      "kind": "denial",
+      "desc": "'TPMO' must NOT access 'ITPMD Project Decision Log' (no grant in the matrix)",
+      "role": "TPMO"
+    },
+    {
+      "id": "D:TPMO:ITPMD Activity Predecessors",
+      "kind": "denial",
+      "desc": "'TPMO' must NOT access 'ITPMD Activity Predecessors' (no grant in the matrix)",
+      "role": "TPMO"
+    },
+    {
+      "id": "D:TPMO:ITPMD Cost Entry Invoices",
+      "kind": "denial",
+      "desc": "'TPMO' must NOT access 'ITPMD Cost Entry Invoices' (no grant in the matrix)",
+      "role": "TPMO"
+    },
+    {
+      "id": "D:TPMO:ITPMD Project Status Report Schedule Highlights",
+      "kind": "denial",
+      "desc": "'TPMO' must NOT access 'ITPMD Project Status Report Schedule Highlights' (no grant in the matrix)",
+      "role": "TPMO"
+    },
+    {
+      "id": "D:TPMO:ITPMD Project Status Report Next Period Plan",
+      "kind": "denial",
+      "desc": "'TPMO' must NOT access 'ITPMD Project Status Report Next Period Plan' (no grant in the matrix)",
+      "role": "TPMO"
+    },
+    {
+      "id": "D:TPMO:ITPMD Project Status Report Key Issues and Risks",
+      "kind": "denial",
+      "desc": "'TPMO' must NOT access 'ITPMD Project Status Report Key Issues and Risks' (no grant in the matrix)",
+      "role": "TPMO"
+    },
+    {
+      "id": "D:TPMO:ITPMD Portfolio Status Report Project Summaries",
+      "kind": "denial",
+      "desc": "'TPMO' must NOT access 'ITPMD Portfolio Status Report Project Summaries' (no grant in the matrix)",
+      "role": "TPMO"
+    },
+    {
+      "id": "A:auto_psr_submit_notify_dh",
+      "kind": "automation",
+      "desc": "automation 'PSR submitted → notify Department Head': trigger fires ⇒ effect record/update exists",
+      "role": null
+    },
+    {
+      "id": "A:auto_psr_dh_approved_notify_sponsor",
+      "kind": "automation",
+      "desc": "automation 'PSR DH-approved (sponsor required) → notify Project Sponsor': trigger fires ⇒ effect record/update exists",
+      "role": null
+    },
+    {
+      "id": "A:auto_psr_dh_returned_notify_pm",
+      "kind": "automation",
+      "desc": "automation 'PSR returned at DH Review → notify PM with comment': trigger fires ⇒ effect record/update exists",
+      "role": null
+    },
+    {
+      "id": "A:auto_psr_sponsor_returned_notify_pm",
+      "kind": "automation",
+      "desc": "automation 'PSR returned at Sponsor Approval → notify PM with comment': trigger fires ⇒ effect record/update exists",
+      "role": null
+    },
+    {
+      "id": "A:auto_psr_approved_notify_pm",
+      "kind": "automation",
+      "desc": "automation 'PSR Approved (locked) → notify PM': trigger fires ⇒ effect record/update exists",
+      "role": null
+    },
+    {
+      "id": "A:auto_psr_deadline_reminder",
+      "kind": "automation",
+      "desc": "automation 'PSR deadline reminders (3-day / 1-day / daily overdue)': trigger fires ⇒ effect record/update exists",
+      "role": null
+    },
+    {
+      "id": "A:auto_activity_assigned_notify_assignee",
+      "kind": "automation",
+      "desc": "automation 'Activity assigned/reassigned → notify Responsible Person': trigger fires ⇒ effect record/update exists",
+      "role": null
+    },
+    {
+      "id": "A:auto_activity_forecast_past_baseline_alert",
+      "kind": "automation",
+      "desc": "automation 'Activity forecast past baseline (Red) → notify Responsible Person': trigger fires ⇒ effect record/update exists",
+      "role": null
+    },
+    {
+      "id": "A:auto_action_item_assigned_notify_assignee",
+      "kind": "automation",
+      "desc": "automation 'Action item created/assigned → notify Assignee': trigger fires ⇒ effect record/update exists",
+      "role": null
+    },
+    {
+      "id": "A:auto_action_item_overdue_notify_assignee",
+      "kind": "automation",
+      "desc": "automation 'Action item Overdue (auto) → notify Assignee': trigger fires ⇒ effect record/update exists",
+      "role": null
+    },
+    {
+      "id": "A:auto_issue_escalated_notify_pm_psc",
+      "kind": "automation",
+      "desc": "automation 'Issue Escalated (auto) → notify Issue Owner/PM and PSC Member': trigger fires ⇒ effect record/update exists",
+      "role": null
+    },
+    {
+      "id": "A:auto_risk_escalated_notify_owner_pm",
+      "kind": "automation",
+      "desc": "automation 'Risk escalated (High/Critical) → notify Risk Owner': trigger fires ⇒ effect record/update exists",
+      "role": null
+    },
+    {
+      "id": "F:ITPMD Project Status Report:Draft:Project:Mandatory",
+      "kind": "field",
+      "desc": "'ITPMD Project Status Report' at step 'Draft': 'Project' is Mandatory",
+      "role": "Project Manager"
+    },
+    {
+      "id": "F:ITPMD Project Status Report:Draft:Narrative_Update:Mandatory",
+      "kind": "field",
+      "desc": "'ITPMD Project Status Report' at step 'Draft': 'Narrative_Update' is Mandatory",
+      "role": "Project Manager"
+    },
+    {
+      "id": "F:ITPMD Project Status Report:Draft:Supporting_Documents:Editable",
+      "kind": "field",
+      "desc": "'ITPMD Project Status Report' at step 'Draft': 'Supporting_Documents' is Editable",
+      "role": "Project Manager"
+    },
+    {
+      "id": "F:ITPMD Project Status Report:Draft:Reporting_Period_Month:Editable",
+      "kind": "field",
+      "desc": "'ITPMD Project Status Report' at step 'Draft': 'Reporting_Period_Month' is Editable",
+      "role": "Project Manager"
+    },
+    {
+      "id": "F:ITPMD Hub Settings:Setting_Name:required",
+      "kind": "field",
+      "desc": "'ITPMD Hub Settings.Setting_Name' rejects empty submission",
+      "role": null
+    },
+    {
+      "id": "F:ITPMD Hub Settings:PSR_Due_Working_Day:required",
+      "kind": "field",
+      "desc": "'ITPMD Hub Settings.PSR_Due_Working_Day' rejects empty submission",
+      "role": null
+    },
+    {
+      "id": "F:ITPMD Hub Settings:Issue_Aging_Period_Days:required",
+      "kind": "field",
+      "desc": "'ITPMD Hub Settings.Issue_Aging_Period_Days' rejects empty submission",
+      "role": null
+    },
+    {
+      "id": "F:ITPMD Holiday Calendar:Holiday_Name:required",
+      "kind": "field",
+      "desc": "'ITPMD Holiday Calendar.Holiday_Name' rejects empty submission",
+      "role": null
+    },
+    {
+      "id": "F:ITPMD Holiday Calendar:Holiday_Date:required",
+      "kind": "field",
+      "desc": "'ITPMD Holiday Calendar.Holiday_Date' rejects empty submission",
+      "role": null
+    },
+    {
+      "id": "F:ITPMD Project:Project_Name:required",
+      "kind": "field",
+      "desc": "'ITPMD Project.Project_Name' rejects empty submission",
+      "role": null
+    },
+    {
+      "id": "F:ITPMD Project:Business_Unit:required",
+      "kind": "field",
+      "desc": "'ITPMD Project.Business_Unit' rejects empty submission",
+      "role": null
+    },
+    {
+      "id": "F:ITPMD Project:Portfolio:required",
+      "kind": "field",
+      "desc": "'ITPMD Project.Portfolio' rejects empty submission",
+      "role": null
+    },
+    {
+      "id": "F:ITPMD Project:Project_Manager:required",
+      "kind": "field",
+      "desc": "'ITPMD Project.Project_Manager' rejects empty submission",
+      "role": null
+    },
+    {
+      "id": "F:ITPMD Project:Department_Head:required",
+      "kind": "field",
+      "desc": "'ITPMD Project.Department_Head' rejects empty submission",
+      "role": null
+    },
+    {
+      "id": "F:ITPMD Project:Status:required",
+      "kind": "field",
+      "desc": "'ITPMD Project.Status' rejects empty submission",
+      "role": null
+    },
+    {
+      "id": "F:ITPMD Project:Approved_Budget:required",
+      "kind": "field",
+      "desc": "'ITPMD Project.Approved_Budget' rejects empty submission",
+      "role": null
+    },
+    {
+      "id": "F:ITPMD Project:Contingency_Fund:required",
+      "kind": "field",
+      "desc": "'ITPMD Project.Contingency_Fund' rejects empty submission",
+      "role": null
+    },
+    {
+      "id": "F:ITPMD Project:Weighted_Percent_Complete:computed",
+      "kind": "field",
+      "desc": "'ITPMD Project.Weighted_Percent_Complete' computes from its formula",
+      "role": null
+    },
+    {
+      "id": "F:ITPMD Project:Schedule_Variance_Days:computed",
+      "kind": "field",
+      "desc": "'ITPMD Project.Schedule_Variance_Days' computes from its formula",
+      "role": null
+    },
+    {
+      "id": "F:ITPMD Project:Current_Approved_Budget:computed",
+      "kind": "field",
+      "desc": "'ITPMD Project.Current_Approved_Budget' computes from its formula",
+      "role": null
+    },
+    {
+      "id": "F:ITPMD Project:Contingency_Remaining:computed",
+      "kind": "field",
+      "desc": "'ITPMD Project.Contingency_Remaining' computes from its formula",
+      "role": null
+    },
+    {
+      "id": "F:ITPMD Project:Contingency_Utilization_Percent:computed",
+      "kind": "field",
+      "desc": "'ITPMD Project.Contingency_Utilization_Percent' computes from its formula",
+      "role": null
+    },
+    {
+      "id": "F:ITPMD Project:Cost_Performance_Percent:computed",
+      "kind": "field",
+      "desc": "'ITPMD Project.Cost_Performance_Percent' computes from its formula",
+      "role": null
+    },
+    {
+      "id": "F:ITPMD Project:Schedule_Health_Code:computed",
+      "kind": "field",
+      "desc": "'ITPMD Project.Schedule_Health_Code' computes from its formula",
+      "role": null
+    },
+    {
+      "id": "F:ITPMD Project:Schedule_Health:computed",
+      "kind": "field",
+      "desc": "'ITPMD Project.Schedule_Health' computes from its formula",
+      "role": null
+    },
+    {
+      "id": "F:ITPMD Project:Cost_Health_Code:computed",
+      "kind": "field",
+      "desc": "'ITPMD Project.Cost_Health_Code' computes from its formula",
+      "role": null
+    },
+    {
+      "id": "F:ITPMD Project:Cost_Health:computed",
+      "kind": "field",
+      "desc": "'ITPMD Project.Cost_Health' computes from its formula",
+      "role": null
+    },
+    {
+      "id": "F:ITPMD Project:Risk_Health_Code:computed",
+      "kind": "field",
+      "desc": "'ITPMD Project.Risk_Health_Code' computes from its formula",
+      "role": null
+    },
+    {
+      "id": "F:ITPMD Project:Risk_Health:computed",
+      "kind": "field",
+      "desc": "'ITPMD Project.Risk_Health' computes from its formula",
+      "role": null
+    },
+    {
+      "id": "F:ITPMD Project:Issue_Health_Code:computed",
+      "kind": "field",
+      "desc": "'ITPMD Project.Issue_Health_Code' computes from its formula",
+      "role": null
+    },
+    {
+      "id": "F:ITPMD Project:Issue_Health:computed",
+      "kind": "field",
+      "desc": "'ITPMD Project.Issue_Health' computes from its formula",
+      "role": null
+    },
+    {
+      "id": "F:ITPMD Project:Overall_Health_Code:computed",
+      "kind": "field",
+      "desc": "'ITPMD Project.Overall_Health_Code' computes from its formula",
+      "role": null
+    },
+    {
+      "id": "F:ITPMD Project:Overall_Health:computed",
+      "kind": "field",
+      "desc": "'ITPMD Project.Overall_Health' computes from its formula",
+      "role": null
+    },
+    {
+      "id": "F:ITPMD Project:Needs_Management_Attention_Flag:computed",
+      "kind": "field",
+      "desc": "'ITPMD Project.Needs_Management_Attention_Flag' computes from its formula",
+      "role": null
+    },
+    {
+      "id": "R:ITPMD Project:Program:ref",
+      "kind": "reference",
+      "desc": "'ITPMD Project.Program' resolves against 'itpmd_program' and lookups populate",
+      "role": null
+    },
+    {
+      "id": "F:ITPMD Activity:Activity_Name:required",
+      "kind": "field",
+      "desc": "'ITPMD Activity.Activity_Name' rejects empty submission",
+      "role": null
+    },
+    {
+      "id": "F:ITPMD Activity:Project:required",
+      "kind": "field",
+      "desc": "'ITPMD Activity.Project' rejects empty submission",
+      "role": null
+    },
+    {
+      "id": "R:ITPMD Activity:Project:ref",
+      "kind": "reference",
+      "desc": "'ITPMD Activity.Project' resolves against 'itpmd_project' and lookups populate",
+      "role": null
+    },
+    {
+      "id": "F:ITPMD Activity:WBS_Code:required",
+      "kind": "field",
+      "desc": "'ITPMD Activity.WBS_Code' rejects empty submission",
+      "role": null
+    },
+    {
+      "id": "F:ITPMD Activity:Planned_Start:required",
+      "kind": "field",
+      "desc": "'ITPMD Activity.Planned_Start' rejects empty submission",
+      "role": null
+    },
+    {
+      "id": "F:ITPMD Activity:Planned_Finish:required",
+      "kind": "field",
+      "desc": "'ITPMD Activity.Planned_Finish' rejects empty submission",
+      "role": null
+    },
+    {
+      "id": "F:ITPMD Activity:Planned_Duration_Days:computed",
+      "kind": "field",
+      "desc": "'ITPMD Activity.Planned_Duration_Days' computes from its formula",
+      "role": null
+    },
+    {
+      "id": "F:ITPMD Activity:Weighted_Complete_Value:computed",
+      "kind": "field",
+      "desc": "'ITPMD Activity.Weighted_Complete_Value' computes from its formula",
+      "role": null
+    },
+    {
+      "id": "F:ITPMD Activity:Missed_Milestone_Flag:computed",
+      "kind": "field",
+      "desc": "'ITPMD Activity.Missed_Milestone_Flag' computes from its formula",
+      "role": null
+    },
+    {
+      "id": "F:ITPMD Activity:Schedule_Variance_Days:computed",
+      "kind": "field",
+      "desc": "'ITPMD Activity.Schedule_Variance_Days' computes from its formula",
+      "role": null
+    },
+    {
+      "id": "F:ITPMD Activity:Status_Code:computed",
+      "kind": "field",
+      "desc": "'ITPMD Activity.Status_Code' computes from its formula",
+      "role": null
+    },
+    {
+      "id": "F:ITPMD Activity:Status:computed",
+      "kind": "field",
+      "desc": "'ITPMD Activity.Status' computes from its formula",
+      "role": null
+    },
+    {
+      "id": "F:ITPMD Risk:Risk_Title:required",
+      "kind": "field",
+      "desc": "'ITPMD Risk.Risk_Title' rejects empty submission",
+      "role": null
+    },
+    {
+      "id": "F:ITPMD Risk:Project:required",
+      "kind": "field",
+      "desc": "'ITPMD Risk.Project' rejects empty submission",
+      "role": null
+    },
+    {
+      "id": "R:ITPMD Risk:Project:ref",
+      "kind": "reference",
+      "desc": "'ITPMD Risk.Project' resolves against 'itpmd_project' and lookups populate",
+      "role": null
+    },
+    {
+      "id": "F:ITPMD Risk:Risk_Category:required",
+      "kind": "field",
+      "desc": "'ITPMD Risk.Risk_Category' rejects empty submission",
+      "role": null
+    },
+    {
+      "id": "F:ITPMD Risk:Probability:required",
+      "kind": "field",
+      "desc": "'ITPMD Risk.Probability' rejects empty submission",
+      "role": null
+    },
+    {
+      "id": "F:ITPMD Risk:Impact:required",
+      "kind": "field",
+      "desc": "'ITPMD Risk.Impact' rejects empty submission",
+      "role": null
+    },
+    {
+      "id": "F:ITPMD Risk:Risk_Rating:computed",
+      "kind": "field",
+      "desc": "'ITPMD Risk.Risk_Rating' computes from its formula",
+      "role": null
+    },
+    {
+      "id": "F:ITPMD Risk:Risk_Band_Code:computed",
+      "kind": "field",
+      "desc": "'ITPMD Risk.Risk_Band_Code' computes from its formula",
+      "role": null
+    },
+    {
+      "id": "F:ITPMD Risk:Risk_Rating_Band:computed",
+      "kind": "field",
+      "desc": "'ITPMD Risk.Risk_Rating_Band' computes from its formula",
+      "role": null
+    },
+    {
+      "id": "F:ITPMD Risk:Risk_Owner:required",
+      "kind": "field",
+      "desc": "'ITPMD Risk.Risk_Owner' rejects empty submission",
+      "role": null
+    },
+    {
+      "id": "F:ITPMD Risk:Residual_Risk_Rating:computed",
+      "kind": "field",
+      "desc": "'ITPMD Risk.Residual_Risk_Rating' computes from its formula",
+      "role": null
+    },
+    {
+      "id": "F:ITPMD Risk:Residual_Band_Code:computed",
+      "kind": "field",
+      "desc": "'ITPMD Risk.Residual_Band_Code' computes from its formula",
+      "role": null
+    },
+    {
+      "id": "F:ITPMD Risk:Residual_Risk_Rating_Band:computed",
+      "kind": "field",
+      "desc": "'ITPMD Risk.Residual_Risk_Rating_Band' computes from its formula",
+      "role": null
+    },
+    {
+      "id": "F:ITPMD Risk:Status:required",
+      "kind": "field",
+      "desc": "'ITPMD Risk.Status' rejects empty submission",
+      "role": null
+    },
+    {
+      "id": "F:ITPMD Risk:Escalation_Flag:computed",
+      "kind": "field",
+      "desc": "'ITPMD Risk.Escalation_Flag' computes from its formula",
+      "role": null
+    },
+    {
+      "id": "F:ITPMD Risk:Critical_Flag:computed",
+      "kind": "field",
+      "desc": "'ITPMD Risk.Critical_Flag' computes from its formula",
+      "role": null
+    },
+    {
+      "id": "F:ITPMD Issue:Issue_Title:required",
+      "kind": "field",
+      "desc": "'ITPMD Issue.Issue_Title' rejects empty submission",
+      "role": null
+    },
+    {
+      "id": "F:ITPMD Issue:Project:required",
+      "kind": "field",
+      "desc": "'ITPMD Issue.Project' rejects empty submission",
+      "role": null
+    },
+    {
+      "id": "R:ITPMD Issue:Project:ref",
+      "kind": "reference",
+      "desc": "'ITPMD Issue.Project' resolves against 'itpmd_project' and lookups populate",
+      "role": null
+    },
+    {
+      "id": "F:ITPMD Issue:Issue_Category:required",
+      "kind": "field",
+      "desc": "'ITPMD Issue.Issue_Category' rejects empty submission",
+      "role": null
+    },
+    {
+      "id": "F:ITPMD Issue:Priority:required",
+      "kind": "field",
+      "desc": "'ITPMD Issue.Priority' rejects empty submission",
+      "role": null
+    },
+    {
+      "id": "F:ITPMD Issue:Issue_Owner:required",
+      "kind": "field",
+      "desc": "'ITPMD Issue.Issue_Owner' rejects empty submission",
+      "role": null
+    },
+    {
+      "id": "R:ITPMD Issue:Hub_Settings:ref",
+      "kind": "reference",
+      "desc": "'ITPMD Issue.Hub_Settings' resolves against 'itpmd_hub_settings' and lookups populate",
+      "role": null
+    },
+    {
+      "id": "F:ITPMD Issue:Days_Open:computed",
+      "kind": "field",
+      "desc": "'ITPMD Issue.Days_Open' computes from its formula",
+      "role": null
+    },
+    {
+      "id": "F:ITPMD Issue:Critical_Flag:computed",
+      "kind": "field",
+      "desc": "'ITPMD Issue.Critical_Flag' computes from its formula",
+      "role": null
+    },
+    {
+      "id": "F:ITPMD Issue:Escalation_Flag:computed",
+      "kind": "field",
+      "desc": "'ITPMD Issue.Escalation_Flag' computes from its formula",
+      "role": null
+    },
+    {
+      "id": "F:ITPMD Action Item:Action_Description:required",
+      "kind": "field",
+      "desc": "'ITPMD Action Item.Action_Description' rejects empty submission",
+      "role": null
+    },
+    {
+      "id": "F:ITPMD Action Item:Project:required",
+      "kind": "field",
+      "desc": "'ITPMD Action Item.Project' rejects empty submission",
+      "role": null
+    },
+    {
+      "id": "R:ITPMD Action Item:Project:ref",
+      "kind": "reference",
+      "desc": "'ITPMD Action Item.Project' resolves against 'itpmd_project' and lookups populate",
+      "role": null
+    },
+    {
+      "id": "R:ITPMD Action Item:Related_Issue:ref",
+      "kind": "reference",
+      "desc": "'ITPMD Action Item.Related_Issue' resolves against 'itpmd_issue' and lookups populate",
+      "role": null
+    },
+    {
+      "id": "F:ITPMD Action Item:Assignee:required",
+      "kind": "field",
+      "desc": "'ITPMD Action Item.Assignee' rejects empty submission",
+      "role": null
+    },
+    {
+      "id": "F:ITPMD Action Item:Overdue_Flag:computed",
+      "kind": "field",
+      "desc": "'ITPMD Action Item.Overdue_Flag' computes from its formula",
+      "role": null
+    },
+    {
+      "id": "F:ITPMD Cost Entry:Cost_Entry_Title:required",
+      "kind": "field",
+      "desc": "'ITPMD Cost Entry.Cost_Entry_Title' rejects empty submission",
+      "role": null
+    },
+    {
+      "id": "F:ITPMD Cost Entry:Project:required",
+      "kind": "field",
+      "desc": "'ITPMD Cost Entry.Project' rejects empty submission",
+      "role": null
+    },
+    {
+      "id": "R:ITPMD Cost Entry:Project:ref",
+      "kind": "reference",
+      "desc": "'ITPMD Cost Entry.Project' resolves against 'itpmd_project' and lookups populate",
+      "role": null
+    },
+    {
+      "id": "F:ITPMD Cost Entry:Entry_Date:required",
+      "kind": "field",
+      "desc": "'ITPMD Cost Entry.Entry_Date' rejects empty submission",
+      "role": null
+    },
+    {
+      "id": "F:ITPMD Project Status Report:Reporting_Period_Month:required",
+      "kind": "field",
+      "desc": "'ITPMD Project Status Report.Reporting_Period_Month' rejects empty submission",
+      "role": null
+    },
+    {
+      "id": "F:ITPMD Project Status Report:Project:required",
+      "kind": "field",
+      "desc": "'ITPMD Project Status Report.Project' rejects empty submission",
+      "role": null
+    },
+    {
+      "id": "R:ITPMD Project Status Report:Project:ref",
+      "kind": "reference",
+      "desc": "'ITPMD Project Status Report.Project' resolves against 'itpmd_project' and lookups populate",
+      "role": null
+    },
+    {
+      "id": "F:ITPMD Project Status Report:Sponsor_Approval_Required:computed",
+      "kind": "field",
+      "desc": "'ITPMD Project Status Report.Sponsor_Approval_Required' computes from its formula",
+      "role": null
+    },
+    {
+      "id": "F:ITPMD Portfolio Status Report:Report_Period:required",
+      "kind": "field",
+      "desc": "'ITPMD Portfolio Status Report.Report_Period' rejects empty submission",
+      "role": null
+    },
+    {
+      "id": "F:ITPMD Project Contracts:Vendor_Name:required",
+      "kind": "field",
+      "desc": "'ITPMD Project Contracts.Vendor_Name' rejects empty submission",
+      "role": null
+    },
+    {
+      "id": "F:ITPMD Project Contracts:Contract_Price:required",
+      "kind": "field",
+      "desc": "'ITPMD Project Contracts.Contract_Price' rejects empty submission",
+      "role": null
+    },
+    {
+      "id": "F:ITPMD Project Project Team:Team_Member:required",
+      "kind": "field",
+      "desc": "'ITPMD Project Project Team.Team_Member' rejects empty submission",
+      "role": null
+    },
+    {
+      "id": "F:ITPMD Project Project Team:Project_Role:required",
+      "kind": "field",
+      "desc": "'ITPMD Project Project Team.Project_Role' rejects empty submission",
+      "role": null
+    },
+    {
+      "id": "F:ITPMD Project Budget Changes:Change_Type:required",
+      "kind": "field",
+      "desc": "'ITPMD Project Budget Changes.Change_Type' rejects empty submission",
+      "role": null
+    },
+    {
+      "id": "F:ITPMD Project Budget Changes:Effective_Date:required",
+      "kind": "field",
+      "desc": "'ITPMD Project Budget Changes.Effective_Date' rejects empty submission",
+      "role": null
+    },
+    {
+      "id": "F:ITPMD Project Baseline History:Baseline_Version:required",
+      "kind": "field",
+      "desc": "'ITPMD Project Baseline History.Baseline_Version' rejects empty submission",
+      "role": null
+    },
+    {
+      "id": "F:ITPMD Project Decision Log:Decision_Description:required",
+      "kind": "field",
+      "desc": "'ITPMD Project Decision Log.Decision_Description' rejects empty submission",
+      "role": null
+    },
+    {
+      "id": "R:ITPMD Project Decision Log:Related_Issue:ref",
+      "kind": "reference",
+      "desc": "'ITPMD Project Decision Log.Related_Issue' resolves against 'itpmd_issue' and lookups populate",
+      "role": null
+    },
+    {
+      "id": "F:ITPMD Activity Predecessors:Predecessor_Activity:required",
+      "kind": "field",
+      "desc": "'ITPMD Activity Predecessors.Predecessor_Activity' rejects empty submission",
+      "role": null
+    },
+    {
+      "id": "R:ITPMD Activity Predecessors:Predecessor_Activity:ref",
+      "kind": "reference",
+      "desc": "'ITPMD Activity Predecessors.Predecessor_Activity' resolves against 'itpmd_activity' and lookups populate",
+      "role": null
+    },
+    {
+      "id": "F:ITPMD Activity Predecessors:Dependency_Type:required",
+      "kind": "field",
+      "desc": "'ITPMD Activity Predecessors.Dependency_Type' rejects empty submission",
+      "role": null
+    },
+    {
+      "id": "F:ITPMD Cost Entry Invoices:Invoice_Number:required",
+      "kind": "field",
+      "desc": "'ITPMD Cost Entry Invoices.Invoice_Number' rejects empty submission",
+      "role": null
+    },
+    {
+      "id": "F:ITPMD Project Status Report Schedule Highlights:Activity:required",
+      "kind": "field",
+      "desc": "'ITPMD Project Status Report Schedule Highlights.Activity' rejects empty submission",
+      "role": null
+    },
+    {
+      "id": "R:ITPMD Project Status Report Schedule Highlights:Activity:ref",
+      "kind": "reference",
+      "desc": "'ITPMD Project Status Report Schedule Highlights.Activity' resolves against 'itpmd_activity' and lookups populate",
+      "role": null
+    },
+    {
+      "id": "F:ITPMD Project Status Report Schedule Highlights:Highlight_Type:required",
+      "kind": "field",
+      "desc": "'ITPMD Project Status Report Schedule Highlights.Highlight_Type' rejects empty submission",
+      "role": null
+    },
+    {
+      "id": "F:ITPMD Project Status Report Next Period Plan:Plan_Activity:required",
+      "kind": "field",
+      "desc": "'ITPMD Project Status Report Next Period Plan.Plan_Activity' rejects empty submission",
+      "role": null
+    },
+    {
+      "id": "R:ITPMD Project Status Report Next Period Plan:Plan_Activity:ref",
+      "kind": "reference",
+      "desc": "'ITPMD Project Status Report Next Period Plan.Plan_Activity' resolves against 'itpmd_activity' and lookups populate",
+      "role": null
+    },
+    {
+      "id": "R:ITPMD Project Status Report Key Issues and Risks:Related_Issue:ref",
+      "kind": "reference",
+      "desc": "'ITPMD Project Status Report Key Issues and Risks.Related_Issue' resolves against 'itpmd_issue' and lookups populate",
+      "role": null
+    },
+    {
+      "id": "R:ITPMD Project Status Report Key Issues and Risks:Related_Risk:ref",
+      "kind": "reference",
+      "desc": "'ITPMD Project Status Report Key Issues and Risks.Related_Risk' resolves against 'itpmd_risk' and lookups populate",
+      "role": null
+    },
+    {
+      "id": "F:ITPMD Portfolio Status Report Project Summaries:PSR:required",
+      "kind": "field",
+      "desc": "'ITPMD Portfolio Status Report Project Summaries.PSR' rejects empty submission",
+      "role": null
+    },
+    {
+      "id": "R:ITPMD Portfolio Status Report Project Summaries:PSR:ref",
+      "kind": "reference",
+      "desc": "'ITPMD Portfolio Status Report Project Summaries.PSR' resolves against 'itpmd_psr' and lookups populate",
+      "role": null
+    },
+    {
+      "id": "F:ITPMD Discussion Message:Project:required",
+      "kind": "field",
+      "desc": "'ITPMD Discussion Message.Project' rejects empty submission",
+      "role": null
+    },
+    {
+      "id": "R:ITPMD Discussion Message:Project:ref",
+      "kind": "reference",
+      "desc": "'ITPMD Discussion Message.Project' resolves against 'itpmd_project' and lookups populate",
+      "role": null
+    },
+    {
+      "id": "F:ITPMD Discussion Message:Author:required",
+      "kind": "field",
+      "desc": "'ITPMD Discussion Message.Author' rejects empty submission",
+      "role": null
+    },
+    {
+      "id": "F:ITPMD Discussion Message:Sent_At:required",
+      "kind": "field",
+      "desc": "'ITPMD Discussion Message.Sent_At' rejects empty submission",
+      "role": null
+    },
+    {
+      "id": "F:ITPMD Discussion Message:Message_Text:required",
+      "kind": "field",
+      "desc": "'ITPMD Discussion Message.Message_Text' rejects empty submission",
+      "role": null
+    },
+    {
+      "id": "F:ITPMD Notification:Recipient:required",
+      "kind": "field",
+      "desc": "'ITPMD Notification.Recipient' rejects empty submission",
+      "role": null
+    },
+    {
+      "id": "F:ITPMD Notification:Notification_Type:required",
+      "kind": "field",
+      "desc": "'ITPMD Notification.Notification_Type' rejects empty submission",
+      "role": null
+    },
+    {
+      "id": "F:ITPMD Notification:Title:required",
+      "kind": "field",
+      "desc": "'ITPMD Notification.Title' rejects empty submission",
+      "role": null
+    },
+    {
+      "id": "R:ITPMD Notification:Project:ref",
+      "kind": "reference",
+      "desc": "'ITPMD Notification.Project' resolves against 'itpmd_project' and lookups populate",
+      "role": null
+    },
+    {
+      "id": "F:ITPMD Discussion Read:Reader:required",
+      "kind": "field",
+      "desc": "'ITPMD Discussion Read.Reader' rejects empty submission",
+      "role": null
+    },
+    {
+      "id": "F:ITPMD Discussion Read:Project:required",
+      "kind": "field",
+      "desc": "'ITPMD Discussion Read.Project' rejects empty submission",
+      "role": null
+    },
+    {
+      "id": "R:ITPMD Discussion Read:Project:ref",
+      "kind": "reference",
+      "desc": "'ITPMD Discussion Read.Project' resolves against 'itpmd_project' and lookups populate",
+      "role": null
+    },
+    {
+      "id": "F:ITPMD Discussion Read:Last_Read_At:required",
+      "kind": "field",
+      "desc": "'ITPMD Discussion Read.Last_Read_At' rejects empty submission",
+      "role": null
+    },
+    {
+      "id": "F:ITPMD Baseline:Project:required",
+      "kind": "field",
+      "desc": "'ITPMD Baseline.Project' rejects empty submission",
+      "role": null
+    },
+    {
+      "id": "R:ITPMD Baseline:Project:ref",
+      "kind": "reference",
+      "desc": "'ITPMD Baseline.Project' resolves against 'itpmd_project' and lookups populate",
+      "role": null
+    },
+    {
+      "id": "F:ITPMD Baseline:Version:required",
+      "kind": "field",
+      "desc": "'ITPMD Baseline.Version' rejects empty submission",
+      "role": null
+    },
+    {
+      "id": "F:ITPMD Baseline:Set_Date:required",
+      "kind": "field",
+      "desc": "'ITPMD Baseline.Set_Date' rejects empty submission",
+      "role": null
+    },
+    {
+      "id": "F:ITPMD Program:Program_Name:required",
+      "kind": "field",
+      "desc": "'ITPMD Program.Program_Name' rejects empty submission",
+      "role": null
+    },
+    {
+      "id": "F:ITPMD Binder Item:Project:required",
+      "kind": "field",
+      "desc": "'ITPMD Binder Item.Project' rejects empty submission",
+      "role": null
+    },
+    {
+      "id": "R:ITPMD Binder Item:Project:ref",
+      "kind": "reference",
+      "desc": "'ITPMD Binder Item.Project' resolves against 'itpmd_project' and lookups populate",
+      "role": null
+    },
+    {
+      "id": "F:ITPMD Binder Item:Item_Type:required",
+      "kind": "field",
+      "desc": "'ITPMD Binder Item.Item_Type' rejects empty submission",
+      "role": null
+    },
+    {
+      "id": "F:ITPMD Weekly Report:Project:required",
+      "kind": "field",
+      "desc": "'ITPMD Weekly Report.Project' rejects empty submission",
+      "role": null
+    },
+    {
+      "id": "R:ITPMD Weekly Report:Project:ref",
+      "kind": "reference",
+      "desc": "'ITPMD Weekly Report.Project' resolves against 'itpmd_project' and lookups populate",
+      "role": null
+    },
+    {
+      "id": "F:ITPMD Weekly Report:Week_Of:required",
+      "kind": "field",
+      "desc": "'ITPMD Weekly Report.Week_Of' rejects empty submission",
+      "role": null
+    },
+    {
+      "id": "F:ITPMD Release:Project:required",
+      "kind": "field",
+      "desc": "'ITPMD Release.Project' rejects empty submission",
+      "role": null
+    },
+    {
+      "id": "R:ITPMD Release:Project:ref",
+      "kind": "reference",
+      "desc": "'ITPMD Release.Project' resolves against 'itpmd_project' and lookups populate",
+      "role": null
+    },
+    {
+      "id": "F:ITPMD Release:Release_Name:required",
+      "kind": "field",
+      "desc": "'ITPMD Release.Release_Name' rejects empty submission",
+      "role": null
+    },
+    {
+      "id": "F:ITPMD Release:Planned_Date:required",
+      "kind": "field",
+      "desc": "'ITPMD Release.Planned_Date' rejects empty submission",
+      "role": null
+    },
+    {
+      "id": "F:ITPMD Template:Template_Name:required",
+      "kind": "field",
+      "desc": "'ITPMD Template.Template_Name' rejects empty submission",
+      "role": null
+    },
+    {
+      "id": "F:ITPMD Template:Template_Type:required",
+      "kind": "field",
+      "desc": "'ITPMD Template.Template_Type' rejects empty submission",
+      "role": null
+    }
+  ]
+}

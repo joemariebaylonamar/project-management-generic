@@ -1,0 +1,134 @@
+{
+  "app": "ITPMD_Project_Hub_A00",
+  "env": "dev (development-landbank-ai, account AcE26a5HoPDd)",
+  "run_at": "2026-09-28",
+  "identity_constraint": {
+    "note": "Only 2 real users exist in the account: joemarie@kissflow.com (a member of ALL 6 app roles — Project Manager, Team Member, Department Head, Project Sponsor, PSC Member, Hub Administrator) and charumathi@kissflow.com (a member of NO app role). The runtime API is authenticated by a single account-level access-key credential (KF_ACCESS_KEY_ID/SECRET), not a per-user session, and there is no impersonation mechanism available to this agent. This means: (a) any positive action the API CAN perform is not proof that only the intended role can perform it, and (b) any role-scoped denial cannot be behaviorally proven live — there is no second credentialed user to attempt the denied action as. These are flagged per-scenario below as observed vs. structural-only vs. untested."
+  },
+  "test_records_created": [
+    { "flow": "ITPMD_Project_A00", "id": "PkEGtbmUaHf1", "name": "ACCEPT-TEST Project Alpha" },
+    { "flow": "ITPMD_Risk_A00", "id": "PkEGtcamdgyT", "name": "ACCEPT-TEST Risk - Vendor delay" },
+    { "flow": "ITPMD_Activity_A00", "id": "PkEGtiDt16UN", "name": "ACCEPT-TEST Activity - Design Phase" },
+    { "flow": "ITPMD_Cost_Entry_A00", "id": "multiple (~10 probe rows, prefix 'ACCEPT-TEST refshape*'/'ACCEPT-TEST CostEntry refcheck*')", "name": "reference-shape probe rows, all orphaned (no Project link — see BLOCKER)" },
+    { "flow": "ITPMD_Project_Status_Report_A00", "id": "PkEGtj2c_B95", "name": "ITPMD Project Status Report from Joemarie (PSR #1, No-branch)" },
+    { "flow": "ITPMD_Project_Status_Report_A00", "id": "PkEGtlASsP7u", "name": "ITPMD Project Status Report from Joemarie (PSR #2, No-branch)" }
+  ],
+  "cleanup_note": "All records above are prefixed ACCEPT-TEST (or are unavoidably server-named 'ITPMD X from Joemarie' for Process items, which have no user-set Name) and are orphaned from any real Project data — safe to bulk-delete from the dev sandbox by these ids.",
+  "blockers": [
+    {
+      "id": "BLK-1-REFERENCE-WRITE",
+      "severity": "critical",
+      "summary": "The runtime Form/Case create and update APIs silently drop (200, field absent on read-back) OR 500-crash on every payload shape tried for a required Reference field pointing at a real record in another flow. Tried on ITPMD_Cost_Entry_A00.project -> ITPMD_Project_A00: {_id}, {_id,Name}, {_id,Name,Kind:'Form'/'Model'}, {Id}, plain id string, arrays of the above -- via draft-create, batch-create (_is_created:true), and post-create update. Plain string / array shapes return HTTP 500 'unexpected error'; object shapes return 200 but the field is never persisted, and Form submit then 400s 'project: Value is required'. Case (Issue/Action Item) validates the same Reference at create time and rejects immediately with the identical error.",
+      "impact": "Blocks live creation of ANY project-linked record via this API: Activity, Risk, Cost Entry, Issue, Action Item, and the PSR-to-Project link all require this same Reference type. This is the reason priorities 2 (board status moves) and most of 3/4 could not be run end-to-end with a real linked Project.",
+      "owner": "kf-data-architect / engine (client.mjs runtime-write layer) -- needs the real Reference-write shape confirmed against a working live app, or a platform-side fix.",
+      "note": "PSR (a Process) was the one exception: its own required 'project' Reference is NOT enforced at create/submit time the same way (create+submit both returned 200 despite the identical silent-drop), which is how the PSR submit journey below could be run at all -- but the resulting PSR items are also unlinked to any Project."
+    },
+    {
+      "id": "BLK-2-APPROVER-ACTOR-IDENTITY",
+      "severity": "critical",
+      "summary": "Submitting a PSR item forward past the PM-owned Draft step works (200 'Submitted successfully', _current_step correctly becomes 'Department Head Review'). Submitting the SAME item's Department Head Review UserTask -- using the freshest correct activity-instance-id read from _current_context immediately beforehand -- consistently 400s: KISSFLOW_ERROR_050302 'You don't have permission to submit this item anymore' (stale id) or KISSFLOW_ERROR_050201 'This item has moved out of your queue' (fresh id, tried twice on two separate PSR items). No claim/pick/self-pick endpoint exists (/claim, /pick, /self-pick, /selfpick all 404).",
+      "impact": "J-09, J-12, J-13 (DH return, PM resubmit, DH approve incl. BR-10 routing, PS approve) could NOT be exercised live -- the API credential can act as the process INITIATOR but not as a named approver AppRole, even though the underlying human user is a member of that role.",
+      "owner": "engine (no fix available at this credential tier) -- flag to the platform owner as the still-open 'process decision-completion' question, now narrowed to an actor-identity gap rather than a URL-shape gap."
+    }
+  ],
+  "scenarios": [
+    {
+      "id": "S-J01-project-create",
+      "journey": "J-01 Set up a project from approved master data",
+      "persona": "Project Manager",
+      "steps": ["POST /form/2/{acc}/ITPMD_Project_A00/batch (_is_created:true) with Project_Name, Business_Unit, Portfolio, Project_Manager/Department_Head/Project_Sponsor (User), Approved_Budget, Contingency_Fund, Status"],
+      "asserts": ["record created 200", "Project_Code auto-sequenced", "Currency fields stored with unit suffix"],
+      "result": "pass",
+      "observed": "Created _id PkEGtbmUaHf1, project_code 'ITP - 0001', approved_budget '500000 USD', contingency_fund '50000 USD'. User fields required the {_id,Name,Kind:'User'} shape (plain id string / arrays rejected with InvalidUserFormat).",
+      "finding": "Project_Manager/Department_Head/Project_Sponsor User-type fields have their metadata field Id literally equal to the matching AppRole's server _id (e.g. field id 'RoEGt7NaqKtv' == Project Manager role id) on BOTH ITPMD_Project_A00 and ITPMD_Project_Status_Report_A00 -- every other User field (Risk_Owner, Responsible_Person, Issue_Owner, Assignee) got a normal snake_case id. Writes worked once the correct (role-id) key was used, so this did not block acceptance, but it is a build anomaly worth a workflow/data-architect look (possible id-collision risk)."
+    },
+    {
+      "id": "S-J02-J07-linked-records",
+      "journey": "J-02..J-07 (Activity, Risk, Cost Entry creation linked to a Project)",
+      "persona": "Project Manager / Team Member",
+      "steps": ["Attempted to create Activity/Risk/Cost Entry rows with project referencing PkEGtbmUaHf1"],
+      "asserts": ["record persists with the Project reference set", "record is visible under that Project"],
+      "result": "fail",
+      "observed": "Reference field silently dropped in every shape tried (see BLK-1). Risk and Activity records were created ANYWAY via the Form batch _is_created:true bypass (which skips required-field validation), so they exist in the sandbox but are NOT linked to the Project.",
+      "owner": "kf-data-architect / engine (BLK-1)"
+    },
+    {
+      "id": "S-RISK-formula",
+      "journey": "Priority 3: Risk rating formula",
+      "persona": "Project Manager",
+      "steps": ["Create Risk Probability=5, Impact=4 (Risk_Rating expect 20, band expect Critical)", "Update Impact=5 (Risk_Rating expect 25, band expect Critical)"],
+      "asserts": ["Risk_Rating = Probability*Impact", "Risk_Rating_Band reflects the >=20 Critical threshold"],
+      "result": "fail",
+      "observed": "Risk_Rating computed and RECOMPUTED correctly both times (20, then 25 after update -- single-level formula is fine). Risk_Rating_Band stayed 'Low' both times (should be 'Critical' at >=20). Root cause: Risk_Rating_Band is a formula-of-a-formula (reads Risk_Band_Code, which reads Risk_Rating) and that second level never (re)computes on create or update.",
+      "owner": "kf-data-architect (formula engine / chained-IF-of-formula-field gap)"
+    },
+    {
+      "id": "S-ACTIVITY-crud",
+      "journey": "Priority 3: Activity create/update by PM and Team Member",
+      "persona": "Project Manager (create), Team Member (percent-complete update)",
+      "steps": ["Create Activity Planned_Start 2026-10-01, Planned_Finish 2026-10-15, Percent_Complete 0", "Update Percent_Complete to 40 (simulating the Team Member's own-record edit)"],
+      "asserts": ["Planned_Duration_Days = DATEDIFF", "Weighted_Complete_Value = %complete*duration/100", "Status text reflects Not Started / In Progress"],
+      "result": "partial",
+      "observed": "Planned_Duration_Days=14 (correct) and Weighted_Complete_Value 0 then 5.6 after update (correct, 40*14/100). Status stayed 'In Progress' at both 0% and 40% complete with Actual_Start blank -- formula says Status_Code should be 1 ('Not Started') until Actual_Start is set. Same chained-formula-of-formula defect as the Risk finding above.",
+      "owner": "kf-data-architect (same formula-engine gap as S-RISK-formula)",
+      "untested_note": "Could not test the field-level restriction 'Team Member edits only %Complete of their own Activity' (decisions.md D20's known residual: Forms have no per-step field_permissions) -- confirmed as a documented gap, not exercised further since the same single identity can write ANY field regardless."
+    },
+    {
+      "id": "S-J08-psr-submit",
+      "journey": "J-08 Generate, preview and submit the monthly PSR",
+      "persona": "Project Manager",
+      "steps": ["POST /process/2/{acc}/ITPMD_Project_Status_Report_A00 (create, Sponsor-No branch: baseline_or_budget_change_requested=false)", "POST .../{itemId}/{activityInstanceId}/submit"],
+      "asserts": ["item advances from Draft to Department Head Review", "_status becomes InProgress", "_current_assigned_to becomes Department Head"],
+      "result": "pass",
+      "observed": "Two independent PSR items (PkEGtj2c_B95, PkEGtlASsP7u) both created and submitted 200; GET .../{item}/{aiid}?_response_type=full confirmed _current_step:'Department Head Review', _status:'InProgress', _current_assigned_to:[Department Head role]. This is real, observed forward-workflow movement, not a simulated pass.",
+      "caveat": "Both PSR items are unlinked to a Project (BLK-1), so the auto-populated schedule/risk/financial sections (ITPH-0094/0095) could not be verified -- only the submit-and-advance mechanic was."
+    },
+    {
+      "id": "S-J09-J12-J13-dh-ps-approval",
+      "journey": "J-09 (revise/resubmit) / J-12 (DH review/approve/return) / J-13 (PS sign-off) + both Sponsor_Approval_Required routings",
+      "persona": "Department Head, Project Manager, Project Sponsor",
+      "steps": ["POST .../{itemId}/{current-context-activityInstanceId}/submit against the Department Head Review step"],
+      "asserts": ["DH can approve -> routes to Sponsor Approval (Yes) or Approved (No) per BR-10", "DH can return with mandatory comment -> item returns to PM Draft", "PS can approve/return the Sponsor Approval step"],
+      "result": "untested",
+      "reason": "BLK-2: every attempt to complete the Department Head Review UserTask via the runtime API 400s regardless of using the freshest correct activity-instance-id (KISSFLOW_ERROR_050302 / 050201). This is a genuine actor-identity/impersonation gap in the available credential, not a scenario failure -- the DH-approval, DH-return, PM-resubmit, PS-approval and the Yes/No BR-10 routing split could not be observed. Both test PSR items remain stuck at Department Head Review in the sandbox.",
+      "owner": "orchestrator / platform owner -- needs either a per-user session credential for the Department Head/Project Sponsor identity, or confirmation of the real decision-completion mechanism."
+    },
+    {
+      "id": "S-ISSUE-ACTION-board",
+      "journey": "Priority 2: Issue and Action Item board status moves",
+      "persona": "Project Manager / Team Member",
+      "steps": ["POST /case/2/{acc}/ITPMD_Issue_A00 with project, issue_category, priority, issue_owner"],
+      "asserts": ["Issue created Open", "status moves Open -> In Progress -> Resolved -> Closed observed", "Action Item Open -> In Progress -> Done observed"],
+      "result": "fail",
+      "observed": "Case creation validates the required 'project' Reference immediately server-side (unlike the PSR process) and rejected with 400 'project: Value is required' -- the same BLK-1 defect, but here it blocks creation outright (no orphaned-record bypass exists for Case the way Form batch allowed). Could not create a single Issue or Action Item, so no board status move could be attempted.",
+      "owner": "kf-data-architect / engine (BLK-1)"
+    },
+    {
+      "id": "S-NEG-tm-cost-entry",
+      "journey": "Priority 4 negative: Team Member cannot create a Cost Entry",
+      "persona": "Team Member",
+      "steps": ["Inspected app-spec.json#permissions and #security.data_scope for (Team Member, itpmd_cost_entry)"],
+      "asserts": ["Team Member has no Editable/ReadOnly grant on itpmd_cost_entry at all"],
+      "result": "untested (structural evidence only)",
+      "observed": "Confirmed structurally: security.permissions and security.data_scope both have ZERO entries for (Team Member, itpmd_cost_entry) -- the role is not a member of that flow at all, matching the design intent. Could NOT be proven behaviorally: the only credential available (joemarie) is a member of ALL 6 roles simultaneously, and the account's only other user (charumathi@kissflow.com) belongs to no app role and has no separate API credential -- there is no way to attempt this create AS a Team-Member-only identity."
+    },
+    {
+      "id": "S-NEG-dh-edit-project",
+      "journey": "Priority 4 negative: Department Head cannot edit a Project",
+      "persona": "Department Head",
+      "steps": ["Inspected app-spec.json#permissions for (Department Head, itpmd_project)"],
+      "asserts": ["Department Head is ReadOnly, not Editable, on itpmd_project"],
+      "result": "untested (structural evidence only)",
+      "observed": "Confirmed structurally: permissions[] lists Department Head level:'ReadOnly' scope:'my-team' on itpmd_project (apply.log's re-confirmed 200 grants match this: Member+View, no Delete). Could not be proven behaviorally for the same single-identity reason as S-NEG-tm-cost-entry."
+    }
+  ],
+  "summary": {
+    "scenarios_run_with_live_evidence": 6,
+    "pass": 2,
+    "partial": 1,
+    "fail": 3,
+    "untested_blocked": 2,
+    "untested_structural_only": 2,
+    "notes": "PASS: J-01 project create, J-08 PM submit. PARTIAL: Activity CRUD (base formulas fine, chained Status formula wrong). FAIL: J-02..J-07 linked-record creation, Risk_Rating_Band formula, Issue/Action Item board creation -- all three trace back to BLK-1 (Reference-field write gap) except the Risk_Rating_Band chained-formula defect which is independent. UNTESTED-BLOCKED: J-09/J-12/J-13 DH/PS approval steps (BLK-2, actor-identity gap). UNTESTED-STRUCTURAL-ONLY: the two named negative/permission scenarios -- confirmed correct in app-spec.json's security config but not provable live without a second role-scoped credential."
+  }
+}

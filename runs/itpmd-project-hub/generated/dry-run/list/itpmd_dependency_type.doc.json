@@ -1,0 +1,18 @@
+{
+  "_id": "itpmd_dependency_type",
+  "Name": "ITPMD Dependency Type",
+  "Description": "",
+  "Type": "List",
+  "Status": "Live",
+  "ListItems": [
+    "FS",
+    "SS",
+    "FF",
+    "SF"
+  ],
+  "_application_id": "itpmd_project_hub_A00",
+  "Security": {
+    "AllowAllFlows": true,
+    "AllowedFlows": []
+  }
+}

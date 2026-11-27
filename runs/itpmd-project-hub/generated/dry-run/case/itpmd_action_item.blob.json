@@ -1,0 +1,328 @@
+{
+  "Root": "itpmd_action_item",
+  "itpmd_action_item": {
+    "Id": "itpmd_action_item",
+    "Name": "ITPMD Action Item",
+    "Kind": "Model",
+    "FlowType": "Case",
+    "Description": "",
+    "Model::Row": [
+      "Row_16c2xar"
+    ],
+    "Model::Field": [
+      "action_description",
+      "project",
+      "related_issue",
+      "assignee",
+      "due_date",
+      "overdue_flag"
+    ],
+    "Model::Appearance": [
+      "Appearance_hku50u"
+    ]
+  },
+  "Row_16c2xar": {
+    "Id": "Row_16c2xar",
+    "Kind": "Row",
+    "Model": "itpmd_action_item",
+    "Row::Column": [
+      "Column_16c2xar"
+    ]
+  },
+  "Column_16c2xar": {
+    "Id": "Column_16c2xar",
+    "Kind": "Column",
+    "Type": "Section",
+    "Name": "Details",
+    "Start": 0,
+    "End": 6,
+    "Row": "Row_16c2xar",
+    "Column::Row": [
+      "Row_16c1p59",
+      "Row_16c1p5a",
+      "Row_16c1p5b"
+    ]
+  },
+  "Row_16c1p59": {
+    "Id": "Row_16c1p59",
+    "Kind": "Row",
+    "Column": "Column_16c2xar",
+    "Row::Column": [
+      "Column_jptk95",
+      "Column_irdu67"
+    ]
+  },
+  "Column_jptk95": {
+    "Id": "Column_jptk95",
+    "Kind": "Column",
+    "Type": "Field",
+    "Start": 0,
+    "End": 3,
+    "Row": "Row_16c1p59",
+    "Column::Field": [
+      "action_description"
+    ]
+  },
+  "Column_irdu67": {
+    "Id": "Column_irdu67",
+    "Kind": "Column",
+    "Type": "Field",
+    "Start": 3,
+    "End": 6,
+    "Row": "Row_16c1p59",
+    "Column::Field": [
+      "project"
+    ]
+  },
+  "Row_16c1p5a": {
+    "Id": "Row_16c1p5a",
+    "Kind": "Row",
+    "Column": "Column_16c2xar",
+    "Row::Column": [
+      "Column_13wn7dd",
+      "Column_ew3gxj"
+    ]
+  },
+  "Column_13wn7dd": {
+    "Id": "Column_13wn7dd",
+    "Kind": "Column",
+    "Type": "Field",
+    "Start": 0,
+    "End": 3,
+    "Row": "Row_16c1p5a",
+    "Column::Field": [
+      "related_issue"
+    ]
+  },
+  "Column_ew3gxj": {
+    "Id": "Column_ew3gxj",
+    "Kind": "Column",
+    "Type": "Field",
+    "Start": 3,
+    "End": 6,
+    "Row": "Row_16c1p5a",
+    "Column::Field": [
+      "assignee"
+    ]
+  },
+  "Row_16c1p5b": {
+    "Id": "Row_16c1p5b",
+    "Kind": "Row",
+    "Column": "Column_16c2xar",
+    "Row::Column": [
+      "Column_vwyfr7",
+      "Column_1ga5lnf"
+    ]
+  },
+  "Column_vwyfr7": {
+    "Id": "Column_vwyfr7",
+    "Kind": "Column",
+    "Type": "Field",
+    "Start": 0,
+    "End": 3,
+    "Row": "Row_16c1p5b",
+    "Column::Field": [
+      "due_date"
+    ]
+  },
+  "Column_1ga5lnf": {
+    "Id": "Column_1ga5lnf",
+    "Kind": "Column",
+    "Type": "Field",
+    "Start": 3,
+    "End": 6,
+    "Row": "Row_16c1p5b",
+    "Column::Field": [
+      "overdue_flag"
+    ]
+  },
+  "action_description": {
+    "Id": "action_description",
+    "Kind": "Field",
+    "Type": "Text",
+    "Name": "Action_Description",
+    "Model": "itpmd_action_item",
+    "Column": "Column_jptk95",
+    "Required": true
+  },
+  "QueryDefinition_irdu67": {
+    "Id": "QueryDefinition_irdu67",
+    "Kind": "QueryDefinition",
+    "Field": "project",
+    "LHSModel": "itpmd_project",
+    "FlowType": "Form",
+    "LookupField": [
+      {
+        "Id": "Project_Name",
+        "Name": "Project_Name",
+        "Type": "Text"
+      }
+    ],
+    "HiddenField": []
+  },
+  "project": {
+    "Id": "project",
+    "Kind": "Field",
+    "Type": "Reference",
+    "Name": "Project",
+    "Model": "itpmd_action_item",
+    "Column": "Column_irdu67",
+    "Required": true,
+    "Field::QueryDefinition": [
+      "QueryDefinition_irdu67"
+    ]
+  },
+  "QueryDefinition_13wn7dd": {
+    "Id": "QueryDefinition_13wn7dd",
+    "Kind": "QueryDefinition",
+    "Field": "related_issue",
+    "LHSModel": "itpmd_issue",
+    "FlowType": "Case",
+    "LookupField": [
+      {
+        "Id": "Issue_Title",
+        "Name": "Issue_Title",
+        "Type": "Text"
+      }
+    ],
+    "HiddenField": []
+  },
+  "related_issue": {
+    "Id": "related_issue",
+    "Kind": "Field",
+    "Type": "Reference",
+    "Name": "Related_Issue",
+    "Model": "itpmd_action_item",
+    "Column": "Column_13wn7dd",
+    "Field::QueryDefinition": [
+      "QueryDefinition_13wn7dd"
+    ]
+  },
+  "QueryDefinition_ew3gxj": {
+    "Id": "QueryDefinition_ew3gxj",
+    "Kind": "QueryDefinition",
+    "Field": "assignee",
+    "LHSModel": "User",
+    "FlowType": "User",
+    "LookupField": [],
+    "HiddenField": []
+  },
+  "assignee": {
+    "Id": "assignee",
+    "Kind": "Field",
+    "Type": "User",
+    "Name": "Assignee",
+    "Model": "itpmd_action_item",
+    "Column": "Column_ew3gxj",
+    "Required": true,
+    "Field::QueryDefinition": [
+      "QueryDefinition_ew3gxj"
+    ]
+  },
+  "due_date": {
+    "Id": "due_date",
+    "Kind": "Field",
+    "Type": "Date",
+    "Name": "Due_Date",
+    "Model": "itpmd_action_item",
+    "Column": "Column_vwyfr7"
+  },
+  "Expression_1ga5lnf": {
+    "Id": "Expression_1ga5lnf",
+    "Kind": "Expression",
+    "Field": "overdue_flag",
+    "ExpressionStr": "IF(Due_Date<TODAY(),1,0)",
+    "Expression::Node": [
+      "Node_usgiv3"
+    ]
+  },
+  "Node_usgiuy": {
+    "Id": "Node_usgiuy",
+    "Kind": "Node",
+    "DataType": "Number",
+    "Type": "Field",
+    "Field": "due_date",
+    "Node": "Node_usgiv0"
+  },
+  "Node_usgiuz": {
+    "Id": "Node_usgiuz",
+    "Kind": "Node",
+    "DataType": "Number",
+    "Type": "Function",
+    "Value": "TODAY",
+    "Category": "Date",
+    "Node::Node": [],
+    "FieldRefCount": 0,
+    "Node": "Node_usgiv0"
+  },
+  "Node_usgiv0": {
+    "Id": "Node_usgiv0",
+    "Kind": "Node",
+    "DataType": "Number",
+    "Type": "Function",
+    "Value": "<",
+    "Category": "Boolean",
+    "Syntax": "Infix",
+    "Node::Node": [
+      "Node_usgiuy",
+      "Node_usgiuz"
+    ],
+    "FieldRefCount": 2,
+    "Node": "Node_usgiv3"
+  },
+  "Node_usgiv1": {
+    "Id": "Node_usgiv1",
+    "Kind": "Node",
+    "DataType": "Number",
+    "Type": "Static",
+    "Value": "1",
+    "Node": "Node_usgiv3"
+  },
+  "Node_usgiv2": {
+    "Id": "Node_usgiv2",
+    "Kind": "Node",
+    "DataType": "Number",
+    "Type": "Static",
+    "Value": "0",
+    "Node": "Node_usgiv3"
+  },
+  "Node_usgiv3": {
+    "Id": "Node_usgiv3",
+    "Kind": "Node",
+    "DataType": "Number",
+    "Type": "Function",
+    "Value": "IF",
+    "Category": "Logical",
+    "Node::Node": [
+      "Node_usgiv0",
+      "Node_usgiv1",
+      "Node_usgiv2"
+    ],
+    "FieldRefCount": 3,
+    "Expression": "Expression_1ga5lnf"
+  },
+  "overdue_flag": {
+    "Id": "overdue_flag",
+    "Kind": "Field",
+    "Type": "Number",
+    "Name": "Overdue_Flag",
+    "Model": "itpmd_action_item",
+    "Column": "Column_1ga5lnf",
+    "Field::Expression": [
+      "Expression_1ga5lnf"
+    ]
+  },
+  "Appearance_hku50u": {
+    "Id": "Appearance_hku50u",
+    "Kind": "Appearance",
+    "Model": "itpmd_action_item",
+    "Appearance::Style": [
+      "Style_hku50u"
+    ]
+  },
+  "Style_hku50u": {
+    "Id": "Style_hku50u",
+    "Kind": "Style",
+    "Appearance": "Appearance_hku50u"
+  }
+}

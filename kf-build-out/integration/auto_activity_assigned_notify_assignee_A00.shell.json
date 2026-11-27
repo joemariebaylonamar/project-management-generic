@@ -1,0 +1,4 @@
+{
+  "Name": "Activity assigned/reassigned → notify Responsible Person",
+  "Description": "J-03 'assignment notification automation' + workflow_meta status-change → field-user:Assignee (ITPH-00255): 'An activity or action item has been assigned to you on {{Project}}.' Reassignment history itself is native item history (D14), not this stitch."
+}

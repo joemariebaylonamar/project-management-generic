@@ -1,0 +1,17 @@
+{
+  "_id": "itpmd_risk_status",
+  "Name": "ITPMD Risk Status",
+  "Description": "",
+  "Type": "List",
+  "Status": "Live",
+  "ListItems": [
+    "Open",
+    "Monitoring",
+    "Closed"
+  ],
+  "_application_id": "itpmd_project_hub_A00",
+  "Security": {
+    "AllowAllFlows": true,
+    "AllowedFlows": []
+  }
+}

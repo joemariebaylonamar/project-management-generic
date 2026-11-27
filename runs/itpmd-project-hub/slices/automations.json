@@ -1,0 +1,165 @@
+{
+  "automations": [
+    {
+      "id": "auto_psr_submit_notify_dh",
+      "name": "PSR submitted → notify Department Head",
+      "source": { "flow": "itpmd_psr", "on": "Draft", "event": "submitted" },
+      "action": {
+        "type": "notify",
+        "target_flow": "itpmd_psr",
+        "field_map": { "Department_Head": "Department_Head", "Project": "Project", "Reporting_Period_Month": "Reporting_Period_Month", "Project_Manager": "Project_Manager" },
+        "condition": null
+      },
+      "channel": "internal",
+      "rationale": "workflow_meta.notifications step-entry → role:Department Head (ITPH-00149, BR-24 Draft→DH Review transition): 'A Project Status Report for {{Project}} ({{Reporting_Period}}) has been submitted ... awaiting your review.' IsActive:false pending step wiring."
+    },
+    {
+      "id": "auto_psr_dh_approved_notify_sponsor",
+      "name": "PSR DH-approved (sponsor required) → notify Project Sponsor",
+      "source": { "flow": "itpmd_psr", "on": "Department Head Review", "event": "approved" },
+      "action": {
+        "type": "notify",
+        "target_flow": "itpmd_psr",
+        "field_map": { "Project_Sponsor": "Project_Sponsor", "Project": "Project", "Reporting_Period_Month": "Reporting_Period_Month" },
+        "condition": "Sponsor_Approval_Required = \"Yes\""
+      },
+      "channel": "internal",
+      "rationale": "BR-10 routing (health Red / baseline-or-budget change requested / PS_Approval_Required flag) + workflow_meta step-entry → role:Project Sponsor (ITPH-00157): 'A Department-Head-approved PSR ... requires your sign-off.'"
+    },
+    {
+      "id": "auto_psr_dh_returned_notify_pm",
+      "name": "PSR returned at DH Review → notify PM with comment",
+      "source": { "flow": "itpmd_psr", "on": "Department Head Review", "event": "rejected" },
+      "action": {
+        "type": "notify",
+        "target_flow": "itpmd_psr",
+        "field_map": { "Project_Manager": "Project_Manager", "Project": "Project", "Reporting_Period_Month": "Reporting_Period_Month" },
+        "condition": null
+      },
+      "channel": "internal",
+      "rationale": "BR-25/ITPH-00116: DH send-back carries the platform's native mandatory-comment prompt; workflow_meta status-change → field-user:Project_Manager (ITPH-00121): 'Your PSR ... was returned by {{Returned_By}}. Reason: {{Return_Comment}}.'"
+    },
+    {
+      "id": "auto_psr_sponsor_returned_notify_pm",
+      "name": "PSR returned at Sponsor Approval → notify PM with comment",
+      "source": { "flow": "itpmd_psr", "on": "Sponsor Approval", "event": "rejected" },
+      "action": {
+        "type": "notify",
+        "target_flow": "itpmd_psr",
+        "field_map": { "Project_Manager": "Project_Manager", "Project": "Project", "Reporting_Period_Month": "Reporting_Period_Month" },
+        "condition": null
+      },
+      "channel": "internal",
+      "rationale": "BR-25/ITPH-00116: Sponsor send-back is the same native mandatory-comment return, mirrored on the conditional step; same PM notification (ITPH-00121)."
+    },
+    {
+      "id": "auto_psr_approved_notify_pm",
+      "name": "PSR Approved (locked) → notify PM",
+      "source": { "flow": "itpmd_psr", "on": "Approved", "event": "completed" },
+      "action": {
+        "type": "notify",
+        "target_flow": "itpmd_psr",
+        "field_map": { "Project_Manager": "Project_Manager", "Project": "Project", "Reporting_Period_Month": "Reporting_Period_Month" },
+        "condition": null
+      },
+      "channel": "internal",
+      "rationale": "BR-13: reaching the terminal Approved step is a locked read-only snapshot; workflow_meta status-change → field-user:Project_Manager: 'Your PSR ... is Approved and locked.'"
+    },
+    {
+      "id": "auto_psr_deadline_reminder",
+      "name": "PSR deadline reminders (3-day / 1-day / daily overdue)",
+      "source": { "flow": "itpmd_psr", "on": "Draft", "event": "updated" },
+      "action": {
+        "type": "notify",
+        "target_flow": "itpmd_psr",
+        "field_map": { "Project_Manager": "Project_Manager", "Project": "Project", "Reporting_Period_Month": "Reporting_Period_Month" },
+        "condition": "SLA (BR-11): PSR due on working day 5 of the following month (ITPMD Hub Settings/ITPMD Holiday Calendar working-day logic) — fire 3 days before due, 1 day before due, and daily while the Draft step remains un-submitted past due"
+      },
+      "channel": "internal",
+      "rationale": "workflow_meta.slas step:itpmd_psr.Draft + workflow_meta.notifications SLA-breach → role:Project Manager (BR-11, ITPH-0097/00148/00157). Engine note: realize via the process connector's SlaBreached trigger (CONNECTOR_CATALOG.process.triggers.slaBreached) once wired — recorded here as source.event:'updated' because 'created|submitted|approved|completed|updated' is this IR's event vocabulary; the actual connector trigger selection is an engine/integrations.mjs concern, not a modeling one."
+    },
+    {
+      "id": "auto_activity_assigned_notify_assignee",
+      "name": "Activity assigned/reassigned → notify Responsible Person",
+      "source": { "flow": "itpmd_activity", "on": "record create/update", "event": "updated" },
+      "action": {
+        "type": "notify",
+        "target_flow": "itpmd_activity",
+        "field_map": { "Responsible_Person": "Responsible_Person", "Assigned_By": "Assigned_By", "Assigned_At": "Assigned_At", "Project": "Project" },
+        "condition": "Responsible_Person is set or changed (assignment or reassignment)"
+      },
+      "channel": "internal",
+      "rationale": "J-03 'assignment notification automation' + workflow_meta status-change → field-user:Assignee (ITPH-00255): 'An activity or action item has been assigned to you on {{Project}}.' Reassignment history itself is native item history (D14), not this stitch."
+    },
+    {
+      "id": "auto_activity_forecast_past_baseline_alert",
+      "name": "Activity forecast past baseline (Red) → notify Responsible Person",
+      "source": { "flow": "itpmd_activity", "on": "record update", "event": "updated" },
+      "action": {
+        "type": "notify",
+        "target_flow": "itpmd_activity",
+        "field_map": { "Responsible_Person": "Responsible_Person", "Project": "Project", "Schedule_Variance_Days": "Schedule_Variance_Days" },
+        "condition": "BR-03: Schedule_Variance_Days > 10 (Red) OR Missed_Milestone_Flag = 1"
+      },
+      "channel": "internal",
+      "rationale": "Journey J-04 explicitly names a 'forecast-past-baseline alert automation' following the PM's forecast update; BR-03's Red threshold (variance > 10 working days, or a missed milestone) is the trigger condition."
+    },
+    {
+      "id": "auto_action_item_assigned_notify_assignee",
+      "name": "Action item created/assigned → notify Assignee",
+      "source": { "flow": "itpmd_action_item", "on": "Open", "event": "created" },
+      "action": {
+        "type": "notify",
+        "target_flow": "itpmd_action_item",
+        "field_map": { "Assignee": "Assignee", "Project": "Project", "Due_Date": "Due_Date" },
+        "condition": null
+      },
+      "channel": "internal",
+      "rationale": "workflow_meta status-change → field-user:Assignee (ITPH-00255): action items are assigned at creation; notify the assignee immediately."
+    },
+    {
+      "id": "auto_action_item_overdue_notify_assignee",
+      "name": "Action item Overdue (auto) → notify Assignee",
+      "source": { "flow": "itpmd_action_item", "on": "Overdue", "event": "updated" },
+      "action": {
+        "type": "notify",
+        "target_flow": "itpmd_action_item",
+        "field_map": { "Assignee": "Assignee", "Project": "Project", "Action_Description": "Action_Description" },
+        "condition": "auto-transition In Progress/Open → Overdue when Due_Date has passed (ITPH-0037/00155)"
+      },
+      "channel": "internal",
+      "rationale": "workflow_meta status:itpmd_action_item.Open/In Progress SLA on_breach: escalate + notify assignee and PM. This stitch covers the assignee half (ITPH-00155); PM visibility is reached via the same Project reference field (Project field mapped for template context), not a separate authored field."
+    },
+    {
+      "id": "auto_issue_escalated_notify_pm_psc",
+      "name": "Issue Escalated (auto) → notify Issue Owner/PM and PSC Member",
+      "source": { "flow": "itpmd_issue", "on": "Escalated", "event": "updated" },
+      "action": {
+        "type": "notify",
+        "target_flow": "itpmd_issue",
+        "field_map": { "Issue_Owner": "Issue_Owner", "Project": "Project", "Issue_Title": "Issue_Title", "Priority": "Priority" },
+        "condition": "BR-21: Priority = Critical, or Target_Resolution_Date passed the configured aging period (ITPMD Hub Settings), while still Open/In Progress"
+      },
+      "channel": "internal",
+      "rationale": "BR-21 + workflow_meta status:itpmd_issue.Open/In Progress on_breach (escalate + notify PM/issue owner and role:PSC Member, ITPH-0039/0040) and BRD ITPH-00150 (PM alerts for critical issues). Issue_Owner carries the PM/delegate; PSC visibility is native board/dashboard reach for the Escalated status, not a separate authored field."
+    },
+    {
+      "id": "auto_risk_escalated_notify_owner_pm",
+      "name": "Risk escalated (High/Critical) → notify Risk Owner",
+      "source": { "flow": "itpmd_risk", "on": "record update", "event": "updated" },
+      "action": {
+        "type": "notify",
+        "target_flow": "itpmd_risk",
+        "field_map": { "Risk_Owner": "Risk_Owner", "Project": "Project", "Risk_Title": "Risk_Title", "Risk_Rating_Band": "Risk_Rating_Band" },
+        "condition": "BR-22: Escalation_Flag = 1 (Risk_Rating_Band = High or Critical)"
+      },
+      "channel": "internal",
+      "rationale": "BR-22 (risk escalates automatically at High/Critical rating, appears on PSC view, triggers notifications) + BRD ITPH-00150 (PM alerts for critical risks and issues). Risk is a plain Form (no workflow steps, D15/architecture), so the trigger is a field-value change (Escalation_Flag), not a step/status transition."
+    }
+  ],
+  "external_not_authored": [
+    {
+      "note": "Kissflow's native step-assignment / My-Items notifications and any account-level email digest for the above are delivered by the platform itself once a role/user is assigned a step or task — no separate email/SMTP automation is authored here; BRD §8.12 does not name a distinct external channel (SMS, webhook, ERP) for MVP notifications, so nothing is flagged external for this app."
+    }
+  ]
+}

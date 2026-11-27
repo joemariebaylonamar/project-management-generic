@@ -1,0 +1,109 @@
+{
+ "_id": "PkESbabyxplK",
+ "Name": "ITPMD Project Status Report from Joms",
+ "_created_by": {
+  "_id": "UsEEQe4PIDoK",
+  "Name": "Joms",
+  "Kind": "User"
+ },
+ "_modified_by": {
+  "_id": "UsEEQe4PIDoK",
+  "Name": "Joms",
+  "Kind": "User"
+ },
+ "_created_at": "2026-10-30T06:36:42Z",
+ "_modified_at": "2026-10-30T06:36:44Z",
+ "_flow_name": "ITPMD Project Status Report",
+ "_application_id": "ITPMD_Project_Hub_A00",
+ "_flow_type": "Process",
+ "_doc_version": "225973795451560224",
+ "_current_step": "Department Head Review",
+ "_current_assigned_to": [
+  {
+   "_id": "RoERtv4trgpx",
+   "Name": "Department Head",
+   "Kind": "AppRole"
+  }
+ ],
+ "_status": "InProgress",
+ "_stage": 1,
+ "_root_process_instance": "PkESbac3MbPW",
+ "_submitted_at": "2026-10-30T06:36:44Z",
+ "_request_number": 4,
+ "_counter": 6,
+ "_last_completed_step": "PkESbac3Qna_",
+ "_progress": 0,
+ "reporting_period_month": "2026-10-01",
+ "project": {
+  "project_name": "QA-Project Alpha",
+  "business_unit": "Retail Banking",
+  "portfolio": "Digital Channels",
+  "RoERtv3vbU79": {
+   "_id": "UsEEQe4PIDoK",
+   "Name": "Joms",
+   "Kind": "User"
+  },
+  "RoERtv4trgpx": {
+   "_id": "UsEEQe4PIDoK",
+   "Name": "Joms",
+   "Kind": "User"
+  },
+  "RoERtv5LLAbI": {
+   "_id": "UsEEQe4PIDoK",
+   "Name": "Joms",
+   "Kind": "User"
+  },
+  "ps_approval_required": false,
+  "_id": "PkESbS8pgLYd",
+  "Name": "ITPMD Project from Joms"
+ },
+ "RoERtv3vbU79": {
+  "_id": "UsEEQe4PIDoK",
+  "Name": "Joms",
+  "Kind": "User"
+ },
+ "RoERtv4trgpx": {
+  "_id": "UsEEQe4PIDoK",
+  "Name": "Joms",
+  "Kind": "User"
+ },
+ "RoERtv5LLAbI": {
+  "_id": "UsEEQe4PIDoK",
+  "Name": "Joms",
+  "Kind": "User"
+ },
+ "ps_approval_required": false,
+ "overall_health": "Red",
+ "baseline_or_budget_change_requested": false,
+ "narrative_update": "QA-PSR red",
+ "_activity_instance_id": "PkESbac3Qna_",
+ "_activity_id": "Activity_zfcq6a",
+ "_note": null,
+ "_entity_id": "PkESbac3Qna_",
+ "_is_duplicable": true,
+ "_watchers": [],
+ "IsSelfPickEnabled": false,
+ "_current_context": [
+  {
+   "_context_current_step": "Department Head Review",
+   "_context_assigned_to": [
+    {
+     "_id": "RoERtv4trgpx",
+     "Name": "Department Head",
+     "Kind": "AppRole"
+    }
+   ],
+   "_context_action_info": [],
+   "NodeType": "UserTask",
+   "_context_assigned_at": "2026-10-30T06:36:44Z",
+   "_context_activity_id": "Activity_1fs3j49",
+   "_context_activity_instance_id": "PkESbae2A2Pw",
+   "_context_is_step_reassigned": false,
+   "_context_reassignments": [],
+   "_context_delegations": [],
+   "_context_last_self_picked_by": null,
+   "ExpectedAt": null
+  }
+ ],
+ "_meta_version": "1793188598682235"
+}

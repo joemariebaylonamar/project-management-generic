@@ -1,0 +1,710 @@
+{
+  "Root": "itpmd_issue",
+  "itpmd_issue": {
+    "Id": "itpmd_issue",
+    "Name": "ITPMD Issue",
+    "Kind": "Model",
+    "FlowType": "Case",
+    "Description": "",
+    "Model::Row": [
+      "Row_l4b0wg"
+    ],
+    "Model::Field": [
+      "issue_title",
+      "project",
+      "issue_category",
+      "priority",
+      "issue_owner",
+      "target_resolution_date",
+      "description",
+      "hub_settings",
+      "issue_aging_period_days",
+      "days_open",
+      "critical_flag",
+      "escalation_flag"
+    ],
+    "Model::Appearance": [
+      "Appearance_1x0gd8r"
+    ]
+  },
+  "Row_l4b0wg": {
+    "Id": "Row_l4b0wg",
+    "Kind": "Row",
+    "Model": "itpmd_issue",
+    "Row::Column": [
+      "Column_l4b0wg"
+    ]
+  },
+  "Column_l4b0wg": {
+    "Id": "Column_l4b0wg",
+    "Kind": "Column",
+    "Type": "Section",
+    "Name": "Details",
+    "Start": 0,
+    "End": 6,
+    "Row": "Row_l4b0wg",
+    "Column::Row": [
+      "Row_l49sqy",
+      "Row_l49sqz",
+      "Row_l49sr0",
+      "Row_l49sr1",
+      "Row_l49sr2",
+      "Row_l49sr3",
+      "Row_l49sr4"
+    ]
+  },
+  "Row_l49sqy": {
+    "Id": "Row_l49sqy",
+    "Kind": "Row",
+    "Column": "Column_l4b0wg",
+    "Row::Column": [
+      "Column_1fmui3z",
+      "Column_q4b4m4"
+    ]
+  },
+  "Column_1fmui3z": {
+    "Id": "Column_1fmui3z",
+    "Kind": "Column",
+    "Type": "Field",
+    "Start": 0,
+    "End": 3,
+    "Row": "Row_l49sqy",
+    "Column::Field": [
+      "issue_title"
+    ]
+  },
+  "Column_q4b4m4": {
+    "Id": "Column_q4b4m4",
+    "Kind": "Column",
+    "Type": "Field",
+    "Start": 3,
+    "End": 6,
+    "Row": "Row_l49sqy",
+    "Column::Field": [
+      "project"
+    ]
+  },
+  "Row_l49sqz": {
+    "Id": "Row_l49sqz",
+    "Kind": "Row",
+    "Column": "Column_l4b0wg",
+    "Row::Column": [
+      "Column_1b3ufsb",
+      "Column_5suz47"
+    ]
+  },
+  "Column_1b3ufsb": {
+    "Id": "Column_1b3ufsb",
+    "Kind": "Column",
+    "Type": "Field",
+    "Start": 0,
+    "End": 3,
+    "Row": "Row_l49sqz",
+    "Column::Field": [
+      "issue_category"
+    ]
+  },
+  "Column_5suz47": {
+    "Id": "Column_5suz47",
+    "Kind": "Column",
+    "Type": "Field",
+    "Start": 3,
+    "End": 6,
+    "Row": "Row_l49sqz",
+    "Column::Field": [
+      "priority"
+    ]
+  },
+  "Row_l49sr0": {
+    "Id": "Row_l49sr0",
+    "Kind": "Row",
+    "Column": "Column_l4b0wg",
+    "Row::Column": [
+      "Column_1fjm1so",
+      "Column_1i0n6jg"
+    ]
+  },
+  "Column_1fjm1so": {
+    "Id": "Column_1fjm1so",
+    "Kind": "Column",
+    "Type": "Field",
+    "Start": 0,
+    "End": 3,
+    "Row": "Row_l49sr0",
+    "Column::Field": [
+      "issue_owner"
+    ]
+  },
+  "Column_1i0n6jg": {
+    "Id": "Column_1i0n6jg",
+    "Kind": "Column",
+    "Type": "Field",
+    "Start": 3,
+    "End": 6,
+    "Row": "Row_l49sr0",
+    "Column::Field": [
+      "target_resolution_date"
+    ]
+  },
+  "Row_l49sr1": {
+    "Id": "Row_l49sr1",
+    "Kind": "Row",
+    "Column": "Column_l4b0wg",
+    "Row::Column": [
+      "Column_khogmh"
+    ]
+  },
+  "Column_khogmh": {
+    "Id": "Column_khogmh",
+    "Kind": "Column",
+    "Type": "Field",
+    "Start": 0,
+    "End": 6,
+    "Row": "Row_l49sr1",
+    "Column::Field": [
+      "description"
+    ]
+  },
+  "Row_l49sr2": {
+    "Id": "Row_l49sr2",
+    "Kind": "Row",
+    "Column": "Column_l4b0wg",
+    "Row::Column": [
+      "Column_kgd3dg",
+      "Column_17y9qth"
+    ]
+  },
+  "Column_kgd3dg": {
+    "Id": "Column_kgd3dg",
+    "Kind": "Column",
+    "Type": "Field",
+    "Start": 0,
+    "End": 3,
+    "Row": "Row_l49sr2",
+    "Column::Field": [
+      "hub_settings"
+    ]
+  },
+  "Column_17y9qth": {
+    "Id": "Column_17y9qth",
+    "Kind": "Column",
+    "Type": "Field",
+    "Start": 3,
+    "End": 6,
+    "Row": "Row_l49sr2",
+    "Column::Field": [
+      "issue_aging_period_days"
+    ]
+  },
+  "Row_l49sr3": {
+    "Id": "Row_l49sr3",
+    "Kind": "Row",
+    "Column": "Column_l4b0wg",
+    "Row::Column": [
+      "Column_rlemo7",
+      "Column_c8jzd5"
+    ]
+  },
+  "Column_rlemo7": {
+    "Id": "Column_rlemo7",
+    "Kind": "Column",
+    "Type": "Field",
+    "Start": 0,
+    "End": 3,
+    "Row": "Row_l49sr3",
+    "Column::Field": [
+      "days_open"
+    ]
+  },
+  "Column_c8jzd5": {
+    "Id": "Column_c8jzd5",
+    "Kind": "Column",
+    "Type": "Field",
+    "Start": 3,
+    "End": 6,
+    "Row": "Row_l49sr3",
+    "Column::Field": [
+      "critical_flag"
+    ]
+  },
+  "Row_l49sr4": {
+    "Id": "Row_l49sr4",
+    "Kind": "Row",
+    "Column": "Column_l4b0wg",
+    "Row::Column": [
+      "Column_1thc8e9"
+    ]
+  },
+  "Column_1thc8e9": {
+    "Id": "Column_1thc8e9",
+    "Kind": "Column",
+    "Type": "Field",
+    "Start": 0,
+    "End": 3,
+    "Row": "Row_l49sr4",
+    "Column::Field": [
+      "escalation_flag"
+    ]
+  },
+  "issue_title": {
+    "Id": "issue_title",
+    "Kind": "Field",
+    "Type": "Text",
+    "Name": "Issue_Title",
+    "Model": "itpmd_issue",
+    "Column": "Column_1fmui3z",
+    "Required": true
+  },
+  "QueryDefinition_q4b4m4": {
+    "Id": "QueryDefinition_q4b4m4",
+    "Kind": "QueryDefinition",
+    "Field": "project",
+    "LHSModel": "itpmd_project",
+    "FlowType": "Form",
+    "LookupField": [
+      {
+        "Id": "Project_Name",
+        "Name": "Project_Name",
+        "Type": "Text"
+      }
+    ],
+    "HiddenField": []
+  },
+  "project": {
+    "Id": "project",
+    "Kind": "Field",
+    "Type": "Reference",
+    "Name": "Project",
+    "Model": "itpmd_issue",
+    "Column": "Column_q4b4m4",
+    "Required": true,
+    "Field::QueryDefinition": [
+      "QueryDefinition_q4b4m4"
+    ]
+  },
+  "issue_category": {
+    "Id": "issue_category",
+    "Kind": "Field",
+    "Type": "Select",
+    "Name": "Issue_Category",
+    "Model": "itpmd_issue",
+    "Column": "Column_1b3ufsb",
+    "Required": true,
+    "ReferredList": "itpmd_issue_category"
+  },
+  "priority": {
+    "Id": "priority",
+    "Kind": "Field",
+    "Type": "Select",
+    "Name": "Priority",
+    "Model": "itpmd_issue",
+    "Column": "Column_5suz47",
+    "Required": true,
+    "ReferredList": "itpmd_priority_level"
+  },
+  "QueryDefinition_1fjm1so": {
+    "Id": "QueryDefinition_1fjm1so",
+    "Kind": "QueryDefinition",
+    "Field": "issue_owner",
+    "LHSModel": "User",
+    "FlowType": "User",
+    "LookupField": [],
+    "HiddenField": []
+  },
+  "issue_owner": {
+    "Id": "issue_owner",
+    "Kind": "Field",
+    "Type": "User",
+    "Name": "Issue_Owner",
+    "Model": "itpmd_issue",
+    "Column": "Column_1fjm1so",
+    "Required": true,
+    "Field::QueryDefinition": [
+      "QueryDefinition_1fjm1so"
+    ]
+  },
+  "target_resolution_date": {
+    "Id": "target_resolution_date",
+    "Kind": "Field",
+    "Type": "Date",
+    "Name": "Target_Resolution_Date",
+    "Model": "itpmd_issue",
+    "Column": "Column_1i0n6jg"
+  },
+  "description": {
+    "Id": "description",
+    "Kind": "Field",
+    "Type": "Textarea",
+    "Name": "Description",
+    "Model": "itpmd_issue",
+    "Column": "Column_khogmh"
+  },
+  "QueryDefinition_kgd3dg": {
+    "Id": "QueryDefinition_kgd3dg",
+    "Kind": "QueryDefinition",
+    "Field": "hub_settings",
+    "LHSModel": "itpmd_hub_settings",
+    "FlowType": "Form",
+    "LookupField": [
+      {
+        "Id": "Setting_Name",
+        "Name": "Setting_Name",
+        "Type": "Text"
+      },
+      {
+        "Id": "Issue_Aging_Period_Days",
+        "Name": "Issue_Aging_Period_Days",
+        "Type": "Text"
+      }
+    ],
+    "HiddenField": [],
+    "AutoFill": true
+  },
+  "hub_settings": {
+    "Id": "hub_settings",
+    "Kind": "Field",
+    "Type": "Reference",
+    "Name": "Hub_Settings",
+    "Model": "itpmd_issue",
+    "Column": "Column_kgd3dg",
+    "Field::QueryDefinition": [
+      "QueryDefinition_kgd3dg"
+    ]
+  },
+  "issue_aging_period_days": {
+    "Id": "issue_aging_period_days",
+    "Kind": "Field",
+    "Type": "Number",
+    "Name": "Issue_Aging_Period_Days",
+    "Model": "itpmd_issue",
+    "Column": "Column_17y9qth"
+  },
+  "Expression_rlemo7": {
+    "Id": "Expression_rlemo7",
+    "Kind": "Expression",
+    "Field": "days_open",
+    "ExpressionStr": "IF(ISBLANK(Target_Resolution_Date),0,DATEDIFF(Target_Resolution_Date,TODAY(),\"Day\"))",
+    "Expression::Node": [
+      "Node_uqacx5"
+    ]
+  },
+  "Node_uqacwy": {
+    "Id": "Node_uqacwy",
+    "Kind": "Node",
+    "DataType": "Number",
+    "Type": "Field",
+    "Field": "target_resolution_date",
+    "Node": "Node_uqacwz"
+  },
+  "Node_uqacwz": {
+    "Id": "Node_uqacwz",
+    "Kind": "Node",
+    "DataType": "Number",
+    "Type": "Function",
+    "Value": "ISBLANK",
+    "Category": "Logical",
+    "Node::Node": [
+      "Node_uqacwy"
+    ],
+    "FieldRefCount": 1,
+    "Node": "Node_uqacx5"
+  },
+  "Node_uqacx0": {
+    "Id": "Node_uqacx0",
+    "Kind": "Node",
+    "DataType": "Number",
+    "Type": "Static",
+    "Value": "0",
+    "Node": "Node_uqacx5"
+  },
+  "Node_uqacx1": {
+    "Id": "Node_uqacx1",
+    "Kind": "Node",
+    "DataType": "Number",
+    "Type": "Field",
+    "Field": "target_resolution_date",
+    "Node": "Node_uqacx4"
+  },
+  "Node_uqacx2": {
+    "Id": "Node_uqacx2",
+    "Kind": "Node",
+    "DataType": "Number",
+    "Type": "Function",
+    "Value": "TODAY",
+    "Category": "Date",
+    "Node::Node": [],
+    "FieldRefCount": 0,
+    "Node": "Node_uqacx4"
+  },
+  "Node_uqacx3": {
+    "Id": "Node_uqacx3",
+    "Kind": "Node",
+    "DataType": "String",
+    "Type": "Static",
+    "Value": "Day",
+    "Node": "Node_uqacx4"
+  },
+  "Node_uqacx4": {
+    "Id": "Node_uqacx4",
+    "Kind": "Node",
+    "DataType": "Number",
+    "Type": "Function",
+    "Value": "DATEDIFF",
+    "Category": "Date",
+    "Node::Node": [
+      "Node_uqacx1",
+      "Node_uqacx2",
+      "Node_uqacx3"
+    ],
+    "FieldRefCount": 3,
+    "Node": "Node_uqacx5"
+  },
+  "Node_uqacx5": {
+    "Id": "Node_uqacx5",
+    "Kind": "Node",
+    "DataType": "Number",
+    "Type": "Function",
+    "Value": "IF",
+    "Category": "Logical",
+    "Node::Node": [
+      "Node_uqacwz",
+      "Node_uqacx0",
+      "Node_uqacx4"
+    ],
+    "FieldRefCount": 3,
+    "Expression": "Expression_rlemo7"
+  },
+  "days_open": {
+    "Id": "days_open",
+    "Kind": "Field",
+    "Type": "Number",
+    "Name": "Days_Open",
+    "Model": "itpmd_issue",
+    "Column": "Column_rlemo7",
+    "Field::Expression": [
+      "Expression_rlemo7"
+    ]
+  },
+  "Expression_c8jzd5": {
+    "Id": "Expression_c8jzd5",
+    "Kind": "Expression",
+    "Field": "critical_flag",
+    "ExpressionStr": "IF(Priority=\"Critical\",1,0)",
+    "Expression::Node": [
+      "Node_gsipqh"
+    ]
+  },
+  "Node_gsipqc": {
+    "Id": "Node_gsipqc",
+    "Kind": "Node",
+    "DataType": "Number",
+    "Type": "Field",
+    "Field": "priority",
+    "Node": "Node_gsipqe"
+  },
+  "Node_gsipqd": {
+    "Id": "Node_gsipqd",
+    "Kind": "Node",
+    "DataType": "String",
+    "Type": "Static",
+    "Value": "Critical",
+    "Node": "Node_gsipqe"
+  },
+  "Node_gsipqe": {
+    "Id": "Node_gsipqe",
+    "Kind": "Node",
+    "DataType": "Number",
+    "Type": "Function",
+    "Value": "=",
+    "Category": "Boolean",
+    "Syntax": "Infix",
+    "Node::Node": [
+      "Node_gsipqc",
+      "Node_gsipqd"
+    ],
+    "FieldRefCount": 2,
+    "Node": "Node_gsipqh"
+  },
+  "Node_gsipqf": {
+    "Id": "Node_gsipqf",
+    "Kind": "Node",
+    "DataType": "Number",
+    "Type": "Static",
+    "Value": "1",
+    "Node": "Node_gsipqh"
+  },
+  "Node_gsipqg": {
+    "Id": "Node_gsipqg",
+    "Kind": "Node",
+    "DataType": "Number",
+    "Type": "Static",
+    "Value": "0",
+    "Node": "Node_gsipqh"
+  },
+  "Node_gsipqh": {
+    "Id": "Node_gsipqh",
+    "Kind": "Node",
+    "DataType": "Number",
+    "Type": "Function",
+    "Value": "IF",
+    "Category": "Logical",
+    "Node::Node": [
+      "Node_gsipqe",
+      "Node_gsipqf",
+      "Node_gsipqg"
+    ],
+    "FieldRefCount": 3,
+    "Expression": "Expression_c8jzd5"
+  },
+  "critical_flag": {
+    "Id": "critical_flag",
+    "Kind": "Field",
+    "Type": "Number",
+    "Name": "Critical_Flag",
+    "Model": "itpmd_issue",
+    "Column": "Column_c8jzd5",
+    "Field::Expression": [
+      "Expression_c8jzd5"
+    ]
+  },
+  "Expression_1thc8e9": {
+    "Id": "Expression_1thc8e9",
+    "Kind": "Expression",
+    "Field": "escalation_flag",
+    "ExpressionStr": "IF(OR(Priority=\"Critical\",Days_Open>Issue_Aging_Period_Days),1,0)",
+    "Expression::Node": [
+      "Node_bnrriz"
+    ]
+  },
+  "Node_bnrriq": {
+    "Id": "Node_bnrriq",
+    "Kind": "Node",
+    "DataType": "Number",
+    "Type": "Field",
+    "Field": "priority",
+    "Node": "Node_bnrris"
+  },
+  "Node_bnrrir": {
+    "Id": "Node_bnrrir",
+    "Kind": "Node",
+    "DataType": "String",
+    "Type": "Static",
+    "Value": "Critical",
+    "Node": "Node_bnrris"
+  },
+  "Node_bnrris": {
+    "Id": "Node_bnrris",
+    "Kind": "Node",
+    "DataType": "Number",
+    "Type": "Function",
+    "Value": "=",
+    "Category": "Boolean",
+    "Syntax": "Infix",
+    "Node::Node": [
+      "Node_bnrriq",
+      "Node_bnrrir"
+    ],
+    "FieldRefCount": 2,
+    "Node": "Node_bnrriw"
+  },
+  "Node_bnrrit": {
+    "Id": "Node_bnrrit",
+    "Kind": "Node",
+    "DataType": "Number",
+    "Type": "Field",
+    "Field": "days_open",
+    "Node": "Node_bnrriv"
+  },
+  "Node_bnrriu": {
+    "Id": "Node_bnrriu",
+    "Kind": "Node",
+    "DataType": "Number",
+    "Type": "Field",
+    "Field": "issue_aging_period_days",
+    "Node": "Node_bnrriv"
+  },
+  "Node_bnrriv": {
+    "Id": "Node_bnrriv",
+    "Kind": "Node",
+    "DataType": "Number",
+    "Type": "Function",
+    "Value": ">",
+    "Category": "Boolean",
+    "Syntax": "Infix",
+    "Node::Node": [
+      "Node_bnrrit",
+      "Node_bnrriu"
+    ],
+    "FieldRefCount": 2,
+    "Node": "Node_bnrriw"
+  },
+  "Node_bnrriw": {
+    "Id": "Node_bnrriw",
+    "Kind": "Node",
+    "DataType": "Number",
+    "Type": "Function",
+    "Value": "OR",
+    "Category": "Logical",
+    "Node::Node": [
+      "Node_bnrris",
+      "Node_bnrriv"
+    ],
+    "FieldRefCount": 2,
+    "Node": "Node_bnrriz"
+  },
+  "Node_bnrrix": {
+    "Id": "Node_bnrrix",
+    "Kind": "Node",
+    "DataType": "Number",
+    "Type": "Static",
+    "Value": "1",
+    "Node": "Node_bnrriz"
+  },
+  "Node_bnrriy": {
+    "Id": "Node_bnrriy",
+    "Kind": "Node",
+    "DataType": "Number",
+    "Type": "Static",
+    "Value": "0",
+    "Node": "Node_bnrriz"
+  },
+  "Node_bnrriz": {
+    "Id": "Node_bnrriz",
+    "Kind": "Node",
+    "DataType": "Number",
+    "Type": "Function",
+    "Value": "IF",
+    "Category": "Logical",
+    "Node::Node": [
+      "Node_bnrriw",
+      "Node_bnrrix",
+      "Node_bnrriy"
+    ],
+    "FieldRefCount": 3,
+    "Expression": "Expression_1thc8e9"
+  },
+  "escalation_flag": {
+    "Id": "escalation_flag",
+    "Kind": "Field",
+    "Type": "Number",
+    "Name": "Escalation_Flag",
+    "Model": "itpmd_issue",
+    "Column": "Column_1thc8e9",
+    "Field::Expression": [
+      "Expression_1thc8e9"
+    ]
+  },
+  "Appearance_1x0gd8r": {
+    "Id": "Appearance_1x0gd8r",
+    "Kind": "Appearance",
+    "Model": "itpmd_issue",
+    "Appearance::Style": [
+      "Style_1x0gd8r"
+    ]
+  },
+  "Style_1x0gd8r": {
+    "Id": "Style_1x0gd8r",
+    "Kind": "Style",
+    "Appearance": "Appearance_1x0gd8r"
+  }
+}

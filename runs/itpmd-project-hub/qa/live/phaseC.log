@@ -1,0 +1,20 @@
+ case req issue issue_title 404
+ case req issue project 404
+ case req issue issue_category 404
+ case req issue priority 404
+ case req issue issue_owner 404
+ case req issue Summary 200
+issue null 404 The field Summary does not exist in the flow ITPMD Issue.
+ case req action action_description 404
+ case req action project 404
+ case req action assignee 404
+ case req action Summary 200
+action null 404 The field Summary does not exist in the flow ITPMD Action Item.
+ psr req project 200 400 undefined {"project":["Value is required"]}
+ psr req reporting_period_month 200 400 undefined {"reporting_period_month":["Value is required"]}
+ psr req narrative_update 200 200 undefined ""
+green {"assigned":[],"keys":"Status,Id,ErrorJson"}
+green approve 400 KISSFLOW_ERROR_050302 return 500 process undefined
+red {"assigned":[],"keys":"Status,Id,ErrorJson"}
+red approve 400 KISSFLOW_ERROR_050302 return 500 process undefined
+PHASE C done

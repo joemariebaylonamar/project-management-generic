@@ -1,0 +1,11 @@
+{
+ "note": "Captured from phaseC console output (phaseC.json PSR section was overwritten by an editing slip; the PSR items themselves were re-read live afterwards via psr_red_detail.json).",
+ "required": {
+  "project": {"create": 200, "submit": 400, "errs": {"project": ["Value is required"]}},
+  "reporting_period_month": {"create": 200, "submit": 400, "errs": {"reporting_period_month": ["Value is required"]}},
+  "narrative_update": {"create": 200, "submit": 200, "note": "submit ACCEPTED with narrative blank; item moved to Department Head Review (Mandatory at Draft step not enforced by the API)"}
+ },
+ "submit": {"green": {"step": "Department Head Review", "status": "InProgress", "assigned": ["Department Head"]}, "red": {"step": "Department Head Review", "status": "InProgress", "assigned": ["Department Head"], "sponsor_approval_required": null, "overall_health": "Red"}},
+ "approveAttempt": {"status": 400, "code": "KISSFLOW_ERROR_050302", "msg": "You don't have permission to submit this item anymore."},
+ "withdrawn": ["PkESbabyxplK", "PkESbaUWx29p", "PkESbaSPtiCi"]
+}

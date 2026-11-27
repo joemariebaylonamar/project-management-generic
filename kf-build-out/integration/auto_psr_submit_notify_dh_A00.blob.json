@@ -1,0 +1,58 @@
+{
+  "Root": "auto_psr_submit_notify_dh_A00",
+  "auto_psr_submit_notify_dh_A00": {
+    "_id": "auto_psr_submit_notify_dh_A00",
+    "Id": "auto_psr_submit_notify_dh_A00",
+    "Kind": "Integration",
+    "Name": "PSR submitted → notify Department Head",
+    "Type": "Integration",
+    "Status": "Draft",
+    "IsActive": true,
+    "_application_id": "itpmd_project_hub_A00",
+    "Connectors": [
+      "Connector_mpgb9k"
+    ],
+    "Integration::Trigger": [
+      "Trigger_979q7q"
+    ],
+    "Integration::Action": [
+      "Action_979q77"
+    ]
+  },
+  "Connector_mpgb9k": {
+    "_id": "Connector_mpgb9k",
+    "Id": "Connector_mpgb9k",
+    "Kind": "Connector",
+    "Name": "PSR submitted → notify Department Head connector",
+    "Entities": [
+      "Trigger_979q7q",
+      "Action_979q77"
+    ]
+  },
+  "Trigger_979q7q": {
+    "_id": "Trigger_979q7q",
+    "Id": "Trigger_979q7q",
+    "Kind": "Trigger",
+    "Version": 1,
+    "Name": "itpmd_psr · submitted",
+    "Flow": "itpmd_psr",
+    "On": "Draft",
+    "Event": "submitted"
+  },
+  "Action_979q77": {
+    "_id": "Action_979q77",
+    "Id": "Action_979q77",
+    "Kind": "Action",
+    "Version": 1,
+    "Name": "notify → itpmd_psr",
+    "ActionType": "notify",
+    "TargetFlow": "itpmd_psr",
+    "FieldMap": {
+      "Department_Head": "Department_Head",
+      "Project": "Project",
+      "Reporting_Period_Month": "Reporting_Period_Month",
+      "Project_Manager": "Project_Manager"
+    },
+    "Condition": null
+  }
+}

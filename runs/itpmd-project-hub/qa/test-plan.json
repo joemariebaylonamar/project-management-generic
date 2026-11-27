@@ -1,0 +1,3897 @@
+{
+ "generatedBy": "runs/current/qa/build-plan.mjs",
+ "target": "dev ITPMD_Project_Hub_A00",
+ "usecases": [
+  {
+   "id": "UC-J-01",
+   "title": "Set up a project from approved master data",
+   "role": "Project Manager",
+   "story": "A project manager sets up a newly approved IT project: its name, business unit, portfolio, the department head and sponsor who oversee it, its contract and purchase-order details, its approved budget and contingency, and who is on the team. The form insists on the key details before it will save, and once saved the project is the single record that schedules, costs and status reports all build on. People who are not on the project, and roles with no business seeing project set-up, are kept out.",
+   "covers": [
+    "J:J-01",
+    "P:Project Manager:itpmd_project:edit",
+    "S:Project Manager:itpmd_project:my",
+    "P:Team Member:itpmd_project:read",
+    "S:Team Member:itpmd_project:my",
+    "P:Department Head:itpmd_project:read",
+    "S:Department Head:itpmd_project:my-team",
+    "P:Project Sponsor:itpmd_project:read",
+    "S:Project Sponsor:itpmd_project:my-team",
+    "P:PSC Member:itpmd_project:read",
+    "S:PSC Member:itpmd_project:all",
+    "P:TPMO:itpmd_project:edit",
+    "S:TPMO:itpmd_project:all",
+    "P:Project Manager:itpmd_program:edit",
+    "S:Project Manager:itpmd_program:all",
+    "P:Team Member:itpmd_program:edit",
+    "S:Team Member:itpmd_program:all",
+    "P:Department Head:itpmd_program:edit",
+    "S:Department Head:itpmd_program:all",
+    "P:Project Sponsor:itpmd_program:edit",
+    "S:Project Sponsor:itpmd_program:all",
+    "P:PSC Member:itpmd_program:edit",
+    "S:PSC Member:itpmd_program:all",
+    "P:Hub Administrator:itpmd_program:edit",
+    "S:Hub Administrator:itpmd_program:all",
+    "P:TPMO:itpmd_program:edit",
+    "S:TPMO:itpmd_program:all",
+    "P:Hub Administrator:itpmd_project:edit",
+    "S:Hub Administrator:itpmd_project:all",
+    "D:Project Manager:ITPMD Project Contracts",
+    "D:Project Manager:ITPMD Project Project Team",
+    "D:Project Manager:ITPMD Project Budget Changes",
+    "D:Team Member:ITPMD Project Contracts",
+    "D:Team Member:ITPMD Project Project Team",
+    "D:Team Member:ITPMD Project Budget Changes",
+    "D:Department Head:ITPMD Project Contracts",
+    "D:Department Head:ITPMD Project Project Team",
+    "D:Department Head:ITPMD Project Budget Changes",
+    "D:Project Sponsor:ITPMD Project Contracts",
+    "D:Project Sponsor:ITPMD Project Project Team",
+    "D:Project Sponsor:ITPMD Project Budget Changes",
+    "D:PSC Member:ITPMD Project Contracts",
+    "D:PSC Member:ITPMD Project Project Team",
+    "D:PSC Member:ITPMD Project Budget Changes",
+    "D:Hub Administrator:ITPMD Project Contracts",
+    "D:Hub Administrator:ITPMD Project Project Team",
+    "D:Hub Administrator:ITPMD Project Budget Changes",
+    "D:TPMO:ITPMD Project Contracts",
+    "D:TPMO:ITPMD Project Project Team",
+    "D:TPMO:ITPMD Project Budget Changes",
+    "F:ITPMD Project:Project_Name:required",
+    "F:ITPMD Project:Business_Unit:required",
+    "F:ITPMD Project:Portfolio:required",
+    "F:ITPMD Project:Project_Manager:required",
+    "F:ITPMD Project:Department_Head:required",
+    "F:ITPMD Project:Status:required",
+    "F:ITPMD Project:Approved_Budget:required",
+    "F:ITPMD Project:Contingency_Fund:required",
+    "F:ITPMD Project:Weighted_Percent_Complete:computed",
+    "F:ITPMD Project:Schedule_Variance_Days:computed",
+    "F:ITPMD Project:Current_Approved_Budget:computed",
+    "F:ITPMD Project:Contingency_Remaining:computed",
+    "F:ITPMD Project:Contingency_Utilization_Percent:computed",
+    "F:ITPMD Project:Cost_Performance_Percent:computed",
+    "F:ITPMD Project:Schedule_Health_Code:computed",
+    "F:ITPMD Project:Schedule_Health:computed",
+    "F:ITPMD Project:Cost_Health_Code:computed",
+    "F:ITPMD Project:Cost_Health:computed",
+    "F:ITPMD Project:Risk_Health_Code:computed",
+    "F:ITPMD Project:Risk_Health:computed",
+    "F:ITPMD Project:Issue_Health_Code:computed",
+    "F:ITPMD Project:Issue_Health:computed",
+    "F:ITPMD Project:Overall_Health_Code:computed",
+    "F:ITPMD Project:Overall_Health:computed",
+    "F:ITPMD Project:Needs_Management_Attention_Flag:computed",
+    "R:ITPMD Project:Program:ref",
+    "F:ITPMD Project Contracts:Vendor_Name:required",
+    "F:ITPMD Project Contracts:Contract_Price:required",
+    "F:ITPMD Project Project Team:Team_Member:required",
+    "F:ITPMD Project Project Team:Project_Role:required",
+    "F:ITPMD Project Budget Changes:Change_Type:required",
+    "F:ITPMD Project Budget Changes:Effective_Date:required",
+    "F:ITPMD Program:Program_Name:required"
+   ]
+  },
+  {
+   "id": "UC-J-02",
+   "title": "Build and baseline the project schedule",
+   "role": "Project Manager",
+   "story": "A project manager builds the project schedule: adds activities with planned dates, links them by dependency, marks milestones, and locks in an approved baseline that later progress is measured against. The system keeps the baseline fixed and records schedule history, and people outside the project team cannot alter the schedule.",
+   "covers": [
+    "J:J-02",
+    "P:Project Manager:itpmd_activity:edit",
+    "S:Project Manager:itpmd_activity:my",
+    "P:Team Member:itpmd_activity:edit",
+    "S:Team Member:itpmd_activity:my",
+    "P:Department Head:itpmd_activity:read",
+    "S:Department Head:itpmd_activity:my-team",
+    "P:Project Sponsor:itpmd_activity:read",
+    "S:Project Sponsor:itpmd_activity:my-team",
+    "P:PSC Member:itpmd_activity:read",
+    "S:PSC Member:itpmd_activity:all",
+    "P:TPMO:itpmd_activity:edit",
+    "S:TPMO:itpmd_activity:all",
+    "P:Project Manager:itpmd_baseline:edit",
+    "S:Project Manager:itpmd_baseline:all",
+    "P:Team Member:itpmd_baseline:edit",
+    "S:Team Member:itpmd_baseline:all",
+    "P:Department Head:itpmd_baseline:edit",
+    "S:Department Head:itpmd_baseline:all",
+    "P:Project Sponsor:itpmd_baseline:edit",
+    "S:Project Sponsor:itpmd_baseline:all",
+    "P:PSC Member:itpmd_baseline:edit",
+    "S:PSC Member:itpmd_baseline:all",
+    "P:Hub Administrator:itpmd_baseline:edit",
+    "S:Hub Administrator:itpmd_baseline:all",
+    "P:TPMO:itpmd_baseline:edit",
+    "S:TPMO:itpmd_baseline:all",
+    "P:Project Manager:itpmd_release:edit",
+    "S:Project Manager:itpmd_release:all",
+    "P:Team Member:itpmd_release:edit",
+    "S:Team Member:itpmd_release:all",
+    "P:Department Head:itpmd_release:edit",
+    "S:Department Head:itpmd_release:all",
+    "P:Project Sponsor:itpmd_release:edit",
+    "S:Project Sponsor:itpmd_release:all",
+    "P:PSC Member:itpmd_release:edit",
+    "S:PSC Member:itpmd_release:all",
+    "P:Hub Administrator:itpmd_release:edit",
+    "S:Hub Administrator:itpmd_release:all",
+    "P:TPMO:itpmd_release:edit",
+    "S:TPMO:itpmd_release:all",
+    "P:Project Manager:itpmd_template:edit",
+    "S:Project Manager:itpmd_template:all",
+    "P:Team Member:itpmd_template:edit",
+    "S:Team Member:itpmd_template:all",
+    "P:Department Head:itpmd_template:edit",
+    "S:Department Head:itpmd_template:all",
+    "P:Project Sponsor:itpmd_template:edit",
+    "S:Project Sponsor:itpmd_template:all",
+    "P:PSC Member:itpmd_template:edit",
+    "S:PSC Member:itpmd_template:all",
+    "P:Hub Administrator:itpmd_template:edit",
+    "S:Hub Administrator:itpmd_template:all",
+    "P:TPMO:itpmd_template:edit",
+    "S:TPMO:itpmd_template:all",
+    "P:Hub Administrator:itpmd_activity:edit",
+    "S:Hub Administrator:itpmd_activity:all",
+    "D:Project Manager:ITPMD Project Baseline History",
+    "D:Project Manager:ITPMD Activity Predecessors",
+    "D:Team Member:ITPMD Project Baseline History",
+    "D:Team Member:ITPMD Activity Predecessors",
+    "D:Department Head:ITPMD Project Baseline History",
+    "D:Department Head:ITPMD Activity Predecessors",
+    "D:Project Sponsor:ITPMD Project Baseline History",
+    "D:Project Sponsor:ITPMD Activity Predecessors",
+    "D:PSC Member:ITPMD Project Baseline History",
+    "D:PSC Member:ITPMD Activity Predecessors",
+    "D:Hub Administrator:ITPMD Project Baseline History",
+    "D:Hub Administrator:ITPMD Activity Predecessors",
+    "D:TPMO:ITPMD Project Baseline History",
+    "D:TPMO:ITPMD Activity Predecessors",
+    "F:ITPMD Activity:Activity_Name:required",
+    "F:ITPMD Activity:Project:required",
+    "R:ITPMD Activity:Project:ref",
+    "F:ITPMD Activity:WBS_Code:required",
+    "F:ITPMD Activity:Planned_Start:required",
+    "F:ITPMD Activity:Planned_Finish:required",
+    "F:ITPMD Activity:Planned_Duration_Days:computed",
+    "F:ITPMD Activity:Weighted_Complete_Value:computed",
+    "F:ITPMD Activity:Missed_Milestone_Flag:computed",
+    "F:ITPMD Activity:Schedule_Variance_Days:computed",
+    "F:ITPMD Activity:Status_Code:computed",
+    "F:ITPMD Activity:Status:computed",
+    "F:ITPMD Project Baseline History:Baseline_Version:required",
+    "F:ITPMD Activity Predecessors:Predecessor_Activity:required",
+    "R:ITPMD Activity Predecessors:Predecessor_Activity:ref",
+    "F:ITPMD Activity Predecessors:Dependency_Type:required",
+    "F:ITPMD Baseline:Project:required",
+    "R:ITPMD Baseline:Project:ref",
+    "F:ITPMD Baseline:Version:required",
+    "F:ITPMD Baseline:Set_Date:required",
+    "F:ITPMD Release:Project:required",
+    "R:ITPMD Release:Project:ref",
+    "F:ITPMD Release:Release_Name:required",
+    "F:ITPMD Release:Planned_Date:required",
+    "F:ITPMD Template:Template_Name:required",
+    "F:ITPMD Template:Template_Type:required"
+   ]
+  },
+  {
+   "id": "UC-J-03",
+   "title": "Assign and reassign activities to team members",
+   "role": "Project Manager",
+   "story": "A project manager hands each activity to a team member and can move it to someone else later. The new owner is told, the change is traceable, and each team member can narrow the schedule down to just their own work.",
+   "covers": [
+    "J:J-03",
+    "A:auto_activity_assigned_notify_assignee"
+   ]
+  },
+  {
+   "id": "UC-J-04",
+   "title": "Track progress, actuals and forecast during the period",
+   "role": "Project Manager",
+   "story": "While work is under way, team members record how far along their activities are and the actual start and finish dates, and the project manager updates forecast dates. The system works out whether each activity is on track, and warns the owner when the forecast slips past the approved baseline.",
+   "covers": [
+    "J:J-04",
+    "P:Project Manager:itpmd_weekly_report:edit",
+    "S:Project Manager:itpmd_weekly_report:all",
+    "P:Team Member:itpmd_weekly_report:edit",
+    "S:Team Member:itpmd_weekly_report:all",
+    "P:Department Head:itpmd_weekly_report:edit",
+    "S:Department Head:itpmd_weekly_report:all",
+    "P:Project Sponsor:itpmd_weekly_report:edit",
+    "S:Project Sponsor:itpmd_weekly_report:all",
+    "P:PSC Member:itpmd_weekly_report:edit",
+    "S:PSC Member:itpmd_weekly_report:all",
+    "P:Hub Administrator:itpmd_weekly_report:edit",
+    "S:Hub Administrator:itpmd_weekly_report:all",
+    "P:TPMO:itpmd_weekly_report:edit",
+    "S:TPMO:itpmd_weekly_report:all",
+    "A:auto_activity_forecast_past_baseline_alert",
+    "F:ITPMD Weekly Report:Project:required",
+    "R:ITPMD Weekly Report:Project:ref",
+    "F:ITPMD Weekly Report:Week_Of:required"
+   ]
+  },
+  {
+   "id": "UC-J-05",
+   "title": "Manage issues, action items and decisions",
+   "role": "Project Manager",
+   "story": "A project manager logs a problem as an issue with a category, priority, owner and target date, breaks it into action items with owners, records the decisions taken, and watches overdue items. Critical or long-overdue issues escalate by themselves so the steering committee sees them, and action items past their due date flip to overdue on their own.",
+   "covers": [
+    "J:J-05",
+    "P:Project Manager:itpmd_issue:edit",
+    "S:Project Manager:itpmd_issue:my",
+    "P:Team Member:itpmd_issue:edit",
+    "S:Team Member:itpmd_issue:my",
+    "P:Department Head:itpmd_issue:read",
+    "S:Department Head:itpmd_issue:my-team",
+    "P:Project Sponsor:itpmd_issue:read",
+    "S:Project Sponsor:itpmd_issue:my-team",
+    "P:PSC Member:itpmd_issue:read",
+    "S:PSC Member:itpmd_issue:all",
+    "P:Project Manager:itpmd_action_item:edit",
+    "S:Project Manager:itpmd_action_item:my",
+    "P:Team Member:itpmd_action_item:edit",
+    "S:Team Member:itpmd_action_item:my",
+    "P:Department Head:itpmd_action_item:read",
+    "S:Department Head:itpmd_action_item:my-team",
+    "P:Project Sponsor:itpmd_action_item:read",
+    "S:Project Sponsor:itpmd_action_item:my-team",
+    "P:PSC Member:itpmd_action_item:read",
+    "S:PSC Member:itpmd_action_item:all",
+    "P:TPMO:itpmd_issue:edit",
+    "S:TPMO:itpmd_issue:all",
+    "P:TPMO:itpmd_action_item:edit",
+    "S:TPMO:itpmd_action_item:all",
+    "P:Project Manager:itpmd_binder_item:edit",
+    "S:Project Manager:itpmd_binder_item:all",
+    "P:Team Member:itpmd_binder_item:edit",
+    "S:Team Member:itpmd_binder_item:all",
+    "P:Department Head:itpmd_binder_item:edit",
+    "S:Department Head:itpmd_binder_item:all",
+    "P:Project Sponsor:itpmd_binder_item:edit",
+    "S:Project Sponsor:itpmd_binder_item:all",
+    "P:PSC Member:itpmd_binder_item:edit",
+    "S:PSC Member:itpmd_binder_item:all",
+    "P:Hub Administrator:itpmd_binder_item:edit",
+    "S:Hub Administrator:itpmd_binder_item:all",
+    "P:TPMO:itpmd_binder_item:edit",
+    "S:TPMO:itpmd_binder_item:all",
+    "D:Project Manager:ITPMD Project Decision Log",
+    "D:Team Member:ITPMD Project Decision Log",
+    "D:Department Head:ITPMD Project Decision Log",
+    "D:Project Sponsor:ITPMD Project Decision Log",
+    "D:PSC Member:ITPMD Project Decision Log",
+    "D:Hub Administrator:ITPMD Issue",
+    "D:Hub Administrator:ITPMD Action Item",
+    "D:Hub Administrator:ITPMD Project Decision Log",
+    "D:TPMO:ITPMD Project Decision Log",
+    "A:auto_action_item_assigned_notify_assignee",
+    "A:auto_action_item_overdue_notify_assignee",
+    "A:auto_issue_escalated_notify_pm_psc",
+    "F:ITPMD Issue:Issue_Title:required",
+    "F:ITPMD Issue:Project:required",
+    "R:ITPMD Issue:Project:ref",
+    "F:ITPMD Issue:Issue_Category:required",
+    "F:ITPMD Issue:Priority:required",
+    "F:ITPMD Issue:Issue_Owner:required",
+    "R:ITPMD Issue:Hub_Settings:ref",
+    "F:ITPMD Issue:Days_Open:computed",
+    "F:ITPMD Issue:Critical_Flag:computed",
+    "F:ITPMD Issue:Escalation_Flag:computed",
+    "F:ITPMD Action Item:Action_Description:required",
+    "F:ITPMD Action Item:Project:required",
+    "R:ITPMD Action Item:Project:ref",
+    "R:ITPMD Action Item:Related_Issue:ref",
+    "F:ITPMD Action Item:Assignee:required",
+    "F:ITPMD Action Item:Overdue_Flag:computed",
+    "F:ITPMD Project Decision Log:Decision_Description:required",
+    "R:ITPMD Project Decision Log:Related_Issue:ref",
+    "F:ITPMD Binder Item:Project:required",
+    "R:ITPMD Binder Item:Project:ref",
+    "F:ITPMD Binder Item:Item_Type:required"
+   ]
+  },
+  {
+   "id": "UC-J-06",
+   "title": "Manage the project risk register",
+   "role": "Project Manager",
+   "story": "A project manager keeps the risk register: records each risk, rates its likelihood and impact, assigns an owner and a response plan, and tracks it over time. The overall rating follows the agreed five-by-five scale automatically, and high or critical risks are flagged to the risk owner.",
+   "covers": [
+    "J:J-06",
+    "P:Project Manager:itpmd_risk:edit",
+    "S:Project Manager:itpmd_risk:my",
+    "P:Team Member:itpmd_risk:read",
+    "S:Team Member:itpmd_risk:my",
+    "P:Department Head:itpmd_risk:read",
+    "S:Department Head:itpmd_risk:my-team",
+    "P:Project Sponsor:itpmd_risk:read",
+    "S:Project Sponsor:itpmd_risk:my-team",
+    "P:PSC Member:itpmd_risk:read",
+    "S:PSC Member:itpmd_risk:all",
+    "P:TPMO:itpmd_risk:edit",
+    "S:TPMO:itpmd_risk:all",
+    "D:Hub Administrator:ITPMD Risk",
+    "A:auto_risk_escalated_notify_owner_pm",
+    "F:ITPMD Risk:Risk_Title:required",
+    "F:ITPMD Risk:Project:required",
+    "R:ITPMD Risk:Project:ref",
+    "F:ITPMD Risk:Risk_Category:required",
+    "F:ITPMD Risk:Probability:required",
+    "F:ITPMD Risk:Impact:required",
+    "F:ITPMD Risk:Risk_Rating:computed",
+    "F:ITPMD Risk:Risk_Band_Code:computed",
+    "F:ITPMD Risk:Risk_Rating_Band:computed",
+    "F:ITPMD Risk:Risk_Owner:required",
+    "F:ITPMD Risk:Residual_Risk_Rating:computed",
+    "F:ITPMD Risk:Residual_Band_Code:computed",
+    "F:ITPMD Risk:Residual_Risk_Rating_Band:computed",
+    "F:ITPMD Risk:Status:required",
+    "F:ITPMD Risk:Escalation_Flag:computed",
+    "F:ITPMD Risk:Critical_Flag:computed"
+   ]
+  },
+  {
+   "id": "UC-J-07",
+   "title": "Manage project financials",
+   "role": "Project Manager",
+   "story": "A project manager records what has actually been spent, what is committed and what is forecast, including invoices, against the project budget. The totals add up on their own and budget changes and contingency draw-downs are visible against the approved figures.",
+   "covers": [
+    "J:J-07",
+    "P:Project Manager:itpmd_cost_entry:edit",
+    "S:Project Manager:itpmd_cost_entry:my",
+    "P:Department Head:itpmd_cost_entry:read",
+    "S:Department Head:itpmd_cost_entry:my-team",
+    "P:Project Sponsor:itpmd_cost_entry:read",
+    "S:Project Sponsor:itpmd_cost_entry:my-team",
+    "P:PSC Member:itpmd_cost_entry:read",
+    "S:PSC Member:itpmd_cost_entry:all",
+    "P:TPMO:itpmd_cost_entry:edit",
+    "S:TPMO:itpmd_cost_entry:all",
+    "D:Project Manager:ITPMD Cost Entry Invoices",
+    "D:Team Member:ITPMD Cost Entry",
+    "D:Team Member:ITPMD Cost Entry Invoices",
+    "D:Department Head:ITPMD Cost Entry Invoices",
+    "D:Project Sponsor:ITPMD Cost Entry Invoices",
+    "D:PSC Member:ITPMD Cost Entry Invoices",
+    "D:Hub Administrator:ITPMD Cost Entry",
+    "D:Hub Administrator:ITPMD Cost Entry Invoices",
+    "D:TPMO:ITPMD Cost Entry Invoices",
+    "F:ITPMD Cost Entry:Cost_Entry_Title:required",
+    "F:ITPMD Cost Entry:Project:required",
+    "R:ITPMD Cost Entry:Project:ref",
+    "F:ITPMD Cost Entry:Entry_Date:required",
+    "F:ITPMD Cost Entry Invoices:Invoice_Number:required"
+   ]
+  },
+  {
+   "id": "UC-J-08",
+   "title": "Generate, preview and submit the monthly PSR",
+   "role": "Project Manager",
+   "story": "At month end the project manager prepares the monthly status report from live project data, previews it, and submits it. The form insists on the project, the narrative update and the reporting month before it will go forward. Once submitted it lands with the project's department head, who is told it is waiting, and a reminder goes out as the deadline nears.",
+   "covers": [
+    "J:J-08",
+    "W:ITPMD Project Status Report:Draft:advance",
+    "P:Project Manager:itpmd_psr:edit",
+    "S:Project Manager:itpmd_psr:my",
+    "P:Department Head:itpmd_psr:edit",
+    "S:Department Head:itpmd_psr:my-team",
+    "P:Project Sponsor:itpmd_psr:edit",
+    "S:Project Sponsor:itpmd_psr:my-team",
+    "P:Team Member:itpmd_psr:read",
+    "S:Team Member:itpmd_psr:my",
+    "P:PSC Member:itpmd_psr:edit",
+    "S:PSC Member:itpmd_psr:all",
+    "P:TPMO:itpmd_psr:edit",
+    "S:TPMO:itpmd_psr:all",
+    "D:Project Manager:ITPMD Project Status Report Schedule Highlights",
+    "D:Project Manager:ITPMD Project Status Report Next Period Plan",
+    "D:Project Manager:ITPMD Project Status Report Key Issues and Risks",
+    "D:Team Member:ITPMD Project Status Report Schedule Highlights",
+    "D:Team Member:ITPMD Project Status Report Next Period Plan",
+    "D:Team Member:ITPMD Project Status Report Key Issues and Risks",
+    "D:Department Head:ITPMD Project Status Report Schedule Highlights",
+    "D:Department Head:ITPMD Project Status Report Next Period Plan",
+    "D:Department Head:ITPMD Project Status Report Key Issues and Risks",
+    "D:Project Sponsor:ITPMD Project Status Report Schedule Highlights",
+    "D:Project Sponsor:ITPMD Project Status Report Next Period Plan",
+    "D:Project Sponsor:ITPMD Project Status Report Key Issues and Risks",
+    "D:PSC Member:ITPMD Project Status Report Schedule Highlights",
+    "D:PSC Member:ITPMD Project Status Report Next Period Plan",
+    "D:PSC Member:ITPMD Project Status Report Key Issues and Risks",
+    "D:Hub Administrator:ITPMD Project Status Report",
+    "D:Hub Administrator:ITPMD Project Status Report Schedule Highlights",
+    "D:Hub Administrator:ITPMD Project Status Report Next Period Plan",
+    "D:Hub Administrator:ITPMD Project Status Report Key Issues and Risks",
+    "D:TPMO:ITPMD Project Status Report Schedule Highlights",
+    "D:TPMO:ITPMD Project Status Report Next Period Plan",
+    "D:TPMO:ITPMD Project Status Report Key Issues and Risks",
+    "A:auto_psr_submit_notify_dh",
+    "A:auto_psr_deadline_reminder",
+    "F:ITPMD Project Status Report:Draft:Project:Mandatory",
+    "F:ITPMD Project Status Report:Draft:Narrative_Update:Mandatory",
+    "F:ITPMD Project Status Report:Draft:Supporting_Documents:Editable",
+    "F:ITPMD Project Status Report:Draft:Reporting_Period_Month:Editable",
+    "F:ITPMD Project Status Report:Reporting_Period_Month:required",
+    "F:ITPMD Project Status Report:Project:required",
+    "R:ITPMD Project Status Report:Project:ref",
+    "F:ITPMD Project Status Report:Sponsor_Approval_Required:computed",
+    "F:ITPMD Project Status Report Schedule Highlights:Activity:required",
+    "R:ITPMD Project Status Report Schedule Highlights:Activity:ref",
+    "F:ITPMD Project Status Report Schedule Highlights:Highlight_Type:required",
+    "F:ITPMD Project Status Report Next Period Plan:Plan_Activity:required",
+    "R:ITPMD Project Status Report Next Period Plan:Plan_Activity:ref",
+    "R:ITPMD Project Status Report Key Issues and Risks:Related_Issue:ref",
+    "R:ITPMD Project Status Report Key Issues and Risks:Related_Risk:ref"
+   ]
+  },
+  {
+   "id": "UC-J-09",
+   "title": "Revise and resubmit a returned PSR",
+   "role": "Project Manager",
+   "story": "When a reviewer sends a status report back with a comment, it returns to the project manager with everything they entered still intact. The manager is told why, fixes it and resubmits, and it goes back through review from the start.",
+   "covers": [
+    "J:J-09",
+    "W:ITPMD Project Status Report:Department Head Review:Return",
+    "W:ITPMD Project Status Report:Sponsor Approval:Return",
+    "A:auto_psr_dh_returned_notify_pm",
+    "A:auto_psr_sponsor_returned_notify_pm"
+   ]
+  },
+  {
+   "id": "UC-J-10",
+   "title": "Monitor schedule performance via the S-curve",
+   "role": "Project Manager",
+   "story": "A project manager looks at the cumulative planned, actual and forecast progress curve for a project, with the schedule performance figures and a table view of the same numbers.",
+   "covers": [
+    "J:J-10"
+   ]
+  },
+  {
+   "id": "UC-J-11",
+   "title": "Work my assigned tasks (My Tasks)",
+   "role": "Team Member",
+   "story": "A team member opens their personal task list and sees only the activities and action items assigned to them across their projects, is told when something new is assigned, and updates their own progress. They cannot see or change other people's work or anything financial.",
+   "covers": [
+    "J:J-11",
+    "P:Project Manager:itpmd_discussion_message:edit",
+    "S:Project Manager:itpmd_discussion_message:all",
+    "P:Project Manager:itpmd_notification:edit",
+    "S:Project Manager:itpmd_notification:all",
+    "P:Project Manager:itpmd_discussion_read:edit",
+    "S:Project Manager:itpmd_discussion_read:all",
+    "P:Team Member:itpmd_discussion_message:edit",
+    "S:Team Member:itpmd_discussion_message:all",
+    "P:Team Member:itpmd_notification:edit",
+    "S:Team Member:itpmd_notification:all",
+    "P:Team Member:itpmd_discussion_read:edit",
+    "S:Team Member:itpmd_discussion_read:all",
+    "P:Department Head:itpmd_discussion_message:edit",
+    "S:Department Head:itpmd_discussion_message:all",
+    "P:Department Head:itpmd_notification:edit",
+    "S:Department Head:itpmd_notification:all",
+    "P:Department Head:itpmd_discussion_read:edit",
+    "S:Department Head:itpmd_discussion_read:all",
+    "P:Project Sponsor:itpmd_discussion_message:edit",
+    "S:Project Sponsor:itpmd_discussion_message:all",
+    "P:Project Sponsor:itpmd_notification:edit",
+    "S:Project Sponsor:itpmd_notification:all",
+    "P:Project Sponsor:itpmd_discussion_read:edit",
+    "S:Project Sponsor:itpmd_discussion_read:all",
+    "P:PSC Member:itpmd_discussion_message:edit",
+    "S:PSC Member:itpmd_discussion_message:all",
+    "P:PSC Member:itpmd_notification:edit",
+    "S:PSC Member:itpmd_notification:all",
+    "P:PSC Member:itpmd_discussion_read:edit",
+    "S:PSC Member:itpmd_discussion_read:all",
+    "P:Hub Administrator:itpmd_discussion_message:edit",
+    "S:Hub Administrator:itpmd_discussion_message:all",
+    "P:Hub Administrator:itpmd_notification:edit",
+    "S:Hub Administrator:itpmd_notification:all",
+    "P:Hub Administrator:itpmd_discussion_read:edit",
+    "S:Hub Administrator:itpmd_discussion_read:all",
+    "P:TPMO:itpmd_discussion_message:edit",
+    "S:TPMO:itpmd_discussion_message:all",
+    "P:TPMO:itpmd_notification:edit",
+    "S:TPMO:itpmd_notification:all",
+    "P:TPMO:itpmd_discussion_read:edit",
+    "S:TPMO:itpmd_discussion_read:all",
+    "F:ITPMD Discussion Message:Project:required",
+    "R:ITPMD Discussion Message:Project:ref",
+    "F:ITPMD Discussion Message:Author:required",
+    "F:ITPMD Discussion Message:Sent_At:required",
+    "F:ITPMD Discussion Message:Message_Text:required",
+    "F:ITPMD Notification:Recipient:required",
+    "F:ITPMD Notification:Notification_Type:required",
+    "F:ITPMD Notification:Title:required",
+    "R:ITPMD Notification:Project:ref",
+    "F:ITPMD Discussion Read:Reader:required",
+    "F:ITPMD Discussion Read:Project:required",
+    "R:ITPMD Discussion Read:Project:ref",
+    "F:ITPMD Discussion Read:Last_Read_At:required"
+   ]
+  },
+  {
+   "id": "UC-J-12",
+   "title": "Review and approve/return a PSR",
+   "role": "Department Head",
+   "story": "A department head is told a status report is waiting, reviews it and either approves it or sends it back with a comment. When approved, the system decides whether the project's sponsor also has to sign off (for example when the project is red) or whether the report can be finalised straight away.",
+   "covers": [
+    "J:J-12",
+    "W:ITPMD Project Status Report:Department Head Review:Approve",
+    "A:auto_psr_dh_approved_notify_sponsor"
+   ]
+  },
+  {
+   "id": "UC-J-13",
+   "title": "Approve a PSR requiring Sponsor sign-off",
+   "role": "Project Sponsor",
+   "story": "A project sponsor is told a department-head-approved report needs their sign-off, reviews it, and either approves it, which locks the report, or sends it back with a comment.",
+   "covers": [
+    "J:J-13",
+    "W:ITPMD Project Status Report:Sponsor Approval:Approve",
+    "W:ITPMD Project Status Report:Approved:advance",
+    "A:auto_psr_approved_notify_pm"
+   ]
+  },
+  {
+   "id": "UC-J-14",
+   "title": "Monitor portfolio health and identify projects needing attention",
+   "role": "PSC Member",
+   "story": "A member of the steering committee sees every project in the portfolio, filters by status, health, risk and business unit, and spots the projects needing attention. They can look at everything but are not allowed to change project data.",
+   "covers": [
+    "J:J-14"
+   ]
+  },
+  {
+   "id": "UC-J-15",
+   "title": "Generate the Portfolio PSR (PPSR) and view PSR history",
+   "role": "PSC Member",
+   "story": "A steering committee member builds the consolidated portfolio status report from the approved project reports and looks back through earlier reports and their approval status over time.",
+   "covers": [
+    "J:J-15",
+    "P:PSC Member:itpmd_portfolio_report:edit",
+    "S:PSC Member:itpmd_portfolio_report:all",
+    "P:Department Head:itpmd_portfolio_report:read",
+    "S:Department Head:itpmd_portfolio_report:all",
+    "P:Project Sponsor:itpmd_portfolio_report:read",
+    "S:Project Sponsor:itpmd_portfolio_report:all",
+    "P:TPMO:itpmd_portfolio_report:edit",
+    "S:TPMO:itpmd_portfolio_report:all",
+    "D:Project Manager:ITPMD Portfolio Status Report",
+    "D:Project Manager:ITPMD Portfolio Status Report Project Summaries",
+    "D:Team Member:ITPMD Portfolio Status Report",
+    "D:Team Member:ITPMD Portfolio Status Report Project Summaries",
+    "D:Department Head:ITPMD Portfolio Status Report Project Summaries",
+    "D:Project Sponsor:ITPMD Portfolio Status Report Project Summaries",
+    "D:PSC Member:ITPMD Portfolio Status Report Project Summaries",
+    "D:Hub Administrator:ITPMD Portfolio Status Report",
+    "D:Hub Administrator:ITPMD Portfolio Status Report Project Summaries",
+    "D:TPMO:ITPMD Portfolio Status Report Project Summaries",
+    "F:ITPMD Portfolio Status Report:Report_Period:required",
+    "F:ITPMD Portfolio Status Report Project Summaries:PSR:required",
+    "R:ITPMD Portfolio Status Report Project Summaries:PSR:ref"
+   ]
+  },
+  {
+   "id": "UC-J-16",
+   "title": "Configure the working calendar and alert settings",
+   "role": "Hub Administrator",
+   "story": "The hub administrator maintains the working calendar of holidays and non-working days and sets the alert thresholds, reminder periods and recipients. Nobody else can change these settings.",
+   "covers": [
+    "J:J-16",
+    "P:Hub Administrator:itpmd_hub_settings:edit",
+    "S:Hub Administrator:itpmd_hub_settings:all",
+    "P:Hub Administrator:itpmd_holiday_calendar:edit",
+    "S:Hub Administrator:itpmd_holiday_calendar:all",
+    "P:TPMO:itpmd_hub_settings:edit",
+    "S:TPMO:itpmd_hub_settings:all",
+    "P:TPMO:itpmd_holiday_calendar:edit",
+    "S:TPMO:itpmd_holiday_calendar:all",
+    "D:Project Manager:ITPMD Hub Settings",
+    "D:Project Manager:ITPMD Holiday Calendar",
+    "D:Team Member:ITPMD Hub Settings",
+    "D:Team Member:ITPMD Holiday Calendar",
+    "D:Department Head:ITPMD Hub Settings",
+    "D:Department Head:ITPMD Holiday Calendar",
+    "D:Project Sponsor:ITPMD Hub Settings",
+    "D:Project Sponsor:ITPMD Holiday Calendar",
+    "D:PSC Member:ITPMD Hub Settings",
+    "D:PSC Member:ITPMD Holiday Calendar",
+    "F:ITPMD Hub Settings:Setting_Name:required",
+    "F:ITPMD Hub Settings:PSR_Due_Working_Day:required",
+    "F:ITPMD Hub Settings:Issue_Aging_Period_Days:required",
+    "F:ITPMD Holiday Calendar:Holiday_Name:required",
+    "F:ITPMD Holiday Calendar:Holiday_Date:required"
+   ]
+  },
+  {
+   "id": "UC-J-17",
+   "title": "Administer users, roles and project access",
+   "role": "Hub Administrator",
+   "story": "The hub administrator creates user accounts, puts people into roles, switches access on and off, and assigns people to the projects they should see, so that each person only sees what they are allowed to.",
+   "covers": [
+    "J:J-17"
+   ]
+  },
+  {
+   "id": "UC-J-18",
+   "title": "Review the audit trail",
+   "role": "Hub Administrator",
+   "story": "The hub administrator reviews the audit trail of what was done by whom, and can trace one status report from creation through submission, approval or return, with comments and timestamps.",
+   "covers": [
+    "J:J-18"
+   ]
+  }
+ ],
+ "tests": [
+  {
+   "id": "T-J-01",
+   "title": "Journey: Set up a project from approved master data",
+   "role": "Project Manager",
+   "covers": [
+    "J:J-01"
+   ],
+   "steps": [
+    "Sign in as the journey's role (acceptance sandbox user).",
+    "PM creates the project record: code, name, business unit, portfolio, assigned DH/PS.",
+    "PM records the procurement/contract details: vendor, NOA/PO/NTP dates, contract value, expiry.",
+    "PM records the approved budget and the approved contingency fund.",
+    "PM sets up the initial project team (who is assigned to this project)."
+   ],
+   "asserts": [
+    "Every step completes without a permission or validation error",
+    "Outcome holds: The project exists as the single source of truth that scheduling, financials and later PSRs all build on.",
+    "Success criterion observed: Project appears correctly in the portfolio list (ITPH-00124)",
+    "Success criterion observed: Changes to approved master data flow through to later PSRs and project records automatically (BR-13)"
+   ],
+   "class": "journey"
+  },
+  {
+   "id": "T-J-02",
+   "title": "Journey: Build and baseline the project schedule",
+   "role": "Project Manager",
+   "covers": [
+    "J:J-02"
+   ],
+   "steps": [
+    "Sign in as the journey's role (acceptance sandbox user).",
+    "PM creates, edits and deletes project activities.",
+    "PM defines planned start/end dates for each activity.",
+    "PM defines dependencies between activities.",
+    "PM identifies and maintains project milestones.",
+    "PM establishes the approved schedule baseline.",
+    "PM generates and views the Gantt chart."
+   ],
+   "asserts": [
+    "Every step completes without a permission or validation error",
+    "Outcome holds: An approved, dependency-consistent schedule with a locked baseline that later progress is measured against.",
+    "Success criterion observed: A baseline is established and stays fixed once approved (BRD §1.4 'Baseline' definition)",
+    "Success criterion observed: Every change to the schedule is captured in schedule history (ITPH-0014)"
+   ],
+   "class": "journey"
+  },
+  {
+   "id": "T-J-03",
+   "title": "Journey: Assign and reassign activities to team members",
+   "role": "Project Manager",
+   "covers": [
+    "J:J-03"
+   ],
+   "steps": [
+    "Sign in as the journey's role (acceptance sandbox user).",
+    "PM assigns each activity and milestone to a responsible team member.",
+    "The assignee is notified.",
+    "PM reassigns an activity to another team member at any time; the change is recorded in schedule history.",
+    "PM (or team member) filters the schedule to just their own assigned activities."
+   ],
+   "asserts": [
+    "Every step completes without a permission or validation error",
+    "Outcome holds: Every activity has a single clear owner, and every reassignment is traceable.",
+    "Success criterion observed: Every open activity has an assignee",
+    "Success criterion observed: Reassignments are visible in schedule history, not silently overwritten"
+   ],
+   "class": "journey"
+  },
+  {
+   "id": "T-J-04",
+   "title": "Journey: Track progress, actuals and forecast during the period",
+   "role": "Project Manager",
+   "covers": [
+    "J:J-04"
+   ],
+   "steps": [
+    "Sign in as the journey's role (acceptance sandbox user).",
+    "Assignees record % complete, actual start and actual finish for their own activities.",
+    "PM manually updates forecast start/finish dates when their assessment of progress changes.",
+    "PM views planned vs. actual schedules to spot variance.",
+    "PM is alerted when the forecast finish passes the baseline finish or a schedule-risk threshold."
+   ],
+   "asserts": [
+    "Every step completes without a permission or validation error",
+    "Outcome holds: The schedule reflects true current status, with schedule health computed and an early warning raised on slippage.",
+    "Success criterion observed: Schedule health (Green/Amber/Red) is computed per BR-03",
+    "Success criterion observed: An alert fires the moment forecast finish exceeds baseline finish"
+   ],
+   "class": "journey"
+  },
+  {
+   "id": "T-J-05",
+   "title": "Journey: Manage issues, action items and decisions",
+   "role": "Project Manager",
+   "covers": [
+    "J:J-05"
+   ],
+   "steps": [
+    "Sign in as the journey's role (acceptance sandbox user).",
+    "PM creates and maintains an issue: category, priority.",
+    "PM assigns an issue owner and a target resolution date.",
+    "PM records the actions required to resolve the issue and assigns action items to team members.",
+    "PM tracks action item status so overdue actions are visible.",
+    "PM records project decisions and their rationale.",
+    "The issue escalates automatically when Critical or overdue past the configured aging period."
+   ],
+   "asserts": [
+    "Every step completes without a permission or validation error",
+    "Outcome holds: Issues are tracked to resolution or escalated, with owners and action items clearly assigned.",
+    "Success criterion observed: Critical or aged-overdue issues escalate and appear on the PSC view (ITPH-0040, BR-21)",
+    "Success criterion observed: Every action item has a status and an owner"
+   ],
+   "class": "journey"
+  },
+  {
+   "id": "T-J-06",
+   "title": "Journey: Manage the project risk register",
+   "role": "Project Manager",
+   "covers": [
+    "J:J-06"
+   ],
+   "steps": [
+    "Sign in as the journey's role (acceptance sandbox user).",
+    "PM creates and maintains a risk register entry.",
+    "PM categorizes the risk.",
+    "PM assesses probability and impact; the overall risk rating is computed per BR-04.",
+    "PM assigns a risk owner.",
+    "PM defines mitigation actions and a response strategy.",
+    "PM monitors residual risk after mitigation.",
+    "The risk escalates automatically when rated High or Critical.",
+    "PM maintains risk history/status over time."
+   ],
+   "asserts": [
+    "Every step completes without a permission or validation error",
+    "Outcome holds: Every risk has a current rating, an owner and a mitigation plan; High/Critical risks are visible to governance.",
+    "Success criterion observed: Risk rating always follows the 5x5 probability x impact matrix (BR-04)",
+    "Success criterion observed: High/Critical risks appear on the PSC view (ITPH-0049)"
+   ],
+   "class": "journey"
+  },
+  {
+   "id": "T-J-07",
+   "title": "Journey: Manage project financials",
+   "role": "Project Manager",
+   "covers": [
+    "J:J-07"
+   ],
+   "steps": [
+    "Sign in as the journey's role (acceptance sandbox user).",
+    "PM records the approved project budget.",
+    "PM records approved changes to the budget with amount, effective date and reason; views the current approved budget after changes.",
+    "PM records the approved contingency fund and monitors its utilization and remaining balance.",
+    "PM records invoices with invoice/DO number and date, vendor, date paid, status and remarks.",
+    "PM records actual and committed project costs.",
+    "PM compares approved budget, actual cost, committed cost and forecast cost to spot variances; views the remaining budget/forecast balance."
+   ],
+   "asserts": [
+    "Every step completes without a permission or validation error",
+    "Outcome holds: An up-to-date financial position that feeds cost health (BR-05) and the PSR's financial summary.",
+    "Success criterion observed: Budget vs actual vs committed vs forecast reconciles for the PSR (ITPH-0068, 0069)",
+    "Success criterion observed: Cost health (Green/Amber/Red) is computed per BR-05"
+   ],
+   "class": "journey"
+  },
+  {
+   "id": "T-J-08",
+   "title": "Journey: Generate, preview and submit the monthly PSR",
+   "role": "Project Manager",
+   "covers": [
+    "J:J-08"
+   ],
+   "steps": [
+    "Sign in as the journey's role (acceptance sandbox user).",
+    "The Hub reminds the PM before the deadline.",
+    "PM generates the PSR; static and computed sections (schedule, milestone, issue, risk, financial, action data) auto-populate from live data.",
+    "PM adds a narrative update and defines/confirms the reporting period.",
+    "PM attaches supporting documents.",
+    "PM identifies activities behind/ahead of schedule and milestones missed or forecast to be missed, and plans the next period's activities/milestones.",
+    "PM previews the PSR before submission and submits it to the DH."
+   ],
+   "asserts": [
+    "Every step completes without a permission or validation error",
+    "Outcome holds: A complete, accurate PSR -- built from system data, not re-typed -- submitted for approval on time.",
+    "Success criterion observed: PSR is submitted by the working-day-5 deadline (BR-11)",
+    "Success criterion observed: Auto-populated static fields match approved project master data and are never edited on an approved PSR (BR-13)"
+   ],
+   "class": "journey"
+  },
+  {
+   "id": "T-J-09",
+   "title": "Journey: Revise and resubmit a returned PSR",
+   "role": "Project Manager",
+   "covers": [
+    "J:J-09"
+   ],
+   "steps": [
+    "Sign in as the journey's role (acceptance sandbox user).",
+    "PM is notified that the PSR was returned.",
+    "PM reviews the mandatory comments explaining what needs correction.",
+    "PM revises the PSR.",
+    "PM resubmits the PSR for approval."
+   ],
+   "asserts": [
+    "Every step completes without a permission or validation error",
+    "Outcome holds: A corrected PSR re-enters the approval flow; nothing is lost from the original submission.",
+    "Success criterion observed: The full return -> revise -> resubmit history is retained and auditable (ITPH-00146)"
+   ],
+   "class": "journey"
+  },
+  {
+   "id": "T-J-10",
+   "title": "Journey: Monitor schedule performance via the S-curve",
+   "role": "Project Manager",
+   "covers": [
+    "J:J-10"
+   ],
+   "steps": [
+    "Sign in as the journey's role (acceptance sandbox user).",
+    "PM views the cumulative planned vs actual vs forecast S-curve for the project.",
+    "PM sees planned % to date, actual % to date, variance in percentage points and SPI.",
+    "PM hovers over the curve for exact weekly values, or views the same data as a table.",
+    "The S-curve is included when the PSR is generated."
+   ],
+   "asserts": [
+    "Every step completes without a permission or validation error",
+    "Outcome holds: Schedule performance trend is visible at a glance, quantified with SPI, and carried into the PSR.",
+    "Success criterion observed: S-curve points are computed per BR-17 (weekly, weighted by activity duration, planned from baseline / actual from actuals / forecast from today to forecast finish)"
+   ],
+   "class": "journey"
+  },
+  {
+   "id": "T-J-11",
+   "title": "Journey: Work my assigned tasks (My Tasks)",
+   "role": "Team Member",
+   "covers": [
+    "J:J-11"
+   ],
+   "steps": [
+    "Sign in as the journey's role (acceptance sandbox user).",
+    "I receive a notification that an activity has been assigned to me.",
+    "I see it on my My Tasks page, alongside every other open activity and action item assigned to me across all my projects, with status and due dates.",
+    "I update % complete, actual start and actual finish for MY OWN activities only.",
+    "If I try to edit an activity that is not assigned to me, I am blocked.",
+    "I can filter the schedule view to show only my own assigned activities."
+   ],
+   "asserts": [
+    "Every step completes without a permission or validation error",
+    "Outcome holds: My work is visible and updatable from one place, without my being able to touch anyone else's schedule items.",
+    "Success criterion observed: Entering % complete > 0 sets the actual start if blank; entering 100% sets the actual finish to today (BR-15)",
+    "Success criterion observed: An assignee can never edit an activity not assigned to them (BR-15, ITPH-00257)"
+   ],
+   "class": "journey"
+  },
+  {
+   "id": "T-J-12",
+   "title": "Journey: Review and approve/return a PSR",
+   "role": "Department Head",
+   "covers": [
+    "J:J-12"
+   ],
+   "steps": [
+    "Sign in as the journey's role (acceptance sandbox user).",
+    "DH is notified that a PSR requires approval.",
+    "DH reviews the submitted PSR's schedule, issue, risk, financial and action content.",
+    "DH approves the PSR, or returns it with mandatory comments.",
+    "If approved, the system checks the PS routing rule (BR-10) and either routes the PSR to the PS or finalizes it.",
+    "DH can view the PSR's approval status and full history at any time."
+   ],
+   "asserts": [
+    "Every step completes without a permission or validation error",
+    "Outcome holds: Only validated PSRs advance; every return carries an actionable, recorded comment.",
+    "Success criterion observed: No PSR advances to Approved without an explicit DH action",
+    "Success criterion observed: A returned PSR always carries a comment (BR-25)"
+   ],
+   "class": "journey"
+  },
+  {
+   "id": "T-J-13",
+   "title": "Journey: Approve a PSR requiring Sponsor sign-off",
+   "role": "Project Sponsor",
+   "covers": [
+    "J:J-13"
+   ],
+   "steps": [
+    "Sign in as the journey's role (acceptance sandbox user).",
+    "PS is notified of a PSR pending approval.",
+    "PS reviews the DH-approved PSR.",
+    "PS approves or returns the PSR."
+   ],
+   "asserts": [
+    "Every step completes without a permission or validation error",
+    "Outcome holds: The PSR receives the Bank's full governance sign-off, or is sent back for correction, per the routing rule.",
+    "Success criterion observed: PS only ever sees PSRs that actually meet BR-10's routing conditions"
+   ],
+   "class": "journey"
+  },
+  {
+   "id": "T-J-14",
+   "title": "Journey: Monitor portfolio health and identify projects needing attention",
+   "role": "PSC Member",
+   "covers": [
+    "J:J-14"
+   ],
+   "steps": [
+    "Sign in as the journey's role (acceptance sandbox user).",
+    "PSC views all projects under the portfolio.",
+    "PSC filters projects by status, health, risk, business unit and other criteria.",
+    "PSC views dashboards of project status, risk, issue, milestone and financial performance.",
+    "PSC monitors project health indicators and identifies projects requiring management attention per BR-06.",
+    "PSC views critical issues and overdue actions, and high/critical risks."
+   ],
+   "asserts": [
+    "Every step completes without a permission or validation error",
+    "Outcome holds: The PSC directs its attention to the projects that need it, without requesting ad-hoc reports.",
+    "Success criterion observed: 'Needs management attention' is computed consistently per BR-06 (overall Red, or any Critical risk/issue, or any overdue escalation)"
+   ],
+   "class": "journey"
+  },
+  {
+   "id": "T-J-15",
+   "title": "Journey: Generate the Portfolio PSR (PPSR) and view PSR history",
+   "role": "PSC Member",
+   "covers": [
+    "J:J-15"
+   ],
+   "steps": [
+    "Sign in as the journey's role (acceptance sandbox user).",
+    "PSC views consolidated project status information across the portfolio.",
+    "PSC generates the Portfolio Project Status Report (PPSR).",
+    "PSC (and PM) view historical PSRs to review performance and status trends over time.",
+    "PSC views the approval status of PSRs across the portfolio."
+   ],
+   "asserts": [
+    "Every step completes without a permission or validation error",
+    "Outcome holds: A consolidated, board-ready portfolio status report and a browsable PSR history.",
+    "Success criterion observed: The PPSR only rolls up PSRs that have reached Approved (locked snapshot), per BR-24"
+   ],
+   "class": "journey"
+  },
+  {
+   "id": "T-J-16",
+   "title": "Journey: Configure the working calendar and alert settings",
+   "role": "Hub Administrator",
+   "covers": [
+    "J:J-16"
+   ],
+   "steps": [
+    "Sign in as the journey's role (acceptance sandbox user).",
+    "Admin adds, edits or removes holidays and special non-working days, including dates and coverage.",
+    "Admin configures alert thresholds, contract-expiration notification periods, aging periods and recipients for reminders and escalations."
+   ],
+   "asserts": [
+    "Every step completes without a permission or validation error",
+    "Outcome holds: Schedule calculations (working-day logic) and escalation/reminder timing reflect current Bank policy without any code change.",
+    "Success criterion observed: Working-day-dependent calculations (durations, dependencies, forecasts, PSR deadline) respect the configured calendar (BR-01)"
+   ],
+   "class": "journey"
+  },
+  {
+   "id": "T-J-17",
+   "title": "Journey: Administer users, roles and project access",
+   "role": "Hub Administrator",
+   "covers": [
+    "J:J-17"
+   ],
+   "steps": [
+    "Sign in as the journey's role (acceptance sandbox user).",
+    "Admin creates and maintains user accounts.",
+    "Admin assigns users to appropriate roles.",
+    "Admin activates, deactivates or modifies user access.",
+    "Admin assigns users to specific projects, so each user can access only the projects relevant to their responsibilities; access defaults to deny-all otherwise.",
+    "Admin maintains role permissions centrally."
+   ],
+   "asserts": [
+    "Every step completes without a permission or validation error",
+    "Outcome holds: Every user's access matches their current responsibility and their current project assignments; no orphaned or over-privileged accounts.",
+    "Success criterion observed: A user with no project assignment sees no project data (BR-23)"
+   ],
+   "class": "journey"
+  },
+  {
+   "id": "T-J-18",
+   "title": "Journey: Review the audit trail",
+   "role": "Hub Administrator",
+   "covers": [
+    "J:J-18"
+   ],
+   "steps": [
+    "Sign in as the journey's role (acceptance sandbox user).",
+    "Admin views all system transactions and user actions recorded in the audit trail.",
+    "Admin (or any authorized user) traces a specific PSR's full lifecycle history -- creation, modification, submission, approval, return, comments, responsible users, timestamps."
+   ],
+   "asserts": [
+    "Every step completes without a permission or validation error",
+    "Outcome holds: Any change to project data, reports, approvals, configuration or access can be traced to the responsible user.",
+    "Success criterion observed: Every one of the confirmed audit log event types is captured (open question: the exact '7 identified log events' of ITPH-00213 are unconfirmed by LANDBANK -- see open-questions.md)"
+   ],
+   "class": "journey"
+  },
+  {
+   "id": "T-PS-itpmd_hub_settings",
+   "title": "Granted access and data scope on ITPMD Hub Settings",
+   "role": "each granted role",
+   "covers": [
+    "P:Hub Administrator:itpmd_hub_settings:edit",
+    "S:Hub Administrator:itpmd_hub_settings:all",
+    "P:TPMO:itpmd_hub_settings:edit",
+    "S:TPMO:itpmd_hub_settings:all"
+   ],
+   "steps": [
+    "As Hub Administrator: create (if InitiateItems/Editable) or list records on itpmd_hub_settings with the role's own sandbox user.",
+    "As Hub Administrator: read back a record of another user and a record the role owns; count visible rows (Hub Administrator expects scope 'all').",
+    "As TPMO: create (if InitiateItems/Editable) or list records on itpmd_hub_settings with the role's own sandbox user.",
+    "As TPMO: read back a record of another user and a record the role owns; count visible rows (TPMO expects scope 'all')."
+   ],
+   "asserts": [
+    "Hub Administrator: can read and write; visible rows match scope 'all'",
+    "TPMO: can read and write; visible rows match scope 'all'"
+   ],
+   "class": "permission+scope",
+   "note": "Universe fixed: P: ids now carry the granted level (read/edit) from p.level. Single-user run: proven via live member-ACL read (weak evidence); per-role execution needs seeded role users."
+  },
+  {
+   "id": "T-PS-itpmd_holiday_calendar",
+   "title": "Granted access and data scope on ITPMD Holiday Calendar",
+   "role": "each granted role",
+   "covers": [
+    "P:Hub Administrator:itpmd_holiday_calendar:edit",
+    "S:Hub Administrator:itpmd_holiday_calendar:all",
+    "P:TPMO:itpmd_holiday_calendar:edit",
+    "S:TPMO:itpmd_holiday_calendar:all"
+   ],
+   "steps": [
+    "As Hub Administrator: create (if InitiateItems/Editable) or list records on itpmd_holiday_calendar with the role's own sandbox user.",
+    "As Hub Administrator: read back a record of another user and a record the role owns; count visible rows (Hub Administrator expects scope 'all').",
+    "As TPMO: create (if InitiateItems/Editable) or list records on itpmd_holiday_calendar with the role's own sandbox user.",
+    "As TPMO: read back a record of another user and a record the role owns; count visible rows (TPMO expects scope 'all')."
+   ],
+   "asserts": [
+    "Hub Administrator: can read and write; visible rows match scope 'all'",
+    "TPMO: can read and write; visible rows match scope 'all'"
+   ],
+   "class": "permission+scope",
+   "note": "Universe fixed: P: ids now carry the granted level (read/edit) from p.level. Single-user run: proven via live member-ACL read (weak evidence); per-role execution needs seeded role users."
+  },
+  {
+   "id": "T-PS-itpmd_project",
+   "title": "Granted access and data scope on ITPMD Project",
+   "role": "each granted role",
+   "covers": [
+    "P:Project Manager:itpmd_project:edit",
+    "S:Project Manager:itpmd_project:my",
+    "P:Team Member:itpmd_project:read",
+    "S:Team Member:itpmd_project:my",
+    "P:Department Head:itpmd_project:read",
+    "S:Department Head:itpmd_project:my-team",
+    "P:Project Sponsor:itpmd_project:read",
+    "S:Project Sponsor:itpmd_project:my-team",
+    "P:PSC Member:itpmd_project:read",
+    "S:PSC Member:itpmd_project:all",
+    "P:TPMO:itpmd_project:edit",
+    "S:TPMO:itpmd_project:all",
+    "P:Hub Administrator:itpmd_project:edit",
+    "S:Hub Administrator:itpmd_project:all"
+   ],
+   "steps": [
+    "As Project Manager: create (if InitiateItems/Editable) or list records on itpmd_project with the role's own sandbox user.",
+    "As Project Manager: read back a record of another user and a record the role owns; count visible rows (Project Manager expects scope 'my').",
+    "As Team Member: create (if InitiateItems/Editable) or list records on itpmd_project with the role's own sandbox user.",
+    "As Team Member: read back a record of another user and a record the role owns; count visible rows (Team Member expects scope 'my').",
+    "As Department Head: create (if InitiateItems/Editable) or list records on itpmd_project with the role's own sandbox user.",
+    "As Department Head: read back a record of another user and a record the role owns; count visible rows (Department Head expects scope 'my-team').",
+    "As Project Sponsor: create (if InitiateItems/Editable) or list records on itpmd_project with the role's own sandbox user.",
+    "As Project Sponsor: read back a record of another user and a record the role owns; count visible rows (Project Sponsor expects scope 'my-team').",
+    "As PSC Member: create (if InitiateItems/Editable) or list records on itpmd_project with the role's own sandbox user.",
+    "As PSC Member: read back a record of another user and a record the role owns; count visible rows (PSC Member expects scope 'all').",
+    "As TPMO: create (if InitiateItems/Editable) or list records on itpmd_project with the role's own sandbox user.",
+    "As TPMO: read back a record of another user and a record the role owns; count visible rows (TPMO expects scope 'all').",
+    "As Hub Administrator: create (if InitiateItems/Editable) or list records on itpmd_project with the role's own sandbox user.",
+    "As Hub Administrator: read back a record of another user and a record the role owns; count visible rows (Hub Administrator expects scope 'all')."
+   ],
+   "asserts": [
+    "Project Manager: can read and write; visible rows match scope 'my'",
+    "Team Member: can read but a write/update attempt is refused; visible rows match scope 'my'",
+    "Department Head: can read but a write/update attempt is refused; visible rows match scope 'my-team'",
+    "Project Sponsor: can read but a write/update attempt is refused; visible rows match scope 'my-team'",
+    "PSC Member: can read but a write/update attempt is refused; visible rows match scope 'all'",
+    "TPMO: can read and write; visible rows match scope 'all'",
+    "Hub Administrator: can read and write; visible rows match scope 'all'"
+   ],
+   "class": "permission+scope",
+   "note": "Universe fixed: P: ids now carry the granted level (read/edit) from p.level. Single-user run: proven via live member-ACL read (weak evidence); per-role execution needs seeded role users."
+  },
+  {
+   "id": "T-PS-itpmd_activity",
+   "title": "Granted access and data scope on ITPMD Activity",
+   "role": "each granted role",
+   "covers": [
+    "P:Project Manager:itpmd_activity:edit",
+    "S:Project Manager:itpmd_activity:my",
+    "P:Team Member:itpmd_activity:edit",
+    "S:Team Member:itpmd_activity:my",
+    "P:Department Head:itpmd_activity:read",
+    "S:Department Head:itpmd_activity:my-team",
+    "P:Project Sponsor:itpmd_activity:read",
+    "S:Project Sponsor:itpmd_activity:my-team",
+    "P:PSC Member:itpmd_activity:read",
+    "S:PSC Member:itpmd_activity:all",
+    "P:TPMO:itpmd_activity:edit",
+    "S:TPMO:itpmd_activity:all",
+    "P:Hub Administrator:itpmd_activity:edit",
+    "S:Hub Administrator:itpmd_activity:all"
+   ],
+   "steps": [
+    "As Project Manager: create (if InitiateItems/Editable) or list records on itpmd_activity with the role's own sandbox user.",
+    "As Project Manager: read back a record of another user and a record the role owns; count visible rows (Project Manager expects scope 'my').",
+    "As Team Member: create (if InitiateItems/Editable) or list records on itpmd_activity with the role's own sandbox user.",
+    "As Team Member: read back a record of another user and a record the role owns; count visible rows (Team Member expects scope 'my').",
+    "As Department Head: create (if InitiateItems/Editable) or list records on itpmd_activity with the role's own sandbox user.",
+    "As Department Head: read back a record of another user and a record the role owns; count visible rows (Department Head expects scope 'my-team').",
+    "As Project Sponsor: create (if InitiateItems/Editable) or list records on itpmd_activity with the role's own sandbox user.",
+    "As Project Sponsor: read back a record of another user and a record the role owns; count visible rows (Project Sponsor expects scope 'my-team').",
+    "As PSC Member: create (if InitiateItems/Editable) or list records on itpmd_activity with the role's own sandbox user.",
+    "As PSC Member: read back a record of another user and a record the role owns; count visible rows (PSC Member expects scope 'all').",
+    "As TPMO: create (if InitiateItems/Editable) or list records on itpmd_activity with the role's own sandbox user.",
+    "As TPMO: read back a record of another user and a record the role owns; count visible rows (TPMO expects scope 'all').",
+    "As Hub Administrator: create (if InitiateItems/Editable) or list records on itpmd_activity with the role's own sandbox user.",
+    "As Hub Administrator: read back a record of another user and a record the role owns; count visible rows (Hub Administrator expects scope 'all')."
+   ],
+   "asserts": [
+    "Project Manager: can read and write; visible rows match scope 'my'",
+    "Team Member: can read and write; visible rows match scope 'my'",
+    "Department Head: can read but a write/update attempt is refused; visible rows match scope 'my-team'",
+    "Project Sponsor: can read but a write/update attempt is refused; visible rows match scope 'my-team'",
+    "PSC Member: can read but a write/update attempt is refused; visible rows match scope 'all'",
+    "TPMO: can read and write; visible rows match scope 'all'",
+    "Hub Administrator: can read and write; visible rows match scope 'all'"
+   ],
+   "class": "permission+scope",
+   "note": "Universe fixed: P: ids now carry the granted level (read/edit) from p.level. Single-user run: proven via live member-ACL read (weak evidence); per-role execution needs seeded role users."
+  },
+  {
+   "id": "T-PS-itpmd_risk",
+   "title": "Granted access and data scope on ITPMD Risk",
+   "role": "each granted role",
+   "covers": [
+    "P:Project Manager:itpmd_risk:edit",
+    "S:Project Manager:itpmd_risk:my",
+    "P:Team Member:itpmd_risk:read",
+    "S:Team Member:itpmd_risk:my",
+    "P:Department Head:itpmd_risk:read",
+    "S:Department Head:itpmd_risk:my-team",
+    "P:Project Sponsor:itpmd_risk:read",
+    "S:Project Sponsor:itpmd_risk:my-team",
+    "P:PSC Member:itpmd_risk:read",
+    "S:PSC Member:itpmd_risk:all",
+    "P:TPMO:itpmd_risk:edit",
+    "S:TPMO:itpmd_risk:all"
+   ],
+   "steps": [
+    "As Project Manager: create (if InitiateItems/Editable) or list records on itpmd_risk with the role's own sandbox user.",
+    "As Project Manager: read back a record of another user and a record the role owns; count visible rows (Project Manager expects scope 'my').",
+    "As Team Member: create (if InitiateItems/Editable) or list records on itpmd_risk with the role's own sandbox user.",
+    "As Team Member: read back a record of another user and a record the role owns; count visible rows (Team Member expects scope 'my').",
+    "As Department Head: create (if InitiateItems/Editable) or list records on itpmd_risk with the role's own sandbox user.",
+    "As Department Head: read back a record of another user and a record the role owns; count visible rows (Department Head expects scope 'my-team').",
+    "As Project Sponsor: create (if InitiateItems/Editable) or list records on itpmd_risk with the role's own sandbox user.",
+    "As Project Sponsor: read back a record of another user and a record the role owns; count visible rows (Project Sponsor expects scope 'my-team').",
+    "As PSC Member: create (if InitiateItems/Editable) or list records on itpmd_risk with the role's own sandbox user.",
+    "As PSC Member: read back a record of another user and a record the role owns; count visible rows (PSC Member expects scope 'all').",
+    "As TPMO: create (if InitiateItems/Editable) or list records on itpmd_risk with the role's own sandbox user.",
+    "As TPMO: read back a record of another user and a record the role owns; count visible rows (TPMO expects scope 'all')."
+   ],
+   "asserts": [
+    "Project Manager: can read and write; visible rows match scope 'my'",
+    "Team Member: can read but a write/update attempt is refused; visible rows match scope 'my'",
+    "Department Head: can read but a write/update attempt is refused; visible rows match scope 'my-team'",
+    "Project Sponsor: can read but a write/update attempt is refused; visible rows match scope 'my-team'",
+    "PSC Member: can read but a write/update attempt is refused; visible rows match scope 'all'",
+    "TPMO: can read and write; visible rows match scope 'all'"
+   ],
+   "class": "permission+scope",
+   "note": "Universe fixed: P: ids now carry the granted level (read/edit) from p.level. Single-user run: proven via live member-ACL read (weak evidence); per-role execution needs seeded role users."
+  },
+  {
+   "id": "T-PS-itpmd_issue",
+   "title": "Granted access and data scope on ITPMD Issue",
+   "role": "each granted role",
+   "covers": [
+    "P:Project Manager:itpmd_issue:edit",
+    "S:Project Manager:itpmd_issue:my",
+    "P:Team Member:itpmd_issue:edit",
+    "S:Team Member:itpmd_issue:my",
+    "P:Department Head:itpmd_issue:read",
+    "S:Department Head:itpmd_issue:my-team",
+    "P:Project Sponsor:itpmd_issue:read",
+    "S:Project Sponsor:itpmd_issue:my-team",
+    "P:PSC Member:itpmd_issue:read",
+    "S:PSC Member:itpmd_issue:all",
+    "P:TPMO:itpmd_issue:edit",
+    "S:TPMO:itpmd_issue:all"
+   ],
+   "steps": [
+    "As Project Manager: create (if InitiateItems/Editable) or list records on itpmd_issue with the role's own sandbox user.",
+    "As Project Manager: read back a record of another user and a record the role owns; count visible rows (Project Manager expects scope 'my').",
+    "As Team Member: create (if InitiateItems/Editable) or list records on itpmd_issue with the role's own sandbox user.",
+    "As Team Member: read back a record of another user and a record the role owns; count visible rows (Team Member expects scope 'my').",
+    "As Department Head: create (if InitiateItems/Editable) or list records on itpmd_issue with the role's own sandbox user.",
+    "As Department Head: read back a record of another user and a record the role owns; count visible rows (Department Head expects scope 'my-team').",
+    "As Project Sponsor: create (if InitiateItems/Editable) or list records on itpmd_issue with the role's own sandbox user.",
+    "As Project Sponsor: read back a record of another user and a record the role owns; count visible rows (Project Sponsor expects scope 'my-team').",
+    "As PSC Member: create (if InitiateItems/Editable) or list records on itpmd_issue with the role's own sandbox user.",
+    "As PSC Member: read back a record of another user and a record the role owns; count visible rows (PSC Member expects scope 'all').",
+    "As TPMO: create (if InitiateItems/Editable) or list records on itpmd_issue with the role's own sandbox user.",
+    "As TPMO: read back a record of another user and a record the role owns; count visible rows (TPMO expects scope 'all')."
+   ],
+   "asserts": [
+    "Project Manager: can read and write; visible rows match scope 'my'",
+    "Team Member: can read and write; visible rows match scope 'my'",
+    "Department Head: can read but a write/update attempt is refused; visible rows match scope 'my-team'",
+    "Project Sponsor: can read but a write/update attempt is refused; visible rows match scope 'my-team'",
+    "PSC Member: can read but a write/update attempt is refused; visible rows match scope 'all'",
+    "TPMO: can read and write; visible rows match scope 'all'"
+   ],
+   "class": "permission+scope",
+   "note": "Universe fixed: P: ids now carry the granted level (read/edit) from p.level. Single-user run: proven via live member-ACL read (weak evidence); per-role execution needs seeded role users."
+  },
+  {
+   "id": "T-PS-itpmd_action_item",
+   "title": "Granted access and data scope on ITPMD Action Item",
+   "role": "each granted role",
+   "covers": [
+    "P:Project Manager:itpmd_action_item:edit",
+    "S:Project Manager:itpmd_action_item:my",
+    "P:Team Member:itpmd_action_item:edit",
+    "S:Team Member:itpmd_action_item:my",
+    "P:Department Head:itpmd_action_item:read",
+    "S:Department Head:itpmd_action_item:my-team",
+    "P:Project Sponsor:itpmd_action_item:read",
+    "S:Project Sponsor:itpmd_action_item:my-team",
+    "P:PSC Member:itpmd_action_item:read",
+    "S:PSC Member:itpmd_action_item:all",
+    "P:TPMO:itpmd_action_item:edit",
+    "S:TPMO:itpmd_action_item:all"
+   ],
+   "steps": [
+    "As Project Manager: create (if InitiateItems/Editable) or list records on itpmd_action_item with the role's own sandbox user.",
+    "As Project Manager: read back a record of another user and a record the role owns; count visible rows (Project Manager expects scope 'my').",
+    "As Team Member: create (if InitiateItems/Editable) or list records on itpmd_action_item with the role's own sandbox user.",
+    "As Team Member: read back a record of another user and a record the role owns; count visible rows (Team Member expects scope 'my').",
+    "As Department Head: create (if InitiateItems/Editable) or list records on itpmd_action_item with the role's own sandbox user.",
+    "As Department Head: read back a record of another user and a record the role owns; count visible rows (Department Head expects scope 'my-team').",
+    "As Project Sponsor: create (if InitiateItems/Editable) or list records on itpmd_action_item with the role's own sandbox user.",
+    "As Project Sponsor: read back a record of another user and a record the role owns; count visible rows (Project Sponsor expects scope 'my-team').",
+    "As PSC Member: create (if InitiateItems/Editable) or list records on itpmd_action_item with the role's own sandbox user.",
+    "As PSC Member: read back a record of another user and a record the role owns; count visible rows (PSC Member expects scope 'all').",
+    "As TPMO: create (if InitiateItems/Editable) or list records on itpmd_action_item with the role's own sandbox user.",
+    "As TPMO: read back a record of another user and a record the role owns; count visible rows (TPMO expects scope 'all')."
+   ],
+   "asserts": [
+    "Project Manager: can read and write; visible rows match scope 'my'",
+    "Team Member: can read and write; visible rows match scope 'my'",
+    "Department Head: can read but a write/update attempt is refused; visible rows match scope 'my-team'",
+    "Project Sponsor: can read but a write/update attempt is refused; visible rows match scope 'my-team'",
+    "PSC Member: can read but a write/update attempt is refused; visible rows match scope 'all'",
+    "TPMO: can read and write; visible rows match scope 'all'"
+   ],
+   "class": "permission+scope",
+   "note": "Universe fixed: P: ids now carry the granted level (read/edit) from p.level. Single-user run: proven via live member-ACL read (weak evidence); per-role execution needs seeded role users."
+  },
+  {
+   "id": "T-PS-itpmd_cost_entry",
+   "title": "Granted access and data scope on ITPMD Cost Entry",
+   "role": "each granted role",
+   "covers": [
+    "P:Project Manager:itpmd_cost_entry:edit",
+    "S:Project Manager:itpmd_cost_entry:my",
+    "P:Department Head:itpmd_cost_entry:read",
+    "S:Department Head:itpmd_cost_entry:my-team",
+    "P:Project Sponsor:itpmd_cost_entry:read",
+    "S:Project Sponsor:itpmd_cost_entry:my-team",
+    "P:PSC Member:itpmd_cost_entry:read",
+    "S:PSC Member:itpmd_cost_entry:all",
+    "P:TPMO:itpmd_cost_entry:edit",
+    "S:TPMO:itpmd_cost_entry:all"
+   ],
+   "steps": [
+    "As Project Manager: create (if InitiateItems/Editable) or list records on itpmd_cost_entry with the role's own sandbox user.",
+    "As Project Manager: read back a record of another user and a record the role owns; count visible rows (Project Manager expects scope 'my').",
+    "As Department Head: create (if InitiateItems/Editable) or list records on itpmd_cost_entry with the role's own sandbox user.",
+    "As Department Head: read back a record of another user and a record the role owns; count visible rows (Department Head expects scope 'my-team').",
+    "As Project Sponsor: create (if InitiateItems/Editable) or list records on itpmd_cost_entry with the role's own sandbox user.",
+    "As Project Sponsor: read back a record of another user and a record the role owns; count visible rows (Project Sponsor expects scope 'my-team').",
+    "As PSC Member: create (if InitiateItems/Editable) or list records on itpmd_cost_entry with the role's own sandbox user.",
+    "As PSC Member: read back a record of another user and a record the role owns; count visible rows (PSC Member expects scope 'all').",
+    "As TPMO: create (if InitiateItems/Editable) or list records on itpmd_cost_entry with the role's own sandbox user.",
+    "As TPMO: read back a record of another user and a record the role owns; count visible rows (TPMO expects scope 'all')."
+   ],
+   "asserts": [
+    "Project Manager: can read and write; visible rows match scope 'my'",
+    "Department Head: can read but a write/update attempt is refused; visible rows match scope 'my-team'",
+    "Project Sponsor: can read but a write/update attempt is refused; visible rows match scope 'my-team'",
+    "PSC Member: can read but a write/update attempt is refused; visible rows match scope 'all'",
+    "TPMO: can read and write; visible rows match scope 'all'"
+   ],
+   "class": "permission+scope",
+   "note": "Universe fixed: P: ids now carry the granted level (read/edit) from p.level. Single-user run: proven via live member-ACL read (weak evidence); per-role execution needs seeded role users."
+  },
+  {
+   "id": "T-PS-itpmd_psr",
+   "title": "Granted access and data scope on ITPMD Project Status Report",
+   "role": "each granted role",
+   "covers": [
+    "P:Project Manager:itpmd_psr:edit",
+    "S:Project Manager:itpmd_psr:my",
+    "P:Department Head:itpmd_psr:edit",
+    "S:Department Head:itpmd_psr:my-team",
+    "P:Project Sponsor:itpmd_psr:edit",
+    "S:Project Sponsor:itpmd_psr:my-team",
+    "P:Team Member:itpmd_psr:read",
+    "S:Team Member:itpmd_psr:my",
+    "P:PSC Member:itpmd_psr:edit",
+    "S:PSC Member:itpmd_psr:all",
+    "P:TPMO:itpmd_psr:edit",
+    "S:TPMO:itpmd_psr:all"
+   ],
+   "steps": [
+    "As Project Manager: create (if InitiateItems/Editable) or list records on itpmd_psr with the role's own sandbox user.",
+    "As Project Manager: read back a record of another user and a record the role owns; count visible rows (Project Manager expects scope 'my').",
+    "As Department Head: create (if InitiateItems/Editable) or list records on itpmd_psr with the role's own sandbox user.",
+    "As Department Head: read back a record of another user and a record the role owns; count visible rows (Department Head expects scope 'my-team').",
+    "As Project Sponsor: create (if InitiateItems/Editable) or list records on itpmd_psr with the role's own sandbox user.",
+    "As Project Sponsor: read back a record of another user and a record the role owns; count visible rows (Project Sponsor expects scope 'my-team').",
+    "As Team Member: create (if InitiateItems/Editable) or list records on itpmd_psr with the role's own sandbox user.",
+    "As Team Member: read back a record of another user and a record the role owns; count visible rows (Team Member expects scope 'my').",
+    "As PSC Member: create (if InitiateItems/Editable) or list records on itpmd_psr with the role's own sandbox user.",
+    "As PSC Member: read back a record of another user and a record the role owns; count visible rows (PSC Member expects scope 'all').",
+    "As TPMO: create (if InitiateItems/Editable) or list records on itpmd_psr with the role's own sandbox user.",
+    "As TPMO: read back a record of another user and a record the role owns; count visible rows (TPMO expects scope 'all')."
+   ],
+   "asserts": [
+    "Project Manager: can read and write; visible rows match scope 'my'",
+    "Department Head: can read and write; visible rows match scope 'my-team'",
+    "Project Sponsor: can read and write; visible rows match scope 'my-team'",
+    "Team Member: can read but a write/update attempt is refused; visible rows match scope 'my'",
+    "PSC Member: can read and write; visible rows match scope 'all'",
+    "TPMO: can read and write; visible rows match scope 'all'"
+   ],
+   "class": "permission+scope",
+   "note": "Universe fixed: P: ids now carry the granted level (read/edit) from p.level. Single-user run: proven via live member-ACL read (weak evidence); per-role execution needs seeded role users."
+  },
+  {
+   "id": "T-PS-itpmd_portfolio_report",
+   "title": "Granted access and data scope on ITPMD Portfolio Status Report",
+   "role": "each granted role",
+   "covers": [
+    "P:PSC Member:itpmd_portfolio_report:edit",
+    "S:PSC Member:itpmd_portfolio_report:all",
+    "P:Department Head:itpmd_portfolio_report:read",
+    "S:Department Head:itpmd_portfolio_report:all",
+    "P:Project Sponsor:itpmd_portfolio_report:read",
+    "S:Project Sponsor:itpmd_portfolio_report:all",
+    "P:TPMO:itpmd_portfolio_report:edit",
+    "S:TPMO:itpmd_portfolio_report:all"
+   ],
+   "steps": [
+    "As PSC Member: create (if InitiateItems/Editable) or list records on itpmd_portfolio_report with the role's own sandbox user.",
+    "As PSC Member: read back a record of another user and a record the role owns; count visible rows (PSC Member expects scope 'all').",
+    "As Department Head: create (if InitiateItems/Editable) or list records on itpmd_portfolio_report with the role's own sandbox user.",
+    "As Department Head: read back a record of another user and a record the role owns; count visible rows (Department Head expects scope 'all').",
+    "As Project Sponsor: create (if InitiateItems/Editable) or list records on itpmd_portfolio_report with the role's own sandbox user.",
+    "As Project Sponsor: read back a record of another user and a record the role owns; count visible rows (Project Sponsor expects scope 'all').",
+    "As TPMO: create (if InitiateItems/Editable) or list records on itpmd_portfolio_report with the role's own sandbox user.",
+    "As TPMO: read back a record of another user and a record the role owns; count visible rows (TPMO expects scope 'all')."
+   ],
+   "asserts": [
+    "PSC Member: can read and write; visible rows match scope 'all'",
+    "Department Head: can read but a write/update attempt is refused; visible rows match scope 'all'",
+    "Project Sponsor: can read but a write/update attempt is refused; visible rows match scope 'all'",
+    "TPMO: can read and write; visible rows match scope 'all'"
+   ],
+   "class": "permission+scope",
+   "note": "Universe fixed: P: ids now carry the granted level (read/edit) from p.level. Single-user run: proven via live member-ACL read (weak evidence); per-role execution needs seeded role users."
+  },
+  {
+   "id": "T-PS-itpmd_discussion_message",
+   "title": "Granted access and data scope on ITPMD Discussion Message",
+   "role": "each granted role",
+   "covers": [
+    "P:Project Manager:itpmd_discussion_message:edit",
+    "S:Project Manager:itpmd_discussion_message:all",
+    "P:Team Member:itpmd_discussion_message:edit",
+    "S:Team Member:itpmd_discussion_message:all",
+    "P:Department Head:itpmd_discussion_message:edit",
+    "S:Department Head:itpmd_discussion_message:all",
+    "P:Project Sponsor:itpmd_discussion_message:edit",
+    "S:Project Sponsor:itpmd_discussion_message:all",
+    "P:PSC Member:itpmd_discussion_message:edit",
+    "S:PSC Member:itpmd_discussion_message:all",
+    "P:Hub Administrator:itpmd_discussion_message:edit",
+    "S:Hub Administrator:itpmd_discussion_message:all",
+    "P:TPMO:itpmd_discussion_message:edit",
+    "S:TPMO:itpmd_discussion_message:all"
+   ],
+   "steps": [
+    "As Project Manager: create (if InitiateItems/Editable) or list records on itpmd_discussion_message with the role's own sandbox user.",
+    "As Project Manager: read back a record of another user and a record the role owns; count visible rows (Project Manager expects scope 'all').",
+    "As Team Member: create (if InitiateItems/Editable) or list records on itpmd_discussion_message with the role's own sandbox user.",
+    "As Team Member: read back a record of another user and a record the role owns; count visible rows (Team Member expects scope 'all').",
+    "As Department Head: create (if InitiateItems/Editable) or list records on itpmd_discussion_message with the role's own sandbox user.",
+    "As Department Head: read back a record of another user and a record the role owns; count visible rows (Department Head expects scope 'all').",
+    "As Project Sponsor: create (if InitiateItems/Editable) or list records on itpmd_discussion_message with the role's own sandbox user.",
+    "As Project Sponsor: read back a record of another user and a record the role owns; count visible rows (Project Sponsor expects scope 'all').",
+    "As PSC Member: create (if InitiateItems/Editable) or list records on itpmd_discussion_message with the role's own sandbox user.",
+    "As PSC Member: read back a record of another user and a record the role owns; count visible rows (PSC Member expects scope 'all').",
+    "As Hub Administrator: create (if InitiateItems/Editable) or list records on itpmd_discussion_message with the role's own sandbox user.",
+    "As Hub Administrator: read back a record of another user and a record the role owns; count visible rows (Hub Administrator expects scope 'all').",
+    "As TPMO: create (if InitiateItems/Editable) or list records on itpmd_discussion_message with the role's own sandbox user.",
+    "As TPMO: read back a record of another user and a record the role owns; count visible rows (TPMO expects scope 'all')."
+   ],
+   "asserts": [
+    "Project Manager: can read and write; visible rows match scope 'all'",
+    "Team Member: can read and write; visible rows match scope 'all'",
+    "Department Head: can read and write; visible rows match scope 'all'",
+    "Project Sponsor: can read and write; visible rows match scope 'all'",
+    "PSC Member: can read and write; visible rows match scope 'all'",
+    "Hub Administrator: can read and write; visible rows match scope 'all'",
+    "TPMO: can read and write; visible rows match scope 'all'"
+   ],
+   "class": "permission+scope",
+   "note": "Universe fixed: P: ids now carry the granted level (read/edit) from p.level. Single-user run: proven via live member-ACL read (weak evidence); per-role execution needs seeded role users."
+  },
+  {
+   "id": "T-PS-itpmd_notification",
+   "title": "Granted access and data scope on ITPMD Notification",
+   "role": "each granted role",
+   "covers": [
+    "P:Project Manager:itpmd_notification:edit",
+    "S:Project Manager:itpmd_notification:all",
+    "P:Team Member:itpmd_notification:edit",
+    "S:Team Member:itpmd_notification:all",
+    "P:Department Head:itpmd_notification:edit",
+    "S:Department Head:itpmd_notification:all",
+    "P:Project Sponsor:itpmd_notification:edit",
+    "S:Project Sponsor:itpmd_notification:all",
+    "P:PSC Member:itpmd_notification:edit",
+    "S:PSC Member:itpmd_notification:all",
+    "P:Hub Administrator:itpmd_notification:edit",
+    "S:Hub Administrator:itpmd_notification:all",
+    "P:TPMO:itpmd_notification:edit",
+    "S:TPMO:itpmd_notification:all"
+   ],
+   "steps": [
+    "As Project Manager: create (if InitiateItems/Editable) or list records on itpmd_notification with the role's own sandbox user.",
+    "As Project Manager: read back a record of another user and a record the role owns; count visible rows (Project Manager expects scope 'all').",
+    "As Team Member: create (if InitiateItems/Editable) or list records on itpmd_notification with the role's own sandbox user.",
+    "As Team Member: read back a record of another user and a record the role owns; count visible rows (Team Member expects scope 'all').",
+    "As Department Head: create (if InitiateItems/Editable) or list records on itpmd_notification with the role's own sandbox user.",
+    "As Department Head: read back a record of another user and a record the role owns; count visible rows (Department Head expects scope 'all').",
+    "As Project Sponsor: create (if InitiateItems/Editable) or list records on itpmd_notification with the role's own sandbox user.",
+    "As Project Sponsor: read back a record of another user and a record the role owns; count visible rows (Project Sponsor expects scope 'all').",
+    "As PSC Member: create (if InitiateItems/Editable) or list records on itpmd_notification with the role's own sandbox user.",
+    "As PSC Member: read back a record of another user and a record the role owns; count visible rows (PSC Member expects scope 'all').",
+    "As Hub Administrator: create (if InitiateItems/Editable) or list records on itpmd_notification with the role's own sandbox user.",
+    "As Hub Administrator: read back a record of another user and a record the role owns; count visible rows (Hub Administrator expects scope 'all').",
+    "As TPMO: create (if InitiateItems/Editable) or list records on itpmd_notification with the role's own sandbox user.",
+    "As TPMO: read back a record of another user and a record the role owns; count visible rows (TPMO expects scope 'all')."
+   ],
+   "asserts": [
+    "Project Manager: can read and write; visible rows match scope 'all'",
+    "Team Member: can read and write; visible rows match scope 'all'",
+    "Department Head: can read and write; visible rows match scope 'all'",
+    "Project Sponsor: can read and write; visible rows match scope 'all'",
+    "PSC Member: can read and write; visible rows match scope 'all'",
+    "Hub Administrator: can read and write; visible rows match scope 'all'",
+    "TPMO: can read and write; visible rows match scope 'all'"
+   ],
+   "class": "permission+scope",
+   "note": "Universe fixed: P: ids now carry the granted level (read/edit) from p.level. Single-user run: proven via live member-ACL read (weak evidence); per-role execution needs seeded role users."
+  },
+  {
+   "id": "T-PS-itpmd_discussion_read",
+   "title": "Granted access and data scope on ITPMD Discussion Read",
+   "role": "each granted role",
+   "covers": [
+    "P:Project Manager:itpmd_discussion_read:edit",
+    "S:Project Manager:itpmd_discussion_read:all",
+    "P:Team Member:itpmd_discussion_read:edit",
+    "S:Team Member:itpmd_discussion_read:all",
+    "P:Department Head:itpmd_discussion_read:edit",
+    "S:Department Head:itpmd_discussion_read:all",
+    "P:Project Sponsor:itpmd_discussion_read:edit",
+    "S:Project Sponsor:itpmd_discussion_read:all",
+    "P:PSC Member:itpmd_discussion_read:edit",
+    "S:PSC Member:itpmd_discussion_read:all",
+    "P:Hub Administrator:itpmd_discussion_read:edit",
+    "S:Hub Administrator:itpmd_discussion_read:all",
+    "P:TPMO:itpmd_discussion_read:edit",
+    "S:TPMO:itpmd_discussion_read:all"
+   ],
+   "steps": [
+    "As Project Manager: create (if InitiateItems/Editable) or list records on itpmd_discussion_read with the role's own sandbox user.",
+    "As Project Manager: read back a record of another user and a record the role owns; count visible rows (Project Manager expects scope 'all').",
+    "As Team Member: create (if InitiateItems/Editable) or list records on itpmd_discussion_read with the role's own sandbox user.",
+    "As Team Member: read back a record of another user and a record the role owns; count visible rows (Team Member expects scope 'all').",
+    "As Department Head: create (if InitiateItems/Editable) or list records on itpmd_discussion_read with the role's own sandbox user.",
+    "As Department Head: read back a record of another user and a record the role owns; count visible rows (Department Head expects scope 'all').",
+    "As Project Sponsor: create (if InitiateItems/Editable) or list records on itpmd_discussion_read with the role's own sandbox user.",
+    "As Project Sponsor: read back a record of another user and a record the role owns; count visible rows (Project Sponsor expects scope 'all').",
+    "As PSC Member: create (if InitiateItems/Editable) or list records on itpmd_discussion_read with the role's own sandbox user.",
+    "As PSC Member: read back a record of another user and a record the role owns; count visible rows (PSC Member expects scope 'all').",
+    "As Hub Administrator: create (if InitiateItems/Editable) or list records on itpmd_discussion_read with the role's own sandbox user.",
+    "As Hub Administrator: read back a record of another user and a record the role owns; count visible rows (Hub Administrator expects scope 'all').",
+    "As TPMO: create (if InitiateItems/Editable) or list records on itpmd_discussion_read with the role's own sandbox user.",
+    "As TPMO: read back a record of another user and a record the role owns; count visible rows (TPMO expects scope 'all')."
+   ],
+   "asserts": [
+    "Project Manager: can read and write; visible rows match scope 'all'",
+    "Team Member: can read and write; visible rows match scope 'all'",
+    "Department Head: can read and write; visible rows match scope 'all'",
+    "Project Sponsor: can read and write; visible rows match scope 'all'",
+    "PSC Member: can read and write; visible rows match scope 'all'",
+    "Hub Administrator: can read and write; visible rows match scope 'all'",
+    "TPMO: can read and write; visible rows match scope 'all'"
+   ],
+   "class": "permission+scope",
+   "note": "Universe fixed: P: ids now carry the granted level (read/edit) from p.level. Single-user run: proven via live member-ACL read (weak evidence); per-role execution needs seeded role users."
+  },
+  {
+   "id": "T-PS-itpmd_baseline",
+   "title": "Granted access and data scope on ITPMD Baseline",
+   "role": "each granted role",
+   "covers": [
+    "P:Project Manager:itpmd_baseline:edit",
+    "S:Project Manager:itpmd_baseline:all",
+    "P:Team Member:itpmd_baseline:edit",
+    "S:Team Member:itpmd_baseline:all",
+    "P:Department Head:itpmd_baseline:edit",
+    "S:Department Head:itpmd_baseline:all",
+    "P:Project Sponsor:itpmd_baseline:edit",
+    "S:Project Sponsor:itpmd_baseline:all",
+    "P:PSC Member:itpmd_baseline:edit",
+    "S:PSC Member:itpmd_baseline:all",
+    "P:Hub Administrator:itpmd_baseline:edit",
+    "S:Hub Administrator:itpmd_baseline:all",
+    "P:TPMO:itpmd_baseline:edit",
+    "S:TPMO:itpmd_baseline:all"
+   ],
+   "steps": [
+    "As Project Manager: create (if InitiateItems/Editable) or list records on itpmd_baseline with the role's own sandbox user.",
+    "As Project Manager: read back a record of another user and a record the role owns; count visible rows (Project Manager expects scope 'all').",
+    "As Team Member: create (if InitiateItems/Editable) or list records on itpmd_baseline with the role's own sandbox user.",
+    "As Team Member: read back a record of another user and a record the role owns; count visible rows (Team Member expects scope 'all').",
+    "As Department Head: create (if InitiateItems/Editable) or list records on itpmd_baseline with the role's own sandbox user.",
+    "As Department Head: read back a record of another user and a record the role owns; count visible rows (Department Head expects scope 'all').",
+    "As Project Sponsor: create (if InitiateItems/Editable) or list records on itpmd_baseline with the role's own sandbox user.",
+    "As Project Sponsor: read back a record of another user and a record the role owns; count visible rows (Project Sponsor expects scope 'all').",
+    "As PSC Member: create (if InitiateItems/Editable) or list records on itpmd_baseline with the role's own sandbox user.",
+    "As PSC Member: read back a record of another user and a record the role owns; count visible rows (PSC Member expects scope 'all').",
+    "As Hub Administrator: create (if InitiateItems/Editable) or list records on itpmd_baseline with the role's own sandbox user.",
+    "As Hub Administrator: read back a record of another user and a record the role owns; count visible rows (Hub Administrator expects scope 'all').",
+    "As TPMO: create (if InitiateItems/Editable) or list records on itpmd_baseline with the role's own sandbox user.",
+    "As TPMO: read back a record of another user and a record the role owns; count visible rows (TPMO expects scope 'all')."
+   ],
+   "asserts": [
+    "Project Manager: can read and write; visible rows match scope 'all'",
+    "Team Member: can read and write; visible rows match scope 'all'",
+    "Department Head: can read and write; visible rows match scope 'all'",
+    "Project Sponsor: can read and write; visible rows match scope 'all'",
+    "PSC Member: can read and write; visible rows match scope 'all'",
+    "Hub Administrator: can read and write; visible rows match scope 'all'",
+    "TPMO: can read and write; visible rows match scope 'all'"
+   ],
+   "class": "permission+scope",
+   "note": "Universe fixed: P: ids now carry the granted level (read/edit) from p.level. Single-user run: proven via live member-ACL read (weak evidence); per-role execution needs seeded role users."
+  },
+  {
+   "id": "T-PS-itpmd_program",
+   "title": "Granted access and data scope on ITPMD Program",
+   "role": "each granted role",
+   "covers": [
+    "P:Project Manager:itpmd_program:edit",
+    "S:Project Manager:itpmd_program:all",
+    "P:Team Member:itpmd_program:edit",
+    "S:Team Member:itpmd_program:all",
+    "P:Department Head:itpmd_program:edit",
+    "S:Department Head:itpmd_program:all",
+    "P:Project Sponsor:itpmd_program:edit",
+    "S:Project Sponsor:itpmd_program:all",
+    "P:PSC Member:itpmd_program:edit",
+    "S:PSC Member:itpmd_program:all",
+    "P:Hub Administrator:itpmd_program:edit",
+    "S:Hub Administrator:itpmd_program:all",
+    "P:TPMO:itpmd_program:edit",
+    "S:TPMO:itpmd_program:all"
+   ],
+   "steps": [
+    "As Project Manager: create (if InitiateItems/Editable) or list records on itpmd_program with the role's own sandbox user.",
+    "As Project Manager: read back a record of another user and a record the role owns; count visible rows (Project Manager expects scope 'all').",
+    "As Team Member: create (if InitiateItems/Editable) or list records on itpmd_program with the role's own sandbox user.",
+    "As Team Member: read back a record of another user and a record the role owns; count visible rows (Team Member expects scope 'all').",
+    "As Department Head: create (if InitiateItems/Editable) or list records on itpmd_program with the role's own sandbox user.",
+    "As Department Head: read back a record of another user and a record the role owns; count visible rows (Department Head expects scope 'all').",
+    "As Project Sponsor: create (if InitiateItems/Editable) or list records on itpmd_program with the role's own sandbox user.",
+    "As Project Sponsor: read back a record of another user and a record the role owns; count visible rows (Project Sponsor expects scope 'all').",
+    "As PSC Member: create (if InitiateItems/Editable) or list records on itpmd_program with the role's own sandbox user.",
+    "As PSC Member: read back a record of another user and a record the role owns; count visible rows (PSC Member expects scope 'all').",
+    "As Hub Administrator: create (if InitiateItems/Editable) or list records on itpmd_program with the role's own sandbox user.",
+    "As Hub Administrator: read back a record of another user and a record the role owns; count visible rows (Hub Administrator expects scope 'all').",
+    "As TPMO: create (if InitiateItems/Editable) or list records on itpmd_program with the role's own sandbox user.",
+    "As TPMO: read back a record of another user and a record the role owns; count visible rows (TPMO expects scope 'all')."
+   ],
+   "asserts": [
+    "Project Manager: can read and write; visible rows match scope 'all'",
+    "Team Member: can read and write; visible rows match scope 'all'",
+    "Department Head: can read and write; visible rows match scope 'all'",
+    "Project Sponsor: can read and write; visible rows match scope 'all'",
+    "PSC Member: can read and write; visible rows match scope 'all'",
+    "Hub Administrator: can read and write; visible rows match scope 'all'",
+    "TPMO: can read and write; visible rows match scope 'all'"
+   ],
+   "class": "permission+scope",
+   "note": "Universe fixed: P: ids now carry the granted level (read/edit) from p.level. Single-user run: proven via live member-ACL read (weak evidence); per-role execution needs seeded role users."
+  },
+  {
+   "id": "T-PS-itpmd_binder_item",
+   "title": "Granted access and data scope on ITPMD Binder Item",
+   "role": "each granted role",
+   "covers": [
+    "P:Project Manager:itpmd_binder_item:edit",
+    "S:Project Manager:itpmd_binder_item:all",
+    "P:Team Member:itpmd_binder_item:edit",
+    "S:Team Member:itpmd_binder_item:all",
+    "P:Department Head:itpmd_binder_item:edit",
+    "S:Department Head:itpmd_binder_item:all",
+    "P:Project Sponsor:itpmd_binder_item:edit",
+    "S:Project Sponsor:itpmd_binder_item:all",
+    "P:PSC Member:itpmd_binder_item:edit",
+    "S:PSC Member:itpmd_binder_item:all",
+    "P:Hub Administrator:itpmd_binder_item:edit",
+    "S:Hub Administrator:itpmd_binder_item:all",
+    "P:TPMO:itpmd_binder_item:edit",
+    "S:TPMO:itpmd_binder_item:all"
+   ],
+   "steps": [
+    "As Project Manager: create (if InitiateItems/Editable) or list records on itpmd_binder_item with the role's own sandbox user.",
+    "As Project Manager: read back a record of another user and a record the role owns; count visible rows (Project Manager expects scope 'all').",
+    "As Team Member: create (if InitiateItems/Editable) or list records on itpmd_binder_item with the role's own sandbox user.",
+    "As Team Member: read back a record of another user and a record the role owns; count visible rows (Team Member expects scope 'all').",
+    "As Department Head: create (if InitiateItems/Editable) or list records on itpmd_binder_item with the role's own sandbox user.",
+    "As Department Head: read back a record of another user and a record the role owns; count visible rows (Department Head expects scope 'all').",
+    "As Project Sponsor: create (if InitiateItems/Editable) or list records on itpmd_binder_item with the role's own sandbox user.",
+    "As Project Sponsor: read back a record of another user and a record the role owns; count visible rows (Project Sponsor expects scope 'all').",
+    "As PSC Member: create (if InitiateItems/Editable) or list records on itpmd_binder_item with the role's own sandbox user.",
+    "As PSC Member: read back a record of another user and a record the role owns; count visible rows (PSC Member expects scope 'all').",
+    "As Hub Administrator: create (if InitiateItems/Editable) or list records on itpmd_binder_item with the role's own sandbox user.",
+    "As Hub Administrator: read back a record of another user and a record the role owns; count visible rows (Hub Administrator expects scope 'all').",
+    "As TPMO: create (if InitiateItems/Editable) or list records on itpmd_binder_item with the role's own sandbox user.",
+    "As TPMO: read back a record of another user and a record the role owns; count visible rows (TPMO expects scope 'all')."
+   ],
+   "asserts": [
+    "Project Manager: can read and write; visible rows match scope 'all'",
+    "Team Member: can read and write; visible rows match scope 'all'",
+    "Department Head: can read and write; visible rows match scope 'all'",
+    "Project Sponsor: can read and write; visible rows match scope 'all'",
+    "PSC Member: can read and write; visible rows match scope 'all'",
+    "Hub Administrator: can read and write; visible rows match scope 'all'",
+    "TPMO: can read and write; visible rows match scope 'all'"
+   ],
+   "class": "permission+scope",
+   "note": "Universe fixed: P: ids now carry the granted level (read/edit) from p.level. Single-user run: proven via live member-ACL read (weak evidence); per-role execution needs seeded role users."
+  },
+  {
+   "id": "T-PS-itpmd_weekly_report",
+   "title": "Granted access and data scope on ITPMD Weekly Report",
+   "role": "each granted role",
+   "covers": [
+    "P:Project Manager:itpmd_weekly_report:edit",
+    "S:Project Manager:itpmd_weekly_report:all",
+    "P:Team Member:itpmd_weekly_report:edit",
+    "S:Team Member:itpmd_weekly_report:all",
+    "P:Department Head:itpmd_weekly_report:edit",
+    "S:Department Head:itpmd_weekly_report:all",
+    "P:Project Sponsor:itpmd_weekly_report:edit",
+    "S:Project Sponsor:itpmd_weekly_report:all",
+    "P:PSC Member:itpmd_weekly_report:edit",
+    "S:PSC Member:itpmd_weekly_report:all",
+    "P:Hub Administrator:itpmd_weekly_report:edit",
+    "S:Hub Administrator:itpmd_weekly_report:all",
+    "P:TPMO:itpmd_weekly_report:edit",
+    "S:TPMO:itpmd_weekly_report:all"
+   ],
+   "steps": [
+    "As Project Manager: create (if InitiateItems/Editable) or list records on itpmd_weekly_report with the role's own sandbox user.",
+    "As Project Manager: read back a record of another user and a record the role owns; count visible rows (Project Manager expects scope 'all').",
+    "As Team Member: create (if InitiateItems/Editable) or list records on itpmd_weekly_report with the role's own sandbox user.",
+    "As Team Member: read back a record of another user and a record the role owns; count visible rows (Team Member expects scope 'all').",
+    "As Department Head: create (if InitiateItems/Editable) or list records on itpmd_weekly_report with the role's own sandbox user.",
+    "As Department Head: read back a record of another user and a record the role owns; count visible rows (Department Head expects scope 'all').",
+    "As Project Sponsor: create (if InitiateItems/Editable) or list records on itpmd_weekly_report with the role's own sandbox user.",
+    "As Project Sponsor: read back a record of another user and a record the role owns; count visible rows (Project Sponsor expects scope 'all').",
+    "As PSC Member: create (if InitiateItems/Editable) or list records on itpmd_weekly_report with the role's own sandbox user.",
+    "As PSC Member: read back a record of another user and a record the role owns; count visible rows (PSC Member expects scope 'all').",
+    "As Hub Administrator: create (if InitiateItems/Editable) or list records on itpmd_weekly_report with the role's own sandbox user.",
+    "As Hub Administrator: read back a record of another user and a record the role owns; count visible rows (Hub Administrator expects scope 'all').",
+    "As TPMO: create (if InitiateItems/Editable) or list records on itpmd_weekly_report with the role's own sandbox user.",
+    "As TPMO: read back a record of another user and a record the role owns; count visible rows (TPMO expects scope 'all')."
+   ],
+   "asserts": [
+    "Project Manager: can read and write; visible rows match scope 'all'",
+    "Team Member: can read and write; visible rows match scope 'all'",
+    "Department Head: can read and write; visible rows match scope 'all'",
+    "Project Sponsor: can read and write; visible rows match scope 'all'",
+    "PSC Member: can read and write; visible rows match scope 'all'",
+    "Hub Administrator: can read and write; visible rows match scope 'all'",
+    "TPMO: can read and write; visible rows match scope 'all'"
+   ],
+   "class": "permission+scope",
+   "note": "Universe fixed: P: ids now carry the granted level (read/edit) from p.level. Single-user run: proven via live member-ACL read (weak evidence); per-role execution needs seeded role users."
+  },
+  {
+   "id": "T-PS-itpmd_release",
+   "title": "Granted access and data scope on ITPMD Release",
+   "role": "each granted role",
+   "covers": [
+    "P:Project Manager:itpmd_release:edit",
+    "S:Project Manager:itpmd_release:all",
+    "P:Team Member:itpmd_release:edit",
+    "S:Team Member:itpmd_release:all",
+    "P:Department Head:itpmd_release:edit",
+    "S:Department Head:itpmd_release:all",
+    "P:Project Sponsor:itpmd_release:edit",
+    "S:Project Sponsor:itpmd_release:all",
+    "P:PSC Member:itpmd_release:edit",
+    "S:PSC Member:itpmd_release:all",
+    "P:Hub Administrator:itpmd_release:edit",
+    "S:Hub Administrator:itpmd_release:all",
+    "P:TPMO:itpmd_release:edit",
+    "S:TPMO:itpmd_release:all"
+   ],
+   "steps": [
+    "As Project Manager: create (if InitiateItems/Editable) or list records on itpmd_release with the role's own sandbox user.",
+    "As Project Manager: read back a record of another user and a record the role owns; count visible rows (Project Manager expects scope 'all').",
+    "As Team Member: create (if InitiateItems/Editable) or list records on itpmd_release with the role's own sandbox user.",
+    "As Team Member: read back a record of another user and a record the role owns; count visible rows (Team Member expects scope 'all').",
+    "As Department Head: create (if InitiateItems/Editable) or list records on itpmd_release with the role's own sandbox user.",
+    "As Department Head: read back a record of another user and a record the role owns; count visible rows (Department Head expects scope 'all').",
+    "As Project Sponsor: create (if InitiateItems/Editable) or list records on itpmd_release with the role's own sandbox user.",
+    "As Project Sponsor: read back a record of another user and a record the role owns; count visible rows (Project Sponsor expects scope 'all').",
+    "As PSC Member: create (if InitiateItems/Editable) or list records on itpmd_release with the role's own sandbox user.",
+    "As PSC Member: read back a record of another user and a record the role owns; count visible rows (PSC Member expects scope 'all').",
+    "As Hub Administrator: create (if InitiateItems/Editable) or list records on itpmd_release with the role's own sandbox user.",
+    "As Hub Administrator: read back a record of another user and a record the role owns; count visible rows (Hub Administrator expects scope 'all').",
+    "As TPMO: create (if InitiateItems/Editable) or list records on itpmd_release with the role's own sandbox user.",
+    "As TPMO: read back a record of another user and a record the role owns; count visible rows (TPMO expects scope 'all')."
+   ],
+   "asserts": [
+    "Project Manager: can read and write; visible rows match scope 'all'",
+    "Team Member: can read and write; visible rows match scope 'all'",
+    "Department Head: can read and write; visible rows match scope 'all'",
+    "Project Sponsor: can read and write; visible rows match scope 'all'",
+    "PSC Member: can read and write; visible rows match scope 'all'",
+    "Hub Administrator: can read and write; visible rows match scope 'all'",
+    "TPMO: can read and write; visible rows match scope 'all'"
+   ],
+   "class": "permission+scope",
+   "note": "Universe fixed: P: ids now carry the granted level (read/edit) from p.level. Single-user run: proven via live member-ACL read (weak evidence); per-role execution needs seeded role users."
+  },
+  {
+   "id": "T-PS-itpmd_template",
+   "title": "Granted access and data scope on ITPMD Template",
+   "role": "each granted role",
+   "covers": [
+    "P:Project Manager:itpmd_template:edit",
+    "S:Project Manager:itpmd_template:all",
+    "P:Team Member:itpmd_template:edit",
+    "S:Team Member:itpmd_template:all",
+    "P:Department Head:itpmd_template:edit",
+    "S:Department Head:itpmd_template:all",
+    "P:Project Sponsor:itpmd_template:edit",
+    "S:Project Sponsor:itpmd_template:all",
+    "P:PSC Member:itpmd_template:edit",
+    "S:PSC Member:itpmd_template:all",
+    "P:Hub Administrator:itpmd_template:edit",
+    "S:Hub Administrator:itpmd_template:all",
+    "P:TPMO:itpmd_template:edit",
+    "S:TPMO:itpmd_template:all"
+   ],
+   "steps": [
+    "As Project Manager: create (if InitiateItems/Editable) or list records on itpmd_template with the role's own sandbox user.",
+    "As Project Manager: read back a record of another user and a record the role owns; count visible rows (Project Manager expects scope 'all').",
+    "As Team Member: create (if InitiateItems/Editable) or list records on itpmd_template with the role's own sandbox user.",
+    "As Team Member: read back a record of another user and a record the role owns; count visible rows (Team Member expects scope 'all').",
+    "As Department Head: create (if InitiateItems/Editable) or list records on itpmd_template with the role's own sandbox user.",
+    "As Department Head: read back a record of another user and a record the role owns; count visible rows (Department Head expects scope 'all').",
+    "As Project Sponsor: create (if InitiateItems/Editable) or list records on itpmd_template with the role's own sandbox user.",
+    "As Project Sponsor: read back a record of another user and a record the role owns; count visible rows (Project Sponsor expects scope 'all').",
+    "As PSC Member: create (if InitiateItems/Editable) or list records on itpmd_template with the role's own sandbox user.",
+    "As PSC Member: read back a record of another user and a record the role owns; count visible rows (PSC Member expects scope 'all').",
+    "As Hub Administrator: create (if InitiateItems/Editable) or list records on itpmd_template with the role's own sandbox user.",
+    "As Hub Administrator: read back a record of another user and a record the role owns; count visible rows (Hub Administrator expects scope 'all').",
+    "As TPMO: create (if InitiateItems/Editable) or list records on itpmd_template with the role's own sandbox user.",
+    "As TPMO: read back a record of another user and a record the role owns; count visible rows (TPMO expects scope 'all')."
+   ],
+   "asserts": [
+    "Project Manager: can read and write; visible rows match scope 'all'",
+    "Team Member: can read and write; visible rows match scope 'all'",
+    "Department Head: can read and write; visible rows match scope 'all'",
+    "Project Sponsor: can read and write; visible rows match scope 'all'",
+    "PSC Member: can read and write; visible rows match scope 'all'",
+    "Hub Administrator: can read and write; visible rows match scope 'all'",
+    "TPMO: can read and write; visible rows match scope 'all'"
+   ],
+   "class": "permission+scope",
+   "note": "Universe fixed: P: ids now carry the granted level (read/edit) from p.level. Single-user run: proven via live member-ACL read (weak evidence); per-role execution needs seeded role users."
+  },
+  {
+   "id": "T-DENY-itpmd_hub_settings",
+   "title": "Roles with no grant are blocked from ITPMD Hub Settings",
+   "role": "Project Manager, Team Member, Department Head, Project Sponsor, PSC Member",
+   "covers": [
+    "D:Project Manager:ITPMD Hub Settings",
+    "D:Team Member:ITPMD Hub Settings",
+    "D:Department Head:ITPMD Hub Settings",
+    "D:Project Sponsor:ITPMD Hub Settings",
+    "D:PSC Member:ITPMD Hub Settings"
+   ],
+   "steps": [
+    "As Project Manager: GET list, GET record, POST create on itpmd_hub_settings",
+    "As Team Member: GET list, GET record, POST create on itpmd_hub_settings",
+    "As Department Head: GET list, GET record, POST create on itpmd_hub_settings",
+    "As Project Sponsor: GET list, GET record, POST create on itpmd_hub_settings",
+    "As PSC Member: GET list, GET record, POST create on itpmd_hub_settings"
+   ],
+   "asserts": [
+    "Project Manager: every attempt returns 403/empty (a success is a SECURITY finding)",
+    "Team Member: every attempt returns 403/empty (a success is a SECURITY finding)",
+    "Department Head: every attempt returns 403/empty (a success is a SECURITY finding)",
+    "Project Sponsor: every attempt returns 403/empty (a success is a SECURITY finding)",
+    "PSC Member: every attempt returns 403/empty (a success is a SECURITY finding)"
+   ],
+   "class": "denial",
+   "realDenials": [
+    "Project Manager",
+    "Team Member",
+    "Department Head",
+    "Project Sponsor",
+    "PSC Member"
+   ],
+   "notIndependentlyGrantable": false
+  },
+  {
+   "id": "T-DENY-itpmd_holiday_calendar",
+   "title": "Roles with no grant are blocked from ITPMD Holiday Calendar",
+   "role": "Project Manager, Team Member, Department Head, Project Sponsor, PSC Member",
+   "covers": [
+    "D:Project Manager:ITPMD Holiday Calendar",
+    "D:Team Member:ITPMD Holiday Calendar",
+    "D:Department Head:ITPMD Holiday Calendar",
+    "D:Project Sponsor:ITPMD Holiday Calendar",
+    "D:PSC Member:ITPMD Holiday Calendar"
+   ],
+   "steps": [
+    "As Project Manager: GET list, GET record, POST create on itpmd_holiday_calendar",
+    "As Team Member: GET list, GET record, POST create on itpmd_holiday_calendar",
+    "As Department Head: GET list, GET record, POST create on itpmd_holiday_calendar",
+    "As Project Sponsor: GET list, GET record, POST create on itpmd_holiday_calendar",
+    "As PSC Member: GET list, GET record, POST create on itpmd_holiday_calendar"
+   ],
+   "asserts": [
+    "Project Manager: every attempt returns 403/empty (a success is a SECURITY finding)",
+    "Team Member: every attempt returns 403/empty (a success is a SECURITY finding)",
+    "Department Head: every attempt returns 403/empty (a success is a SECURITY finding)",
+    "Project Sponsor: every attempt returns 403/empty (a success is a SECURITY finding)",
+    "PSC Member: every attempt returns 403/empty (a success is a SECURITY finding)"
+   ],
+   "class": "denial",
+   "realDenials": [
+    "Project Manager",
+    "Team Member",
+    "Department Head",
+    "Project Sponsor",
+    "PSC Member"
+   ],
+   "notIndependentlyGrantable": false
+  },
+  {
+   "id": "T-DENY-itpmd_project",
+   "title": "Roles with no grant are blocked from ITPMD Project",
+   "role": "n/a",
+   "covers": [],
+   "steps": [],
+   "asserts": [],
+   "class": "denial",
+   "realDenials": [],
+   "notIndependentlyGrantable": false
+  },
+  {
+   "id": "T-DENY-itpmd_activity",
+   "title": "Roles with no grant are blocked from ITPMD Activity",
+   "role": "n/a",
+   "covers": [],
+   "steps": [],
+   "asserts": [],
+   "class": "denial",
+   "realDenials": [],
+   "notIndependentlyGrantable": false
+  },
+  {
+   "id": "T-DENY-itpmd_risk",
+   "title": "Roles with no grant are blocked from ITPMD Risk",
+   "role": "Hub Administrator",
+   "covers": [
+    "D:Hub Administrator:ITPMD Risk"
+   ],
+   "steps": [
+    "As Hub Administrator: GET list, GET record, POST create on itpmd_risk"
+   ],
+   "asserts": [
+    "Hub Administrator: every attempt returns 403/empty (a success is a SECURITY finding)"
+   ],
+   "class": "denial",
+   "realDenials": [
+    "Hub Administrator"
+   ],
+   "notIndependentlyGrantable": false
+  },
+  {
+   "id": "T-DENY-itpmd_issue",
+   "title": "Roles with no grant are blocked from ITPMD Issue",
+   "role": "Hub Administrator",
+   "covers": [
+    "D:Hub Administrator:ITPMD Issue"
+   ],
+   "steps": [
+    "As Hub Administrator: GET list, GET record, POST create on itpmd_issue"
+   ],
+   "asserts": [
+    "Hub Administrator: every attempt returns 403/empty (a success is a SECURITY finding)"
+   ],
+   "class": "denial",
+   "realDenials": [
+    "Hub Administrator"
+   ],
+   "notIndependentlyGrantable": false
+  },
+  {
+   "id": "T-DENY-itpmd_action_item",
+   "title": "Roles with no grant are blocked from ITPMD Action Item",
+   "role": "Hub Administrator",
+   "covers": [
+    "D:Hub Administrator:ITPMD Action Item"
+   ],
+   "steps": [
+    "As Hub Administrator: GET list, GET record, POST create on itpmd_action_item"
+   ],
+   "asserts": [
+    "Hub Administrator: every attempt returns 403/empty (a success is a SECURITY finding)"
+   ],
+   "class": "denial",
+   "realDenials": [
+    "Hub Administrator"
+   ],
+   "notIndependentlyGrantable": false
+  },
+  {
+   "id": "T-DENY-itpmd_cost_entry",
+   "title": "Roles with no grant are blocked from ITPMD Cost Entry",
+   "role": "Team Member, Hub Administrator",
+   "covers": [
+    "D:Team Member:ITPMD Cost Entry",
+    "D:Hub Administrator:ITPMD Cost Entry"
+   ],
+   "steps": [
+    "As Team Member: GET list, GET record, POST create on itpmd_cost_entry",
+    "As Hub Administrator: GET list, GET record, POST create on itpmd_cost_entry"
+   ],
+   "asserts": [
+    "Team Member: every attempt returns 403/empty (a success is a SECURITY finding)",
+    "Hub Administrator: every attempt returns 403/empty (a success is a SECURITY finding)"
+   ],
+   "class": "denial",
+   "realDenials": [
+    "Team Member",
+    "Hub Administrator"
+   ],
+   "notIndependentlyGrantable": false
+  },
+  {
+   "id": "T-DENY-itpmd_psr",
+   "title": "Roles with no grant are blocked from ITPMD Project Status Report",
+   "role": "Hub Administrator",
+   "covers": [
+    "D:Hub Administrator:ITPMD Project Status Report"
+   ],
+   "steps": [
+    "As Hub Administrator: GET list, GET record, POST create on itpmd_psr"
+   ],
+   "asserts": [
+    "Hub Administrator: every attempt returns 403/empty (a success is a SECURITY finding)"
+   ],
+   "class": "denial",
+   "realDenials": [
+    "Hub Administrator"
+   ],
+   "notIndependentlyGrantable": false
+  },
+  {
+   "id": "T-DENY-itpmd_portfolio_report",
+   "title": "Roles with no grant are blocked from ITPMD Portfolio Status Report",
+   "role": "Project Manager, Team Member, Hub Administrator",
+   "covers": [
+    "D:Project Manager:ITPMD Portfolio Status Report",
+    "D:Team Member:ITPMD Portfolio Status Report",
+    "D:Hub Administrator:ITPMD Portfolio Status Report"
+   ],
+   "steps": [
+    "As Project Manager: GET list, GET record, POST create on itpmd_portfolio_report",
+    "As Team Member: GET list, GET record, POST create on itpmd_portfolio_report",
+    "As Hub Administrator: GET list, GET record, POST create on itpmd_portfolio_report"
+   ],
+   "asserts": [
+    "Project Manager: every attempt returns 403/empty (a success is a SECURITY finding)",
+    "Team Member: every attempt returns 403/empty (a success is a SECURITY finding)",
+    "Hub Administrator: every attempt returns 403/empty (a success is a SECURITY finding)"
+   ],
+   "class": "denial",
+   "realDenials": [
+    "Project Manager",
+    "Team Member",
+    "Hub Administrator"
+   ],
+   "notIndependentlyGrantable": false
+  },
+  {
+   "id": "T-DENY-itpmd_project__contracts",
+   "title": "Roles with no grant are blocked from ITPMD Project Contracts",
+   "role": "Project Manager, Team Member, Department Head, Project Sponsor, PSC Member, Hub Administrator, TPMO",
+   "covers": [
+    "D:Project Manager:ITPMD Project Contracts",
+    "D:Team Member:ITPMD Project Contracts",
+    "D:Department Head:ITPMD Project Contracts",
+    "D:Project Sponsor:ITPMD Project Contracts",
+    "D:PSC Member:ITPMD Project Contracts",
+    "D:Hub Administrator:ITPMD Project Contracts",
+    "D:TPMO:ITPMD Project Contracts"
+   ],
+   "steps": [
+    "As Project Manager: GET list, GET record, POST create on itpmd_project__contracts",
+    "As Team Member: GET list, GET record, POST create on itpmd_project__contracts",
+    "As Department Head: GET list, GET record, POST create on itpmd_project__contracts",
+    "As Project Sponsor: GET list, GET record, POST create on itpmd_project__contracts",
+    "As PSC Member: GET list, GET record, POST create on itpmd_project__contracts",
+    "As Hub Administrator: GET list, GET record, POST create on itpmd_project__contracts",
+    "As TPMO: GET list, GET record, POST create on itpmd_project__contracts"
+   ],
+   "asserts": [
+    "Project Manager: every attempt returns 403/empty (a success is a SECURITY finding)",
+    "Team Member: every attempt returns 403/empty (a success is a SECURITY finding)",
+    "Department Head: every attempt returns 403/empty (a success is a SECURITY finding)",
+    "Project Sponsor: every attempt returns 403/empty (a success is a SECURITY finding)",
+    "PSC Member: every attempt returns 403/empty (a success is a SECURITY finding)",
+    "Hub Administrator: every attempt returns 403/empty (a success is a SECURITY finding)",
+    "TPMO: every attempt returns 403/empty (a success is a SECURITY finding)",
+    "Child table: not independently grantable; a role's access follows the parent flow, so the denial is asserted through the parent flow's ACL (roles that hold the parent grant are recorded as not-independently-grantable, not as failures)."
+   ],
+   "class": "denial",
+   "realDenials": [
+    "Project Manager",
+    "Team Member",
+    "Department Head",
+    "Project Sponsor",
+    "PSC Member",
+    "Hub Administrator",
+    "TPMO"
+   ],
+   "notIndependentlyGrantable": true
+  },
+  {
+   "id": "T-DENY-itpmd_project__project_team",
+   "title": "Roles with no grant are blocked from ITPMD Project Project Team",
+   "role": "Project Manager, Team Member, Department Head, Project Sponsor, PSC Member, Hub Administrator, TPMO",
+   "covers": [
+    "D:Project Manager:ITPMD Project Project Team",
+    "D:Team Member:ITPMD Project Project Team",
+    "D:Department Head:ITPMD Project Project Team",
+    "D:Project Sponsor:ITPMD Project Project Team",
+    "D:PSC Member:ITPMD Project Project Team",
+    "D:Hub Administrator:ITPMD Project Project Team",
+    "D:TPMO:ITPMD Project Project Team"
+   ],
+   "steps": [
+    "As Project Manager: GET list, GET record, POST create on itpmd_project__project_team",
+    "As Team Member: GET list, GET record, POST create on itpmd_project__project_team",
+    "As Department Head: GET list, GET record, POST create on itpmd_project__project_team",
+    "As Project Sponsor: GET list, GET record, POST create on itpmd_project__project_team",
+    "As PSC Member: GET list, GET record, POST create on itpmd_project__project_team",
+    "As Hub Administrator: GET list, GET record, POST create on itpmd_project__project_team",
+    "As TPMO: GET list, GET record, POST create on itpmd_project__project_team"
+   ],
+   "asserts": [
+    "Project Manager: every attempt returns 403/empty (a success is a SECURITY finding)",
+    "Team Member: every attempt returns 403/empty (a success is a SECURITY finding)",
+    "Department Head: every attempt returns 403/empty (a success is a SECURITY finding)",
+    "Project Sponsor: every attempt returns 403/empty (a success is a SECURITY finding)",
+    "PSC Member: every attempt returns 403/empty (a success is a SECURITY finding)",
+    "Hub Administrator: every attempt returns 403/empty (a success is a SECURITY finding)",
+    "TPMO: every attempt returns 403/empty (a success is a SECURITY finding)",
+    "Child table: not independently grantable; a role's access follows the parent flow, so the denial is asserted through the parent flow's ACL (roles that hold the parent grant are recorded as not-independently-grantable, not as failures)."
+   ],
+   "class": "denial",
+   "realDenials": [
+    "Project Manager",
+    "Team Member",
+    "Department Head",
+    "Project Sponsor",
+    "PSC Member",
+    "Hub Administrator",
+    "TPMO"
+   ],
+   "notIndependentlyGrantable": true
+  },
+  {
+   "id": "T-DENY-itpmd_project__budget_changes",
+   "title": "Roles with no grant are blocked from ITPMD Project Budget Changes",
+   "role": "Project Manager, Team Member, Department Head, Project Sponsor, PSC Member, Hub Administrator, TPMO",
+   "covers": [
+    "D:Project Manager:ITPMD Project Budget Changes",
+    "D:Team Member:ITPMD Project Budget Changes",
+    "D:Department Head:ITPMD Project Budget Changes",
+    "D:Project Sponsor:ITPMD Project Budget Changes",
+    "D:PSC Member:ITPMD Project Budget Changes",
+    "D:Hub Administrator:ITPMD Project Budget Changes",
+    "D:TPMO:ITPMD Project Budget Changes"
+   ],
+   "steps": [
+    "As Project Manager: GET list, GET record, POST create on itpmd_project__budget_changes",
+    "As Team Member: GET list, GET record, POST create on itpmd_project__budget_changes",
+    "As Department Head: GET list, GET record, POST create on itpmd_project__budget_changes",
+    "As Project Sponsor: GET list, GET record, POST create on itpmd_project__budget_changes",
+    "As PSC Member: GET list, GET record, POST create on itpmd_project__budget_changes",
+    "As Hub Administrator: GET list, GET record, POST create on itpmd_project__budget_changes",
+    "As TPMO: GET list, GET record, POST create on itpmd_project__budget_changes"
+   ],
+   "asserts": [
+    "Project Manager: every attempt returns 403/empty (a success is a SECURITY finding)",
+    "Team Member: every attempt returns 403/empty (a success is a SECURITY finding)",
+    "Department Head: every attempt returns 403/empty (a success is a SECURITY finding)",
+    "Project Sponsor: every attempt returns 403/empty (a success is a SECURITY finding)",
+    "PSC Member: every attempt returns 403/empty (a success is a SECURITY finding)",
+    "Hub Administrator: every attempt returns 403/empty (a success is a SECURITY finding)",
+    "TPMO: every attempt returns 403/empty (a success is a SECURITY finding)",
+    "Child table: not independently grantable; a role's access follows the parent flow, so the denial is asserted through the parent flow's ACL (roles that hold the parent grant are recorded as not-independently-grantable, not as failures)."
+   ],
+   "class": "denial",
+   "realDenials": [
+    "Project Manager",
+    "Team Member",
+    "Department Head",
+    "Project Sponsor",
+    "PSC Member",
+    "Hub Administrator",
+    "TPMO"
+   ],
+   "notIndependentlyGrantable": true
+  },
+  {
+   "id": "T-DENY-itpmd_project__baseline_history",
+   "title": "Roles with no grant are blocked from ITPMD Project Baseline History",
+   "role": "Project Manager, Team Member, Department Head, Project Sponsor, PSC Member, Hub Administrator, TPMO",
+   "covers": [
+    "D:Project Manager:ITPMD Project Baseline History",
+    "D:Team Member:ITPMD Project Baseline History",
+    "D:Department Head:ITPMD Project Baseline History",
+    "D:Project Sponsor:ITPMD Project Baseline History",
+    "D:PSC Member:ITPMD Project Baseline History",
+    "D:Hub Administrator:ITPMD Project Baseline History",
+    "D:TPMO:ITPMD Project Baseline History"
+   ],
+   "steps": [
+    "As Project Manager: GET list, GET record, POST create on itpmd_project__baseline_history",
+    "As Team Member: GET list, GET record, POST create on itpmd_project__baseline_history",
+    "As Department Head: GET list, GET record, POST create on itpmd_project__baseline_history",
+    "As Project Sponsor: GET list, GET record, POST create on itpmd_project__baseline_history",
+    "As PSC Member: GET list, GET record, POST create on itpmd_project__baseline_history",
+    "As Hub Administrator: GET list, GET record, POST create on itpmd_project__baseline_history",
+    "As TPMO: GET list, GET record, POST create on itpmd_project__baseline_history"
+   ],
+   "asserts": [
+    "Project Manager: every attempt returns 403/empty (a success is a SECURITY finding)",
+    "Team Member: every attempt returns 403/empty (a success is a SECURITY finding)",
+    "Department Head: every attempt returns 403/empty (a success is a SECURITY finding)",
+    "Project Sponsor: every attempt returns 403/empty (a success is a SECURITY finding)",
+    "PSC Member: every attempt returns 403/empty (a success is a SECURITY finding)",
+    "Hub Administrator: every attempt returns 403/empty (a success is a SECURITY finding)",
+    "TPMO: every attempt returns 403/empty (a success is a SECURITY finding)",
+    "Child table: not independently grantable; a role's access follows the parent flow, so the denial is asserted through the parent flow's ACL (roles that hold the parent grant are recorded as not-independently-grantable, not as failures)."
+   ],
+   "class": "denial",
+   "realDenials": [
+    "Project Manager",
+    "Team Member",
+    "Department Head",
+    "Project Sponsor",
+    "PSC Member",
+    "Hub Administrator",
+    "TPMO"
+   ],
+   "notIndependentlyGrantable": true
+  },
+  {
+   "id": "T-DENY-itpmd_project__decision_log",
+   "title": "Roles with no grant are blocked from ITPMD Project Decision Log",
+   "role": "Project Manager, Team Member, Department Head, Project Sponsor, PSC Member, Hub Administrator, TPMO",
+   "covers": [
+    "D:Project Manager:ITPMD Project Decision Log",
+    "D:Team Member:ITPMD Project Decision Log",
+    "D:Department Head:ITPMD Project Decision Log",
+    "D:Project Sponsor:ITPMD Project Decision Log",
+    "D:PSC Member:ITPMD Project Decision Log",
+    "D:Hub Administrator:ITPMD Project Decision Log",
+    "D:TPMO:ITPMD Project Decision Log"
+   ],
+   "steps": [
+    "As Project Manager: GET list, GET record, POST create on itpmd_project__decision_log",
+    "As Team Member: GET list, GET record, POST create on itpmd_project__decision_log",
+    "As Department Head: GET list, GET record, POST create on itpmd_project__decision_log",
+    "As Project Sponsor: GET list, GET record, POST create on itpmd_project__decision_log",
+    "As PSC Member: GET list, GET record, POST create on itpmd_project__decision_log",
+    "As Hub Administrator: GET list, GET record, POST create on itpmd_project__decision_log",
+    "As TPMO: GET list, GET record, POST create on itpmd_project__decision_log"
+   ],
+   "asserts": [
+    "Project Manager: every attempt returns 403/empty (a success is a SECURITY finding)",
+    "Team Member: every attempt returns 403/empty (a success is a SECURITY finding)",
+    "Department Head: every attempt returns 403/empty (a success is a SECURITY finding)",
+    "Project Sponsor: every attempt returns 403/empty (a success is a SECURITY finding)",
+    "PSC Member: every attempt returns 403/empty (a success is a SECURITY finding)",
+    "Hub Administrator: every attempt returns 403/empty (a success is a SECURITY finding)",
+    "TPMO: every attempt returns 403/empty (a success is a SECURITY finding)",
+    "Child table: not independently grantable; a role's access follows the parent flow, so the denial is asserted through the parent flow's ACL (roles that hold the parent grant are recorded as not-independently-grantable, not as failures)."
+   ],
+   "class": "denial",
+   "realDenials": [
+    "Project Manager",
+    "Team Member",
+    "Department Head",
+    "Project Sponsor",
+    "PSC Member",
+    "Hub Administrator",
+    "TPMO"
+   ],
+   "notIndependentlyGrantable": true
+  },
+  {
+   "id": "T-DENY-itpmd_activity__predecessors",
+   "title": "Roles with no grant are blocked from ITPMD Activity Predecessors",
+   "role": "Project Manager, Team Member, Department Head, Project Sponsor, PSC Member, Hub Administrator, TPMO",
+   "covers": [
+    "D:Project Manager:ITPMD Activity Predecessors",
+    "D:Team Member:ITPMD Activity Predecessors",
+    "D:Department Head:ITPMD Activity Predecessors",
+    "D:Project Sponsor:ITPMD Activity Predecessors",
+    "D:PSC Member:ITPMD Activity Predecessors",
+    "D:Hub Administrator:ITPMD Activity Predecessors",
+    "D:TPMO:ITPMD Activity Predecessors"
+   ],
+   "steps": [
+    "As Project Manager: GET list, GET record, POST create on itpmd_activity__predecessors",
+    "As Team Member: GET list, GET record, POST create on itpmd_activity__predecessors",
+    "As Department Head: GET list, GET record, POST create on itpmd_activity__predecessors",
+    "As Project Sponsor: GET list, GET record, POST create on itpmd_activity__predecessors",
+    "As PSC Member: GET list, GET record, POST create on itpmd_activity__predecessors",
+    "As Hub Administrator: GET list, GET record, POST create on itpmd_activity__predecessors",
+    "As TPMO: GET list, GET record, POST create on itpmd_activity__predecessors"
+   ],
+   "asserts": [
+    "Project Manager: every attempt returns 403/empty (a success is a SECURITY finding)",
+    "Team Member: every attempt returns 403/empty (a success is a SECURITY finding)",
+    "Department Head: every attempt returns 403/empty (a success is a SECURITY finding)",
+    "Project Sponsor: every attempt returns 403/empty (a success is a SECURITY finding)",
+    "PSC Member: every attempt returns 403/empty (a success is a SECURITY finding)",
+    "Hub Administrator: every attempt returns 403/empty (a success is a SECURITY finding)",
+    "TPMO: every attempt returns 403/empty (a success is a SECURITY finding)",
+    "Child table: not independently grantable; a role's access follows the parent flow, so the denial is asserted through the parent flow's ACL (roles that hold the parent grant are recorded as not-independently-grantable, not as failures)."
+   ],
+   "class": "denial",
+   "realDenials": [
+    "Project Manager",
+    "Team Member",
+    "Department Head",
+    "Project Sponsor",
+    "PSC Member",
+    "Hub Administrator",
+    "TPMO"
+   ],
+   "notIndependentlyGrantable": true
+  },
+  {
+   "id": "T-DENY-itpmd_cost_entry__invoices",
+   "title": "Roles with no grant are blocked from ITPMD Cost Entry Invoices",
+   "role": "Project Manager, Team Member, Department Head, Project Sponsor, PSC Member, Hub Administrator, TPMO",
+   "covers": [
+    "D:Project Manager:ITPMD Cost Entry Invoices",
+    "D:Team Member:ITPMD Cost Entry Invoices",
+    "D:Department Head:ITPMD Cost Entry Invoices",
+    "D:Project Sponsor:ITPMD Cost Entry Invoices",
+    "D:PSC Member:ITPMD Cost Entry Invoices",
+    "D:Hub Administrator:ITPMD Cost Entry Invoices",
+    "D:TPMO:ITPMD Cost Entry Invoices"
+   ],
+   "steps": [
+    "As Project Manager: GET list, GET record, POST create on itpmd_cost_entry__invoices",
+    "As Team Member: GET list, GET record, POST create on itpmd_cost_entry__invoices",
+    "As Department Head: GET list, GET record, POST create on itpmd_cost_entry__invoices",
+    "As Project Sponsor: GET list, GET record, POST create on itpmd_cost_entry__invoices",
+    "As PSC Member: GET list, GET record, POST create on itpmd_cost_entry__invoices",
+    "As Hub Administrator: GET list, GET record, POST create on itpmd_cost_entry__invoices",
+    "As TPMO: GET list, GET record, POST create on itpmd_cost_entry__invoices"
+   ],
+   "asserts": [
+    "Project Manager: every attempt returns 403/empty (a success is a SECURITY finding)",
+    "Team Member: every attempt returns 403/empty (a success is a SECURITY finding)",
+    "Department Head: every attempt returns 403/empty (a success is a SECURITY finding)",
+    "Project Sponsor: every attempt returns 403/empty (a success is a SECURITY finding)",
+    "PSC Member: every attempt returns 403/empty (a success is a SECURITY finding)",
+    "Hub Administrator: every attempt returns 403/empty (a success is a SECURITY finding)",
+    "TPMO: every attempt returns 403/empty (a success is a SECURITY finding)",
+    "Child table: not independently grantable; a role's access follows the parent flow, so the denial is asserted through the parent flow's ACL (roles that hold the parent grant are recorded as not-independently-grantable, not as failures)."
+   ],
+   "class": "denial",
+   "realDenials": [
+    "Project Manager",
+    "Team Member",
+    "Department Head",
+    "Project Sponsor",
+    "PSC Member",
+    "Hub Administrator",
+    "TPMO"
+   ],
+   "notIndependentlyGrantable": true
+  },
+  {
+   "id": "T-DENY-itpmd_psr__schedule_highlights",
+   "title": "Roles with no grant are blocked from ITPMD Project Status Report Schedule Highlights",
+   "role": "Project Manager, Team Member, Department Head, Project Sponsor, PSC Member, Hub Administrator, TPMO",
+   "covers": [
+    "D:Project Manager:ITPMD Project Status Report Schedule Highlights",
+    "D:Team Member:ITPMD Project Status Report Schedule Highlights",
+    "D:Department Head:ITPMD Project Status Report Schedule Highlights",
+    "D:Project Sponsor:ITPMD Project Status Report Schedule Highlights",
+    "D:PSC Member:ITPMD Project Status Report Schedule Highlights",
+    "D:Hub Administrator:ITPMD Project Status Report Schedule Highlights",
+    "D:TPMO:ITPMD Project Status Report Schedule Highlights"
+   ],
+   "steps": [
+    "As Project Manager: GET list, GET record, POST create on itpmd_psr__schedule_highlights",
+    "As Team Member: GET list, GET record, POST create on itpmd_psr__schedule_highlights",
+    "As Department Head: GET list, GET record, POST create on itpmd_psr__schedule_highlights",
+    "As Project Sponsor: GET list, GET record, POST create on itpmd_psr__schedule_highlights",
+    "As PSC Member: GET list, GET record, POST create on itpmd_psr__schedule_highlights",
+    "As Hub Administrator: GET list, GET record, POST create on itpmd_psr__schedule_highlights",
+    "As TPMO: GET list, GET record, POST create on itpmd_psr__schedule_highlights"
+   ],
+   "asserts": [
+    "Project Manager: every attempt returns 403/empty (a success is a SECURITY finding)",
+    "Team Member: every attempt returns 403/empty (a success is a SECURITY finding)",
+    "Department Head: every attempt returns 403/empty (a success is a SECURITY finding)",
+    "Project Sponsor: every attempt returns 403/empty (a success is a SECURITY finding)",
+    "PSC Member: every attempt returns 403/empty (a success is a SECURITY finding)",
+    "Hub Administrator: every attempt returns 403/empty (a success is a SECURITY finding)",
+    "TPMO: every attempt returns 403/empty (a success is a SECURITY finding)",
+    "Child table: not independently grantable; a role's access follows the parent flow, so the denial is asserted through the parent flow's ACL (roles that hold the parent grant are recorded as not-independently-grantable, not as failures)."
+   ],
+   "class": "denial",
+   "realDenials": [
+    "Project Manager",
+    "Team Member",
+    "Department Head",
+    "Project Sponsor",
+    "PSC Member",
+    "Hub Administrator",
+    "TPMO"
+   ],
+   "notIndependentlyGrantable": true
+  },
+  {
+   "id": "T-DENY-itpmd_psr__next_period_plan",
+   "title": "Roles with no grant are blocked from ITPMD Project Status Report Next Period Plan",
+   "role": "Project Manager, Team Member, Department Head, Project Sponsor, PSC Member, Hub Administrator, TPMO",
+   "covers": [
+    "D:Project Manager:ITPMD Project Status Report Next Period Plan",
+    "D:Team Member:ITPMD Project Status Report Next Period Plan",
+    "D:Department Head:ITPMD Project Status Report Next Period Plan",
+    "D:Project Sponsor:ITPMD Project Status Report Next Period Plan",
+    "D:PSC Member:ITPMD Project Status Report Next Period Plan",
+    "D:Hub Administrator:ITPMD Project Status Report Next Period Plan",
+    "D:TPMO:ITPMD Project Status Report Next Period Plan"
+   ],
+   "steps": [
+    "As Project Manager: GET list, GET record, POST create on itpmd_psr__next_period_plan",
+    "As Team Member: GET list, GET record, POST create on itpmd_psr__next_period_plan",
+    "As Department Head: GET list, GET record, POST create on itpmd_psr__next_period_plan",
+    "As Project Sponsor: GET list, GET record, POST create on itpmd_psr__next_period_plan",
+    "As PSC Member: GET list, GET record, POST create on itpmd_psr__next_period_plan",
+    "As Hub Administrator: GET list, GET record, POST create on itpmd_psr__next_period_plan",
+    "As TPMO: GET list, GET record, POST create on itpmd_psr__next_period_plan"
+   ],
+   "asserts": [
+    "Project Manager: every attempt returns 403/empty (a success is a SECURITY finding)",
+    "Team Member: every attempt returns 403/empty (a success is a SECURITY finding)",
+    "Department Head: every attempt returns 403/empty (a success is a SECURITY finding)",
+    "Project Sponsor: every attempt returns 403/empty (a success is a SECURITY finding)",
+    "PSC Member: every attempt returns 403/empty (a success is a SECURITY finding)",
+    "Hub Administrator: every attempt returns 403/empty (a success is a SECURITY finding)",
+    "TPMO: every attempt returns 403/empty (a success is a SECURITY finding)",
+    "Child table: not independently grantable; a role's access follows the parent flow, so the denial is asserted through the parent flow's ACL (roles that hold the parent grant are recorded as not-independently-grantable, not as failures)."
+   ],
+   "class": "denial",
+   "realDenials": [
+    "Project Manager",
+    "Team Member",
+    "Department Head",
+    "Project Sponsor",
+    "PSC Member",
+    "Hub Administrator",
+    "TPMO"
+   ],
+   "notIndependentlyGrantable": true
+  },
+  {
+   "id": "T-DENY-itpmd_psr__key_issues_and_risks",
+   "title": "Roles with no grant are blocked from ITPMD Project Status Report Key Issues and Risks",
+   "role": "Project Manager, Team Member, Department Head, Project Sponsor, PSC Member, Hub Administrator, TPMO",
+   "covers": [
+    "D:Project Manager:ITPMD Project Status Report Key Issues and Risks",
+    "D:Team Member:ITPMD Project Status Report Key Issues and Risks",
+    "D:Department Head:ITPMD Project Status Report Key Issues and Risks",
+    "D:Project Sponsor:ITPMD Project Status Report Key Issues and Risks",
+    "D:PSC Member:ITPMD Project Status Report Key Issues and Risks",
+    "D:Hub Administrator:ITPMD Project Status Report Key Issues and Risks",
+    "D:TPMO:ITPMD Project Status Report Key Issues and Risks"
+   ],
+   "steps": [
+    "As Project Manager: GET list, GET record, POST create on itpmd_psr__key_issues_and_risks",
+    "As Team Member: GET list, GET record, POST create on itpmd_psr__key_issues_and_risks",
+    "As Department Head: GET list, GET record, POST create on itpmd_psr__key_issues_and_risks",
+    "As Project Sponsor: GET list, GET record, POST create on itpmd_psr__key_issues_and_risks",
+    "As PSC Member: GET list, GET record, POST create on itpmd_psr__key_issues_and_risks",
+    "As Hub Administrator: GET list, GET record, POST create on itpmd_psr__key_issues_and_risks",
+    "As TPMO: GET list, GET record, POST create on itpmd_psr__key_issues_and_risks"
+   ],
+   "asserts": [
+    "Project Manager: every attempt returns 403/empty (a success is a SECURITY finding)",
+    "Team Member: every attempt returns 403/empty (a success is a SECURITY finding)",
+    "Department Head: every attempt returns 403/empty (a success is a SECURITY finding)",
+    "Project Sponsor: every attempt returns 403/empty (a success is a SECURITY finding)",
+    "PSC Member: every attempt returns 403/empty (a success is a SECURITY finding)",
+    "Hub Administrator: every attempt returns 403/empty (a success is a SECURITY finding)",
+    "TPMO: every attempt returns 403/empty (a success is a SECURITY finding)",
+    "Child table: not independently grantable; a role's access follows the parent flow, so the denial is asserted through the parent flow's ACL (roles that hold the parent grant are recorded as not-independently-grantable, not as failures)."
+   ],
+   "class": "denial",
+   "realDenials": [
+    "Project Manager",
+    "Team Member",
+    "Department Head",
+    "Project Sponsor",
+    "PSC Member",
+    "Hub Administrator",
+    "TPMO"
+   ],
+   "notIndependentlyGrantable": true
+  },
+  {
+   "id": "T-DENY-itpmd_portfolio_report__project_summaries",
+   "title": "Roles with no grant are blocked from ITPMD Portfolio Status Report Project Summaries",
+   "role": "Project Manager, Team Member, Department Head, Project Sponsor, PSC Member, Hub Administrator, TPMO",
+   "covers": [
+    "D:Project Manager:ITPMD Portfolio Status Report Project Summaries",
+    "D:Team Member:ITPMD Portfolio Status Report Project Summaries",
+    "D:Department Head:ITPMD Portfolio Status Report Project Summaries",
+    "D:Project Sponsor:ITPMD Portfolio Status Report Project Summaries",
+    "D:PSC Member:ITPMD Portfolio Status Report Project Summaries",
+    "D:Hub Administrator:ITPMD Portfolio Status Report Project Summaries",
+    "D:TPMO:ITPMD Portfolio Status Report Project Summaries"
+   ],
+   "steps": [
+    "As Project Manager: GET list, GET record, POST create on itpmd_portfolio_report__project_summaries",
+    "As Team Member: GET list, GET record, POST create on itpmd_portfolio_report__project_summaries",
+    "As Department Head: GET list, GET record, POST create on itpmd_portfolio_report__project_summaries",
+    "As Project Sponsor: GET list, GET record, POST create on itpmd_portfolio_report__project_summaries",
+    "As PSC Member: GET list, GET record, POST create on itpmd_portfolio_report__project_summaries",
+    "As Hub Administrator: GET list, GET record, POST create on itpmd_portfolio_report__project_summaries",
+    "As TPMO: GET list, GET record, POST create on itpmd_portfolio_report__project_summaries"
+   ],
+   "asserts": [
+    "Project Manager: every attempt returns 403/empty (a success is a SECURITY finding)",
+    "Team Member: every attempt returns 403/empty (a success is a SECURITY finding)",
+    "Department Head: every attempt returns 403/empty (a success is a SECURITY finding)",
+    "Project Sponsor: every attempt returns 403/empty (a success is a SECURITY finding)",
+    "PSC Member: every attempt returns 403/empty (a success is a SECURITY finding)",
+    "Hub Administrator: every attempt returns 403/empty (a success is a SECURITY finding)",
+    "TPMO: every attempt returns 403/empty (a success is a SECURITY finding)",
+    "Child table: not independently grantable; a role's access follows the parent flow, so the denial is asserted through the parent flow's ACL (roles that hold the parent grant are recorded as not-independently-grantable, not as failures)."
+   ],
+   "class": "denial",
+   "realDenials": [
+    "Project Manager",
+    "Team Member",
+    "Department Head",
+    "Project Sponsor",
+    "PSC Member",
+    "Hub Administrator",
+    "TPMO"
+   ],
+   "notIndependentlyGrantable": true
+  },
+  {
+   "id": "T-DENY-itpmd_discussion_message",
+   "title": "Roles with no grant are blocked from ITPMD Discussion Message",
+   "role": "n/a",
+   "covers": [],
+   "steps": [],
+   "asserts": [],
+   "class": "denial",
+   "realDenials": [],
+   "notIndependentlyGrantable": false
+  },
+  {
+   "id": "T-DENY-itpmd_notification",
+   "title": "Roles with no grant are blocked from ITPMD Notification",
+   "role": "n/a",
+   "covers": [],
+   "steps": [],
+   "asserts": [],
+   "class": "denial",
+   "realDenials": [],
+   "notIndependentlyGrantable": false
+  },
+  {
+   "id": "T-DENY-itpmd_discussion_read",
+   "title": "Roles with no grant are blocked from ITPMD Discussion Read",
+   "role": "n/a",
+   "covers": [],
+   "steps": [],
+   "asserts": [],
+   "class": "denial",
+   "realDenials": [],
+   "notIndependentlyGrantable": false
+  },
+  {
+   "id": "T-DENY-itpmd_baseline",
+   "title": "Roles with no grant are blocked from ITPMD Baseline",
+   "role": "n/a",
+   "covers": [],
+   "steps": [],
+   "asserts": [],
+   "class": "denial",
+   "realDenials": [],
+   "notIndependentlyGrantable": false
+  },
+  {
+   "id": "T-DENY-itpmd_program",
+   "title": "Roles with no grant are blocked from ITPMD Program",
+   "role": "n/a",
+   "covers": [],
+   "steps": [],
+   "asserts": [],
+   "class": "denial",
+   "realDenials": [],
+   "notIndependentlyGrantable": false
+  },
+  {
+   "id": "T-DENY-itpmd_binder_item",
+   "title": "Roles with no grant are blocked from ITPMD Binder Item",
+   "role": "n/a",
+   "covers": [],
+   "steps": [],
+   "asserts": [],
+   "class": "denial",
+   "realDenials": [],
+   "notIndependentlyGrantable": false
+  },
+  {
+   "id": "T-DENY-itpmd_weekly_report",
+   "title": "Roles with no grant are blocked from ITPMD Weekly Report",
+   "role": "n/a",
+   "covers": [],
+   "steps": [],
+   "asserts": [],
+   "class": "denial",
+   "realDenials": [],
+   "notIndependentlyGrantable": false
+  },
+  {
+   "id": "T-DENY-itpmd_release",
+   "title": "Roles with no grant are blocked from ITPMD Release",
+   "role": "n/a",
+   "covers": [],
+   "steps": [],
+   "asserts": [],
+   "class": "denial",
+   "realDenials": [],
+   "notIndependentlyGrantable": false
+  },
+  {
+   "id": "T-DENY-itpmd_template",
+   "title": "Roles with no grant are blocked from ITPMD Template",
+   "role": "n/a",
+   "covers": [],
+   "steps": [],
+   "asserts": [],
+   "class": "denial",
+   "realDenials": [],
+   "notIndependentlyGrantable": false
+  },
+  {
+   "id": "T-FLD-itpmd_hub_settings",
+   "title": "Field rules on ITPMD Hub Settings",
+   "role": "Project Manager (or the flow's creator role)",
+   "covers": [
+    "F:ITPMD Hub Settings:Setting_Name:required",
+    "F:ITPMD Hub Settings:PSR_Due_Working_Day:required",
+    "F:ITPMD Hub Settings:Issue_Aging_Period_Days:required"
+   ],
+   "steps": [
+    "Attempt to save/submit itpmd_hub_settings with each required field blank in turn: Setting_Name, PSR_Due_Working_Day, Issue_Aging_Period_Days"
+   ],
+   "asserts": [
+    "Each blank-required attempt is rejected with a 'Value is required' style error"
+   ],
+   "class": "field"
+  },
+  {
+   "id": "T-FLD-itpmd_holiday_calendar",
+   "title": "Field rules on ITPMD Holiday Calendar",
+   "role": "Project Manager (or the flow's creator role)",
+   "covers": [
+    "F:ITPMD Holiday Calendar:Holiday_Name:required",
+    "F:ITPMD Holiday Calendar:Holiday_Date:required"
+   ],
+   "steps": [
+    "Attempt to save/submit itpmd_holiday_calendar with each required field blank in turn: Holiday_Name, Holiday_Date"
+   ],
+   "asserts": [
+    "Each blank-required attempt is rejected with a 'Value is required' style error"
+   ],
+   "class": "field"
+  },
+  {
+   "id": "T-FLD-itpmd_project",
+   "title": "Field rules on ITPMD Project",
+   "role": "Project Manager (or the flow's creator role)",
+   "covers": [
+    "F:ITPMD Project:Project_Name:required",
+    "F:ITPMD Project:Business_Unit:required",
+    "F:ITPMD Project:Portfolio:required",
+    "F:ITPMD Project:Project_Manager:required",
+    "F:ITPMD Project:Department_Head:required",
+    "F:ITPMD Project:Status:required",
+    "F:ITPMD Project:Approved_Budget:required",
+    "F:ITPMD Project:Contingency_Fund:required",
+    "F:ITPMD Project:Weighted_Percent_Complete:computed",
+    "F:ITPMD Project:Schedule_Variance_Days:computed",
+    "F:ITPMD Project:Current_Approved_Budget:computed",
+    "F:ITPMD Project:Contingency_Remaining:computed",
+    "F:ITPMD Project:Contingency_Utilization_Percent:computed",
+    "F:ITPMD Project:Cost_Performance_Percent:computed",
+    "F:ITPMD Project:Schedule_Health_Code:computed",
+    "F:ITPMD Project:Schedule_Health:computed",
+    "F:ITPMD Project:Cost_Health_Code:computed",
+    "F:ITPMD Project:Cost_Health:computed",
+    "F:ITPMD Project:Risk_Health_Code:computed",
+    "F:ITPMD Project:Risk_Health:computed",
+    "F:ITPMD Project:Issue_Health_Code:computed",
+    "F:ITPMD Project:Issue_Health:computed",
+    "F:ITPMD Project:Overall_Health_Code:computed",
+    "F:ITPMD Project:Overall_Health:computed",
+    "F:ITPMD Project:Needs_Management_Attention_Flag:computed"
+   ],
+   "steps": [
+    "Attempt to save/submit itpmd_project with each required field blank in turn: Project_Name, Business_Unit, Portfolio, Project_Manager, Department_Head, Status, Approved_Budget, Contingency_Fund",
+    "Write raw inputs, read back computed fields: Weighted_Percent_Complete, Schedule_Variance_Days, Current_Approved_Budget, Contingency_Remaining, Contingency_Utilization_Percent, Cost_Performance_Percent, Schedule_Health_Code, Schedule_Health, Cost_Health_Code, Cost_Health, Risk_Health_Code, Risk_Health, Issue_Health_Code, Issue_Health, Overall_Health_Code, Overall_Health, Needs_Management_Attention_Flag; then update an input and re-read"
+   ],
+   "asserts": [
+    "Each blank-required attempt is rejected with a 'Value is required' style error",
+    "Computed values equal the formula result; chained formulas (formula-of-formula) recompute after an input update"
+   ],
+   "class": "field"
+  },
+  {
+   "id": "T-FLD-itpmd_activity",
+   "title": "Field rules on ITPMD Activity",
+   "role": "Project Manager (or the flow's creator role)",
+   "covers": [
+    "F:ITPMD Activity:Activity_Name:required",
+    "F:ITPMD Activity:Project:required",
+    "F:ITPMD Activity:WBS_Code:required",
+    "F:ITPMD Activity:Planned_Start:required",
+    "F:ITPMD Activity:Planned_Finish:required",
+    "F:ITPMD Activity:Planned_Duration_Days:computed",
+    "F:ITPMD Activity:Weighted_Complete_Value:computed",
+    "F:ITPMD Activity:Missed_Milestone_Flag:computed",
+    "F:ITPMD Activity:Schedule_Variance_Days:computed",
+    "F:ITPMD Activity:Status_Code:computed",
+    "F:ITPMD Activity:Status:computed"
+   ],
+   "steps": [
+    "Attempt to save/submit itpmd_activity with each required field blank in turn: Activity_Name, Project, WBS_Code, Planned_Start, Planned_Finish",
+    "Write raw inputs, read back computed fields: Planned_Duration_Days, Weighted_Complete_Value, Missed_Milestone_Flag, Schedule_Variance_Days, Status_Code, Status; then update an input and re-read"
+   ],
+   "asserts": [
+    "Each blank-required attempt is rejected with a 'Value is required' style error",
+    "Computed values equal the formula result; chained formulas (formula-of-formula) recompute after an input update"
+   ],
+   "class": "field"
+  },
+  {
+   "id": "T-FLD-itpmd_risk",
+   "title": "Field rules on ITPMD Risk",
+   "role": "Project Manager (or the flow's creator role)",
+   "covers": [
+    "F:ITPMD Risk:Risk_Title:required",
+    "F:ITPMD Risk:Project:required",
+    "F:ITPMD Risk:Risk_Category:required",
+    "F:ITPMD Risk:Probability:required",
+    "F:ITPMD Risk:Impact:required",
+    "F:ITPMD Risk:Risk_Rating:computed",
+    "F:ITPMD Risk:Risk_Band_Code:computed",
+    "F:ITPMD Risk:Risk_Rating_Band:computed",
+    "F:ITPMD Risk:Risk_Owner:required",
+    "F:ITPMD Risk:Residual_Risk_Rating:computed",
+    "F:ITPMD Risk:Residual_Band_Code:computed",
+    "F:ITPMD Risk:Residual_Risk_Rating_Band:computed",
+    "F:ITPMD Risk:Status:required",
+    "F:ITPMD Risk:Escalation_Flag:computed",
+    "F:ITPMD Risk:Critical_Flag:computed"
+   ],
+   "steps": [
+    "Attempt to save/submit itpmd_risk with each required field blank in turn: Risk_Title, Project, Risk_Category, Probability, Impact, Risk_Owner, Status",
+    "Write raw inputs, read back computed fields: Risk_Rating, Risk_Band_Code, Risk_Rating_Band, Residual_Risk_Rating, Residual_Band_Code, Residual_Risk_Rating_Band, Escalation_Flag, Critical_Flag; then update an input and re-read"
+   ],
+   "asserts": [
+    "Each blank-required attempt is rejected with a 'Value is required' style error",
+    "Computed values equal the formula result; chained formulas (formula-of-formula) recompute after an input update"
+   ],
+   "class": "field"
+  },
+  {
+   "id": "T-FLD-itpmd_issue",
+   "title": "Field rules on ITPMD Issue",
+   "role": "Project Manager (or the flow's creator role)",
+   "covers": [
+    "F:ITPMD Issue:Issue_Title:required",
+    "F:ITPMD Issue:Project:required",
+    "F:ITPMD Issue:Issue_Category:required",
+    "F:ITPMD Issue:Priority:required",
+    "F:ITPMD Issue:Issue_Owner:required",
+    "F:ITPMD Issue:Days_Open:computed",
+    "F:ITPMD Issue:Critical_Flag:computed",
+    "F:ITPMD Issue:Escalation_Flag:computed"
+   ],
+   "steps": [
+    "Attempt to save/submit itpmd_issue with each required field blank in turn: Issue_Title, Project, Issue_Category, Priority, Issue_Owner",
+    "Write raw inputs, read back computed fields: Days_Open, Critical_Flag, Escalation_Flag; then update an input and re-read"
+   ],
+   "asserts": [
+    "Each blank-required attempt is rejected with a 'Value is required' style error",
+    "Computed values equal the formula result; chained formulas (formula-of-formula) recompute after an input update"
+   ],
+   "class": "field"
+  },
+  {
+   "id": "T-FLD-itpmd_action_item",
+   "title": "Field rules on ITPMD Action Item",
+   "role": "Project Manager (or the flow's creator role)",
+   "covers": [
+    "F:ITPMD Action Item:Action_Description:required",
+    "F:ITPMD Action Item:Project:required",
+    "F:ITPMD Action Item:Assignee:required",
+    "F:ITPMD Action Item:Overdue_Flag:computed"
+   ],
+   "steps": [
+    "Attempt to save/submit itpmd_action_item with each required field blank in turn: Action_Description, Project, Assignee",
+    "Write raw inputs, read back computed fields: Overdue_Flag; then update an input and re-read"
+   ],
+   "asserts": [
+    "Each blank-required attempt is rejected with a 'Value is required' style error",
+    "Computed values equal the formula result; chained formulas (formula-of-formula) recompute after an input update"
+   ],
+   "class": "field"
+  },
+  {
+   "id": "T-FLD-itpmd_cost_entry",
+   "title": "Field rules on ITPMD Cost Entry",
+   "role": "Project Manager (or the flow's creator role)",
+   "covers": [
+    "F:ITPMD Cost Entry:Cost_Entry_Title:required",
+    "F:ITPMD Cost Entry:Project:required",
+    "F:ITPMD Cost Entry:Entry_Date:required"
+   ],
+   "steps": [
+    "Attempt to save/submit itpmd_cost_entry with each required field blank in turn: Cost_Entry_Title, Project, Entry_Date"
+   ],
+   "asserts": [
+    "Each blank-required attempt is rejected with a 'Value is required' style error"
+   ],
+   "class": "field"
+  },
+  {
+   "id": "T-FLD-itpmd_psr",
+   "title": "Field rules on ITPMD Project Status Report",
+   "role": "Project Manager (or the flow's creator role)",
+   "covers": [
+    "F:ITPMD Project Status Report:Draft:Project:Mandatory",
+    "F:ITPMD Project Status Report:Draft:Narrative_Update:Mandatory",
+    "F:ITPMD Project Status Report:Draft:Supporting_Documents:Editable",
+    "F:ITPMD Project Status Report:Draft:Reporting_Period_Month:Editable",
+    "F:ITPMD Project Status Report:Reporting_Period_Month:required",
+    "F:ITPMD Project Status Report:Project:required",
+    "F:ITPMD Project Status Report:Sponsor_Approval_Required:computed"
+   ],
+   "steps": [
+    "Attempt to save/submit itpmd_psr with each required field blank in turn: Reporting_Period_Month, Project",
+    "Write raw inputs, read back computed fields: Sponsor_Approval_Required; then update an input and re-read",
+    "Open the item at the Draft step and read each field's permission state"
+   ],
+   "asserts": [
+    "Each blank-required attempt is rejected with a 'Value is required' style error",
+    "Computed values equal the formula result; chained formulas (formula-of-formula) recompute after an input update",
+    "State holds: ITPMD Project Status Report:Draft:Project:Mandatory",
+    "State holds: ITPMD Project Status Report:Draft:Narrative_Update:Mandatory",
+    "State holds: ITPMD Project Status Report:Draft:Supporting_Documents:Editable",
+    "State holds: ITPMD Project Status Report:Draft:Reporting_Period_Month:Editable"
+   ],
+   "class": "field"
+  },
+  {
+   "id": "T-FLD-itpmd_portfolio_report",
+   "title": "Field rules on ITPMD Portfolio Status Report",
+   "role": "Project Manager (or the flow's creator role)",
+   "covers": [
+    "F:ITPMD Portfolio Status Report:Report_Period:required"
+   ],
+   "steps": [
+    "Attempt to save/submit itpmd_portfolio_report with each required field blank in turn: Report_Period"
+   ],
+   "asserts": [
+    "Each blank-required attempt is rejected with a 'Value is required' style error"
+   ],
+   "class": "field"
+  },
+  {
+   "id": "T-FLD-itpmd_project__contracts",
+   "title": "Field rules on ITPMD Project Contracts",
+   "role": "Project Manager (or the flow's creator role)",
+   "covers": [
+    "F:ITPMD Project Contracts:Vendor_Name:required",
+    "F:ITPMD Project Contracts:Contract_Price:required"
+   ],
+   "steps": [
+    "Attempt to save/submit itpmd_project__contracts with each required field blank in turn: Vendor_Name, Contract_Price"
+   ],
+   "asserts": [
+    "Each blank-required attempt is rejected with a 'Value is required' style error"
+   ],
+   "class": "field"
+  },
+  {
+   "id": "T-FLD-itpmd_project__project_team",
+   "title": "Field rules on ITPMD Project Project Team",
+   "role": "Project Manager (or the flow's creator role)",
+   "covers": [
+    "F:ITPMD Project Project Team:Team_Member:required",
+    "F:ITPMD Project Project Team:Project_Role:required"
+   ],
+   "steps": [
+    "Attempt to save/submit itpmd_project__project_team with each required field blank in turn: Team_Member, Project_Role"
+   ],
+   "asserts": [
+    "Each blank-required attempt is rejected with a 'Value is required' style error"
+   ],
+   "class": "field"
+  },
+  {
+   "id": "T-FLD-itpmd_project__budget_changes",
+   "title": "Field rules on ITPMD Project Budget Changes",
+   "role": "Project Manager (or the flow's creator role)",
+   "covers": [
+    "F:ITPMD Project Budget Changes:Change_Type:required",
+    "F:ITPMD Project Budget Changes:Effective_Date:required"
+   ],
+   "steps": [
+    "Attempt to save/submit itpmd_project__budget_changes with each required field blank in turn: Change_Type, Effective_Date"
+   ],
+   "asserts": [
+    "Each blank-required attempt is rejected with a 'Value is required' style error"
+   ],
+   "class": "field"
+  },
+  {
+   "id": "T-FLD-itpmd_project__baseline_history",
+   "title": "Field rules on ITPMD Project Baseline History",
+   "role": "Project Manager (or the flow's creator role)",
+   "covers": [
+    "F:ITPMD Project Baseline History:Baseline_Version:required"
+   ],
+   "steps": [
+    "Attempt to save/submit itpmd_project__baseline_history with each required field blank in turn: Baseline_Version"
+   ],
+   "asserts": [
+    "Each blank-required attempt is rejected with a 'Value is required' style error"
+   ],
+   "class": "field"
+  },
+  {
+   "id": "T-FLD-itpmd_project__decision_log",
+   "title": "Field rules on ITPMD Project Decision Log",
+   "role": "Project Manager (or the flow's creator role)",
+   "covers": [
+    "F:ITPMD Project Decision Log:Decision_Description:required"
+   ],
+   "steps": [
+    "Attempt to save/submit itpmd_project__decision_log with each required field blank in turn: Decision_Description"
+   ],
+   "asserts": [
+    "Each blank-required attempt is rejected with a 'Value is required' style error"
+   ],
+   "class": "field"
+  },
+  {
+   "id": "T-FLD-itpmd_activity__predecessors",
+   "title": "Field rules on ITPMD Activity Predecessors",
+   "role": "Project Manager (or the flow's creator role)",
+   "covers": [
+    "F:ITPMD Activity Predecessors:Predecessor_Activity:required",
+    "F:ITPMD Activity Predecessors:Dependency_Type:required"
+   ],
+   "steps": [
+    "Attempt to save/submit itpmd_activity__predecessors with each required field blank in turn: Predecessor_Activity, Dependency_Type"
+   ],
+   "asserts": [
+    "Each blank-required attempt is rejected with a 'Value is required' style error"
+   ],
+   "class": "field"
+  },
+  {
+   "id": "T-FLD-itpmd_cost_entry__invoices",
+   "title": "Field rules on ITPMD Cost Entry Invoices",
+   "role": "Project Manager (or the flow's creator role)",
+   "covers": [
+    "F:ITPMD Cost Entry Invoices:Invoice_Number:required"
+   ],
+   "steps": [
+    "Attempt to save/submit itpmd_cost_entry__invoices with each required field blank in turn: Invoice_Number"
+   ],
+   "asserts": [
+    "Each blank-required attempt is rejected with a 'Value is required' style error"
+   ],
+   "class": "field"
+  },
+  {
+   "id": "T-FLD-itpmd_psr__schedule_highlights",
+   "title": "Field rules on ITPMD Project Status Report Schedule Highlights",
+   "role": "Project Manager (or the flow's creator role)",
+   "covers": [
+    "F:ITPMD Project Status Report Schedule Highlights:Activity:required",
+    "F:ITPMD Project Status Report Schedule Highlights:Highlight_Type:required"
+   ],
+   "steps": [
+    "Attempt to save/submit itpmd_psr__schedule_highlights with each required field blank in turn: Activity, Highlight_Type"
+   ],
+   "asserts": [
+    "Each blank-required attempt is rejected with a 'Value is required' style error"
+   ],
+   "class": "field"
+  },
+  {
+   "id": "T-FLD-itpmd_psr__next_period_plan",
+   "title": "Field rules on ITPMD Project Status Report Next Period Plan",
+   "role": "Project Manager (or the flow's creator role)",
+   "covers": [
+    "F:ITPMD Project Status Report Next Period Plan:Plan_Activity:required"
+   ],
+   "steps": [
+    "Attempt to save/submit itpmd_psr__next_period_plan with each required field blank in turn: Plan_Activity"
+   ],
+   "asserts": [
+    "Each blank-required attempt is rejected with a 'Value is required' style error"
+   ],
+   "class": "field"
+  },
+  {
+   "id": "T-FLD-itpmd_portfolio_report__project_summaries",
+   "title": "Field rules on ITPMD Portfolio Status Report Project Summaries",
+   "role": "Project Manager (or the flow's creator role)",
+   "covers": [
+    "F:ITPMD Portfolio Status Report Project Summaries:PSR:required"
+   ],
+   "steps": [
+    "Attempt to save/submit itpmd_portfolio_report__project_summaries with each required field blank in turn: PSR"
+   ],
+   "asserts": [
+    "Each blank-required attempt is rejected with a 'Value is required' style error"
+   ],
+   "class": "field"
+  },
+  {
+   "id": "T-FLD-itpmd_discussion_message",
+   "title": "Field rules on ITPMD Discussion Message",
+   "role": "Project Manager (or the flow's creator role)",
+   "covers": [
+    "F:ITPMD Discussion Message:Project:required",
+    "F:ITPMD Discussion Message:Author:required",
+    "F:ITPMD Discussion Message:Sent_At:required",
+    "F:ITPMD Discussion Message:Message_Text:required"
+   ],
+   "steps": [
+    "Attempt to save/submit itpmd_discussion_message with each required field blank in turn: Project, Author, Sent_At, Message_Text"
+   ],
+   "asserts": [
+    "Each blank-required attempt is rejected with a 'Value is required' style error"
+   ],
+   "class": "field"
+  },
+  {
+   "id": "T-FLD-itpmd_notification",
+   "title": "Field rules on ITPMD Notification",
+   "role": "Project Manager (or the flow's creator role)",
+   "covers": [
+    "F:ITPMD Notification:Recipient:required",
+    "F:ITPMD Notification:Notification_Type:required",
+    "F:ITPMD Notification:Title:required"
+   ],
+   "steps": [
+    "Attempt to save/submit itpmd_notification with each required field blank in turn: Recipient, Notification_Type, Title"
+   ],
+   "asserts": [
+    "Each blank-required attempt is rejected with a 'Value is required' style error"
+   ],
+   "class": "field"
+  },
+  {
+   "id": "T-FLD-itpmd_discussion_read",
+   "title": "Field rules on ITPMD Discussion Read",
+   "role": "Project Manager (or the flow's creator role)",
+   "covers": [
+    "F:ITPMD Discussion Read:Reader:required",
+    "F:ITPMD Discussion Read:Project:required",
+    "F:ITPMD Discussion Read:Last_Read_At:required"
+   ],
+   "steps": [
+    "Attempt to save/submit itpmd_discussion_read with each required field blank in turn: Reader, Project, Last_Read_At"
+   ],
+   "asserts": [
+    "Each blank-required attempt is rejected with a 'Value is required' style error"
+   ],
+   "class": "field"
+  },
+  {
+   "id": "T-FLD-itpmd_baseline",
+   "title": "Field rules on ITPMD Baseline",
+   "role": "Project Manager (or the flow's creator role)",
+   "covers": [
+    "F:ITPMD Baseline:Project:required",
+    "F:ITPMD Baseline:Version:required",
+    "F:ITPMD Baseline:Set_Date:required"
+   ],
+   "steps": [
+    "Attempt to save/submit itpmd_baseline with each required field blank in turn: Project, Version, Set_Date"
+   ],
+   "asserts": [
+    "Each blank-required attempt is rejected with a 'Value is required' style error"
+   ],
+   "class": "field"
+  },
+  {
+   "id": "T-FLD-itpmd_program",
+   "title": "Field rules on ITPMD Program",
+   "role": "Project Manager (or the flow's creator role)",
+   "covers": [
+    "F:ITPMD Program:Program_Name:required"
+   ],
+   "steps": [
+    "Attempt to save/submit itpmd_program with each required field blank in turn: Program_Name"
+   ],
+   "asserts": [
+    "Each blank-required attempt is rejected with a 'Value is required' style error"
+   ],
+   "class": "field"
+  },
+  {
+   "id": "T-FLD-itpmd_binder_item",
+   "title": "Field rules on ITPMD Binder Item",
+   "role": "Project Manager (or the flow's creator role)",
+   "covers": [
+    "F:ITPMD Binder Item:Project:required",
+    "F:ITPMD Binder Item:Item_Type:required"
+   ],
+   "steps": [
+    "Attempt to save/submit itpmd_binder_item with each required field blank in turn: Project, Item_Type"
+   ],
+   "asserts": [
+    "Each blank-required attempt is rejected with a 'Value is required' style error"
+   ],
+   "class": "field"
+  },
+  {
+   "id": "T-FLD-itpmd_weekly_report",
+   "title": "Field rules on ITPMD Weekly Report",
+   "role": "Project Manager (or the flow's creator role)",
+   "covers": [
+    "F:ITPMD Weekly Report:Project:required",
+    "F:ITPMD Weekly Report:Week_Of:required"
+   ],
+   "steps": [
+    "Attempt to save/submit itpmd_weekly_report with each required field blank in turn: Project, Week_Of"
+   ],
+   "asserts": [
+    "Each blank-required attempt is rejected with a 'Value is required' style error"
+   ],
+   "class": "field"
+  },
+  {
+   "id": "T-FLD-itpmd_release",
+   "title": "Field rules on ITPMD Release",
+   "role": "Project Manager (or the flow's creator role)",
+   "covers": [
+    "F:ITPMD Release:Project:required",
+    "F:ITPMD Release:Release_Name:required",
+    "F:ITPMD Release:Planned_Date:required"
+   ],
+   "steps": [
+    "Attempt to save/submit itpmd_release with each required field blank in turn: Project, Release_Name, Planned_Date"
+   ],
+   "asserts": [
+    "Each blank-required attempt is rejected with a 'Value is required' style error"
+   ],
+   "class": "field"
+  },
+  {
+   "id": "T-FLD-itpmd_template",
+   "title": "Field rules on ITPMD Template",
+   "role": "Project Manager (or the flow's creator role)",
+   "covers": [
+    "F:ITPMD Template:Template_Name:required",
+    "F:ITPMD Template:Template_Type:required"
+   ],
+   "steps": [
+    "Attempt to save/submit itpmd_template with each required field blank in turn: Template_Name, Template_Type"
+   ],
+   "asserts": [
+    "Each blank-required attempt is rejected with a 'Value is required' style error"
+   ],
+   "class": "field"
+  },
+  {
+   "id": "T-REF-itpmd_project",
+   "title": "Reference links on ITPMD Project",
+   "role": "Project Manager (or the flow's creator role)",
+   "covers": [
+    "R:ITPMD Project:Program:ref"
+   ],
+   "steps": [
+    "Create a parent target record, then create a record on this flow pointing at it (try the {_id, Name} shape)",
+    "Read back the stored record"
+   ],
+   "asserts": [
+    "The reference value persists (not silently dropped)",
+    "Lookup columns of the target are populated on the record"
+   ],
+   "class": "reference",
+   "knownPlatformLimit": "Reference field runtime writes are dropped on this dev sandbox (MEMORY-LOCAL)"
+  },
+  {
+   "id": "T-REF-itpmd_activity",
+   "title": "Reference links on ITPMD Activity",
+   "role": "Project Manager (or the flow's creator role)",
+   "covers": [
+    "R:ITPMD Activity:Project:ref"
+   ],
+   "steps": [
+    "Create a parent target record, then create a record on this flow pointing at it (try the {_id, Name} shape)",
+    "Read back the stored record"
+   ],
+   "asserts": [
+    "The reference value persists (not silently dropped)",
+    "Lookup columns of the target are populated on the record"
+   ],
+   "class": "reference",
+   "knownPlatformLimit": "Reference field runtime writes are dropped on this dev sandbox (MEMORY-LOCAL)"
+  },
+  {
+   "id": "T-REF-itpmd_risk",
+   "title": "Reference links on ITPMD Risk",
+   "role": "Project Manager (or the flow's creator role)",
+   "covers": [
+    "R:ITPMD Risk:Project:ref"
+   ],
+   "steps": [
+    "Create a parent target record, then create a record on this flow pointing at it (try the {_id, Name} shape)",
+    "Read back the stored record"
+   ],
+   "asserts": [
+    "The reference value persists (not silently dropped)",
+    "Lookup columns of the target are populated on the record"
+   ],
+   "class": "reference",
+   "knownPlatformLimit": "Reference field runtime writes are dropped on this dev sandbox (MEMORY-LOCAL)"
+  },
+  {
+   "id": "T-REF-itpmd_issue",
+   "title": "Reference links on ITPMD Issue",
+   "role": "Project Manager (or the flow's creator role)",
+   "covers": [
+    "R:ITPMD Issue:Project:ref",
+    "R:ITPMD Issue:Hub_Settings:ref"
+   ],
+   "steps": [
+    "Create a parent target record, then create a record on this flow pointing at it (try the {_id, Name} shape)",
+    "Read back the stored record"
+   ],
+   "asserts": [
+    "The reference value persists (not silently dropped)",
+    "Lookup columns of the target are populated on the record"
+   ],
+   "class": "reference",
+   "knownPlatformLimit": "Reference field runtime writes are dropped on this dev sandbox (MEMORY-LOCAL)"
+  },
+  {
+   "id": "T-REF-itpmd_action_item",
+   "title": "Reference links on ITPMD Action Item",
+   "role": "Project Manager (or the flow's creator role)",
+   "covers": [
+    "R:ITPMD Action Item:Project:ref",
+    "R:ITPMD Action Item:Related_Issue:ref"
+   ],
+   "steps": [
+    "Create a parent target record, then create a record on this flow pointing at it (try the {_id, Name} shape)",
+    "Read back the stored record"
+   ],
+   "asserts": [
+    "The reference value persists (not silently dropped)",
+    "Lookup columns of the target are populated on the record"
+   ],
+   "class": "reference",
+   "knownPlatformLimit": "Reference field runtime writes are dropped on this dev sandbox (MEMORY-LOCAL)"
+  },
+  {
+   "id": "T-REF-itpmd_cost_entry",
+   "title": "Reference links on ITPMD Cost Entry",
+   "role": "Project Manager (or the flow's creator role)",
+   "covers": [
+    "R:ITPMD Cost Entry:Project:ref"
+   ],
+   "steps": [
+    "Create a parent target record, then create a record on this flow pointing at it (try the {_id, Name} shape)",
+    "Read back the stored record"
+   ],
+   "asserts": [
+    "The reference value persists (not silently dropped)",
+    "Lookup columns of the target are populated on the record"
+   ],
+   "class": "reference",
+   "knownPlatformLimit": "Reference field runtime writes are dropped on this dev sandbox (MEMORY-LOCAL)"
+  },
+  {
+   "id": "T-REF-itpmd_psr",
+   "title": "Reference links on ITPMD Project Status Report",
+   "role": "Project Manager (or the flow's creator role)",
+   "covers": [
+    "R:ITPMD Project Status Report:Project:ref"
+   ],
+   "steps": [
+    "Create a parent target record, then create a record on this flow pointing at it (try the {_id, Name} shape)",
+    "Read back the stored record"
+   ],
+   "asserts": [
+    "The reference value persists (not silently dropped)",
+    "Lookup columns of the target are populated on the record"
+   ],
+   "class": "reference",
+   "knownPlatformLimit": "Reference field runtime writes are dropped on this dev sandbox (MEMORY-LOCAL)"
+  },
+  {
+   "id": "T-REF-itpmd_project__decision_log",
+   "title": "Reference links on ITPMD Project Decision Log",
+   "role": "Project Manager (or the flow's creator role)",
+   "covers": [
+    "R:ITPMD Project Decision Log:Related_Issue:ref"
+   ],
+   "steps": [
+    "Create a parent target record, then create a record on this flow pointing at it (try the {_id, Name} shape)",
+    "Read back the stored record"
+   ],
+   "asserts": [
+    "The reference value persists (not silently dropped)",
+    "Lookup columns of the target are populated on the record"
+   ],
+   "class": "reference",
+   "knownPlatformLimit": "Reference field runtime writes are dropped on this dev sandbox (MEMORY-LOCAL)"
+  },
+  {
+   "id": "T-REF-itpmd_activity__predecessors",
+   "title": "Reference links on ITPMD Activity Predecessors",
+   "role": "Project Manager (or the flow's creator role)",
+   "covers": [
+    "R:ITPMD Activity Predecessors:Predecessor_Activity:ref"
+   ],
+   "steps": [
+    "Create a parent target record, then create a record on this flow pointing at it (try the {_id, Name} shape)",
+    "Read back the stored record"
+   ],
+   "asserts": [
+    "The reference value persists (not silently dropped)",
+    "Lookup columns of the target are populated on the record"
+   ],
+   "class": "reference",
+   "knownPlatformLimit": "Reference field runtime writes are dropped on this dev sandbox (MEMORY-LOCAL)"
+  },
+  {
+   "id": "T-REF-itpmd_psr__schedule_highlights",
+   "title": "Reference links on ITPMD Project Status Report Schedule Highlights",
+   "role": "Project Manager (or the flow's creator role)",
+   "covers": [
+    "R:ITPMD Project Status Report Schedule Highlights:Activity:ref"
+   ],
+   "steps": [
+    "Create a parent target record, then create a record on this flow pointing at it (try the {_id, Name} shape)",
+    "Read back the stored record"
+   ],
+   "asserts": [
+    "The reference value persists (not silently dropped)",
+    "Lookup columns of the target are populated on the record"
+   ],
+   "class": "reference",
+   "knownPlatformLimit": "Reference field runtime writes are dropped on this dev sandbox (MEMORY-LOCAL)"
+  },
+  {
+   "id": "T-REF-itpmd_psr__next_period_plan",
+   "title": "Reference links on ITPMD Project Status Report Next Period Plan",
+   "role": "Project Manager (or the flow's creator role)",
+   "covers": [
+    "R:ITPMD Project Status Report Next Period Plan:Plan_Activity:ref"
+   ],
+   "steps": [
+    "Create a parent target record, then create a record on this flow pointing at it (try the {_id, Name} shape)",
+    "Read back the stored record"
+   ],
+   "asserts": [
+    "The reference value persists (not silently dropped)",
+    "Lookup columns of the target are populated on the record"
+   ],
+   "class": "reference",
+   "knownPlatformLimit": "Reference field runtime writes are dropped on this dev sandbox (MEMORY-LOCAL)"
+  },
+  {
+   "id": "T-REF-itpmd_psr__key_issues_and_risks",
+   "title": "Reference links on ITPMD Project Status Report Key Issues and Risks",
+   "role": "Project Manager (or the flow's creator role)",
+   "covers": [
+    "R:ITPMD Project Status Report Key Issues and Risks:Related_Issue:ref",
+    "R:ITPMD Project Status Report Key Issues and Risks:Related_Risk:ref"
+   ],
+   "steps": [
+    "Create a parent target record, then create a record on this flow pointing at it (try the {_id, Name} shape)",
+    "Read back the stored record"
+   ],
+   "asserts": [
+    "The reference value persists (not silently dropped)",
+    "Lookup columns of the target are populated on the record"
+   ],
+   "class": "reference",
+   "knownPlatformLimit": "Reference field runtime writes are dropped on this dev sandbox (MEMORY-LOCAL)"
+  },
+  {
+   "id": "T-REF-itpmd_portfolio_report__project_summaries",
+   "title": "Reference links on ITPMD Portfolio Status Report Project Summaries",
+   "role": "Project Manager (or the flow's creator role)",
+   "covers": [
+    "R:ITPMD Portfolio Status Report Project Summaries:PSR:ref"
+   ],
+   "steps": [
+    "Create a parent target record, then create a record on this flow pointing at it (try the {_id, Name} shape)",
+    "Read back the stored record"
+   ],
+   "asserts": [
+    "The reference value persists (not silently dropped)",
+    "Lookup columns of the target are populated on the record"
+   ],
+   "class": "reference",
+   "knownPlatformLimit": "Reference field runtime writes are dropped on this dev sandbox (MEMORY-LOCAL)"
+  },
+  {
+   "id": "T-REF-itpmd_discussion_message",
+   "title": "Reference links on ITPMD Discussion Message",
+   "role": "Project Manager (or the flow's creator role)",
+   "covers": [
+    "R:ITPMD Discussion Message:Project:ref"
+   ],
+   "steps": [
+    "Create a parent target record, then create a record on this flow pointing at it (try the {_id, Name} shape)",
+    "Read back the stored record"
+   ],
+   "asserts": [
+    "The reference value persists (not silently dropped)",
+    "Lookup columns of the target are populated on the record"
+   ],
+   "class": "reference",
+   "knownPlatformLimit": "Reference field runtime writes are dropped on this dev sandbox (MEMORY-LOCAL)"
+  },
+  {
+   "id": "T-REF-itpmd_notification",
+   "title": "Reference links on ITPMD Notification",
+   "role": "Project Manager (or the flow's creator role)",
+   "covers": [
+    "R:ITPMD Notification:Project:ref"
+   ],
+   "steps": [
+    "Create a parent target record, then create a record on this flow pointing at it (try the {_id, Name} shape)",
+    "Read back the stored record"
+   ],
+   "asserts": [
+    "The reference value persists (not silently dropped)",
+    "Lookup columns of the target are populated on the record"
+   ],
+   "class": "reference",
+   "knownPlatformLimit": "Reference field runtime writes are dropped on this dev sandbox (MEMORY-LOCAL)"
+  },
+  {
+   "id": "T-REF-itpmd_discussion_read",
+   "title": "Reference links on ITPMD Discussion Read",
+   "role": "Project Manager (or the flow's creator role)",
+   "covers": [
+    "R:ITPMD Discussion Read:Project:ref"
+   ],
+   "steps": [
+    "Create a parent target record, then create a record on this flow pointing at it (try the {_id, Name} shape)",
+    "Read back the stored record"
+   ],
+   "asserts": [
+    "The reference value persists (not silently dropped)",
+    "Lookup columns of the target are populated on the record"
+   ],
+   "class": "reference",
+   "knownPlatformLimit": "Reference field runtime writes are dropped on this dev sandbox (MEMORY-LOCAL)"
+  },
+  {
+   "id": "T-REF-itpmd_baseline",
+   "title": "Reference links on ITPMD Baseline",
+   "role": "Project Manager (or the flow's creator role)",
+   "covers": [
+    "R:ITPMD Baseline:Project:ref"
+   ],
+   "steps": [
+    "Create a parent target record, then create a record on this flow pointing at it (try the {_id, Name} shape)",
+    "Read back the stored record"
+   ],
+   "asserts": [
+    "The reference value persists (not silently dropped)",
+    "Lookup columns of the target are populated on the record"
+   ],
+   "class": "reference",
+   "knownPlatformLimit": "Reference field runtime writes are dropped on this dev sandbox (MEMORY-LOCAL)"
+  },
+  {
+   "id": "T-REF-itpmd_binder_item",
+   "title": "Reference links on ITPMD Binder Item",
+   "role": "Project Manager (or the flow's creator role)",
+   "covers": [
+    "R:ITPMD Binder Item:Project:ref"
+   ],
+   "steps": [
+    "Create a parent target record, then create a record on this flow pointing at it (try the {_id, Name} shape)",
+    "Read back the stored record"
+   ],
+   "asserts": [
+    "The reference value persists (not silently dropped)",
+    "Lookup columns of the target are populated on the record"
+   ],
+   "class": "reference",
+   "knownPlatformLimit": "Reference field runtime writes are dropped on this dev sandbox (MEMORY-LOCAL)"
+  },
+  {
+   "id": "T-REF-itpmd_weekly_report",
+   "title": "Reference links on ITPMD Weekly Report",
+   "role": "Project Manager (or the flow's creator role)",
+   "covers": [
+    "R:ITPMD Weekly Report:Project:ref"
+   ],
+   "steps": [
+    "Create a parent target record, then create a record on this flow pointing at it (try the {_id, Name} shape)",
+    "Read back the stored record"
+   ],
+   "asserts": [
+    "The reference value persists (not silently dropped)",
+    "Lookup columns of the target are populated on the record"
+   ],
+   "class": "reference",
+   "knownPlatformLimit": "Reference field runtime writes are dropped on this dev sandbox (MEMORY-LOCAL)"
+  },
+  {
+   "id": "T-REF-itpmd_release",
+   "title": "Reference links on ITPMD Release",
+   "role": "Project Manager (or the flow's creator role)",
+   "covers": [
+    "R:ITPMD Release:Project:ref"
+   ],
+   "steps": [
+    "Create a parent target record, then create a record on this flow pointing at it (try the {_id, Name} shape)",
+    "Read back the stored record"
+   ],
+   "asserts": [
+    "The reference value persists (not silently dropped)",
+    "Lookup columns of the target are populated on the record"
+   ],
+   "class": "reference",
+   "knownPlatformLimit": "Reference field runtime writes are dropped on this dev sandbox (MEMORY-LOCAL)"
+  },
+  {
+   "id": "T-WF-draft-to-dh",
+   "title": "PSR: manager submits, lands at Department Head Review",
+   "role": "Project Manager",
+   "covers": [
+    "W:ITPMD Project Status Report:Draft:advance",
+    "F:ITPMD Project Status Report:Draft:Project:Mandatory",
+    "F:ITPMD Project Status Report:Draft:Narrative_Update:Mandatory",
+    "F:ITPMD Project Status Report:Draft:Supporting_Documents:Editable",
+    "F:ITPMD Project Status Report:Draft:Reporting_Period_Month:Editable"
+   ],
+   "steps": [
+    "As PM create a PSR with project, narrative and period, submit it",
+    "GET the item's current step, status, assignee"
+   ],
+   "asserts": [
+    "Item is at 'Department Head Review', InProgress, assigned to the Department Head role",
+    "At Draft the Project and Narrative fields are Mandatory and Supporting Documents and Reporting Month are Editable"
+   ],
+   "class": "workflow"
+  },
+  {
+   "id": "T-WF-dh-approve",
+   "title": "PSR: DH approves; routes to Sponsor only when required, else Approved",
+   "role": "Department Head",
+   "covers": [
+    "W:ITPMD Project Status Report:Department Head Review:Approve",
+    "W:ITPMD Project Status Report:Sponsor Approval:Approve",
+    "W:ITPMD Project Status Report:Approved:advance"
+   ],
+   "steps": [
+    "Two PSRs: one with sponsor approval required = No, one = Yes (Red health)",
+    "As DH approve both",
+    "As Sponsor approve the second"
+   ],
+   "asserts": [
+    "No-sponsor PSR goes straight to Approved and locks",
+    "Sponsor-required PSR waits at Sponsor Approval, then Approved",
+    "Approved PSR is read-only"
+   ],
+   "class": "workflow",
+   "knownPlatformLimit": "Approver-step submit returns 400 via the access key (MEMORY-LOCAL)"
+  },
+  {
+   "id": "T-WF-return",
+   "title": "PSR: DH and Sponsor return with a comment, item goes back to manager intact",
+   "role": "Department Head, Project Sponsor",
+   "covers": [
+    "W:ITPMD Project Status Report:Department Head Review:Return",
+    "W:ITPMD Project Status Report:Sponsor Approval:Return"
+   ],
+   "steps": [
+    "As DH send back a PSR with a comment; as Sponsor send back another",
+    "GET both items"
+   ],
+   "asserts": [
+    "Each lands back at Draft for the initiator",
+    "Their entered data is unchanged",
+    "A return without a comment is refused"
+   ],
+   "class": "workflow",
+   "knownPlatformLimit": "Approver-step submit returns 400 via the access key (MEMORY-LOCAL)"
+  },
+  {
+   "id": "T-auto_psr_submit_notify_dh",
+   "title": "Automation: PSR submitted → notify Department Head",
+   "role": "Project Manager",
+   "covers": [
+    "A:auto_psr_submit_notify_dh"
+   ],
+   "steps": [
+    "Fire the trigger for 'PSR submitted → notify Department Head'",
+    "Poll the integration run log / notification outcome for up to 2 minutes"
+   ],
+   "asserts": [
+    "A run record exists and the notification action executed with a recipient, subject and body",
+    "Integration is switched on in the live app (read-only metadata check)"
+   ],
+   "class": "automation",
+   "note": "decisions D30: all 12 integrations were deliberately left OFF and 9 have empty field mappings; 3 have no trigger"
+  },
+  {
+   "id": "T-auto_psr_dh_approved_notify_sponsor",
+   "title": "Automation: PSR DH-approved (sponsor required) → notify Project Sponsor",
+   "role": "Project Manager",
+   "covers": [
+    "A:auto_psr_dh_approved_notify_sponsor"
+   ],
+   "steps": [
+    "Fire the trigger for 'PSR DH-approved (sponsor required) → notify Project Sponsor'",
+    "Poll the integration run log / notification outcome for up to 2 minutes"
+   ],
+   "asserts": [
+    "A run record exists and the notification action executed with a recipient, subject and body",
+    "Integration is switched on in the live app (read-only metadata check)"
+   ],
+   "class": "automation",
+   "note": "decisions D30: all 12 integrations were deliberately left OFF and 9 have empty field mappings; 3 have no trigger"
+  },
+  {
+   "id": "T-auto_psr_dh_returned_notify_pm",
+   "title": "Automation: PSR returned at DH Review → notify PM with comment",
+   "role": "Project Manager",
+   "covers": [
+    "A:auto_psr_dh_returned_notify_pm"
+   ],
+   "steps": [
+    "Fire the trigger for 'PSR returned at DH Review → notify PM with comment'",
+    "Poll the integration run log / notification outcome for up to 2 minutes"
+   ],
+   "asserts": [
+    "A run record exists and the notification action executed with a recipient, subject and body",
+    "Integration is switched on in the live app (read-only metadata check)"
+   ],
+   "class": "automation",
+   "note": "decisions D30: all 12 integrations were deliberately left OFF and 9 have empty field mappings; 3 have no trigger"
+  },
+  {
+   "id": "T-auto_psr_sponsor_returned_notify_pm",
+   "title": "Automation: PSR returned at Sponsor Approval → notify PM with comment",
+   "role": "Project Manager",
+   "covers": [
+    "A:auto_psr_sponsor_returned_notify_pm"
+   ],
+   "steps": [
+    "Fire the trigger for 'PSR returned at Sponsor Approval → notify PM with comment'",
+    "Poll the integration run log / notification outcome for up to 2 minutes"
+   ],
+   "asserts": [
+    "A run record exists and the notification action executed with a recipient, subject and body",
+    "Integration is switched on in the live app (read-only metadata check)"
+   ],
+   "class": "automation",
+   "note": "decisions D30: all 12 integrations were deliberately left OFF and 9 have empty field mappings; 3 have no trigger"
+  },
+  {
+   "id": "T-auto_psr_approved_notify_pm",
+   "title": "Automation: PSR Approved (locked) → notify PM",
+   "role": "Project Manager",
+   "covers": [
+    "A:auto_psr_approved_notify_pm"
+   ],
+   "steps": [
+    "Fire the trigger for 'PSR Approved (locked) → notify PM'",
+    "Poll the integration run log / notification outcome for up to 2 minutes"
+   ],
+   "asserts": [
+    "A run record exists and the notification action executed with a recipient, subject and body",
+    "Integration is switched on in the live app (read-only metadata check)"
+   ],
+   "class": "automation",
+   "note": "decisions D30: all 12 integrations were deliberately left OFF and 9 have empty field mappings; 3 have no trigger"
+  },
+  {
+   "id": "T-auto_psr_deadline_reminder",
+   "title": "Automation: PSR deadline reminders (3-day / 1-day / daily overdue)",
+   "role": "Project Manager",
+   "covers": [
+    "A:auto_psr_deadline_reminder"
+   ],
+   "steps": [
+    "Fire the trigger for 'PSR deadline reminders (3-day / 1-day / daily overdue)'",
+    "Poll the integration run log / notification outcome for up to 2 minutes"
+   ],
+   "asserts": [
+    "A run record exists and the notification action executed with a recipient, subject and body",
+    "Integration is switched on in the live app (read-only metadata check)"
+   ],
+   "class": "automation",
+   "note": "decisions D30: all 12 integrations were deliberately left OFF and 9 have empty field mappings; 3 have no trigger"
+  },
+  {
+   "id": "T-auto_activity_assigned_notify_assignee",
+   "title": "Automation: Activity assigned/reassigned → notify Responsible Person",
+   "role": "Project Manager",
+   "covers": [
+    "A:auto_activity_assigned_notify_assignee"
+   ],
+   "steps": [
+    "Fire the trigger for 'Activity assigned/reassigned → notify Responsible Person'",
+    "Poll the integration run log / notification outcome for up to 2 minutes"
+   ],
+   "asserts": [
+    "A run record exists and the notification action executed with a recipient, subject and body",
+    "Integration is switched on in the live app (read-only metadata check)"
+   ],
+   "class": "automation",
+   "note": "decisions D30: all 12 integrations were deliberately left OFF and 9 have empty field mappings; 3 have no trigger"
+  },
+  {
+   "id": "T-auto_activity_forecast_past_baseline_alert",
+   "title": "Automation: Activity forecast past baseline (Red) → notify Responsible Person",
+   "role": "Project Manager",
+   "covers": [
+    "A:auto_activity_forecast_past_baseline_alert"
+   ],
+   "steps": [
+    "Fire the trigger for 'Activity forecast past baseline (Red) → notify Responsible Person'",
+    "Poll the integration run log / notification outcome for up to 2 minutes"
+   ],
+   "asserts": [
+    "A run record exists and the notification action executed with a recipient, subject and body",
+    "Integration is switched on in the live app (read-only metadata check)"
+   ],
+   "class": "automation",
+   "note": "decisions D30: all 12 integrations were deliberately left OFF and 9 have empty field mappings; 3 have no trigger"
+  },
+  {
+   "id": "T-auto_action_item_assigned_notify_assignee",
+   "title": "Automation: Action item created/assigned → notify Assignee",
+   "role": "Project Manager",
+   "covers": [
+    "A:auto_action_item_assigned_notify_assignee"
+   ],
+   "steps": [
+    "Fire the trigger for 'Action item created/assigned → notify Assignee'",
+    "Poll the integration run log / notification outcome for up to 2 minutes"
+   ],
+   "asserts": [
+    "A run record exists and the notification action executed with a recipient, subject and body",
+    "Integration is switched on in the live app (read-only metadata check)"
+   ],
+   "class": "automation",
+   "note": "decisions D30: all 12 integrations were deliberately left OFF and 9 have empty field mappings; 3 have no trigger"
+  },
+  {
+   "id": "T-auto_action_item_overdue_notify_assignee",
+   "title": "Automation: Action item Overdue (auto) → notify Assignee",
+   "role": "Project Manager",
+   "covers": [
+    "A:auto_action_item_overdue_notify_assignee"
+   ],
+   "steps": [
+    "Fire the trigger for 'Action item Overdue (auto) → notify Assignee'",
+    "Poll the integration run log / notification outcome for up to 2 minutes"
+   ],
+   "asserts": [
+    "A run record exists and the notification action executed with a recipient, subject and body",
+    "Integration is switched on in the live app (read-only metadata check)"
+   ],
+   "class": "automation",
+   "note": "decisions D30: all 12 integrations were deliberately left OFF and 9 have empty field mappings; 3 have no trigger"
+  },
+  {
+   "id": "T-auto_issue_escalated_notify_pm_psc",
+   "title": "Automation: Issue Escalated (auto) → notify Issue Owner/PM and PSC Member",
+   "role": "Project Manager",
+   "covers": [
+    "A:auto_issue_escalated_notify_pm_psc"
+   ],
+   "steps": [
+    "Fire the trigger for 'Issue Escalated (auto) → notify Issue Owner/PM and PSC Member'",
+    "Poll the integration run log / notification outcome for up to 2 minutes"
+   ],
+   "asserts": [
+    "A run record exists and the notification action executed with a recipient, subject and body",
+    "Integration is switched on in the live app (read-only metadata check)"
+   ],
+   "class": "automation",
+   "note": "decisions D30: all 12 integrations were deliberately left OFF and 9 have empty field mappings; 3 have no trigger"
+  },
+  {
+   "id": "T-auto_risk_escalated_notify_owner_pm",
+   "title": "Automation: Risk escalated (High/Critical) → notify Risk Owner",
+   "role": "Project Manager",
+   "covers": [
+    "A:auto_risk_escalated_notify_owner_pm"
+   ],
+   "steps": [
+    "Fire the trigger for 'Risk escalated (High/Critical) → notify Risk Owner'",
+    "Poll the integration run log / notification outcome for up to 2 minutes"
+   ],
+   "asserts": [
+    "A run record exists and the notification action executed with a recipient, subject and body",
+    "Integration is switched on in the live app (read-only metadata check)"
+   ],
+   "class": "automation",
+   "note": "decisions D30: all 12 integrations were deliberately left OFF and 9 have empty field mappings; 3 have no trigger"
+  },
+  {
+   "id": "T-DEC-D13-sponsor-conditional",
+   "title": "Decision D13/D21: sponsor step is conditional",
+   "role": "Department Head",
+   "covers": [
+    "W:ITPMD Project Status Report:Sponsor Approval:Approve"
+   ],
+   "steps": [
+    "Approve a PSR with and without sponsor-required flag"
+   ],
+   "asserts": [
+    "Routing differs by the flag"
+   ],
+   "class": "decision-invariant"
+  },
+  {
+   "id": "T-DEC-D21-reject-to-initiator",
+   "title": "Decision D21/BR-25: rejections return to initiator with data intact and mandatory comment",
+   "role": "Department Head",
+   "covers": [
+    "W:ITPMD Project Status Report:Department Head Review:Return",
+    "W:ITPMD Project Status Report:Sponsor Approval:Return"
+   ],
+   "steps": [
+    "Send back with and without comment"
+   ],
+   "asserts": [
+    "Lands at step 1, data intact, comment required"
+   ],
+   "class": "decision-invariant"
+  },
+  {
+   "id": "T-DEC-D29-row-scope",
+   "title": "Decision D29/BR-23: row scoping is UI-only; platform cannot restrict rows",
+   "role": "Department Head",
+   "covers": [
+    "S:Department Head:itpmd_project:my-team"
+   ],
+   "steps": [
+    "As DH list projects via REST where not named DH"
+   ],
+   "asserts": [
+    "Expected per D29: rows ARE visible via REST (documented limit); record as known design limit, not as a pass"
+   ],
+   "class": "decision-invariant"
+  }
+ ]
+}

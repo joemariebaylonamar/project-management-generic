@@ -1,0 +1,705 @@
+{
+  "app": {
+    "name": "ITPMD Project Hub",
+    "id": "itpmd_project_hub_A00",
+    "description": "LANDBANK ITPMD Project Hub (MVP): project schedules, issues, risks, financials and the monthly PSR approval cycle (PM > DH > conditional Sponsor), rolled up into a PSC portfolio view."
+  },
+  "roles": [
+    {
+      "id": "project_manager",
+      "name": "Project Manager"
+    },
+    {
+      "id": "team_member",
+      "name": "Team Member"
+    },
+    {
+      "id": "department_head",
+      "name": "Department Head"
+    },
+    {
+      "id": "project_sponsor",
+      "name": "Project Sponsor"
+    },
+    {
+      "id": "psc_member",
+      "name": "PSC Member"
+    },
+    {
+      "id": "hub_administrator",
+      "name": "Hub Administrator"
+    }
+  ],
+  "architecture": {
+    "app_name": "ITPMD Project Hub",
+    "flows": [
+      {
+        "id": "itpmd_project",
+        "name": "ITPMD Project",
+        "type": "Form",
+        "from_entity": [
+          "E-01",
+          "E-02",
+          "E-06",
+          "E-09",
+          "E-11",
+          "E-19"
+        ],
+        "child_tables": [
+          {
+            "name": "Contracts",
+            "from_entity": "E-02",
+            "rationale": "1..N procurement/contract rows owned by the project; recorded once at set-up (J-01); aggregated into total contract value for PSR static fields (BR-13)."
+          },
+          {
+            "name": "Project Team",
+            "from_entity": "E-19",
+            "rationale": "User x project-role rows = the project's team and access list (J-01, J-17, BR-23); tightly owned, edited by PM/Admin only."
+          },
+          {
+            "name": "Budget Changes",
+            "from_entity": "E-11",
+            "rationale": "Approved budget changes and contingency draws, recorded post-approval (J-07); summed into current approved budget and contingency balance (BR-05)."
+          },
+          {
+            "name": "Baseline History",
+            "from_entity": "E-06",
+            "rationale": "Versioned baseline register (version, approval date, approver, budget at baseline) (J-02); the live baseline dates sit on each Activity."
+          },
+          {
+            "name": "Decision Log",
+            "from_entity": "E-09",
+            "rationale": "Project decisions + rationale (J-05, ITPH-0038); simple log, optional reference to the Issue it resolves."
+          }
+        ],
+        "rationale": "Master record and reference hub for every other flow; status (Planning/Active/On Hold/Closed) is a master attribute, not a routed or board-moved workflow, and health indicators are computed (BR-02/03/05/06) from cross-flow aggregates. Form, not Board, because 8 flows reference it and PSC dashboards must list it (J-01, J-14)."
+      },
+      {
+        "id": "itpmd_activity",
+        "name": "ITPMD Activity",
+        "type": "Form",
+        "from_entity": [
+          "E-03",
+          "E-05",
+          "E-16",
+          "E-04"
+        ],
+        "child_tables": [
+          {
+            "name": "Predecessors",
+            "from_entity": "E-04",
+            "rationale": "Dependency rows (predecessor Activity ref, FS/SS/FF/SF, lag) owned by the successor activity (J-02, ITPH-006)."
+          }
+        ],
+        "rationale": "Schedule line of record: planned/baseline/forecast/actual start+finish, % complete, planned duration (weight), responsible person, milestone flag. Status is DERIVED from % complete (BR-15), not user-moved, so Form not Board. Feeds Gantt, S-curve (BR-17), weighted % complete (BR-02), My Tasks (J-11)."
+      },
+      {
+        "id": "itpmd_risk",
+        "name": "ITPMD Risk",
+        "type": "Form",
+        "from_entity": [
+          "E-10"
+        ],
+        "child_tables": [],
+        "rationale": "Risk register entry with computed 5x5 rating (BR-04) and computed escalation (BR-22); PM-maintained register, no routing. Form so PSC dashboards can list High/Critical risks directly (J-06, J-14)."
+      },
+      {
+        "id": "itpmd_issue",
+        "name": "ITPMD Issue",
+        "type": "Board",
+        "from_entity": [
+          "E-07"
+        ],
+        "child_tables": [],
+        "rationale": "Ticket-shaped entity whose status (Open > In Progress > Resolved > Closed) is moved by the PM/owner with no fixed approval chain = Board per the Process-vs-Board rule; escalation (BR-21) is a computed flag, not a routing step (J-05, J-14)."
+      },
+      {
+        "id": "itpmd_action_item",
+        "name": "ITPMD Action Item",
+        "type": "Board",
+        "from_entity": [
+          "E-08"
+        ],
+        "child_tables": [],
+        "rationale": "To-do assigned to a team member and moved Open > Done by that assignee; must appear on the assignee's My Tasks across ALL projects (ITPH-00258) and can stand alone without an Issue, so it is its own Board, not a child table of Issue (J-05, J-11)."
+      },
+      {
+        "id": "itpmd_cost_entry",
+        "name": "ITPMD Cost Entry",
+        "type": "Form",
+        "from_entity": [
+          "E-12",
+          "E-13"
+        ],
+        "child_tables": [
+          {
+            "name": "Invoices",
+            "from_entity": "E-13",
+            "rationale": "Vendor invoices (invoice/DO no+date, vendor, amount, date paid, status, remarks) billed against a cost/commitment line (J-07, ITPH-0057)."
+          }
+        ],
+        "rationale": "Actual/committed/forecast cost lines per project, aggregated to Project for budget-vs-actual-vs-committed-vs-forecast and cost health (BR-05, J-07). PM-recorded data of record, no approval."
+      },
+      {
+        "id": "itpmd_psr",
+        "name": "ITPMD Project Status Report",
+        "type": "Process",
+        "from_entity": [
+          "E-14"
+        ],
+        "child_tables": [
+          {
+            "name": "Schedule Highlights",
+            "rationale": "Activities/milestones behind, ahead, missed or forecast late (ITPH-0106..0108); rows reference Activity with autofilled dates/% = frozen snapshot (BR-13)."
+          },
+          {
+            "name": "Next Period Plan",
+            "rationale": "Activities/milestones planned for next period (ITPH-0104); rows reference Activity."
+          },
+          {
+            "name": "Key Issues and Risks",
+            "rationale": "Issue/risk highlights for the reporting period, snapshotted onto the PSR."
+          }
+        ],
+        "rationale": "Core structured approval: Draft (PM) > DH Review > [conditional: PS Approval when BR-10] > Approved; Return = native send-back with mandatory comment (BR-24, BR-25). Header snapshots project health/financial/S-curve figures via Project lookup autofill so an approved PSR never changes (BR-13) (J-08, J-09, J-12, J-13)."
+      },
+      {
+        "id": "itpmd_portfolio_report",
+        "name": "ITPMD Portfolio Status Report",
+        "type": "Form",
+        "from_entity": [
+          "E-14"
+        ],
+        "child_tables": [
+          {
+            "name": "Project Summaries",
+            "rationale": "One row per approved PSR in the period (PSR ref + autofilled health/% complete/cost figures) = consolidated PPSR snapshot (ITPH-00101, BR-24)."
+          }
+        ],
+        "rationale": "The PPSR as a persisted monthly artifact the PSC generates (J-15). No approval chain in the BRD, so Form. Live portfolio dashboards are separate derived pages (experience-designer)."
+      },
+      {
+        "id": "itpmd_holiday_calendar",
+        "name": "ITPMD Holiday Calendar",
+        "type": "Form",
+        "from_entity": [
+          "E-15"
+        ],
+        "child_tables": [],
+        "rationale": "Admin-maintained holidays / non-working days (J-16, BR-01). Dataform (the engine has no Dataset builder); consumed by working-day logic and the PSR deadline reminder automation."
+      },
+      {
+        "id": "itpmd_hub_settings",
+        "name": "ITPMD Hub Settings",
+        "type": "Form",
+        "from_entity": [
+          "E-15"
+        ],
+        "child_tables": [],
+        "rationale": "Singleton-by-convention config record: PSR due working day, reminder offsets, issue aging period, escalation recipients (J-16, BR-11, BR-21). Dataform so thresholds change without a rebuild."
+      }
+    ],
+    "roles": [
+      {
+        "id": "project_manager",
+        "name": "Project Manager"
+      },
+      {
+        "id": "team_member",
+        "name": "Team Member"
+      },
+      {
+        "id": "department_head",
+        "name": "Department Head"
+      },
+      {
+        "id": "project_sponsor",
+        "name": "Project Sponsor"
+      },
+      {
+        "id": "psc_member",
+        "name": "PSC Member"
+      },
+      {
+        "id": "hub_administrator",
+        "name": "Hub Administrator"
+      }
+    ],
+    "persona_role_map": [
+      {
+        "persona": "P-01",
+        "role": "Project Manager",
+        "rationale": "Owns project data, schedule, registers, financials; initiates PSR."
+      },
+      {
+        "persona": "P-02",
+        "role": "Team Member",
+        "rationale": "Updates own activities/action items (BR-15, J-11)."
+      },
+      {
+        "persona": "P-03",
+        "role": "Department Head",
+        "rationale": "PSR DH Review step (J-12)."
+      },
+      {
+        "persona": "P-04",
+        "role": "Project Sponsor",
+        "rationale": "Conditional PSR PS Approval step (BR-10, J-13)."
+      },
+      {
+        "persona": "P-05",
+        "role": "PSC Member",
+        "rationale": "Portfolio read + generates PPSR (J-14, J-15)."
+      },
+      {
+        "persona": "P-07",
+        "role": "Hub Administrator",
+        "rationale": "Holiday calendar + settings (J-16)."
+      },
+      {
+        "persona": "P-08",
+        "role": "Hub Administrator",
+        "rationale": "Merged with P-07: in-app work is project-team maintenance (J-17); user accounts, role assignment and audit trail are Kissflow-native admin (J-17, J-18)."
+      },
+      {
+        "persona": "P-06",
+        "role": null,
+        "rationale": "DROPPED for MVP: QA has no MVP journey (decisions D3); recorded as open question; add a read-only QA role when the Phase-2 risk repository lands."
+      }
+    ],
+    "er_map": [
+      {
+        "from": "itpmd_project",
+        "to": "itpmd_project.Contracts",
+        "cardinality": "1:N",
+        "ref_holder": "child table (embedded)",
+        "rationale": "Project owns its contracts"
+      },
+      {
+        "from": "itpmd_project",
+        "to": "itpmd_project.Project Team",
+        "cardinality": "1:N",
+        "ref_holder": "child table (embedded); row holds User field",
+        "rationale": "team = access list (BR-23)"
+      },
+      {
+        "from": "itpmd_project",
+        "to": "itpmd_project.Budget Changes",
+        "cardinality": "1:N",
+        "ref_holder": "child table (embedded)",
+        "rationale": "budget/contingency adjustments"
+      },
+      {
+        "from": "itpmd_project",
+        "to": "itpmd_project.Baseline History",
+        "cardinality": "1:N",
+        "ref_holder": "child table (embedded)",
+        "rationale": "baseline versions"
+      },
+      {
+        "from": "itpmd_project",
+        "to": "itpmd_project.Decision Log",
+        "cardinality": "1:N",
+        "ref_holder": "child table (embedded)",
+        "rationale": "decision log"
+      },
+      {
+        "from": "itpmd_project.Decision Log",
+        "to": "itpmd_issue",
+        "cardinality": "N:1 (optional)",
+        "ref_holder": "Decision Log row holds Reference -> ITPMD Issue",
+        "rationale": "decision resolves an issue (back-edge, wired in PASS-2)"
+      },
+      {
+        "from": "itpmd_activity",
+        "to": "itpmd_project",
+        "cardinality": "N:1",
+        "ref_holder": "ITPMD Activity holds Reference -> ITPMD Project",
+        "rationale": "schedule belongs to project"
+      },
+      {
+        "from": "itpmd_activity",
+        "to": "itpmd_activity.Predecessors",
+        "cardinality": "1:N",
+        "ref_holder": "child table (embedded)",
+        "rationale": "dependencies"
+      },
+      {
+        "from": "itpmd_activity.Predecessors",
+        "to": "itpmd_activity",
+        "cardinality": "N:1",
+        "ref_holder": "Predecessors row holds Reference -> ITPMD Activity (self-flow)",
+        "rationale": "predecessor link"
+      },
+      {
+        "from": "itpmd_risk",
+        "to": "itpmd_project",
+        "cardinality": "N:1",
+        "ref_holder": "ITPMD Risk holds Reference -> ITPMD Project",
+        "rationale": "risk register per project"
+      },
+      {
+        "from": "itpmd_issue",
+        "to": "itpmd_project",
+        "cardinality": "N:1",
+        "ref_holder": "ITPMD Issue holds Reference -> ITPMD Project",
+        "rationale": "issues per project"
+      },
+      {
+        "from": "itpmd_issue",
+        "to": "itpmd_hub_settings",
+        "cardinality": "N:1 (lookup)",
+        "ref_holder": "ITPMD Issue holds Reference -> ITPMD Hub Settings",
+        "rationale": "aging period for BR-21 escalation"
+      },
+      {
+        "from": "itpmd_action_item",
+        "to": "itpmd_project",
+        "cardinality": "N:1",
+        "ref_holder": "ITPMD Action Item holds Reference -> ITPMD Project",
+        "rationale": "actions per project"
+      },
+      {
+        "from": "itpmd_action_item",
+        "to": "itpmd_issue",
+        "cardinality": "N:1 (optional)",
+        "ref_holder": "ITPMD Action Item holds Reference -> ITPMD Issue",
+        "rationale": "actions resolve an issue"
+      },
+      {
+        "from": "itpmd_cost_entry",
+        "to": "itpmd_project",
+        "cardinality": "N:1",
+        "ref_holder": "ITPMD Cost Entry holds Reference -> ITPMD Project",
+        "rationale": "costs per project"
+      },
+      {
+        "from": "itpmd_cost_entry",
+        "to": "itpmd_cost_entry.Invoices",
+        "cardinality": "1:N",
+        "ref_holder": "child table (embedded)",
+        "rationale": "invoices billed on the cost line"
+      },
+      {
+        "from": "itpmd_psr",
+        "to": "itpmd_project",
+        "cardinality": "N:1",
+        "ref_holder": "ITPMD Project Status Report holds Reference -> ITPMD Project (lookup+autofill snapshot)",
+        "rationale": "one PSR per project per period"
+      },
+      {
+        "from": "itpmd_psr",
+        "to": "itpmd_psr.Schedule Highlights",
+        "cardinality": "1:N",
+        "ref_holder": "child table (embedded)",
+        "rationale": "snapshot rows"
+      },
+      {
+        "from": "itpmd_psr.Schedule Highlights",
+        "to": "itpmd_activity",
+        "cardinality": "N:1",
+        "ref_holder": "row holds Reference -> ITPMD Activity",
+        "rationale": "highlighted activity/milestone"
+      },
+      {
+        "from": "itpmd_psr",
+        "to": "itpmd_psr.Next Period Plan",
+        "cardinality": "1:N",
+        "ref_holder": "child table (embedded)",
+        "rationale": "next-period rows"
+      },
+      {
+        "from": "itpmd_psr.Next Period Plan",
+        "to": "itpmd_activity",
+        "cardinality": "N:1",
+        "ref_holder": "row holds Reference -> ITPMD Activity",
+        "rationale": "planned activity"
+      },
+      {
+        "from": "itpmd_psr",
+        "to": "itpmd_psr.Key Issues and Risks",
+        "cardinality": "1:N",
+        "ref_holder": "child table (embedded)",
+        "rationale": "issue/risk highlight rows"
+      },
+      {
+        "from": "itpmd_psr.Key Issues and Risks",
+        "to": "itpmd_issue",
+        "cardinality": "N:1 (optional)",
+        "ref_holder": "row holds Reference -> ITPMD Issue",
+        "rationale": "issue highlight"
+      },
+      {
+        "from": "itpmd_psr.Key Issues and Risks",
+        "to": "itpmd_risk",
+        "cardinality": "N:1 (optional)",
+        "ref_holder": "row holds Reference -> ITPMD Risk",
+        "rationale": "risk highlight"
+      },
+      {
+        "from": "itpmd_portfolio_report",
+        "to": "itpmd_portfolio_report.Project Summaries",
+        "cardinality": "1:N",
+        "ref_holder": "child table (embedded)",
+        "rationale": "PPSR rows"
+      },
+      {
+        "from": "itpmd_portfolio_report.Project Summaries",
+        "to": "itpmd_psr",
+        "cardinality": "N:1",
+        "ref_holder": "row holds Reference -> ITPMD Project Status Report",
+        "rationale": "rolls up approved PSRs only (BR-24)"
+      },
+      {
+        "from": "itpmd_project",
+        "to": "itpmd_activity",
+        "cardinality": "1:N (aggregate)",
+        "ref_holder": "cross-flow aggregate on Project matching Activity.Project = _id",
+        "rationale": "weighted % complete, max forecast/baseline finish (BR-02/03)"
+      },
+      {
+        "from": "itpmd_project",
+        "to": "itpmd_cost_entry",
+        "cardinality": "1:N (aggregate)",
+        "ref_holder": "cross-flow aggregate on Project",
+        "rationale": "actual/committed/forecast totals (BR-05)"
+      },
+      {
+        "from": "itpmd_project",
+        "to": "itpmd_risk",
+        "cardinality": "1:N (aggregate)",
+        "ref_holder": "cross-flow aggregate on Project",
+        "rationale": "count escalated risks (BR-06)"
+      },
+      {
+        "from": "itpmd_project",
+        "to": "itpmd_issue",
+        "cardinality": "1:N (aggregate)",
+        "ref_holder": "cross-flow aggregate on Project (FlowType Case)",
+        "rationale": "count escalated/critical issues (BR-06)"
+      },
+      {
+        "from": "itpmd_project",
+        "to": "itpmd_action_item",
+        "cardinality": "1:N (aggregate)",
+        "ref_holder": "cross-flow aggregate on Project (FlowType Case)",
+        "rationale": "count overdue actions (BR-06)"
+      }
+    ],
+    "journey_flow_map": [
+      {
+        "journey": "J-01",
+        "persona": "P-01",
+        "path": [
+          "ITPMD Project (create; Contracts, Budget Changes, Project Team)"
+        ],
+        "outcome_check": "Project record exists; referenced by all downstream flows"
+      },
+      {
+        "journey": "J-02",
+        "persona": "P-01",
+        "path": [
+          "ITPMD Activity (create activities + milestones, Predecessors)",
+          "ITPMD Project > Baseline History",
+          "Gantt page (derived)"
+        ],
+        "outcome_check": "baseline dates set on activities"
+      },
+      {
+        "journey": "J-03",
+        "persona": "P-01",
+        "path": [
+          "ITPMD Activity (set Responsible Person; reassign)",
+          "assignment notification automation"
+        ],
+        "outcome_check": "assignee notified; reassignment in item history"
+      },
+      {
+        "journey": "J-04",
+        "persona": "P-01",
+        "path": [
+          "ITPMD Activity (% complete/actuals by assignee; forecast by PM)",
+          "ITPMD Project (computed schedule health)",
+          "forecast-past-baseline alert automation"
+        ],
+        "outcome_check": "schedule health per BR-03"
+      },
+      {
+        "journey": "J-05",
+        "persona": "P-01",
+        "path": [
+          "ITPMD Issue board (Open > In Progress > Resolved > Closed)",
+          "ITPMD Action Item board (Open > In Progress > Done)",
+          "ITPMD Project > Decision Log"
+        ],
+        "outcome_check": "issues escalate via computed flag (BR-21)"
+      },
+      {
+        "journey": "J-06",
+        "persona": "P-01",
+        "path": [
+          "ITPMD Risk (register, computed rating + escalation)"
+        ],
+        "outcome_check": "BR-04/BR-22"
+      },
+      {
+        "journey": "J-07",
+        "persona": "P-01",
+        "path": [
+          "ITPMD Project > Budget Changes",
+          "ITPMD Cost Entry (+ Invoices)",
+          "ITPMD Project (financial aggregates, cost health)"
+        ],
+        "outcome_check": "BR-05"
+      },
+      {
+        "journey": "J-08",
+        "persona": "P-01",
+        "path": [
+          "ITPMD Project Status Report: Start/Draft (PM) > DH Review",
+          "PSR deadline reminder automation"
+        ],
+        "outcome_check": "PSR submitted to DH"
+      },
+      {
+        "journey": "J-09",
+        "persona": "P-01",
+        "path": [
+          "ITPMD Project Status Report: native send-back to Draft > resubmit > DH Review"
+        ],
+        "outcome_check": "returned PSR resubmitted with history"
+      },
+      {
+        "journey": "J-10",
+        "persona": "P-01",
+        "path": [
+          "ITPMD Activity + ITPMD Project (S-curve inputs)",
+          "S-curve page (derived)",
+          "ITPMD Project Status Report (SPI/% snapshot)"
+        ],
+        "outcome_check": "BR-17"
+      },
+      {
+        "journey": "J-11",
+        "persona": "P-02",
+        "path": [
+          "My Tasks page (derived): ITPMD Activity (own) + ITPMD Action Item board (own)"
+        ],
+        "outcome_check": "assignee updates own work"
+      },
+      {
+        "journey": "J-12",
+        "persona": "P-03",
+        "path": [
+          "ITPMD Project Status Report: DH Review step > PS Approval (if BR-10) | Approved"
+        ],
+        "outcome_check": "approve or return with comment"
+      },
+      {
+        "journey": "J-13",
+        "persona": "P-04",
+        "path": [
+          "ITPMD Project Status Report: PS Approval step (conditional)"
+        ],
+        "outcome_check": "final approval or return"
+      },
+      {
+        "journey": "J-14",
+        "persona": "P-05",
+        "path": [
+          "Portfolio dashboard (derived) over ITPMD Project, ITPMD Risk, ITPMD Issue, ITPMD Action Item"
+        ],
+        "outcome_check": "needs-attention per BR-06"
+      },
+      {
+        "journey": "J-15",
+        "persona": "P-05",
+        "path": [
+          "ITPMD Portfolio Status Report (+ Project Summaries of approved PSRs)",
+          "ITPMD Project Status Report (read history/approval status)"
+        ],
+        "outcome_check": "PPSR generated"
+      },
+      {
+        "journey": "J-16",
+        "persona": "P-07",
+        "path": [
+          "ITPMD Holiday Calendar",
+          "ITPMD Hub Settings"
+        ],
+        "outcome_check": "calendar + thresholds maintained"
+      },
+      {
+        "journey": "J-17",
+        "persona": "P-08",
+        "path": [
+          "Kissflow native user + app-role admin",
+          "ITPMD Project > Project Team"
+        ],
+        "outcome_check": "project access list maintained"
+      },
+      {
+        "journey": "J-18",
+        "persona": "P-08",
+        "path": [
+          "Kissflow native audit log + PSR item history/comments"
+        ],
+        "outcome_check": "traceability; no authored flow"
+      }
+    ],
+    "not_flows": [
+      {
+        "entity": "E-16 Activity Assignment",
+        "resolution": "Collapsed into ITPMD Activity.Responsible Person (+ assigned by/at); reassignment history = native item history (ITPH-00254)."
+      },
+      {
+        "entity": "E-05 Milestone",
+        "resolution": "Folded into ITPMD Activity as a milestone flag (zero-duration schedule line) so Gantt/S-curve/assignment treat it uniformly (ITPH-007, BR-03 missed-milestone test)."
+      },
+      {
+        "entity": "E-17 Notification",
+        "resolution": "Kissflow-native step/assignment notifications + notify automations (kf-integration-analyst)."
+      },
+      {
+        "entity": "E-18 User Account",
+        "resolution": "Kissflow users + app roles (native admin)."
+      },
+      {
+        "entity": "E-19 Project Assignment",
+        "resolution": "ITPMD Project > Project Team child table."
+      },
+      {
+        "entity": "E-20 Audit Log Entry",
+        "resolution": "Kissflow-native audit log + item history; not authored."
+      },
+      {
+        "entity": "Gantt / S-curve / portfolio dashboard",
+        "resolution": "Derived pages/reports (kf-experience-designer) over Activity/Project/PSR data."
+      }
+    ],
+    "data_support_notes": [
+      "Activity must carry planned, baseline, forecast and actual start/finish, % complete, planned duration (working days, = weight), milestone flag, summary flag + WBS code (hierarchy by code, no parent self-reference).",
+      "Project must carry cross-flow aggregates (weighted % complete, forecast vs baseline finish, cost totals, escalated counts) feeding health fields BR-02/03/05/06; PSR snapshots them via lookup autofill.",
+      "PSR must carry a PS-routing input (health Red / baseline-or-budget change requested / project 'PS approval required' flag) for the BR-10 step condition."
+    ],
+    "build_order": [
+      "roles: Project Manager, Team Member, Department Head, Project Sponsor, PSC Member, Hub Administrator",
+      "lists (app-prefixed 'ITPMD ...' option sets, owned by kf-data-architect)",
+      "ITPMD Hub Settings",
+      "ITPMD Holiday Calendar",
+      "ITPMD Project (+ Contracts, Project Team, Budget Changes, Baseline History, Decision Log)",
+      "ITPMD Activity (+ Predecessors)",
+      "ITPMD Risk",
+      "ITPMD Issue (Board)",
+      "ITPMD Action Item (Board)",
+      "ITPMD Cost Entry (+ Invoices)",
+      "PASS-2 back-edges: Project cross-flow aggregates; Decision Log -> Issue reference",
+      "ITPMD Project Status Report (Process + Schedule Highlights, Next Period Plan, Key Issues and Risks)",
+      "ITPMD Portfolio Status Report (+ Project Summaries)",
+      "workflow: PSR steps + conditional PS step; Issue/Action Item board statuses",
+      "permissions (security)",
+      "automations (reminders, assignment + escalation notifications)",
+      "pages + nav (role landings, Gantt, S-curve, My Tasks, portfolio dashboard)"
+    ]
+  }
+}

@@ -1,0 +1,98 @@
+{
+  "Root": "Perm_5djd6r",
+  "Perm_5djd6r": {
+    "Id": "Perm_5djd6r",
+    "Kind": "FlowPermission",
+    "Role": "psc_member",
+    "RoleName": "PSC Member",
+    "Model": "itpmd_issue",
+    "Level": "ReadOnly",
+    "Scope": "all",
+    "FlowPermission::Permission": [
+      "Permission_babxm3",
+      "Permission_fkxqs8",
+      "Permission_r37g6f",
+      "Permission_d75klf",
+      "Permission_b73has",
+      "Permission_67qwpk",
+      "Permission_1f69y3p",
+      "Permission_12khci8",
+      "Permission_t55xvl",
+      "Permission_1mls5j7",
+      "Permission_15rjwxx",
+      "Permission_186a33x"
+    ]
+  },
+  "Permission_babxm3": {
+    "Id": "Permission_babxm3",
+    "Kind": "Permission",
+    "Column": "issue_title",
+    "Permission": "ReadOnly"
+  },
+  "Permission_fkxqs8": {
+    "Id": "Permission_fkxqs8",
+    "Kind": "Permission",
+    "Column": "project",
+    "Permission": "ReadOnly"
+  },
+  "Permission_r37g6f": {
+    "Id": "Permission_r37g6f",
+    "Kind": "Permission",
+    "Column": "issue_category",
+    "Permission": "ReadOnly"
+  },
+  "Permission_d75klf": {
+    "Id": "Permission_d75klf",
+    "Kind": "Permission",
+    "Column": "priority",
+    "Permission": "ReadOnly"
+  },
+  "Permission_b73has": {
+    "Id": "Permission_b73has",
+    "Kind": "Permission",
+    "Column": "issue_owner",
+    "Permission": "ReadOnly"
+  },
+  "Permission_67qwpk": {
+    "Id": "Permission_67qwpk",
+    "Kind": "Permission",
+    "Column": "target_resolution_date",
+    "Permission": "ReadOnly"
+  },
+  "Permission_1f69y3p": {
+    "Id": "Permission_1f69y3p",
+    "Kind": "Permission",
+    "Column": "description",
+    "Permission": "ReadOnly"
+  },
+  "Permission_12khci8": {
+    "Id": "Permission_12khci8",
+    "Kind": "Permission",
+    "Column": "hub_settings",
+    "Permission": "ReadOnly"
+  },
+  "Permission_t55xvl": {
+    "Id": "Permission_t55xvl",
+    "Kind": "Permission",
+    "Column": "issue_aging_period_days",
+    "Permission": "ReadOnly"
+  },
+  "Permission_1mls5j7": {
+    "Id": "Permission_1mls5j7",
+    "Kind": "Permission",
+    "Column": "days_open",
+    "Permission": "ReadOnly"
+  },
+  "Permission_15rjwxx": {
+    "Id": "Permission_15rjwxx",
+    "Kind": "Permission",
+    "Column": "critical_flag",
+    "Permission": "ReadOnly"
+  },
+  "Permission_186a33x": {
+    "Id": "Permission_186a33x",
+    "Kind": "Permission",
+    "Column": "escalation_flag",
+    "Permission": "ReadOnly"
+  }
+}

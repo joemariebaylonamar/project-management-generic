@@ -1,0 +1,163 @@
+{
+  "Root": "CaseFlow_1x0gd8r",
+  "Status_l3jjzr": {
+    "Id": "Status_l3jjzr",
+    "Kind": "Status",
+    "Name": "Open",
+    "Category": "NotStarted",
+    "IsSystem": false,
+    "Resources": [],
+    "OutwardStatus": [
+      "Status_87cghd",
+      "Status_8fqyx7"
+    ],
+    "EntryRule": [],
+    "ExitRule": [],
+    "Rule": [],
+    "SLADisabled": false
+  },
+  "Status_87cghd": {
+    "Id": "Status_87cghd",
+    "Kind": "Status",
+    "Name": "In Progress",
+    "Category": "InProgress",
+    "IsSystem": false,
+    "Resources": [],
+    "OutwardStatus": [
+      "Status_8fqyx7",
+      "Status_150cqqx"
+    ],
+    "EntryRule": [],
+    "ExitRule": [],
+    "Rule": [],
+    "SLADisabled": false
+  },
+  "Status_8fqyx7": {
+    "Id": "Status_8fqyx7",
+    "Kind": "Status",
+    "Name": "Escalated",
+    "Category": "InProgress",
+    "IsSystem": false,
+    "Resources": [],
+    "OutwardStatus": [
+      "Status_87cghd",
+      "Status_150cqqx"
+    ],
+    "EntryRule": [],
+    "ExitRule": [],
+    "Rule": [],
+    "SLADisabled": false
+  },
+  "Status_150cqqx": {
+    "Id": "Status_150cqqx",
+    "Kind": "Status",
+    "Name": "Resolved",
+    "Category": "InProgress",
+    "IsSystem": false,
+    "Resources": [],
+    "OutwardStatus": [
+      "Status_87cghd",
+      "Status_pcyljz"
+    ],
+    "EntryRule": [],
+    "ExitRule": [],
+    "Rule": [],
+    "SLADisabled": false
+  },
+  "Status_pcyljz": {
+    "Id": "Status_pcyljz",
+    "Kind": "Status",
+    "Name": "Closed",
+    "Category": "Closed",
+    "IsSystem": false,
+    "Resources": [],
+    "OutwardStatus": [
+      "Status_l3jjzr",
+      "Status_87cghd",
+      "Status_8fqyx7",
+      "Status_150cqqx",
+      "Status_12fpcqf"
+    ],
+    "EntryRule": [],
+    "ExitRule": [],
+    "Rule": [],
+    "SLADisabled": false
+  },
+  "Status_12fpcqf": {
+    "Id": "Status_12fpcqf",
+    "Kind": "Status",
+    "Name": "Reopened",
+    "Category": "ReOpened",
+    "IsSystem": true,
+    "Resources": [],
+    "OutwardStatus": [
+      "Status_l3jjzr",
+      "Status_87cghd",
+      "Status_8fqyx7",
+      "Status_150cqqx",
+      "Status_pcyljz"
+    ],
+    "EntryRule": [],
+    "ExitRule": [],
+    "Rule": [],
+    "SLADisabled": false
+  },
+  "State_Not_Started": {
+    "Id": "State_Not_Started",
+    "Name": "Not started",
+    "Category": "NotStarted",
+    "IsSystem": true,
+    "IsDefaultState": true,
+    "IsLastState": false,
+    "Kind": "State"
+  },
+  "State_In_Progress": {
+    "Id": "State_In_Progress",
+    "Name": "In progress",
+    "Category": "InProgress",
+    "IsSystem": true,
+    "IsDefaultState": false,
+    "IsLastState": false,
+    "Kind": "State"
+  },
+  "State_On_Hold": {
+    "Id": "State_On_Hold",
+    "Name": "On hold",
+    "Category": "NotStarted",
+    "IsSystem": true,
+    "IsDefaultState": false,
+    "IsLastState": false,
+    "Kind": "State"
+  },
+  "State_Done": {
+    "Id": "State_Done",
+    "Name": "Done",
+    "Category": "Closed",
+    "IsSystem": true,
+    "IsDefaultState": false,
+    "IsLastState": true,
+    "Kind": "State"
+  },
+  "CaseFlow_1x0gd8r": {
+    "Id": "CaseFlow_1x0gd8r",
+    "Name": "ITPMD Issue flow",
+    "Kind": "CaseFlow",
+    "Model": "itpmd_issue",
+    "Type": "Case",
+    "FlowType": "CaseFlow",
+    "CaseFlow::Status": [
+      "Status_l3jjzr",
+      "Status_87cghd",
+      "Status_8fqyx7",
+      "Status_150cqqx",
+      "Status_pcyljz",
+      "Status_12fpcqf"
+    ],
+    "CaseFlow::State": [
+      "State_Not_Started",
+      "State_In_Progress",
+      "State_On_Hold",
+      "State_Done"
+    ]
+  }
+}

@@ -1,0 +1,4 @@
+{
+  "Name": "PM Project Cockpit",
+  "Description": "Project Manager's cockpit — projects, schedule, registers, financials and PSR status across every project they manage. Editable on every project-scoped flow (security.data_scope: my)."
+}

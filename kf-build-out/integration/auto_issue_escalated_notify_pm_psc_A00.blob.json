@@ -1,0 +1,58 @@
+{
+  "Root": "auto_issue_escalated_notify_pm_psc_A00",
+  "auto_issue_escalated_notify_pm_psc_A00": {
+    "_id": "auto_issue_escalated_notify_pm_psc_A00",
+    "Id": "auto_issue_escalated_notify_pm_psc_A00",
+    "Kind": "Integration",
+    "Name": "Issue Escalated (auto) → notify Issue Owner/PM and PSC Member",
+    "Type": "Integration",
+    "Status": "Draft",
+    "IsActive": true,
+    "_application_id": "itpmd_project_hub_A00",
+    "Connectors": [
+      "Connector_hy5ahw"
+    ],
+    "Integration::Trigger": [
+      "Trigger_cg3hhu"
+    ],
+    "Integration::Action": [
+      "Action_cg3hhb"
+    ]
+  },
+  "Connector_hy5ahw": {
+    "_id": "Connector_hy5ahw",
+    "Id": "Connector_hy5ahw",
+    "Kind": "Connector",
+    "Name": "Issue Escalated (auto) → notify Issue Owner/PM and PSC Member connector",
+    "Entities": [
+      "Trigger_cg3hhu",
+      "Action_cg3hhb"
+    ]
+  },
+  "Trigger_cg3hhu": {
+    "_id": "Trigger_cg3hhu",
+    "Id": "Trigger_cg3hhu",
+    "Kind": "Trigger",
+    "Version": 1,
+    "Name": "itpmd_issue · updated",
+    "Flow": "itpmd_issue",
+    "On": "Escalated",
+    "Event": "updated"
+  },
+  "Action_cg3hhb": {
+    "_id": "Action_cg3hhb",
+    "Id": "Action_cg3hhb",
+    "Kind": "Action",
+    "Version": 1,
+    "Name": "notify → itpmd_issue",
+    "ActionType": "notify",
+    "TargetFlow": "itpmd_issue",
+    "FieldMap": {
+      "Issue_Owner": "Issue_Owner",
+      "Project": "Project",
+      "Issue_Title": "Issue_Title",
+      "Priority": "Priority"
+    },
+    "Condition": "BR-21: Priority = Critical, or Target_Resolution_Date passed the configured aging period (ITPMD Hub Settings), while still Open/In Progress"
+  }
+}

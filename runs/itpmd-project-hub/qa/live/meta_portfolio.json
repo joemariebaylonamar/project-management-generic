@@ -1,0 +1,387 @@
+{
+ "Root": "ITPMD_Portfolio_Status_Report_A00",
+ "ITPMD_Portfolio_Status_Report_A00": {
+  "Id": "ITPMD_Portfolio_Status_Report_A00",
+  "Name": "ITPMD Portfolio Status Report",
+  "Kind": "Model",
+  "FlowType": "Form",
+  "Description": "",
+  "_application_id": "ITPMD_Project_Hub_A00",
+  "Model::Row": [
+   "Row_1in3pi8",
+   "Row_14q2sbq"
+  ],
+  "Model::Field": [
+   "report_period",
+   "portfolio_narrative",
+   "total_projects_reported"
+  ],
+  "Model::Model": [
+   "ITPMD_Portfolio_Status_Report_A00__project_summaries"
+  ]
+ },
+ "Row_1in3pi8": {
+  "Id": "Row_1in3pi8",
+  "Kind": "Row",
+  "Model": "ITPMD_Portfolio_Status_Report_A00",
+  "Row::Column": [
+   "Column_1in3pi8"
+  ]
+ },
+ "Column_1in3pi8": {
+  "Id": "Column_1in3pi8",
+  "Kind": "Column",
+  "Type": "Section",
+  "Name": "Details",
+  "Start": 0,
+  "End": 6,
+  "Row": "Row_1in3pi8",
+  "Column::Row": [
+   "Row_1in2hcq",
+   "Row_1in2hcr",
+   "Row_1in2hcs"
+  ]
+ },
+ "Row_1in2hcq": {
+  "Id": "Row_1in2hcq",
+  "Kind": "Row",
+  "Column": "Column_1in3pi8",
+  "Row::Column": [
+   "Column_5526k3"
+  ]
+ },
+ "Column_5526k3": {
+  "Id": "Column_5526k3",
+  "Kind": "Column",
+  "Type": "Field",
+  "Start": 0,
+  "End": 3,
+  "Row": "Row_1in2hcq",
+  "Column::Field": [
+   "report_period"
+  ]
+ },
+ "Row_1in2hcr": {
+  "Id": "Row_1in2hcr",
+  "Kind": "Row",
+  "Column": "Column_1in3pi8",
+  "Row::Column": [
+   "Column_1gu65tq"
+  ]
+ },
+ "Column_1gu65tq": {
+  "Id": "Column_1gu65tq",
+  "Kind": "Column",
+  "Type": "Field",
+  "Start": 0,
+  "End": 6,
+  "Row": "Row_1in2hcr",
+  "Column::Field": [
+   "portfolio_narrative"
+  ]
+ },
+ "Row_1in2hcs": {
+  "Id": "Row_1in2hcs",
+  "Kind": "Row",
+  "Column": "Column_1in3pi8",
+  "Row::Column": [
+   "Column_llpk06"
+  ]
+ },
+ "Column_llpk06": {
+  "Id": "Column_llpk06",
+  "Kind": "Column",
+  "Type": "Field",
+  "Start": 0,
+  "End": 3,
+  "Row": "Row_1in2hcs",
+  "Column::Field": [
+   "total_projects_reported"
+  ]
+ },
+ "report_period": {
+  "Id": "report_period",
+  "Kind": "Field",
+  "Type": "Date",
+  "Name": "Report_Period",
+  "Model": "ITPMD_Portfolio_Status_Report_A00",
+  "Column": "Column_5526k3",
+  "Required": true
+ },
+ "portfolio_narrative": {
+  "Id": "portfolio_narrative",
+  "Kind": "Field",
+  "Type": "Textarea",
+  "Name": "Portfolio_Narrative",
+  "Model": "ITPMD_Portfolio_Status_Report_A00",
+  "Column": "Column_1gu65tq"
+ },
+ "total_projects_reported": {
+  "Id": "total_projects_reported",
+  "Kind": "Field",
+  "Type": "Number",
+  "Name": "Total_Projects_Reported",
+  "Model": "ITPMD_Portfolio_Status_Report_A00",
+  "Column": "Column_llpk06",
+  "Field::QueryDefinition": [
+   "AggregateDefinition_llpk06"
+  ],
+  "Widget": "Aggregation",
+  "ReadOnly": true
+ },
+ "AggregateDefinition_llpk06": {
+  "Id": "AggregateDefinition_llpk06",
+  "Kind": "QueryDefinition",
+  "Field": "total_projects_reported",
+  "LHSModel": "ITPMD_Portfolio_Status_Report_A00",
+  "FlowType": "Form",
+  "LookupField": [],
+  "AggregateType": "Count",
+  "LHSRootModel": "ITPMD_Portfolio_Status_Report_A00",
+  "AggregateField": "report_period"
+ },
+ "Row_14q2sbq": {
+  "Id": "Row_14q2sbq",
+  "Kind": "Row",
+  "Model": "ITPMD_Portfolio_Status_Report_A00",
+  "Row::Column": [
+   "Column_14q2sbq"
+  ]
+ },
+ "Column_14q2sbq": {
+  "Id": "Column_14q2sbq",
+  "Kind": "Column",
+  "Type": "Model",
+  "Name": "Project Summaries",
+  "Start": 0,
+  "End": 6,
+  "AllowImport": false,
+  "Row": "Row_14q2sbq",
+  "Column::Model": [
+   "ITPMD_Portfolio_Status_Report_A00__project_summaries"
+  ]
+ },
+ "ITPMD_Portfolio_Status_Report_A00__project_summaries": {
+  "Id": "ITPMD_Portfolio_Status_Report_A00__project_summaries",
+  "Kind": "Model",
+  "Name": "ITPMD Portfolio Status Report Project Summaries",
+  "Model": "ITPMD_Portfolio_Status_Report_A00",
+  "Column": "Column_14q2sbq",
+  "Model::Row": [
+   "Row_1yjme1j"
+  ],
+  "Model::Field": [
+   "psr",
+   "reporting_period_month",
+   "overall_health",
+   "weighted_percent_complete",
+   "current_approved_budget",
+   "total_actual_cost"
+  ]
+ },
+ "Row_1yjme1j": {
+  "Id": "Row_1yjme1j",
+  "Kind": "Row",
+  "Model": "ITPMD_Portfolio_Status_Report_A00__project_summaries",
+  "Row::Column": [
+   "Column_1yjmcgk",
+   "Column_1be355s",
+   "Column_ceu2q1",
+   "Column_jk853s",
+   "Column_738dcs",
+   "Column_p6osk4"
+  ]
+ },
+ "Column_1yjmcgk": {
+  "Id": "Column_1yjmcgk",
+  "Kind": "Column",
+  "Type": "Field",
+  "Start": 0,
+  "End": 0,
+  "Row": "Row_1yjme1j",
+  "Column::Field": [
+   "psr"
+  ]
+ },
+ "QueryDefinition_1yjmcgk": {
+  "Id": "QueryDefinition_1yjmcgk",
+  "Kind": "QueryDefinition",
+  "Field": "psr",
+  "LHSModel": "ITPMD_Project_Status_Report_A00",
+  "FlowType": "Process",
+  "LookupField": [
+   {
+    "Id": "reporting_period_month",
+    "Name": "Reporting_Period_Month",
+    "Type": "Text"
+   },
+   {
+    "Id": "project",
+    "Name": "Project",
+    "Type": "Text"
+   },
+   {
+    "Id": "overall_health",
+    "Name": "Overall_Health",
+    "Type": "Text"
+   },
+   {
+    "Id": "weighted_percent_complete",
+    "Name": "Weighted_Percent_Complete",
+    "Type": "Text"
+   },
+   {
+    "Id": "current_approved_budget",
+    "Name": "Current_Approved_Budget",
+    "Type": "Text"
+   },
+   {
+    "Id": "total_actual_cost",
+    "Name": "Total_Actual_Cost",
+    "Type": "Text"
+   },
+   {
+    "Id": "schedule_health",
+    "Name": "Schedule_Health",
+    "Type": "Text"
+   },
+   {
+    "Id": "cost_health",
+    "Name": "Cost_Health",
+    "Type": "Text"
+   },
+   {
+    "Id": "risk_health",
+    "Name": "Risk_Health",
+    "Type": "Text"
+   },
+   {
+    "Id": "issue_health",
+    "Name": "Issue_Health",
+    "Type": "Text"
+   }
+  ],
+  "HiddenField": [],
+  "AutoFill": true
+ },
+ "psr": {
+  "Id": "psr",
+  "Kind": "Field",
+  "Type": "Reference",
+  "Name": "PSR",
+  "Model": "ITPMD_Portfolio_Status_Report_A00__project_summaries",
+  "Column": "Column_1yjmcgk",
+  "Required": true,
+  "Field::QueryDefinition": [
+   "QueryDefinition_1yjmcgk"
+  ]
+ },
+ "Column_1be355s": {
+  "Id": "Column_1be355s",
+  "Kind": "Column",
+  "Type": "Field",
+  "Start": 0,
+  "End": 0,
+  "Row": "Row_1yjme1j",
+  "Column::Field": [
+   "reporting_period_month"
+  ]
+ },
+ "reporting_period_month": {
+  "Id": "reporting_period_month",
+  "Kind": "Field",
+  "Type": "Date",
+  "Name": "Reporting_Period_Month",
+  "Model": "ITPMD_Portfolio_Status_Report_A00__project_summaries",
+  "Column": "Column_1be355s"
+ },
+ "Column_ceu2q1": {
+  "Id": "Column_ceu2q1",
+  "Kind": "Column",
+  "Type": "Field",
+  "Start": 0,
+  "End": 0,
+  "Row": "Row_1yjme1j",
+  "Column::Field": [
+   "overall_health"
+  ]
+ },
+ "overall_health": {
+  "Id": "overall_health",
+  "Kind": "Field",
+  "Type": "Text",
+  "Name": "Overall_Health",
+  "Model": "ITPMD_Portfolio_Status_Report_A00__project_summaries",
+  "Column": "Column_ceu2q1"
+ },
+ "Column_jk853s": {
+  "Id": "Column_jk853s",
+  "Kind": "Column",
+  "Type": "Field",
+  "Start": 0,
+  "End": 0,
+  "Row": "Row_1yjme1j",
+  "Column::Field": [
+   "weighted_percent_complete"
+  ]
+ },
+ "weighted_percent_complete": {
+  "Id": "weighted_percent_complete",
+  "Kind": "Field",
+  "Type": "Number",
+  "Name": "Weighted_Percent_Complete",
+  "Model": "ITPMD_Portfolio_Status_Report_A00__project_summaries",
+  "Column": "Column_jk853s"
+ },
+ "Column_738dcs": {
+  "Id": "Column_738dcs",
+  "Kind": "Column",
+  "Type": "Field",
+  "Start": 0,
+  "End": 0,
+  "Row": "Row_1yjme1j",
+  "Column::Field": [
+   "current_approved_budget"
+  ]
+ },
+ "current_approved_budget": {
+  "Id": "current_approved_budget",
+  "Kind": "Field",
+  "Type": "Currency",
+  "Name": "Current_Approved_Budget",
+  "Model": "ITPMD_Portfolio_Status_Report_A00__project_summaries",
+  "Column": "Column_738dcs",
+  "CurrencyTypes": [
+   "PHP"
+  ]
+ },
+ "Column_p6osk4": {
+  "Id": "Column_p6osk4",
+  "Kind": "Column",
+  "Type": "Field",
+  "Start": 0,
+  "End": 0,
+  "Row": "Row_1yjme1j",
+  "Column::Field": [
+   "total_actual_cost"
+  ]
+ },
+ "total_actual_cost": {
+  "Id": "total_actual_cost",
+  "Kind": "Field",
+  "Type": "Currency",
+  "Name": "Total_Actual_Cost",
+  "Model": "ITPMD_Portfolio_Status_Report_A00__project_summaries",
+  "Column": "Column_p6osk4",
+  "CurrencyTypes": [
+   "PHP"
+  ]
+ },
+ "PublishedAt": "2026-10-28T07:59:54Z",
+ "PublishedBy": {
+  "_id": "UsEEQe4PIDoK",
+  "Name": "Joms",
+  "Kind": "User"
+ },
+ "_meta_version": "1793174395063157"
+}

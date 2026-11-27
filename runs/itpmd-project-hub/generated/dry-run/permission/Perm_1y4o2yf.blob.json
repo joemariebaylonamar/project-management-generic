@@ -1,0 +1,98 @@
+{
+  "Root": "Perm_1y4o2yf",
+  "Perm_1y4o2yf": {
+    "Id": "Perm_1y4o2yf",
+    "Kind": "FlowPermission",
+    "Role": "project_manager",
+    "RoleName": "Project Manager",
+    "Model": "itpmd_issue",
+    "Level": "Editable",
+    "Scope": "my",
+    "FlowPermission::Permission": [
+      "Permission_12q9mey",
+      "Permission_12zdctj",
+      "Permission_14wcxli",
+      "Permission_43862a",
+      "Permission_12n163n",
+      "Permission_5kqt8n",
+      "Permission_7l3kxg",
+      "Permission_krwda7",
+      "Permission_822rdc",
+      "Permission_164m1w2",
+      "Permission_mt82dw",
+      "Permission_2oio3w"
+    ]
+  },
+  "Permission_12q9mey": {
+    "Id": "Permission_12q9mey",
+    "Kind": "Permission",
+    "Column": "issue_title",
+    "Permission": "Editable"
+  },
+  "Permission_12zdctj": {
+    "Id": "Permission_12zdctj",
+    "Kind": "Permission",
+    "Column": "project",
+    "Permission": "Editable"
+  },
+  "Permission_14wcxli": {
+    "Id": "Permission_14wcxli",
+    "Kind": "Permission",
+    "Column": "issue_category",
+    "Permission": "Editable"
+  },
+  "Permission_43862a": {
+    "Id": "Permission_43862a",
+    "Kind": "Permission",
+    "Column": "priority",
+    "Permission": "Editable"
+  },
+  "Permission_12n163n": {
+    "Id": "Permission_12n163n",
+    "Kind": "Permission",
+    "Column": "issue_owner",
+    "Permission": "Editable"
+  },
+  "Permission_5kqt8n": {
+    "Id": "Permission_5kqt8n",
+    "Kind": "Permission",
+    "Column": "target_resolution_date",
+    "Permission": "Editable"
+  },
+  "Permission_7l3kxg": {
+    "Id": "Permission_7l3kxg",
+    "Kind": "Permission",
+    "Column": "description",
+    "Permission": "Editable"
+  },
+  "Permission_krwda7": {
+    "Id": "Permission_krwda7",
+    "Kind": "Permission",
+    "Column": "hub_settings",
+    "Permission": "Editable"
+  },
+  "Permission_822rdc": {
+    "Id": "Permission_822rdc",
+    "Kind": "Permission",
+    "Column": "issue_aging_period_days",
+    "Permission": "Editable"
+  },
+  "Permission_164m1w2": {
+    "Id": "Permission_164m1w2",
+    "Kind": "Permission",
+    "Column": "days_open",
+    "Permission": "Editable"
+  },
+  "Permission_mt82dw": {
+    "Id": "Permission_mt82dw",
+    "Kind": "Permission",
+    "Column": "critical_flag",
+    "Permission": "Editable"
+  },
+  "Permission_2oio3w": {
+    "Id": "Permission_2oio3w",
+    "Kind": "Permission",
+    "Column": "escalation_flag",
+    "Permission": "Editable"
+  }
+}

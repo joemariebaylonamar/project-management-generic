@@ -1,0 +1,58 @@
+{
+  "Root": "auto_activity_assigned_notify_assignee_A00",
+  "auto_activity_assigned_notify_assignee_A00": {
+    "_id": "auto_activity_assigned_notify_assignee_A00",
+    "Id": "auto_activity_assigned_notify_assignee_A00",
+    "Kind": "Integration",
+    "Name": "Activity assigned/reassigned → notify Responsible Person",
+    "Type": "Integration",
+    "Status": "Draft",
+    "IsActive": true,
+    "_application_id": "itpmd_project_hub_A00",
+    "Connectors": [
+      "Connector_18ji3y5"
+    ],
+    "Integration::Trigger": [
+      "Trigger_1qw023v"
+    ],
+    "Integration::Action": [
+      "Action_1qw023c"
+    ]
+  },
+  "Connector_18ji3y5": {
+    "_id": "Connector_18ji3y5",
+    "Id": "Connector_18ji3y5",
+    "Kind": "Connector",
+    "Name": "Activity assigned/reassigned → notify Responsible Person connector",
+    "Entities": [
+      "Trigger_1qw023v",
+      "Action_1qw023c"
+    ]
+  },
+  "Trigger_1qw023v": {
+    "_id": "Trigger_1qw023v",
+    "Id": "Trigger_1qw023v",
+    "Kind": "Trigger",
+    "Version": 1,
+    "Name": "itpmd_activity · updated",
+    "Flow": "itpmd_activity",
+    "On": "record create/update",
+    "Event": "updated"
+  },
+  "Action_1qw023c": {
+    "_id": "Action_1qw023c",
+    "Id": "Action_1qw023c",
+    "Kind": "Action",
+    "Version": 1,
+    "Name": "notify → itpmd_activity",
+    "ActionType": "notify",
+    "TargetFlow": "itpmd_activity",
+    "FieldMap": {
+      "Responsible_Person": "Responsible_Person",
+      "Assigned_By": "Assigned_By",
+      "Assigned_At": "Assigned_At",
+      "Project": "Project"
+    },
+    "Condition": "Responsible_Person is set or changed (assignment or reassignment)"
+  }
+}

@@ -1,0 +1,734 @@
+{
+  "app": {
+    "id": "ITPMD_Project_Hub_A00",
+    "name": "ITPMD Project Hub",
+    "theme": "ledger",
+    "themeNote": "Anchor `ledger` with the prototype's exact LANDBANK tokens pinned in src/app-theme.css (primary #2F7D32, brand #74BC44, sidebar #123A1C, bg #F3F5F4; light + dark). Font IBM Plex Sans. Tokens only, no hex.",
+    "reference": "../ITPMD_Project_Hub_Prototype_LANDBANK (4).html",
+    "scope": "MVP. Excluded: Discussion/chat (Phase 2), LEAF AI assistant (Phase 3), Liquidated damages tab + LD formula (Phase 2), sample-data reset, prototype user switcher, System Admin screens (users/roles/security/audit are Kissflow-native).",
+    "currency": "PHP, formatted like the prototype: peso() = '₱' + millions with 2 decimals + 'M'; pesoFull() for invoice-level amounts",
+    "dates": "fd() = '28 Sep 2026'; fds() = '28 Sep'. TODAY = client date."
+  },
+
+  "shell": {
+    "layout": "Prototype .frame: fixed left rail (aside.side) + main column (top bar + content). Content uses list|detail split (section.list + main.detail) on Projects and Approvals; wide single column elsewhere. Mobile: rail collapses to drawer; list/detail stacks with a '‹ All projects' back button.",
+    "rail": {
+      "surface": "bg-sidebar (dark green #123A1C token) / text-sidebar-foreground; active item uses the brand accent token",
+      "logo": { "src": "/landbank-logo.webp", "alt": "LANDBANK", "placement": "top logo card, above product lockup" },
+      "product": { "mark": "PH", "title": "ITPMD Project Hub", "subtitle": "LANDBANK · ITPMD" },
+      "section": "Workspace",
+      "footer": ["System date <b>{fd(today)}</b>"],
+      "items": [
+        { "key": "portfolio", "label": "Portfolio", "icon": "LayoutDashboard", "route": "/", "roles": ["Project Manager", "Department Head", "Project Sponsor", "PSC Member"] },
+        { "key": "projects", "label": "Projects", "icon": "FolderKanban", "route": "/projects", "roles": ["Project Manager", "Team Member", "Department Head", "Project Sponsor", "PSC Member"] },
+        { "key": "approvals", "label": "Approvals", "icon": "CheckCircle2", "route": "/approvals", "roles": ["Department Head", "Project Sponsor"], "badge": "count of PSR getMyTasksItems() (items waiting on my step)" },
+        { "key": "mytasks", "label": "My tasks", "icon": "ListChecks", "route": "/my-tasks", "roles": ["Project Manager", "Team Member"], "badge": "my open Activities (responsible_person = me, percent_complete < 100) + my open Action Items" },
+        { "key": "alerts", "label": "Notifications", "icon": "Bell", "route": "/notifications", "roles": ["*"], "badge": "count of red + amber notifications" },
+        { "key": "admin", "label": "Configuration", "icon": "Settings", "route": "/admin", "roles": ["Hub Administrator", "Admin"] }
+      ],
+      "roleAware": "Resolve the signed-in user's app role(s) via kf.user / kf.app role APIs; render only items whose roles include one of them. If a user holds several roles, union the items. If current route is not allowed, redirect to the role landing."
+    },
+    "topbar": {
+      "crumb": "Section name, plus ' / {project_name}' when a project is selected",
+      "search": "Only on /projects: 'Search projects by name or code' (filters project_name, project_code, business_unit)",
+      "themeSwitch": "Light / Dark / Match system segmented radio (prototype theme-sw)",
+      "bell": "Links to /notifications; dot when notification count > 0",
+      "user": "Avatar initials + name + role label (from kf.user + resolved role). No user switcher (prototype-only)."
+    },
+    "landing": {
+      "Project Manager": "/",
+      "Department Head": "/",
+      "Project Sponsor": "/",
+      "PSC Member": "/",
+      "Team Member": "/my-tasks",
+      "Hub Administrator": "/admin",
+      "Admin": "/admin"
+    }
+  },
+
+  "dataScope": {
+    "note": "security.data_scope is a view convention (not row security); the UI applies it client-side exactly like prototype myProjects().",
+    "projectsForRole": {
+      "Project Manager": "ITPMD_Project_A00 where RoEGt7NaqKtv (Project_Manager) = me",
+      "Department Head": "ITPMD_Project_A00 where RoEGt7OXkCaE (Department_Head) = me",
+      "Project Sponsor": "ITPMD_Project_A00 where RoEGt7Ov2pUP (Project_Sponsor) = me",
+      "PSC Member": "all ITPMD_Project_A00",
+      "Team Member": "projects referenced by Activities where responsible_person = me OR Issues where issue_owner = me OR Action Items where assignee = me"
+    },
+    "canEditProject": "role Project Manager AND project.RoEGt7NaqKtv = me (else show 'Read only' tag)",
+    "canEditActivity": "canEditProject OR activity.responsible_person = me (Team Member: only percent_complete, actual_start, actual_finish per BR-15)"
+  },
+
+  "roles": [
+    { "id": "RoEGt7NaqKtv", "name": "Project Manager", "access": ["ITPMD_Project_A00", "ITPMD_Activity_A00", "ITPMD_Risk_A00", "ITPMD_Issue_A00", "ITPMD_Action_Item_A00", "ITPMD_Cost_Entry_A00", "ITPMD_Project_Status_Report_A00"] },
+    { "id": "RoEGt7O8EJvK", "name": "Team Member", "access": ["ITPMD_Project_A00", "ITPMD_Activity_A00", "ITPMD_Risk_A00", "ITPMD_Issue_A00", "ITPMD_Action_Item_A00", "ITPMD_Project_Status_Report_A00"] },
+    { "id": "RoEGt7OXkCaE", "name": "Department Head", "access": ["ITPMD_Project_A00", "ITPMD_Activity_A00", "ITPMD_Risk_A00", "ITPMD_Issue_A00", "ITPMD_Action_Item_A00", "ITPMD_Cost_Entry_A00", "ITPMD_Project_Status_Report_A00", "ITPMD_Portfolio_Status_Report_A00"] },
+    { "id": "RoEGt7Ov2pUP", "name": "Project Sponsor", "access": ["ITPMD_Project_A00", "ITPMD_Activity_A00", "ITPMD_Risk_A00", "ITPMD_Issue_A00", "ITPMD_Action_Item_A00", "ITPMD_Cost_Entry_A00", "ITPMD_Project_Status_Report_A00", "ITPMD_Portfolio_Status_Report_A00"] },
+    { "id": "RoEGt7PJAYoG", "name": "PSC Member", "access": ["ITPMD_Project_A00", "ITPMD_Activity_A00", "ITPMD_Risk_A00", "ITPMD_Issue_A00", "ITPMD_Action_Item_A00", "ITPMD_Cost_Entry_A00", "ITPMD_Project_Status_Report_A00", "ITPMD_Portfolio_Status_Report_A00"] },
+    { "id": "RoEGt7Q6eHPp", "name": "Hub Administrator", "access": ["ITPMD_Holiday_Calendar_A00", "ITPMD_Hub_Settings_A00", "ITPMD_Portfolio_Status_Report_A00"] },
+    { "id": "RoEGt7MEhv1f", "name": "Admin", "access": ["*"] },
+    { "id": "RoEGt7MLQaAk", "name": "User", "access": [] }
+  ],
+
+  "pages": [
+    {
+      "id": "portfolio",
+      "route": "index",
+      "path": "/",
+      "title": "Portfolio",
+      "intent": "view",
+      "roles": ["Project Manager", "Department Head", "Project Sponsor", "PSC Member"],
+      "redirectOtherRoles": "Team Member -> /my-tasks; Hub Administrator/Admin -> /admin",
+      "nav": { "label": "Portfolio", "icon": "LayoutDashboard" },
+      "prototype": "vPortfolio() + ppsrView()",
+      "header": {
+        "kicker": "Portfolio overview · {role label}",
+        "title": "{count of scoped projects} active IT projects",
+        "actions": [{ "label": "Generate portfolio report (PPSR)", "opens": "ppsr-sheet", "gate": "ITPMD_Portfolio_Status_Report_A00" }]
+      },
+      "widgets": [
+        {
+          "id": "health-split", "type": "stat",
+          "props": { "label": "Project health", "variant": "hsplit", "buckets": [["Green", "On track"], ["Amber", "At risk"], ["Red", "Critical"]] },
+          "binding": { "flowType": "Form", "flowId": "ITPMD_Project_A00", "groupField": "overall_health", "agg": "count" }
+        },
+        {
+          "id": "attention-count", "type": "kpi",
+          "props": { "label": "Needs management attention", "agg": "count", "filter": "needs_management_attention_flag = 1", "tone": "destructive" },
+          "binding": { "flowType": "Form", "flowId": "ITPMD_Project_A00", "fields": ["needs_management_attention_flag"] }
+        },
+        {
+          "id": "crit-issues-risks", "type": "kpi",
+          "props": { "label": "Critical or escalated issues · high risks", "value": "sum(escalated_issue_count) · sum(escalated_risk_count)", "sub": "Across the portfolio" },
+          "binding": { "flowType": "Form", "flowId": "ITPMD_Project_A00", "fields": ["escalated_issue_count", "escalated_risk_count"] },
+          "note": "Issue escalation_flag already includes Critical priority; Risk escalation_flag = band High or Critical (rating >= 10), matching prototype hiR."
+        },
+        {
+          "id": "fc-vs-budget", "type": "kpi",
+          "props": { "label": "Forecast cost vs approved budget", "value": "pct(sum(total_forecast_cost) / sum(current_approved_budget) * 100)", "sub": "peso(sum total_forecast_cost) of peso(sum current_approved_budget)" },
+          "binding": { "flowType": "Form", "flowId": "ITPMD_Project_A00", "fields": ["total_forecast_cost", "current_approved_budget"] },
+          "gate": "ITPMD_Project_A00"
+        },
+        {
+          "id": "attention-list", "type": "callout",
+          "props": {
+            "title": "Projects requiring management attention",
+            "filter": "needs_management_attention_flag = 1",
+            "row": "alert tinted by overall_health; name + project_code; reasons joined ' · '; Open button -> /projects/{_id}",
+            "reasons": [
+              "missed_milestone_count > 0 -> '{n} milestone(s) past due and not achieved'",
+              "else schedule_variance_days > 0 -> 'Forecast finish {n} days after baseline'",
+              "cost_health != Green -> cost_performance_percent > 100 ? 'Forecast cost at {cost_performance_percent}% of budget' : 'Contingency {contingency_utilization_percent}% used'",
+              "critical_risk_count/escalated_risk_count > 0 -> '{n} high/critical risk(s)'",
+              "critical_issue_count/escalated_issue_count > 0 -> '{n} critical/escalated issue(s)'",
+              "overdue_action_count > 0 -> '{n} overdue action item(s)'"
+            ]
+          },
+          "binding": { "flowType": "Form", "flowId": "ITPMD_Project_A00", "fields": ["project_name", "project_code", "overall_health", "needs_management_attention_flag", "missed_milestone_count", "schedule_variance_days", "cost_health", "cost_performance_percent", "contingency_utilization_percent", "critical_risk_count", "escalated_risk_count", "critical_issue_count", "escalated_issue_count", "overdue_action_count"] }
+        },
+        {
+          "id": "project-status-table", "type": "table",
+          "props": {
+            "title": "Project status",
+            "filters": [{ "field": "overall_health", "label": "All health" }, { "field": "business_unit", "label": "All business units" }],
+            "columns": [
+              { "label": "Project", "field": "project_name", "sub": "project_code", "link": "/projects/{_id}" },
+              { "label": "Business unit", "field": "business_unit" },
+              { "label": "Overall", "field": "overall_health", "render": "pill" },
+              { "label": "Schedule", "field": "schedule_health", "render": "dot" },
+              { "label": "Cost", "field": "cost_health", "render": "dot" },
+              { "label": "Risk", "field": "risk_health", "render": "dot" },
+              { "label": "Issues", "field": "issue_health", "render": "dot" },
+              { "label": "Complete", "field": "weighted_percent_complete", "align": "right", "render": "pct" },
+              { "label": "Var. (days)", "field": "schedule_variance_days", "align": "right", "render": "signed" },
+              { "label": "Forecast finish", "field": "max_forecast_finish", "render": "date" },
+              { "label": "Latest PSR", "source": "latest ITPMD_Project_Status_Report_A00 item for this project: MON(reporting_period_month) · _status" }
+            ],
+            "legend": "On track / At risk / Critical dots",
+            "empty": "No projects match these filters."
+          },
+          "binding": { "flowType": "Form", "flowId": "ITPMD_Project_A00", "fields": ["project_name", "project_code", "business_unit", "overall_health", "schedule_health", "cost_health", "risk_health", "issue_health", "weighted_percent_complete", "schedule_variance_days", "max_forecast_finish"] }
+        },
+        {
+          "id": "budget-vs-forecast", "type": "hbars",
+          "props": { "title": "Budget vs forecast cost", "sub": "bar = forecast at completion · outline = current approved budget", "label": "project_name", "bar": "total_forecast_cost", "outline": "current_approved_budget", "value": "cost_performance_percent", "colorBy": "cost_health (Red->destructive, Amber->warning, Green->primary)" },
+          "binding": { "flowType": "Form", "flowId": "ITPMD_Project_A00", "fields": ["project_name", "total_forecast_cost", "current_approved_budget", "cost_performance_percent", "cost_health"] }
+        },
+        {
+          "id": "ppsr-sheet", "type": "panel",
+          "props": {
+            "title": "PPSR – {Month YYYY}",
+            "kicker": "Portfolio Project Status Report",
+            "kv": ["Portfolio: all ITPMD projects in your view ({n})", "Prepared by: kf.user name", "As of: today"],
+            "summaryColumns": ["project_name/project_code", "RoEGt7NaqKtv (PM)", "overall_health", "weighted_percent_complete", "max_baseline_finish", "max_forecast_finish", "current_approved_budget", "total_forecast_cost", "contingency_utilization_percent"],
+            "criticalItems": "Issues (ITPMD_Issue_A00) with critical_flag or escalation_flag = 1 and _status not Resolved/Closed; Risks (ITPMD_Risk_A00) with risk_rating_band = Critical and status != Closed (title + mitigation_actions)",
+            "save": "Save as Portfolio Status Report: createItem on ITPMD_Portfolio_Status_Report_A00 with report_period, portfolio_narrative (textarea), total_projects_reported = n",
+            "back": "Back to dashboard"
+          },
+          "binding": { "flowType": "Form", "flowId": "ITPMD_Portfolio_Status_Report_A00", "fields": ["report_period", "portfolio_narrative", "total_projects_reported"] },
+          "gate": "ITPMD_Portfolio_Status_Report_A00"
+        }
+      ]
+    },
+
+    {
+      "id": "projects",
+      "route": "projects/index",
+      "path": "/projects",
+      "title": "Projects",
+      "intent": "view",
+      "roles": ["Project Manager", "Team Member", "Department Head", "Project Sponsor", "PSC Member"],
+      "nav": { "label": "Projects", "icon": "FolderKanban" },
+      "prototype": "vProjects() list panel",
+      "behavior": "List panel + empty detail ('Select a project from the list.'); on desktop auto-open the first scoped project (navigate to /projects/{_id}).",
+      "widgets": [
+        {
+          "id": "project-list", "type": "table",
+          "props": {
+            "variant": "list-panel",
+            "head": "Projects · '{n} project(s) you can access'",
+            "item": "project_name + overall_health dot; meta: project_code · business_unit · '{weighted_percent_complete}% done'; progress bar of weighted_percent_complete",
+            "search": "topbar search over project_name, project_code, business_unit",
+            "empty": "No projects assigned."
+          },
+          "binding": { "flowType": "Form", "flowId": "ITPMD_Project_A00", "fields": ["project_name", "project_code", "business_unit", "overall_health", "weighted_percent_complete", "RoEGt7NaqKtv", "RoEGt7OXkCaE", "RoEGt7Ov2pUP"] }
+        },
+        {
+          "id": "new-project", "type": "form",
+          "props": { "trigger": "'New project' button in list head (Project Manager only)", "container": "Sheet" },
+          "binding": { "flowType": "Form", "flowId": "ITPMD_Project_A00" },
+          "roles": ["Project Manager"]
+        }
+      ]
+    },
+
+    {
+      "id": "project-detail",
+      "route": "projects/[id]",
+      "path": "/projects/:id?tab=overview|schedule|issues|risks|financials|scurve|psr",
+      "title": "{project_name}",
+      "intent": "view-edit",
+      "roles": ["Project Manager", "Team Member", "Department Head", "Project Sponsor", "PSC Member"],
+      "prototype": "vProjects() detail + tOverview/tSchedule/gantt/tIssues/tRisks/tFinancials/tSCurve/tPSR/psrDetail",
+      "layout": "Same list panel as /projects on the left (selected row highlighted); detail on the right.",
+      "header": {
+        "kicker": "{project_code} · {portfolio}",
+        "title": "project_name",
+        "meta": ["PM {RoEGt7NaqKtv name}", "Contract {peso(contract_value)}"],
+        "right": ["overall_health pill", "'Read only' tag when !canEditProject"],
+        "binding": { "flowType": "Form", "flowId": "ITPMD_Project_A00", "fields": ["project_code", "portfolio", "project_name", "RoEGt7NaqKtv", "contract_value", "overall_health"] }
+      },
+      "tabs": [
+        {
+          "key": "overview", "label": "Overview",
+          "widgets": [
+            {
+              "id": "ov-completion", "type": "progress",
+              "props": { "label": "Overall completion", "value": "weighted_percent_complete", "sub": "Planned by today: {expected}% (computed from Activities: duration-weighted fraction of baseline_start..baseline_finish elapsed, non-milestones)" },
+              "binding": { "flowType": "Form", "flowId": "ITPMD_Project_A00", "fields": ["weighted_percent_complete"] },
+              "secondaryBinding": { "flowType": "Form", "flowId": "ITPMD_Activity_A00", "filter": "project = :id", "fields": ["baseline_start", "baseline_finish", "planned_duration_days", "is_milestone"] }
+            },
+            {
+              "id": "ov-forecast-finish", "type": "kpi",
+              "props": { "label": "Forecast finish", "value": "fd(max_forecast_finish)", "sub": "Baseline fd(max_baseline_finish) · {+schedule_variance_days} days (destructive if > 0, else success)" },
+              "binding": { "flowType": "Form", "flowId": "ITPMD_Project_A00", "fields": ["max_forecast_finish", "max_baseline_finish", "schedule_variance_days"] }
+            },
+            {
+              "id": "ov-forecast-cost", "type": "kpi",
+              "props": { "label": "Forecast cost", "value": "peso(total_forecast_cost)", "sub": "{cost_performance_percent}% of peso(current_approved_budget) budget" },
+              "binding": { "flowType": "Form", "flowId": "ITPMD_Project_A00", "fields": ["total_forecast_cost", "cost_performance_percent", "current_approved_budget"] }
+            },
+            {
+              "id": "ov-contingency", "type": "kpi",
+              "props": { "label": "Contingency used", "value": "pct(contingency_utilization_percent)", "sub": "peso(contingency_remaining) left of peso(contingency_fund)" },
+              "binding": { "flowType": "Form", "flowId": "ITPMD_Project_A00", "fields": ["contingency_utilization_percent", "contingency_remaining", "contingency_fund"] }
+            },
+            {
+              "id": "ov-health-dims", "type": "panel",
+              "props": { "title": "Health by dimension", "sub": "rules BR-03 to BR-06", "kv": [["Schedule", "schedule_health"], ["Cost", "cost_health"], ["Risks", "risk_health"], ["Issues", "issue_health"]], "render": "pill", "reasons": "same reason builder as portfolio attention-list" },
+              "binding": { "flowType": "Form", "flowId": "ITPMD_Project_A00", "fields": ["schedule_health", "cost_health", "risk_health", "issue_health", "missed_milestone_count", "schedule_variance_days", "cost_performance_percent", "contingency_utilization_percent", "critical_risk_count", "escalated_risk_count", "critical_issue_count", "escalated_issue_count"] }
+            },
+            {
+              "id": "ov-master-data", "type": "panel",
+              "props": { "title": "Project master data", "kv": [["Business unit", "business_unit"], ["Portfolio", "portfolio"], ["Status", "status"], ["Department Head", "RoEGt7OXkCaE"], ["Sponsor", "RoEGt7Ov2pUP"], ["Start date", "project_start_date"], ["Planned end date", "project_planned_end_date"], ["Approved budget", "approved_budget"], ["PS approval of PSR", "ps_approval_required ? 'Always required' : 'Only when health is Red'"]], "edit": "PM of project: 'Edit' opens Form (ITPMD_Project_A00, instanceId) in a Sheet" },
+              "binding": { "flowType": "Form", "flowId": "ITPMD_Project_A00", "fields": ["business_unit", "portfolio", "status", "RoEGt7OXkCaE", "RoEGt7Ov2pUP", "project_start_date", "project_planned_end_date", "approved_budget", "ps_approval_required"] }
+            },
+            {
+              "id": "ov-milestones", "type": "table",
+              "props": {
+                "title": "Milestones",
+                "filter": "project = :id AND is_milestone = true",
+                "columns": [{ "label": "Milestone", "field": "activity_name" }, { "label": "Baseline", "field": "baseline_finish", "render": "date" }, { "label": "Forecast / actual", "value": "actual_finish || forecast_finish", "render": "date" }, { "label": "Status", "derive": "percent_complete>=100 ? (actual_finish>baseline_finish ? 'Achieved late'(A) : 'Achieved'(G)) : (missed_milestone_flag=1 ? 'Missed'(R) : forecast_finish>baseline_finish ? 'Forecast late'(R) : 'On schedule'(I))", "render": "pill" }]
+              },
+              "binding": { "flowType": "Form", "flowId": "ITPMD_Activity_A00", "fields": ["activity_name", "is_milestone", "baseline_finish", "forecast_finish", "actual_finish", "percent_complete", "missed_milestone_flag"] }
+            }
+          ]
+        },
+        {
+          "key": "schedule", "label": "Schedule",
+          "controls": ["Segmented: Activities | Gantt chart", "Checkbox 'Only activities assigned to me' (forced on + disabled for Team Member who is not PM)"],
+          "widgets": [
+            {
+              "id": "sched-note", "type": "callout",
+              "props": { "text": "Role-specific note: PM 'Assign each activity to a team member…'; Team Member 'You can update the activities assigned to you. Other activities are read-only.'; others 'Read-only view.'" }
+            },
+            {
+              "id": "sched-table", "type": "table",
+              "props": {
+                "sort": "wbs_code (natural)",
+                "filter": "project = :id",
+                "rowClass": "milestone rows bold with ◆; complete rows muted; my rows highlighted",
+                "columns": [
+                  { "label": "ID", "field": "wbs_code", "mono": true },
+                  { "label": "Activity", "field": "activity_name", "indentBy": "is_summary" },
+                  { "label": "Assigned to", "field": "responsible_person", "edit": "PM of project (User select) -> updateItem responsible_person + assigned_by = me + assigned_at = now" },
+                  { "label": "Dur", "field": "planned_duration_days", "align": "right" },
+                  { "label": "Baseline", "value": "fds(baseline_start) – fds(baseline_finish)" },
+                  { "label": "Actual start", "field": "actual_start", "edit": "canEditActivity (date input)" },
+                  { "label": "Actual finish", "field": "actual_finish", "edit": "canEditActivity (date input)" },
+                  { "label": "% done", "field": "percent_complete", "edit": "canEditActivity (number 0-100 step 5)" },
+                  { "label": "Forecast finish", "field": "forecast_finish", "edit": "PM of project and no actual_finish (acts as the prototype's 'Manual forecast')", "tone": "destructive when forecast_finish > baseline_finish" },
+                  { "label": "Status", "derive": "actState: percent_complete>=100 Complete(G); forecast_finish>baseline_finish or today>baseline_finish -> Behind(R); pct < expected-10 -> Behind(A); pct > expected+10 -> Ahead(G); pct>0 In progress(I); else Not started(N). Fallback text: status field", "render": "pill" },
+                  { "label": "", "actions": ["PM: delete (two-click confirm) -> deleteItem"] }
+                ],
+                "writes": "form.updateItem({ itemId, data }) on ITPMD_Activity_A00; refetch Project for recalculated aggregates"
+              },
+              "binding": { "flowType": "Form", "flowId": "ITPMD_Activity_A00", "fields": ["wbs_code", "activity_name", "is_summary", "is_milestone", "responsible_person", "assigned_by", "assigned_at", "planned_duration_days", "planned_start", "planned_finish", "baseline_start", "baseline_finish", "forecast_start", "forecast_finish", "actual_start", "actual_finish", "percent_complete", "status", "project"] }
+            },
+            {
+              "id": "gantt", "type": "timeline",
+              "props": {
+                "component": "custom SVG/div Gantt (prototype gantt()), not recharts",
+                "rows": "activities of the project sorted by wbs_code (respects 'only mine' filter); left column 'wbs_code activity_name', tooltip responsible_person",
+                "axis": "month ticks from first-of-month(min(project_start_date, baseline_start, actual_start|forecast_start|planned_start)) to first of month after max(baseline_finish, forecast_finish)+1; vertical month grid",
+                "bars": {
+                  "baseline": "thin muted ghost bar baseline_start..baseline_finish",
+                  "forecastActual": "main bar (actual_start || forecast_start || planned_start)..(actual_finish || forecast_finish || planned_finish), inner fill = percent_complete",
+                  "late": "destructive tint when forecast_finish > baseline_finish",
+                  "milestone": "diamond at (actual_finish || forecast_finish) when is_milestone",
+                  "summary": "is_summary rows rendered as bracket bar"
+                },
+                "today": "dashed destructive vertical line",
+                "legend": ["Forecast / actual", "Baseline", "Late vs baseline", "Milestone", "Today"],
+                "interaction": "PM of project only: drag an unstarted, incomplete bar to move forecast_start/forecast_finish (and planned_start/planned_finish if no baseline yet); drag right edge to change forecast_finish; completed/started bars locked; persist via updateItem. No dependency cascade (see gaps).",
+                "hint": "PM note: 'Drag a bar to move an activity that hasn't started. Drag its right edge to change the forecast finish. The grey baseline stays put so you can see the variance. Completed activities are locked.'"
+              },
+              "binding": { "flowType": "Form", "flowId": "ITPMD_Activity_A00", "fields": ["wbs_code", "activity_name", "is_summary", "is_milestone", "responsible_person", "planned_start", "planned_finish", "baseline_start", "baseline_finish", "forecast_start", "forecast_finish", "actual_start", "actual_finish", "percent_complete"] }
+            },
+            {
+              "id": "add-activity", "type": "form",
+              "props": { "title": "Add activity or milestone", "container": "Dialog (button 'Add to schedule')", "prefill": { "project": ":id" } },
+              "binding": { "flowType": "Form", "flowId": "ITPMD_Activity_A00" },
+              "roles": ["Project Manager"], "condition": "canEditProject"
+            },
+            {
+              "id": "set-baseline", "type": "form",
+              "props": { "label": "Set new baseline", "confirm": "two-click 'Click again to confirm'", "action": "for every activity of the project: updateItem baseline_start = forecast_start || planned_start, baseline_finish = forecast_finish || planned_finish" },
+              "binding": { "flowType": "Form", "flowId": "ITPMD_Activity_A00", "fields": ["baseline_start", "baseline_finish", "forecast_start", "forecast_finish", "planned_start", "planned_finish"] },
+              "roles": ["Project Manager"], "condition": "canEditProject"
+            }
+          ]
+        },
+        {
+          "key": "issues", "label": "Issues and actions",
+          "widgets": [
+            {
+              "id": "issues-table", "type": "table",
+              "props": {
+                "filter": "project = :id",
+                "columns": [
+                  { "label": "ID", "field": "_id", "mono": true, "short": true },
+                  { "label": "Issue", "field": "issue_title", "sub": "issue_category" },
+                  { "label": "Priority", "field": "priority", "render": "pill (Critical R, High A, Medium I, Low G)" },
+                  { "label": "Owner", "field": "issue_owner" },
+                  { "label": "Target", "field": "target_resolution_date", "render": "date", "tone": "destructive when overdue & not resolved" },
+                  { "label": "Status", "field": "_status", "render": "pill; plus 'Escalated' tag when escalation_flag = 1" },
+                  { "label": "Actions", "value": "count of Action Items where related_issue = issue._id (done/total)" },
+                  { "label": "", "actions": ["expand row -> nested action items", "Open -> board.openForm({ _id }) for status transitions/edit"] }
+                ],
+                "nested": {
+                  "binding": { "flowType": "Case", "flowId": "ITPMD_Action_Item_A00", "filter": "related_issue = issue._id" },
+                  "columns": [{ "label": "Action", "field": "action_description" }, { "label": "Assigned to", "field": "assignee" }, { "label": "Due", "field": "due_date", "render": "date" }, { "label": "Status", "field": "_status", "render": "pill" }],
+                  "add": "Add action -> Form ITPMD_Action_Item_A00 prefilled project, related_issue"
+                }
+              },
+              "binding": { "flowType": "Case", "flowId": "ITPMD_Issue_A00", "view": "AllItems_View", "groupField": "_status", "fields": ["issue_title", "project", "issue_category", "priority", "issue_owner", "target_resolution_date", "description", "days_open", "critical_flag", "escalation_flag"] }
+            },
+            {
+              "id": "unlinked-actions", "type": "table",
+              "props": { "title": "Other action items on this project", "filter": "project = :id AND related_issue empty", "columns": ["action_description", "assignee", "due_date", "_status"] },
+              "binding": { "flowType": "Case", "flowId": "ITPMD_Action_Item_A00", "fields": ["action_description", "project", "related_issue", "assignee", "due_date", "overdue_flag"] }
+            },
+            {
+              "id": "log-issue", "type": "form",
+              "props": { "title": "Log an issue", "container": "Dialog", "prefill": { "project": ":id" } },
+              "binding": { "flowType": "Case", "flowId": "ITPMD_Issue_A00" },
+              "roles": ["Project Manager", "Team Member"]
+            }
+          ]
+        },
+        {
+          "key": "risks", "label": "Risks",
+          "widgets": [
+            {
+              "id": "risk-matrix", "type": "panel",
+              "props": { "component": "custom 5x5 heat matrix (prototype .matrix)", "title": "Risk matrix", "y": "probability 5..1", "x": "impact 1..5", "cell": "count of risks with status != Closed at (probability, impact); cell tone by band of p*i (Low 1–4, Med 5–9, High 10–16, Critical 20–25)", "legend": "↑ Probability · Impact →" },
+              "binding": { "flowType": "Form", "flowId": "ITPMD_Risk_A00", "fields": ["probability", "impact", "status", "project"] }
+            },
+            {
+              "id": "risk-summary", "type": "kpirow",
+              "props": { "title": "Summary", "items": ["Critical", "High", "Medium", "Low"], "value": "count where risk_rating_band = item and status != Closed", "note": "High and Critical risks escalate to the PSC view. Residual rating shows the expected level after mitigation." },
+              "binding": { "flowType": "Form", "flowId": "ITPMD_Risk_A00", "groupField": "risk_rating_band", "fields": ["risk_rating_band", "status"] }
+            },
+            {
+              "id": "risk-table", "type": "table",
+              "props": {
+                "filter": "project = :id",
+                "columns": [
+                  { "label": "ID", "field": "_id", "short": true },
+                  { "label": "Risk", "field": "risk_title", "sub": "risk_category · status" },
+                  { "label": "P", "field": "probability", "edit": "PM of project (select 1-5)" },
+                  { "label": "I", "field": "impact", "edit": "PM of project (select 1-5)" },
+                  { "label": "Rating", "value": "risk_rating_band · risk_rating", "render": "pill (Critical R, High A, Medium I, Low G)" },
+                  { "label": "Response", "field": "response_strategy" },
+                  { "label": "Mitigation", "field": "mitigation_actions" },
+                  { "label": "Residual", "field": "residual_risk_rating_band", "render": "pill" },
+                  { "label": "Owner", "field": "risk_owner" }
+                ]
+              },
+              "binding": { "flowType": "Form", "flowId": "ITPMD_Risk_A00", "fields": ["risk_title", "project", "risk_category", "status", "probability", "impact", "risk_rating", "risk_rating_band", "response_strategy", "mitigation_actions", "residual_risk_rating_band", "risk_owner"] }
+            },
+            {
+              "id": "add-risk", "type": "form",
+              "props": { "title": "Add risk", "container": "Dialog", "prefill": { "project": ":id" } },
+              "binding": { "flowType": "Form", "flowId": "ITPMD_Risk_A00" },
+              "roles": ["Project Manager"], "condition": "canEditProject"
+            }
+          ]
+        },
+        {
+          "key": "financials", "label": "Financials",
+          "widgets": [
+            {
+              "id": "fin-budget-vs-cost", "type": "hbars",
+              "props": {
+                "title": "Budget vs cost",
+                "bars": [["Approved budget", "current_approved_budget", "muted"], ["Actual cost", "total_actual_cost", "primary"], ["Actual + committed", "total_actual_cost + total_committed_cost", "info"], ["Forecast at completion", "total_forecast_cost", "by cost_health"]],
+                "kv": [["Remaining budget", "current_approved_budget - total_actual_cost - total_committed_cost", "(budget − actual − committed)"], ["Forecast balance", "current_approved_budget - total_forecast_cost", "destructive if < 0"]]
+              },
+              "binding": { "flowType": "Form", "flowId": "ITPMD_Project_A00", "fields": ["current_approved_budget", "total_actual_cost", "total_committed_cost", "total_forecast_cost", "cost_health"] }
+            },
+            {
+              "id": "fin-contingency", "type": "progress",
+              "props": { "title": "Contingency", "label": "Used", "value": "peso(total_contingency_draws) of peso(contingency_fund)", "bar": "contingency_utilization_percent (warning tone at >= 75 per Cost_Health_Code rule)", "sub": "{contingency_utilization_percent}% used · peso(contingency_remaining) available · alert at 75%" },
+              "binding": { "flowType": "Form", "flowId": "ITPMD_Project_A00", "fields": ["total_contingency_draws", "contingency_fund", "contingency_utilization_percent", "contingency_remaining"] }
+            },
+            {
+              "id": "fin-budget-changes", "type": "panel",
+              "props": { "title": "Budget changes", "kv": [["Original approved budget", "approved_budget"], ["Net approved changes", "total_budget_changes"], ["Current approved budget", "current_approved_budget", "bold"]] },
+              "binding": { "flowType": "Form", "flowId": "ITPMD_Project_A00", "fields": ["approved_budget", "total_budget_changes", "current_approved_budget"] }
+            },
+            {
+              "id": "fin-cost-entries", "type": "table",
+              "props": { "title": "Cost entries (update costs)", "filter": "project = :id", "sort": "entry_date desc", "columns": [["Date", "entry_date"], ["Entry", "cost_entry_title"], ["Actual", "actual_amount"], ["Committed", "committed_amount"], ["Forecast", "forecast_amount"]], "footer": "column sums", "rowClick": "PM: open Form (edit) in Sheet" },
+              "binding": { "flowType": "Form", "flowId": "ITPMD_Cost_Entry_A00", "fields": ["cost_entry_title", "project", "entry_date", "cost_description", "actual_amount", "committed_amount", "forecast_amount"] },
+              "gate": "ITPMD_Cost_Entry_A00"
+            },
+            {
+              "id": "add-cost-entry", "type": "form",
+              "props": { "title": "Update costs", "button": "Add cost entry", "container": "Dialog", "prefill": { "project": ":id" } },
+              "binding": { "flowType": "Form", "flowId": "ITPMD_Cost_Entry_A00" },
+              "roles": ["Project Manager"], "condition": "canEditProject", "gate": "ITPMD_Cost_Entry_A00"
+            }
+          ]
+        },
+        {
+          "key": "scurve", "label": "S-curve",
+          "widgets": [
+            {
+              "id": "sc-kpis", "type": "kpirow",
+              "props": {
+                "items": [
+                  ["Planned progress to date", "planned(today)"],
+                  ["Actual progress to date", "actual(today)"],
+                  ["Progress variance", "actual(today) - planned(today) (pp, signed, tone)"],
+                  ["Schedule performance index", "actual(today) / planned(today), 2dp"]
+                ]
+              },
+              "binding": { "flowType": "Form", "flowId": "ITPMD_Activity_A00", "fields": ["baseline_start", "baseline_finish", "actual_start", "actual_finish", "forecast_start", "forecast_finish", "percent_complete", "planned_duration_days", "is_milestone"] }
+            },
+            {
+              "id": "scurve", "type": "linechart",
+              "props": {
+                "component": "custom recharts ComposedChart (prototype tSCurve / curvePoints())",
+                "title": "Progress S-curve",
+                "compute": "Activities of project, non-milestone (is_milestone false) and non-summary; weight w = planned_duration_days (fallback days between planned_start and planned_finish). Dates: weekly from project_start_date (fallback min baseline_start) to max(max_baseline_finish, max_forecast_finish), plus today. frac(s,f,at) = linear elapsed share. planned(at) = Σ w·frac(baseline_start, baseline_finish, at)/Σw·100 (fallback planned_start/finish if no baseline). actual(at<=today) = Σ w·(actual_finish ? 100 : percent_complete)/100·frac(actual_start, actual_finish||today, at). forecast(at>=today) = Σ w·(pct + (100-pct)·frac(max(today, forecast_start), forecast_finish, at))/100.",
+                "series": [["Planned (baseline)", "chart-3 / muted dashed"], ["Actual", "primary solid, to today"], ["Forecast", "brand dashed, from today"]],
+                "yAxis": "0–100%",
+                "markers": ["Today reference line", "Baseline finish (max_baseline_finish)", "Forecast finish (max_forecast_finish)"],
+                "endLabels": "right-side labels with final % per series"
+              },
+              "binding": { "flowType": "Form", "flowId": "ITPMD_Activity_A00", "fields": ["baseline_start", "baseline_finish", "planned_start", "planned_finish", "actual_start", "actual_finish", "forecast_start", "forecast_finish", "percent_complete", "planned_duration_days", "is_milestone", "is_summary"] },
+              "secondaryBinding": { "flowType": "Form", "flowId": "ITPMD_Project_A00", "fields": ["project_start_date", "max_baseline_finish", "max_forecast_finish", "weighted_percent_complete"] }
+            },
+            {
+              "id": "sc-table", "type": "table",
+              "props": { "title": "Weekly values", "columns": ["Week of", "Planned %", "Actual %", "Forecast %"], "source": "same computed series as scurve" },
+              "binding": { "flowType": "Form", "flowId": "ITPMD_Activity_A00" }
+            }
+          ]
+        },
+        {
+          "key": "psr", "label": "Status reports",
+          "widgets": [
+            {
+              "id": "psr-head", "type": "callout",
+              "props": { "text": "Reporting period: monthly · due by working day 5 of the following month (BR-11)", "action": { "label": "Generate PSR for {Month YYYY}", "condition": "canEditProject AND no PSR item for current month", "do": "proc.createItem({ data: { project: :id, reporting_period_month: first-of-current-month } }) then open Form (process, instanceId) in Sheet" } },
+              "binding": { "flowType": "Process", "flowId": "ITPMD_Project_Status_Report_A00", "fields": ["project", "reporting_period_month"] },
+              "roles": ["Project Manager"]
+            },
+            {
+              "id": "psr-table", "type": "table",
+              "props": {
+                "filter": "project = :id",
+                "sort": "reporting_period_month desc",
+                "columns": [
+                  { "label": "Period", "field": "reporting_period_month", "render": "Month YYYY" },
+                  { "label": "Status", "value": "_status + _current_step -> Draft(N) / Department Head Review=Submitted(A) / Sponsor Approval='For PS Approval'(A) / Returned(R) / Approved(G)", "render": "pill" },
+                  { "label": "Health at submission", "field": "overall_health", "render": "pill" },
+                  { "label": "Last action", "value": "_current_assigned_to · _submitted_at" },
+                  { "label": "", "actions": ["Open -> PSR detail"] }
+                ],
+                "empty": "No status reports yet.",
+                "note": "A PSR pulls project details, schedule, issues, risks and financials from live data. Approved PSRs are frozen snapshots kept as history.",
+                "source": "union of proc.getMyItems({status:'all'}), getMyTasksItems(), getParticipatedItems(); de-dupe by _id"
+              },
+              "binding": { "flowType": "Process", "flowId": "ITPMD_Project_Status_Report_A00", "fields": ["reporting_period_month", "project", "overall_health", "_status", "_current_step", "_current_assigned_to", "_submitted_at", "_request_number"] }
+            },
+            {
+              "id": "psr-detail", "type": "panel",
+              "props": {
+                "shared": "Same component used by /approvals",
+                "steps": "stepper: Draft -> DH review -> PS approval (only when ps_approval_required or overall_health = Red) -> Approved; current from _current_step; 'Returned' state when sent back",
+                "kv": [["Reporting period", "reporting_period_month"], ["Project Manager", "RoEGt7NaqKtv"], ["Department Head", "RoEGt7OXkCaE"], ["Project Sponsor", "RoEGt7Ov2pUP"], ["Overall health", "overall_health"], ["Schedule", "schedule_health"], ["Cost", "cost_health"], ["Risks", "risk_health"], ["Issues", "issue_health"], ["Weighted % complete", "weighted_percent_complete"], ["Current approved budget", "current_approved_budget"], ["Actual cost", "total_actual_cost"], ["Committed cost", "total_committed_cost"], ["Forecast cost", "total_forecast_cost"], ["Contingency remaining", "contingency_remaining"], ["Baseline/budget change requested", "baseline_or_budget_change_requested"], ["Sponsor approval required", "sponsor_approval_required"]],
+                "narrative": "narrative_update (editable textarea for PM at Draft; read-only otherwise)",
+                "attachments": "supporting_documents",
+                "actions": "PM at Draft: 'Submit to DH' (or 'Resubmit to DH' when returned) -> proc.submitItem({ instanceId, activityInstanceId }). Editing via Form (flowType process, instanceId + activityInstanceId).",
+                "back": "‹ All status reports"
+              },
+              "binding": { "flowType": "Process", "flowId": "ITPMD_Project_Status_Report_A00", "fields": ["reporting_period_month", "project", "RoEGt7NaqKtv", "RoEGt7OXkCaE", "RoEGt7Ov2pUP", "ps_approval_required", "overall_health", "schedule_health", "cost_health", "risk_health", "issue_health", "weighted_percent_complete", "current_approved_budget", "total_actual_cost", "total_committed_cost", "total_forecast_cost", "contingency_remaining", "baseline_or_budget_change_requested", "sponsor_approval_required", "narrative_update", "supporting_documents", "_status", "_current_step"] }
+            }
+          ]
+        }
+      ]
+    },
+
+    {
+      "id": "my-tasks",
+      "route": "my-tasks",
+      "path": "/my-tasks",
+      "title": "My tasks",
+      "intent": "view-edit",
+      "roles": ["Project Manager", "Team Member"],
+      "nav": { "label": "My tasks", "icon": "ListChecks" },
+      "prototype": "vMyTasks()",
+      "header": { "kicker": "Assigned to {me}", "title": "My tasks" },
+      "widgets": [
+        {
+          "id": "mt-kpis", "type": "kpirow",
+          "props": { "items": [
+            ["Open activities", "count Activities responsible_person = me AND percent_complete < 100"],
+            ["Behind schedule", "of those: forecast_finish > baseline_finish OR (today > baseline_finish)", "tone destructive"],
+            ["Open action items", "count Action Items assignee = me AND _status != Done"]
+          ] },
+          "binding": { "flowType": "Form", "flowId": "ITPMD_Activity_A00", "fields": ["responsible_person", "percent_complete", "forecast_finish", "baseline_finish"] },
+          "secondaryBinding": { "flowType": "Case", "flowId": "ITPMD_Action_Item_A00", "fields": ["assignee"] }
+        },
+        {
+          "id": "mt-activities", "type": "table",
+          "props": {
+            "title": "Activities",
+            "filter": "responsible_person = me",
+            "columns": [
+              { "label": "Project", "field": "project", "link": "/projects/{project}?tab=schedule" },
+              { "label": "Activity", "field": "activity_name", "sub": "wbs_code" },
+              { "label": "Baseline finish", "field": "baseline_finish", "render": "date" },
+              { "label": "Actual start", "field": "actual_start", "edit": "date" },
+              { "label": "Actual finish", "field": "actual_finish", "edit": "date" },
+              { "label": "% done", "field": "percent_complete", "edit": "number 0-100 step 5" },
+              { "label": "Forecast finish", "field": "forecast_finish", "render": "date", "tone": "destructive when > baseline_finish" }
+            ],
+            "writes": "updateItem on ITPMD_Activity_A00 (BR-15: own activities only)"
+          },
+          "binding": { "flowType": "Form", "flowId": "ITPMD_Activity_A00", "fields": ["project", "activity_name", "wbs_code", "responsible_person", "baseline_finish", "actual_start", "actual_finish", "percent_complete", "forecast_finish"] }
+        },
+        {
+          "id": "mt-actions", "type": "table",
+          "props": {
+            "title": "Action items",
+            "filter": "assignee = me",
+            "columns": [
+              { "label": "Project", "field": "project" },
+              { "label": "Action", "field": "action_description" },
+              { "label": "From issue", "field": "related_issue", "link": "/projects/{project}?tab=issues" },
+              { "label": "Due", "field": "due_date", "render": "date", "tone": "destructive when overdue_flag = 1 and not Done" },
+              { "label": "Status", "field": "_status", "render": "pill", "action": "board.openForm({ _id }) to move status" }
+            ]
+          },
+          "binding": { "flowType": "Case", "flowId": "ITPMD_Action_Item_A00", "view": "AllItems_View", "fields": ["project", "action_description", "related_issue", "assignee", "due_date", "overdue_flag"] }
+        }
+      ]
+    },
+
+    {
+      "id": "approvals",
+      "route": "approvals",
+      "path": "/approvals",
+      "title": "Approvals",
+      "intent": "view-edit",
+      "roles": ["Department Head", "Project Sponsor"],
+      "nav": { "label": "Approvals", "icon": "CheckCircle2" },
+      "prototype": "vApprovals() + psrDetail(p, r, {step})",
+      "widgets": [
+        {
+          "id": "appr-queue", "type": "table",
+          "props": {
+            "variant": "list-panel",
+            "source": "proc.getMyTasksItems() -> items currently assigned to me; step = _current_step ('Department Head Review' -> DH, 'Sponsor Approval' -> PS)",
+            "item": "project name + overall_health dot; meta: MONF(reporting_period_month) · submitted by RoEGt7NaqKtv · _submitted_at",
+            "empty": "No status reports are waiting for you."
+          },
+          "binding": { "flowType": "Process", "flowId": "ITPMD_Project_Status_Report_A00", "fields": ["project", "reporting_period_month", "overall_health", "RoEGt7NaqKtv", "_current_step", "_submitted_at", "_request_number"] }
+        },
+        {
+          "id": "appr-detail", "type": "panel",
+          "props": {
+            "title": "PSR – {Month YYYY}",
+            "reuse": "project-detail psr-detail panel (read-only narrative)",
+            "decision": {
+              "title": "Your decision as {Department Head | Project Sponsor}",
+              "comment": "textarea 'Comments (required when returning)'",
+              "approve": "proc.submitItem({ instanceId: _id, activityInstanceId: _activity_instance_id, comment })",
+              "return": "Return to PM -> proc.sendbackItem({ instanceId, activityInstanceId, stepId: <Draft step id from getProgress/getFields>, comment }) (comment mandatory, BR-25)",
+              "hint": "DH: ps_approval_required || overall_health = Red ? 'After your approval this PSR goes to the Project Sponsor.' : 'Your approval is final for this PSR.'"
+            }
+          },
+          "binding": { "flowType": "Process", "flowId": "ITPMD_Project_Status_Report_A00", "fields": ["reporting_period_month", "project", "ps_approval_required", "overall_health", "schedule_health", "cost_health", "risk_health", "issue_health", "weighted_percent_complete", "current_approved_budget", "total_actual_cost", "total_committed_cost", "total_forecast_cost", "contingency_remaining", "baseline_or_budget_change_requested", "narrative_update", "supporting_documents", "_current_step", "_status"] }
+        }
+      ]
+    },
+
+    {
+      "id": "notifications",
+      "route": "notifications",
+      "path": "/notifications",
+      "title": "Notifications",
+      "intent": "view",
+      "roles": ["*"],
+      "nav": { "label": "Notifications", "icon": "Bell" },
+      "prototype": "vAlerts() / notifications()",
+      "header": { "kicker": "Notifications · {role label}", "title": "{n} item(s) for you | 'You are all caught up'" },
+      "widgets": [
+        {
+          "id": "alert-feed", "type": "feed",
+          "props": {
+            "sort": "severity R, A, I, G",
+            "item": "tinted alert row: message, sub-line, Open button -> target route",
+            "rules": [
+              { "roles": ["Project Manager"], "sev": "A/I", "msg": "PSR for {month} is not yet submitted", "when": "no PSR item (getMyItems) for current month on a scoped project, or it is still at Draft", "go": "/projects/{id}?tab=psr" },
+              { "roles": ["Project Manager"], "sev": "R", "msg": "PSR returned for revision", "when": "my PSR item sent back to Draft (_current_step Draft after submission)", "go": "/projects/{id}?tab=psr" },
+              { "roles": ["Project Manager"], "sev": "G", "msg": "PSR approved", "when": "current-month PSR _status Completed/Approved", "go": "/projects/{id}?tab=psr" },
+              { "roles": ["Project Manager"], "sev": "by schedule_health", "msg": "Forecast finish is {schedule_variance_days} days past baseline", "when": "Project.schedule_variance_days > 0", "go": "/projects/{id}?tab=schedule" },
+              { "roles": ["Project Manager", "PSC Member", "Department Head"], "sev": "R", "msg": "Critical risk: {risk_title}", "when": "Risk risk_rating_band = Critical AND status != Closed", "go": "/projects/{id}?tab=risks" },
+              { "roles": ["Project Manager", "PSC Member", "Department Head"], "sev": "R", "msg": "{Escalated|Critical} issue: {issue_title}", "when": "Issue escalation_flag = 1 AND _status not Resolved/Closed", "go": "/projects/{id}?tab=issues" },
+              { "roles": ["PSC Member"], "sev": "R", "msg": "{project_name} needs management attention", "when": "Project.needs_management_attention_flag = 1", "go": "/projects/{id}" },
+              { "roles": ["Project Manager", "Team Member"], "sev": "R", "msg": "Overdue action: {action_description}", "when": "Action Item assignee = me, due_date < today, _status != Done", "go": "/projects/{project}?tab=issues" },
+              { "roles": ["Project Manager", "Team Member"], "sev": "A", "msg": "Action due soon: {action_description}", "when": "assignee = me, due within 3 days, _status != Done", "go": "/projects/{project}?tab=issues" },
+              { "roles": ["Department Head", "Project Sponsor"], "sev": "A", "msg": "PSR awaiting your approval", "when": "each PSR in getMyTasksItems()", "go": "/approvals" }
+            ]
+          },
+          "binding": { "flowType": "Form", "flowId": "ITPMD_Project_A00", "fields": ["project_name", "project_code", "schedule_variance_days", "schedule_health", "max_forecast_finish", "max_baseline_finish", "needs_management_attention_flag"] },
+          "secondaryBindings": [
+            { "flowType": "Form", "flowId": "ITPMD_Risk_A00", "fields": ["risk_title", "project", "risk_rating", "risk_rating_band", "status"] },
+            { "flowType": "Case", "flowId": "ITPMD_Issue_A00", "fields": ["issue_title", "project", "target_resolution_date", "critical_flag", "escalation_flag"] },
+            { "flowType": "Case", "flowId": "ITPMD_Action_Item_A00", "fields": ["action_description", "project", "assignee", "due_date", "overdue_flag"] },
+            { "flowType": "Process", "flowId": "ITPMD_Project_Status_Report_A00", "fields": ["project", "reporting_period_month", "_status", "_current_step"] }
+          ]
+        }
+      ]
+    },
+
+    {
+      "id": "admin",
+      "route": "admin",
+      "path": "/admin?tab=calendar|thresholds",
+      "title": "Configuration",
+      "intent": "view-edit",
+      "roles": ["Hub Administrator", "Admin"],
+      "nav": { "label": "Configuration", "icon": "Settings" },
+      "prototype": "vAdmin() -> aCalendar(), aThresholds() (users/roles/security/audit/LEAF/LD excluded)",
+      "layout": "Left list of admin sections (Holiday calendar, Alert thresholds) + detail",
+      "tabs": [
+        {
+          "key": "calendar", "label": "Holiday calendar",
+          "widgets": [
+            {
+              "id": "holiday-table", "type": "table",
+              "props": { "kicker": "Working calendar", "title": "Holidays and non-working days", "sort": "holiday_date asc", "columns": [["Date", "holiday_date"], ["Day", "weekday(holiday_date)"], ["Name", "holiday_name"], ["Coverage", "coverage"], ["Recurring", "is_recurring_annually"], ["", "delete (two-click confirm) -> deleteItem"]] },
+              "binding": { "flowType": "Form", "flowId": "ITPMD_Holiday_Calendar_A00", "fields": ["holiday_name", "holiday_date", "coverage", "is_recurring_annually"] },
+              "gate": "ITPMD_Holiday_Calendar_A00"
+            },
+            {
+              "id": "add-holiday", "type": "form",
+              "props": { "title": "Add holiday", "container": "Dialog" },
+              "binding": { "flowType": "Form", "flowId": "ITPMD_Holiday_Calendar_A00" },
+              "gate": "ITPMD_Holiday_Calendar_A00"
+            }
+          ]
+        },
+        {
+          "key": "thresholds", "label": "Alert thresholds",
+          "widgets": [
+            {
+              "id": "hub-settings", "type": "panel",
+              "props": {
+                "kicker": "Rules BR-03 to BR-06",
+                "title": "Health and alert thresholds",
+                "groups": [
+                  ["PSR schedule", ["psr_due_working_day", "psr_reminder_days_before", "psr_reminder_final_day_before"]],
+                  ["Escalation", ["issue_aging_period_days", "escalation_recipients"]]
+                ],
+                "readOnlyRules": "Show the schedule/cost/contingency thresholds baked into Project formulas as read-only text: Schedule Amber >= 1 day, Red > 10 days or any missed milestone; Cost Amber > 100% or contingency >= 75%, Red > 105% or contingency >= 100%",
+                "edit": "first ITPMD_Hub_Settings_A00 record (setting_name); edit via Form in Sheet, or create when none exists"
+              },
+              "binding": { "flowType": "Form", "flowId": "ITPMD_Hub_Settings_A00", "fields": ["setting_name", "psr_due_working_day", "psr_reminder_days_before", "psr_reminder_final_day_before", "issue_aging_period_days", "escalation_recipients"] },
+              "gate": "ITPMD_Hub_Settings_A00"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+
+  "gaps": [
+    { "id": "G1", "where": "Project header / Overview master data", "prototype": "Vendor, Notice of Award, Purchase Order no./date, Notice to Proceed, Contract expiry", "reason": "Live in the Project 'Contracts' child table per app-spec, but child tables are not in the synced kf-schema.json. Only contract_value (aggregate) is available. Builder may add them only after confirming the table via form.getFields()." },
+    { "id": "G2", "where": "Overview > Decisions", "prototype": "Decision log timeline + 'Record decision'", "reason": "Decision Log child table not in synced schema. Dropped." },
+    { "id": "G3", "where": "Overview > Milestones 'Value' column", "prototype": "Milestone price", "reason": "No price field on ITPMD_Activity_A00. Column dropped." },
+    { "id": "G4", "where": "Schedule table 'Pred.' column + Gantt dependency cascade", "prototype": "Predecessor ids; forecasts recalculated through dependencies", "reason": "Predecessors child table not in synced schema and there is no scheduling engine in the data layer. Drag in the Gantt moves only the dragged activity; no cascade." },
+    { "id": "G5", "where": "Schedule 'Baseline vN · date' + History tab + Schedule change history", "prototype": "Baseline version, schedule history log, History tab", "reason": "Baseline History child table not in synced schema; no SDK API for Form item history. 'Set new baseline' rewrites baseline dates only. History tab dropped." },
+    { "id": "G6", "where": "Schedule variance unit", "prototype": "Working days (skips weekends and Bank holidays)", "reason": "schedule_variance_days is calendar-day DATEDIFF, and ITPMD_Holiday_Calendar_A00 is readable only by Hub Administrator. UI labels it 'days' rather than 'wd'." },
+    { "id": "G7", "where": "Financials > Contingency draws list, Budget changes list, Record change/draw forms", "prototype": "Dated draw and change rows with reasons", "reason": "Budget Changes child table not in synced schema. Only totals (total_budget_changes, total_contingency_draws) are shown." },
+    { "id": "G8", "where": "Financials > Invoices", "prototype": "Invoice table + add invoice", "reason": "Invoices child table on Cost Entry not in synced schema. Dropped." },
+    { "id": "G9", "where": "Financials for Team Member", "prototype": "Cost figures", "reason": "Team Member has no access to ITPMD_Cost_Entry_A00. Cost-entry widgets are gated; project-level totals still show." },
+    { "id": "G10", "where": "S-curve actual line history", "prototype": "Actual % per past week", "reason": "No weekly progress snapshot series (BR-17) in the schema. Past actual values are interpolated from actual_start/actual_finish/percent_complete, same as the prototype." },
+    { "id": "G11", "where": "PSR visibility for PSC Member and Team Member; portfolio 'Latest PSR' column", "prototype": "Every PSR of the project", "reason": "Process SDK lists only my items, my tasks and participated items (getAdminItems needs admin). Non-initiator, non-approver roles may see an empty PSR list. Builder should verify live and show an empty state, not fake rows." },
+    { "id": "G12", "where": "PSR deadline date", "prototype": "Computed 'next deadline {date}'", "reason": "psr_due_working_day and holidays live in Hub Settings/Holiday Calendar, which only Hub Administrator can read. Shown as text 'working day 5 of the following month (BR-11)' instead of a computed date." },
+    { "id": "G13", "where": "Health aggregates on Project", "prototype": "Only open risks/issues and undone actions count", "reason": "Risk/Issue escalation_flag and critical_flag, and Action overdue_flag, do not exclude Closed/Resolved/Done items, so Project counts may include closed items. Where item lists are loaded (tabs, notifications), the UI filters by status itself. Portfolio KPIs use the Project aggregates as-is." },
+    { "id": "G14", "where": "Case status field", "prototype": "Issue status (Open/In Progress/Escalated/Resolved/Closed), Action status (Open/In Progress/Overdue/Done)", "reason": "Synced schema lists no status or system fields for the Case models. Plan binds to the board system status '_status'; the builder must confirm the key via board.getFields(). Status moves go through board.openForm, not inline." },
+    { "id": "G15", "where": "Notifications stored messages", "prototype": "S.notes (stored per-user notifications, unread state)", "reason": "No notification model. The feed is derived live from data; there is no read/unread state." },
+    { "id": "G16", "where": "Admin > Users, Roles and permissions, Security parameters, Audit trail, LEAF, LD formula", "prototype": "System admin screens", "reason": "No backing models (Kissflow-native admin) or Phase 2/3. Excluded." },
+    { "id": "G17", "where": "Admin > thresholds for schedule/cost/contingency", "prototype": "Editable amber/red thresholds", "reason": "Hard-coded in Project formula fields, not in Hub Settings. Shown read-only." },
+    { "id": "G18", "where": "Portfolio PPSR export", "prototype": "PDF/DOCX/XLSX/CSV export note", "reason": "Out of scope for the custom UI; the PPSR can be saved as an ITPMD_Portfolio_Status_Report_A00 record." },
+    { "id": "G19", "where": "Project Manager PPSR", "prototype": "PM sees 'Generate portfolio report (PPSR)'", "reason": "Project Manager has no access to ITPMD_Portfolio_Status_Report_A00; button gated (hidden for PM)." }
+  ]
+}

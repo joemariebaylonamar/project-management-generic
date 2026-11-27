@@ -1,0 +1,22 @@
+{
+  "_id": "itpmd_portfolio_list",
+  "Name": "ITPMD Portfolio List",
+  "Description": "",
+  "Type": "List",
+  "Status": "Live",
+  "ListItems": [
+    "Core Banking Modernization",
+    "Digital Channels",
+    "Regulatory and Compliance",
+    "Infrastructure and Security",
+    "Data and Analytics",
+    "Core Banking",
+    "Infrastructure",
+    "Digital Workplace"
+  ],
+  "_application_id": "itpmd_project_hub_A00",
+  "Security": {
+    "AllowAllFlows": true,
+    "AllowedFlows": []
+  }
+}

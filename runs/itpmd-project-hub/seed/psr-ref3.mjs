@@ -1,0 +1,11 @@
+import { readFileSync } from "node:fs";
+import { call, c, q, sleep } from "./kf.mjs";
+const ids = JSON.parse(readFileSync(new URL("./seeded-ids.json", import.meta.url))).projects;
+const P = `/process/2/${c.acc}/ITPMD_Project_Status_Report_A00`;
+const cr = await call("POST", `${P}?${q}`, { project: { _id: ids.P3 }, reporting_period_month: "2026-08-01" }, 1);
+const id = cr.body._id, aiid = cr.body._activity_instance_id; await sleep(700);
+const d = (await call("GET", `${P}/${id}/${aiid}?${q}`)).body;
+console.log("sent P3 =", ids.P3, "| P1 =", ids.P1);
+console.log("stored project._id:", d.project?._id, "name:", d.project?.project_name);
+console.log("other PSR fields:", JSON.stringify({ overall: d.overall_health, budget: d.current_approved_budget, pm: d.RoEGt7NaqKtv, sponsorReq: d.sponsor_approval_required }));
+await call("DELETE", `${P}/${id}?${q}`, undefined, 1);

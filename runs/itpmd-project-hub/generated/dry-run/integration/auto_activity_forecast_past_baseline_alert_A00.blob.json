@@ -1,0 +1,57 @@
+{
+  "Root": "auto_activity_forecast_past_baseline_alert_A00",
+  "auto_activity_forecast_past_baseline_alert_A00": {
+    "_id": "auto_activity_forecast_past_baseline_alert_A00",
+    "Id": "auto_activity_forecast_past_baseline_alert_A00",
+    "Kind": "Integration",
+    "Name": "Activity forecast past baseline (Red) → notify Responsible Person",
+    "Type": "Integration",
+    "Status": "Draft",
+    "IsActive": true,
+    "_application_id": "itpmd_project_hub_A00",
+    "Connectors": [
+      "Connector_x892xc"
+    ],
+    "Integration::Trigger": [
+      "Trigger_vwdmgu"
+    ],
+    "Integration::Action": [
+      "Action_vwdmgb"
+    ]
+  },
+  "Connector_x892xc": {
+    "_id": "Connector_x892xc",
+    "Id": "Connector_x892xc",
+    "Kind": "Connector",
+    "Name": "Activity forecast past baseline (Red) → notify Responsible Person connector",
+    "Entities": [
+      "Trigger_vwdmgu",
+      "Action_vwdmgb"
+    ]
+  },
+  "Trigger_vwdmgu": {
+    "_id": "Trigger_vwdmgu",
+    "Id": "Trigger_vwdmgu",
+    "Kind": "Trigger",
+    "Version": 1,
+    "Name": "itpmd_activity · updated",
+    "Flow": "itpmd_activity",
+    "On": "record update",
+    "Event": "updated"
+  },
+  "Action_vwdmgb": {
+    "_id": "Action_vwdmgb",
+    "Id": "Action_vwdmgb",
+    "Kind": "Action",
+    "Version": 1,
+    "Name": "notify → itpmd_activity",
+    "ActionType": "notify",
+    "TargetFlow": "itpmd_activity",
+    "FieldMap": {
+      "Responsible_Person": "Responsible_Person",
+      "Project": "Project",
+      "Schedule_Variance_Days": "Schedule_Variance_Days"
+    },
+    "Condition": "BR-03: Schedule_Variance_Days > 10 (Red) OR Missed_Milestone_Flag = 1"
+  }
+}

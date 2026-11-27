@@ -1,0 +1,4 @@
+{
+  "Name": "Issue Escalated (auto) → notify Issue Owner/PM and PSC Member",
+  "Description": "BR-21 + workflow_meta status:itpmd_issue.Open/In Progress on_breach (escalate + notify PM/issue owner and role:PSC Member, ITPH-0039/0040) and BRD ITPH-00150 (PM alerts for critical issues). Issue_Owner carries the PM/delegate; PSC visibility is native board/dashboard reach for the Escalated status, not a separate authored field."
+}

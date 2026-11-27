@@ -1,0 +1,137 @@
+{
+  "Root": "itpmd_holiday_calendar",
+  "itpmd_holiday_calendar": {
+    "Id": "itpmd_holiday_calendar",
+    "Name": "ITPMD Holiday Calendar",
+    "Kind": "Model",
+    "FlowType": "Form",
+    "Description": "",
+    "Model::Row": [
+      "Row_q4i83u"
+    ],
+    "Model::Field": [
+      "holiday_name",
+      "holiday_date",
+      "coverage",
+      "is_recurring_annually"
+    ]
+  },
+  "Row_q4i83u": {
+    "Id": "Row_q4i83u",
+    "Kind": "Row",
+    "Model": "itpmd_holiday_calendar",
+    "Row::Column": [
+      "Column_q4i83u"
+    ]
+  },
+  "Column_q4i83u": {
+    "Id": "Column_q4i83u",
+    "Kind": "Column",
+    "Type": "Section",
+    "Name": "Details",
+    "Start": 0,
+    "End": 6,
+    "Row": "Row_q4i83u",
+    "Column::Row": [
+      "Row_q4gzyc",
+      "Row_q4gzyd"
+    ]
+  },
+  "Row_q4gzyc": {
+    "Id": "Row_q4gzyc",
+    "Kind": "Row",
+    "Column": "Column_q4i83u",
+    "Row::Column": [
+      "Column_14nvz0p",
+      "Column_14no9wm"
+    ]
+  },
+  "Column_14nvz0p": {
+    "Id": "Column_14nvz0p",
+    "Kind": "Column",
+    "Type": "Field",
+    "Start": 0,
+    "End": 3,
+    "Row": "Row_q4gzyc",
+    "Column::Field": [
+      "holiday_name"
+    ]
+  },
+  "Column_14no9wm": {
+    "Id": "Column_14no9wm",
+    "Kind": "Column",
+    "Type": "Field",
+    "Start": 3,
+    "End": 6,
+    "Row": "Row_q4gzyc",
+    "Column::Field": [
+      "holiday_date"
+    ]
+  },
+  "Row_q4gzyd": {
+    "Id": "Row_q4gzyd",
+    "Kind": "Row",
+    "Column": "Column_q4i83u",
+    "Row::Column": [
+      "Column_jthy5n",
+      "Column_yl6zke"
+    ]
+  },
+  "Column_jthy5n": {
+    "Id": "Column_jthy5n",
+    "Kind": "Column",
+    "Type": "Field",
+    "Start": 0,
+    "End": 3,
+    "Row": "Row_q4gzyd",
+    "Column::Field": [
+      "coverage"
+    ]
+  },
+  "Column_yl6zke": {
+    "Id": "Column_yl6zke",
+    "Kind": "Column",
+    "Type": "Field",
+    "Start": 3,
+    "End": 6,
+    "Row": "Row_q4gzyd",
+    "Column::Field": [
+      "is_recurring_annually"
+    ]
+  },
+  "holiday_name": {
+    "Id": "holiday_name",
+    "Kind": "Field",
+    "Type": "Text",
+    "Name": "Holiday_Name",
+    "Model": "itpmd_holiday_calendar",
+    "Column": "Column_14nvz0p",
+    "Required": true
+  },
+  "holiday_date": {
+    "Id": "holiday_date",
+    "Kind": "Field",
+    "Type": "Date",
+    "Name": "Holiday_Date",
+    "Model": "itpmd_holiday_calendar",
+    "Column": "Column_14no9wm",
+    "Required": true
+  },
+  "coverage": {
+    "Id": "coverage",
+    "Kind": "Field",
+    "Type": "Select",
+    "Name": "Coverage",
+    "Model": "itpmd_holiday_calendar",
+    "Column": "Column_jthy5n",
+    "ReferredList": "itpmd_holiday_coverage"
+  },
+  "is_recurring_annually": {
+    "Id": "is_recurring_annually",
+    "Kind": "Field",
+    "Type": "Boolean",
+    "Name": "Is_Recurring_Annually",
+    "Model": "itpmd_holiday_calendar",
+    "Column": "Column_yl6zke"
+  }
+}

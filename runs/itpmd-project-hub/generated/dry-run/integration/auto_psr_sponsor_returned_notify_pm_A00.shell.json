@@ -1,0 +1,4 @@
+{
+  "Name": "PSR returned at Sponsor Approval → notify PM with comment",
+  "Description": "BR-25/ITPH-00116: Sponsor send-back is the same native mandatory-comment return, mirrored on the conditional step; same PM notification (ITPH-00121)."
+}

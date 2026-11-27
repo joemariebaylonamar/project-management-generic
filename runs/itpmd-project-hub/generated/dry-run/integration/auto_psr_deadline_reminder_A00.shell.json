@@ -1,0 +1,4 @@
+{
+  "Name": "PSR deadline reminders (3-day / 1-day / daily overdue)",
+  "Description": "workflow_meta.slas step:itpmd_psr.Draft + workflow_meta.notifications SLA-breach → role:Project Manager (BR-11, ITPH-0097/00148/00157). Engine note: realize via the process connector's SlaBreached trigger (CONNECTOR_CATALOG.process.triggers.slaBreached) once wired — recorded here as source.event:'updated' because 'created|submitted|approved|completed|updated' is this IR's event vocabulary; the actual connector trigger selection is an engine/integrations.mjs concern, not a modeling one."
+}

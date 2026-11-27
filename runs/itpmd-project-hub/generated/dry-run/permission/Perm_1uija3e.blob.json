@@ -1,0 +1,56 @@
+{
+  "Root": "Perm_1uija3e",
+  "Perm_1uija3e": {
+    "Id": "Perm_1uija3e",
+    "Kind": "FlowPermission",
+    "Role": "project_manager",
+    "RoleName": "Project Manager",
+    "Model": "itpmd_action_item",
+    "Level": "Editable",
+    "Scope": "my",
+    "FlowPermission::Permission": [
+      "Permission_kru5yd",
+      "Permission_1oizx7",
+      "Permission_acih65",
+      "Permission_jiq6hf",
+      "Permission_10jl5b3",
+      "Permission_1d8f5iv"
+    ]
+  },
+  "Permission_kru5yd": {
+    "Id": "Permission_kru5yd",
+    "Kind": "Permission",
+    "Column": "action_description",
+    "Permission": "Editable"
+  },
+  "Permission_1oizx7": {
+    "Id": "Permission_1oizx7",
+    "Kind": "Permission",
+    "Column": "project",
+    "Permission": "Editable"
+  },
+  "Permission_acih65": {
+    "Id": "Permission_acih65",
+    "Kind": "Permission",
+    "Column": "related_issue",
+    "Permission": "Editable"
+  },
+  "Permission_jiq6hf": {
+    "Id": "Permission_jiq6hf",
+    "Kind": "Permission",
+    "Column": "assignee",
+    "Permission": "Editable"
+  },
+  "Permission_10jl5b3": {
+    "Id": "Permission_10jl5b3",
+    "Kind": "Permission",
+    "Column": "due_date",
+    "Permission": "Editable"
+  },
+  "Permission_1d8f5iv": {
+    "Id": "Permission_1d8f5iv",
+    "Kind": "Permission",
+    "Column": "overdue_flag",
+    "Permission": "Editable"
+  }
+}

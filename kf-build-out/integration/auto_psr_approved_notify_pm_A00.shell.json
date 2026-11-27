@@ -1,0 +1,4 @@
+{
+  "Name": "PSR Approved (locked) → notify PM",
+  "Description": "BR-13: reaching the terminal Approved step is a locked read-only snapshot; workflow_meta status-change → field-user:Project_Manager: 'Your PSR ... is Approved and locked.'"
+}

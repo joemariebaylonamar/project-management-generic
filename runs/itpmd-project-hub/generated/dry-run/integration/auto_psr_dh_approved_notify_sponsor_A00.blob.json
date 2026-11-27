@@ -1,0 +1,57 @@
+{
+  "Root": "auto_psr_dh_approved_notify_sponsor_A00",
+  "auto_psr_dh_approved_notify_sponsor_A00": {
+    "_id": "auto_psr_dh_approved_notify_sponsor_A00",
+    "Id": "auto_psr_dh_approved_notify_sponsor_A00",
+    "Kind": "Integration",
+    "Name": "PSR DH-approved (sponsor required) → notify Project Sponsor",
+    "Type": "Integration",
+    "Status": "Draft",
+    "IsActive": true,
+    "_application_id": "itpmd_project_hub_A00",
+    "Connectors": [
+      "Connector_1efgzoo"
+    ],
+    "Integration::Trigger": [
+      "Trigger_b4x3ti"
+    ],
+    "Integration::Action": [
+      "Action_b4x3sz"
+    ]
+  },
+  "Connector_1efgzoo": {
+    "_id": "Connector_1efgzoo",
+    "Id": "Connector_1efgzoo",
+    "Kind": "Connector",
+    "Name": "PSR DH-approved (sponsor required) → notify Project Sponsor connector",
+    "Entities": [
+      "Trigger_b4x3ti",
+      "Action_b4x3sz"
+    ]
+  },
+  "Trigger_b4x3ti": {
+    "_id": "Trigger_b4x3ti",
+    "Id": "Trigger_b4x3ti",
+    "Kind": "Trigger",
+    "Version": 1,
+    "Name": "itpmd_psr · approved",
+    "Flow": "itpmd_psr",
+    "On": "Department Head Review",
+    "Event": "approved"
+  },
+  "Action_b4x3sz": {
+    "_id": "Action_b4x3sz",
+    "Id": "Action_b4x3sz",
+    "Kind": "Action",
+    "Version": 1,
+    "Name": "notify → itpmd_psr",
+    "ActionType": "notify",
+    "TargetFlow": "itpmd_psr",
+    "FieldMap": {
+      "Project_Sponsor": "Project_Sponsor",
+      "Project": "Project",
+      "Reporting_Period_Month": "Reporting_Period_Month"
+    },
+    "Condition": "Sponsor_Approval_Required = \"Yes\""
+  }
+}

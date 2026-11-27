@@ -1,0 +1,145 @@
+no-pages: skipping experience layer — no native pages/nav, no AI dashboards
+resuming from checkpoint runs/current/apply-state.json (delete it to start clean)
+reuse: found existing app ITPMD_Project_Hub_A00 in id-map.json (37 flow ids)
+
+APPLY (LIVE) — ITPMD Project Hub → development-landbank-ai.kissflow.com
+  (no PROD creds set — app will be created directly in development-landbank-ai.kissflow.com)
+ai-pages disabled — using the template page path
+07:26:11   incremental: 10 flow(s) in checkpoint — unchanged ones will be skipped (KF_FORCE_REPUBLISH=1 to force)
+07:26:11   reuse app ITPMD_Project_Hub_A00
+07:26:12   role Project Manager → reused
+07:26:12   role Team Member → reused
+07:26:12   role Department Head → reused
+07:26:12   role Project Sponsor → reused
+07:26:12   role PSC Member → reused
+07:26:12   role Hub Administrator → reused
+07:26:17   roles: developer UsEGq2SRCohs added to 6/6 role(s)
+07:26:18   reuse: 37 flow ids from map (skip create for those; new/recreated artifacts in this IR still get created)
+07:26:18   list-items ITPMD_Business_Unit_A00 → 200 (7)
+07:26:18   list-items ITPMD_Portfolio_List_A00 → 200 (5)
+07:26:18   list-items ITPMD_Project_Status_A00 → 200 (4)
+07:26:18   list-items ITPMD_Dependency_Type_A00 → 200 (4)
+07:26:18   list-items ITPMD_Risk_Category_A00 → 200 (8)
+07:26:18   list-items ITPMD_Risk_Response_Strategy_A00 → 200 (4)
+07:26:18   list-items ITPMD_Risk_Status_A00 → 200 (3)
+07:26:18   list-items ITPMD_Issue_Category_A00 → 200 (7)
+07:26:19   list-items ITPMD_Priority_Level_A00 → 200 (4)
+07:26:19   list-items ITPMD_Invoice_Status_A00 → 200 (4)
+07:26:19   list-items ITPMD_Budget_Change_Type_A00 → 200 (3)
+07:26:19   list-items ITPMD_Project_Team_Role_A00 → 200 (6)
+07:26:19   list-items ITPMD_Schedule_Highlight_Type_A00 → 200 (4)
+07:26:19   list-items ITPMD_Holiday_Coverage_A00 → 200 (3)
+07:26:19   list-items ITPMD_Yes_No_A00 → 200 (2)
+07:26:19   body ITPMD_Hub_Settings_A00 → skip (unchanged, already published)
+07:26:19   body ITPMD_Holiday_Calendar_A00 → skip (unchanged, already published)
+07:26:19   body ITPMD_Risk_A00 → skip (unchanged, already published)
+07:26:19   body ITPMD_Issue_A00 → skip (unchanged, already published)
+07:26:19   body ITPMD_Action_Item_A00 → skip (unchanged, already published)
+07:26:20   body ITPMD_Cost_Entry_A00 → draft 200, publish 200
+07:26:21   body ITPMD_Activity_A00 → draft 200, publish 200
+07:26:21   body ITPMD_Project_Status_Report_A00 → draft 200, publish 200
+07:26:22   body ITPMD_Project_A00 → draft 200, publish 200
+07:26:22   body ITPMD_Portfolio_Status_Report_A00 → draft 200, publish 200
+07:26:24   caseflow ITPMD_Issue_A00 → statuses 6, draft 200, publish 200
+07:26:27   caseflow ITPMD_Action_Item_A00 → statuses 5, draft 200, publish 200
+07:26:27   board page itpmd issue Board → 386e9cd7-2190-4cf9-8dd9-990ebbdb8062 {"create":400}
+07:26:27   board page itpmd action item Board → 22c12b5e-bafa-4553-905a-859737ee4bf0 {"create":400}
+07:26:28   access Project Manager → itpmd_project (form) 423
+07:26:28   access Team Member → itpmd_project (form) 423
+07:26:28   access Hub Administrator → itpmd_hub_settings (form) 200
+07:26:28   access Hub Administrator → itpmd_holiday_calendar (form) 200
+07:26:28   access Department Head → itpmd_project (form) 200
+07:26:28     report ITPMD Project All Items → Team Member View report
+07:26:28     report ITPMD Hub Settings All Items → Hub Administrator View report
+07:26:28     report Holidays by Coverage → Hub Administrator View report
+07:26:28     report ITPMD Project All Items → Department Head View report
+07:26:29     report Project Health Distribution → Project Manager View report
+07:26:29     report ITPMD Holiday Calendar All Items → Hub Administrator View report
+07:26:29     report Project Health Distribution → Department Head View report
+07:26:29     report Projects by Business Unit → Team Member View report
+07:26:29   access Project Sponsor → itpmd_project (form) 423
+07:26:30     report Projects by Overall Health → Project Manager View report
+07:26:30   access PSC Member → itpmd_project (form) 423
+07:26:30     report ITPMD Project All Items → Project Sponsor View report
+07:26:30     report ITPMD Project All Items → PSC Member View report
+07:26:30     report Project Health Distribution → Project Sponsor View report
+07:26:31     report Projects by Overall Health → Project Manager View report
+07:26:31     report Projects by Overall Health → Department Head View report
+07:26:31     report Projects by Portfolio → Team Member View report
+07:26:31     report Projects by Portfolio → Department Head View report
+07:26:32     report Projects by Status → Project Manager View report
+07:26:32     report Projects by Status → Team Member View report
+07:26:32     report Projects by Status → Department Head View report
+07:26:32     report Projects by Overall Health → Project Sponsor View report
+07:26:32   access Team Member → itpmd_activity (form) 423
+07:26:33   access Project Manager → itpmd_activity (form) 200
+07:26:33     report Projects by Portfolio → Project Sponsor View report
+07:26:33   access Department Head → itpmd_activity (form) 200
+07:26:33     report Projects by Status → PSC Member View report
+07:26:33     report ITPMD Activity All Items → Team Member View report
+07:26:34   access PSC Member → itpmd_activity (form) 423
+07:26:34   access Project Sponsor → itpmd_activity (form) 200
+07:26:34   access Team Member → itpmd_risk (form) 423
+07:26:34   access Project Manager → itpmd_risk (form) 200
+07:26:34   access Department Head → itpmd_risk (form) 200
+07:26:35     report ITPMD Risk All Items → Team Member View report
+07:26:35     report ITPMD Risk All Items → Department Head View report
+07:26:35   access PSC Member → itpmd_risk (form) 423
+07:26:35   access Project Sponsor → itpmd_risk (form) 200
+07:26:36   access Project Manager → itpmd_issue (case) 200
+07:26:36     report ITPMD Risk All Items → PSC Member View report
+07:26:36   access Team Member → itpmd_issue (case) 200
+07:26:36   access Department Head → itpmd_issue (case) 200
+07:26:37   access PSC Member → itpmd_issue (case) 423
+07:26:37   access Project Sponsor → itpmd_issue (case) 200
+07:26:37   access Project Manager → itpmd_action_item (case) 200
+07:26:37   access Team Member → itpmd_action_item (case) 200
+07:26:37   access Department Head → itpmd_action_item (case) 200
+07:26:37   access PSC Member → itpmd_action_item (case) 423
+07:26:37   access Project Sponsor → itpmd_action_item (case) 200
+07:26:37     report ITPMD Action Item All Items → Project Manager View report
+07:26:38     report ITPMD Action Item All Items → Department Head View report
+07:26:38     report ITPMD Action Item All Items → Project Sponsor View report
+07:26:38   access Department Head → itpmd_cost_entry (form) 423
+07:26:38   access Project Manager → itpmd_cost_entry (form) 200
+07:26:38   access PSC Member → itpmd_cost_entry (form) 423
+07:26:38   access Project Sponsor → itpmd_cost_entry (form) 200
+07:26:38   access Project Manager → itpmd_psr (process) 200
+07:26:38     report ITPMD Cost Entry All Items → Department Head View report
+07:26:38     report ITPMD Cost Entry All Items → Project Manager View report
+07:26:39     report ITPMD Cost Entry All Items → Project Sponsor View report
+07:26:39     report ITPMD Project Status Report All Items → Project Manager View report
+07:26:39     report Project Status Reports by Status → Project Manager View report
+07:26:39   access Department Head → itpmd_psr (process) 200
+07:26:39   access Team Member → itpmd_psr (process) 423
+07:26:39   access PSC Member → itpmd_psr (process) 423
+07:26:39   access Project Sponsor → itpmd_psr (process) 200
+07:26:40   access PSC Member → itpmd_portfolio_report (form) 200
+07:26:40     report ITPMD Project Status Report All Items → Department Head View report
+07:26:40     report ITPMD Project Status Report All Items → Project Sponsor View report
+07:26:40     report Project Status Reports by Status → PSC Member View report
+07:26:40   access Project Sponsor → itpmd_portfolio_report (form) 423
+07:26:40   access Department Head → itpmd_portfolio_report (form) 423
+07:26:40     report ITPMD Portfolio Status Report All Items → PSC Member View report
+07:26:40     report Project Status Reports by Status → Project Sponsor View report
+07:26:41     report ITPMD Portfolio Status Report All Items → Department Head View report
+07:26:43   nav: 0 menus / 0 sub-menus, draft 200 publish 200
+07:26:46   automation PSR submitted → notify Department Head → f4861b72-296b-4179-9ea3-35c8a0a2b6fb PARTIAL {"create":400}
+07:26:46   automation PSR DH-approved (sponsor required) → notify Project Sponsor → 3d701765-92eb-4c3f-88f9-dc947f605851 PARTIAL {"create":400}
+07:26:46   automation PSR returned at DH Review → notify PM with comment → PSR_returned_at_DH_Review_notify_P_A00 (already exists — skipped)
+07:26:46   automation PSR returned at Sponsor Approval → notify PM with comment → PSR_returned_at_Sponsor_Approval_n_A00 (already exists — skipped)
+07:26:46   automation PSR Approved (locked) → notify PM → PSR_Approved_locked_notify_PM_A00 (already exists — skipped)
+07:26:46   automation PSR deadline reminders (3-day / 1-day / daily overdue) → PSR_deadline_reminders_3_day_1_day_A00 (already exists — skipped)
+07:26:46   automation Activity assigned/reassigned → notify Responsible Person → Activity_assigned_reassigned_notif_A00 (already exists — skipped)
+07:26:46   automation Activity forecast past baseline (Red) → notify Responsible Person → Activity_forecast_past_baseline_Re_A00 (already exists — skipped)
+07:26:46   automation Action item created/assigned → notify Assignee → Action_item_created_assigned_notif_A00 (already exists — skipped)
+07:26:46   automation Action item Overdue (auto) → notify Assignee → Action_item_Overdue_auto_notify_As_A00 (already exists — skipped)
+07:26:46   automation Issue Escalated (auto) → notify Issue Owner/PM and PSC Member → Issue_Escalated_auto_notify_Issue__A00 (already exists — skipped)
+07:26:46   automation Risk escalated (High/Critical) → notify Risk Owner → Risk_escalated_High_Critical_notif_A00 (already exists — skipped)
+
+=== REPORT ===
+app: ITPMD_Project_Hub_A00
+roles: Project Manager(200), Team Member(200), Department Head(200), Project Sponsor(200), PSC Member(200), Hub Administrator(200)
+created shells: 2  published: 10 (5 unchanged, skipped — incremental)
+verified nested in app: 37
+  ITPMD_Action_Item_A00(Live), ITPMD_Issue_A00(Live), ITPMD_Project_Status_Report_A00(Live), Risk_escalated_High_Critical_notif_A00(Live), Issue_Escalated_auto_notify_Issue__A00(Live), Action_item_Overdue_auto_notify_As_A00(Live), Action_item_created_assigned_notif_A00(Live), Activity_forecast_past_baseline_Re_A00(Live), Activity_assigned_reassigned_notif_A00(Live), PSR_deadline_reminders_3_day_1_day_A00(Live), PSR_Approved_locked_notify_PM_A00(Live), PSR_returned_at_Sponsor_Approval_n_A00(Live), PSR_returned_at_DH_Review_notify_P_A00(Live), PSR_DH_approved_sponsor_required_n_A00(Live), PSR_submitted_notify_Department_He_A00(Live), ITPMD_Portfolio_Status_Report_A00(Live), ITPMD_Cost_Entry_A00(Live), ITPMD_Risk_A00(Live), ITPMD_Activity_A00(Live), ITPMD_Project_A00(Live), ITPMD_Holiday_Calendar_A00(Live), ITPMD_Hub_Settings_A00(Live), ITPMD_Yes_No_A00(Live), ITPMD_Holiday_Coverage_A00(Live), ITPMD_Schedule_Highlight_Type_A00(Live), ITPMD_Project_Team_Role_A00(Live), ITPMD_Budget_Change_Type_A00(Live), ITPMD_Priority_Level_A00(Live), ITPMD_Invoice_Status_A00(Live), ITPMD_Risk_Response_Strategy_A00(Live), ITPMD_Risk_Status_A00(Live), ITPMD_Issue_Category_A00(Live), ITPMD_Project_Status_A00(Live), ITPMD_Risk_Category_A00(Live), ITPMD_Dependency_Type_A00(Live), ITPMD_Business_Unit_A00(Live), ITPMD_Portfolio_List_A00(Live)

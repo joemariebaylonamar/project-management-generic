@@ -1,0 +1,23 @@
+import fs from "node:fs";
+import { c, rq, F, q, ME, sleep, draftSubmit, getForm } from "./lib.mjs";
+import { compileFormula } from "../../../../engine/builders.mjs";
+const FLOW = "ITPMD_Activity_A00";
+const list = await rq("GET", `${F(FLOW)}/list?page_number=1&page_size=5&${q}`);
+const P = { _id: (list.body.Data || list.body)[0].project._id };
+const probe = async (tag, extra) => {
+  const r = await draftSubmit(FLOW, { activity_name: "QA-ISBLANK " + tag, project: P, wbs_code: "QX" + tag, planned_start: "2026-11-02", planned_finish: "2026-11-06", baseline_start: "2026-11-02", baseline_finish: "2026-11-06", forecast_start: "2026-11-02", forecast_finish: "2026-11-06", responsible_person: ME, ...extra });
+  if (!r.id) return { tag, err: JSON.stringify(r.submit?.body || r.draft?.body).slice(0, 160) };
+  await sleep(3500); const x = await getForm(FLOW, r.id); await rq("DELETE", `${F(FLOW)}/${r.id}?${q}`);
+  return { tag, pct: extra.percent_complete, actual_start: extra.actual_start || "(blank)", status: x.status };
+};
+const r = await c.getDraft("form", FLOW); const b = r.data || r.body || r.json; const ents = b.entities || b;
+const ex = Object.values(ents).find((e) => e && e.Kind === "Expression" && e.Field === "status");
+const drop = (id) => { const n = ents[id]; if (!n) return; (n["Node::Node"] || []).forEach(drop); delete ents[id]; };
+(ex["Expression::Node"] || []).forEach(drop); ex["Expression::Node"] = [];
+const F2 = 'IF(Percent_Complete>=100,"Complete",IF(Percent_Complete>0,"In Progress","Not Started"))';
+const ok = compileFormula(ents, ex.Id, F2, "Text", FLOW); console.log("compiled:", ok);
+if (!ok) process.exit(1); ex.ExpressionStr = F2;
+const put = await c.putDraft("form", FLOW, b); console.log("putDraft", put.status, put.body?.error_code || put.body?.message || "");
+if (put.status >= 300) process.exit(1);
+const pub = await c.publish("form", FLOW); console.log("publish", pub.status, pub.body?.error_code || ""); await sleep(2000);
+for (const [t, e] of [["A", { percent_complete: 0 }], ["B", { percent_complete: 40, actual_start: "2026-10-20" }], ["C", { percent_complete: 100, actual_start: "2026-10-20", actual_finish: "2026-10-25" }]]) console.log(" ", JSON.stringify(await probe("s" + t, e)));

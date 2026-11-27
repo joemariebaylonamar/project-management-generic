@@ -1,0 +1,161 @@
+{
+  "Root": "Perm_78m4j4",
+  "Perm_78m4j4": {
+    "Id": "Perm_78m4j4",
+    "Kind": "FlowPermission",
+    "Role": "team_member",
+    "RoleName": "Team Member",
+    "Model": "itpmd_psr",
+    "Level": "ReadOnly",
+    "Scope": "my",
+    "FlowPermission::Permission": [
+      "Permission_1ew2gtd",
+      "Permission_fhdyzb",
+      "Permission_k0j2s1",
+      "Permission_517vhh",
+      "Permission_fu8n0q",
+      "Permission_1i85q93",
+      "Permission_1hp2ive",
+      "Permission_7qodmq",
+      "Permission_k0d85q",
+      "Permission_1ddvgku",
+      "Permission_1nsxxoe",
+      "Permission_1jlspvd",
+      "Permission_1fjhzzx",
+      "Permission_10eve0l",
+      "Permission_1x9agxt",
+      "Permission_1g7xm5u",
+      "Permission_1ikml4q",
+      "Permission_x320yb",
+      "Permission_1h5p5q0",
+      "Permission_4gyi6",
+      "Permission_817sss"
+    ]
+  },
+  "Permission_1ew2gtd": {
+    "Id": "Permission_1ew2gtd",
+    "Kind": "Permission",
+    "Column": "reporting_period_month",
+    "Permission": "ReadOnly"
+  },
+  "Permission_fhdyzb": {
+    "Id": "Permission_fhdyzb",
+    "Kind": "Permission",
+    "Column": "project",
+    "Permission": "ReadOnly"
+  },
+  "Permission_k0j2s1": {
+    "Id": "Permission_k0j2s1",
+    "Kind": "Permission",
+    "Column": "project_manager",
+    "Permission": "ReadOnly"
+  },
+  "Permission_517vhh": {
+    "Id": "Permission_517vhh",
+    "Kind": "Permission",
+    "Column": "department_head",
+    "Permission": "ReadOnly"
+  },
+  "Permission_fu8n0q": {
+    "Id": "Permission_fu8n0q",
+    "Kind": "Permission",
+    "Column": "project_sponsor",
+    "Permission": "ReadOnly"
+  },
+  "Permission_1i85q93": {
+    "Id": "Permission_1i85q93",
+    "Kind": "Permission",
+    "Column": "ps_approval_required",
+    "Permission": "ReadOnly"
+  },
+  "Permission_1hp2ive": {
+    "Id": "Permission_1hp2ive",
+    "Kind": "Permission",
+    "Column": "overall_health",
+    "Permission": "ReadOnly"
+  },
+  "Permission_7qodmq": {
+    "Id": "Permission_7qodmq",
+    "Kind": "Permission",
+    "Column": "schedule_health",
+    "Permission": "ReadOnly"
+  },
+  "Permission_k0d85q": {
+    "Id": "Permission_k0d85q",
+    "Kind": "Permission",
+    "Column": "cost_health",
+    "Permission": "ReadOnly"
+  },
+  "Permission_1ddvgku": {
+    "Id": "Permission_1ddvgku",
+    "Kind": "Permission",
+    "Column": "risk_health",
+    "Permission": "ReadOnly"
+  },
+  "Permission_1nsxxoe": {
+    "Id": "Permission_1nsxxoe",
+    "Kind": "Permission",
+    "Column": "issue_health",
+    "Permission": "ReadOnly"
+  },
+  "Permission_1jlspvd": {
+    "Id": "Permission_1jlspvd",
+    "Kind": "Permission",
+    "Column": "weighted_percent_complete",
+    "Permission": "ReadOnly"
+  },
+  "Permission_1fjhzzx": {
+    "Id": "Permission_1fjhzzx",
+    "Kind": "Permission",
+    "Column": "current_approved_budget",
+    "Permission": "ReadOnly"
+  },
+  "Permission_10eve0l": {
+    "Id": "Permission_10eve0l",
+    "Kind": "Permission",
+    "Column": "total_actual_cost",
+    "Permission": "ReadOnly"
+  },
+  "Permission_1x9agxt": {
+    "Id": "Permission_1x9agxt",
+    "Kind": "Permission",
+    "Column": "total_committed_cost",
+    "Permission": "ReadOnly"
+  },
+  "Permission_1g7xm5u": {
+    "Id": "Permission_1g7xm5u",
+    "Kind": "Permission",
+    "Column": "total_forecast_cost",
+    "Permission": "ReadOnly"
+  },
+  "Permission_1ikml4q": {
+    "Id": "Permission_1ikml4q",
+    "Kind": "Permission",
+    "Column": "contingency_remaining",
+    "Permission": "ReadOnly"
+  },
+  "Permission_x320yb": {
+    "Id": "Permission_x320yb",
+    "Kind": "Permission",
+    "Column": "baseline_or_budget_change_requested",
+    "Permission": "ReadOnly"
+  },
+  "Permission_1h5p5q0": {
+    "Id": "Permission_1h5p5q0",
+    "Kind": "Permission",
+    "Column": "sponsor_approval_required",
+    "Permission": "ReadOnly"
+  },
+  "Permission_4gyi6": {
+    "Id": "Permission_4gyi6",
+    "Kind": "Permission",
+    "Column": "narrative_update",
+    "Permission": "ReadOnly"
+  },
+  "Permission_817sss": {
+    "Id": "Permission_817sss",
+    "Kind": "Permission",
+    "Column": "supporting_documents",
+    "Permission": "ReadOnly"
+  }
+}

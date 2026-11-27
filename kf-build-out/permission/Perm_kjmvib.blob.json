@@ -1,0 +1,161 @@
+{
+  "Root": "Perm_kjmvib",
+  "Perm_kjmvib": {
+    "Id": "Perm_kjmvib",
+    "Kind": "FlowPermission",
+    "Role": "project_manager",
+    "RoleName": "Project Manager",
+    "Model": "itpmd_psr",
+    "Level": "Editable",
+    "Scope": "my",
+    "FlowPermission::Permission": [
+      "Permission_qqgmnq",
+      "Permission_3s59fw",
+      "Permission_wh1kzq",
+      "Permission_hhqdp6",
+      "Permission_sar58f",
+      "Permission_6l85bw",
+      "Permission_6px3xb",
+      "Permission_k76vuf",
+      "Permission_w0swqr",
+      "Permission_1peb55v",
+      "Permission_u0n53n",
+      "Permission_13iuf3i",
+      "Permission_zqpyk2",
+      "Permission_1125vhm",
+      "Permission_lmcw0m",
+      "Permission_1agzmhz",
+      "Permission_198bm5r",
+      "Permission_1wvoia0",
+      "Permission_112quy5",
+      "Permission_1k3vdoj",
+      "Permission_vfe9up"
+    ]
+  },
+  "Permission_qqgmnq": {
+    "Id": "Permission_qqgmnq",
+    "Kind": "Permission",
+    "Column": "reporting_period_month",
+    "Permission": "Editable"
+  },
+  "Permission_3s59fw": {
+    "Id": "Permission_3s59fw",
+    "Kind": "Permission",
+    "Column": "project",
+    "Permission": "Editable"
+  },
+  "Permission_wh1kzq": {
+    "Id": "Permission_wh1kzq",
+    "Kind": "Permission",
+    "Column": "project_manager",
+    "Permission": "Editable"
+  },
+  "Permission_hhqdp6": {
+    "Id": "Permission_hhqdp6",
+    "Kind": "Permission",
+    "Column": "department_head",
+    "Permission": "Editable"
+  },
+  "Permission_sar58f": {
+    "Id": "Permission_sar58f",
+    "Kind": "Permission",
+    "Column": "project_sponsor",
+    "Permission": "Editable"
+  },
+  "Permission_6l85bw": {
+    "Id": "Permission_6l85bw",
+    "Kind": "Permission",
+    "Column": "ps_approval_required",
+    "Permission": "Editable"
+  },
+  "Permission_6px3xb": {
+    "Id": "Permission_6px3xb",
+    "Kind": "Permission",
+    "Column": "overall_health",
+    "Permission": "Editable"
+  },
+  "Permission_k76vuf": {
+    "Id": "Permission_k76vuf",
+    "Kind": "Permission",
+    "Column": "schedule_health",
+    "Permission": "Editable"
+  },
+  "Permission_w0swqr": {
+    "Id": "Permission_w0swqr",
+    "Kind": "Permission",
+    "Column": "cost_health",
+    "Permission": "Editable"
+  },
+  "Permission_1peb55v": {
+    "Id": "Permission_1peb55v",
+    "Kind": "Permission",
+    "Column": "risk_health",
+    "Permission": "Editable"
+  },
+  "Permission_u0n53n": {
+    "Id": "Permission_u0n53n",
+    "Kind": "Permission",
+    "Column": "issue_health",
+    "Permission": "Editable"
+  },
+  "Permission_13iuf3i": {
+    "Id": "Permission_13iuf3i",
+    "Kind": "Permission",
+    "Column": "weighted_percent_complete",
+    "Permission": "Editable"
+  },
+  "Permission_zqpyk2": {
+    "Id": "Permission_zqpyk2",
+    "Kind": "Permission",
+    "Column": "current_approved_budget",
+    "Permission": "Editable"
+  },
+  "Permission_1125vhm": {
+    "Id": "Permission_1125vhm",
+    "Kind": "Permission",
+    "Column": "total_actual_cost",
+    "Permission": "Editable"
+  },
+  "Permission_lmcw0m": {
+    "Id": "Permission_lmcw0m",
+    "Kind": "Permission",
+    "Column": "total_committed_cost",
+    "Permission": "Editable"
+  },
+  "Permission_1agzmhz": {
+    "Id": "Permission_1agzmhz",
+    "Kind": "Permission",
+    "Column": "total_forecast_cost",
+    "Permission": "Editable"
+  },
+  "Permission_198bm5r": {
+    "Id": "Permission_198bm5r",
+    "Kind": "Permission",
+    "Column": "contingency_remaining",
+    "Permission": "Editable"
+  },
+  "Permission_1wvoia0": {
+    "Id": "Permission_1wvoia0",
+    "Kind": "Permission",
+    "Column": "baseline_or_budget_change_requested",
+    "Permission": "Editable"
+  },
+  "Permission_112quy5": {
+    "Id": "Permission_112quy5",
+    "Kind": "Permission",
+    "Column": "sponsor_approval_required",
+    "Permission": "Editable"
+  },
+  "Permission_1k3vdoj": {
+    "Id": "Permission_1k3vdoj",
+    "Kind": "Permission",
+    "Column": "narrative_update",
+    "Permission": "Editable"
+  },
+  "Permission_vfe9up": {
+    "Id": "Permission_vfe9up",
+    "Kind": "Permission",
+    "Column": "supporting_documents",
+    "Permission": "Editable"
+  }
+}

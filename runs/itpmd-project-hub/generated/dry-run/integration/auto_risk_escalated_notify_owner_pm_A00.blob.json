@@ -1,0 +1,58 @@
+{
+  "Root": "auto_risk_escalated_notify_owner_pm_A00",
+  "auto_risk_escalated_notify_owner_pm_A00": {
+    "_id": "auto_risk_escalated_notify_owner_pm_A00",
+    "Id": "auto_risk_escalated_notify_owner_pm_A00",
+    "Kind": "Integration",
+    "Name": "Risk escalated (High/Critical) → notify Risk Owner",
+    "Type": "Integration",
+    "Status": "Draft",
+    "IsActive": true,
+    "_application_id": "itpmd_project_hub_A00",
+    "Connectors": [
+      "Connector_u456wp"
+    ],
+    "Integration::Trigger": [
+      "Trigger_1e44pyf"
+    ],
+    "Integration::Action": [
+      "Action_1e44pxw"
+    ]
+  },
+  "Connector_u456wp": {
+    "_id": "Connector_u456wp",
+    "Id": "Connector_u456wp",
+    "Kind": "Connector",
+    "Name": "Risk escalated (High/Critical) → notify Risk Owner connector",
+    "Entities": [
+      "Trigger_1e44pyf",
+      "Action_1e44pxw"
+    ]
+  },
+  "Trigger_1e44pyf": {
+    "_id": "Trigger_1e44pyf",
+    "Id": "Trigger_1e44pyf",
+    "Kind": "Trigger",
+    "Version": 1,
+    "Name": "itpmd_risk · updated",
+    "Flow": "itpmd_risk",
+    "On": "record update",
+    "Event": "updated"
+  },
+  "Action_1e44pxw": {
+    "_id": "Action_1e44pxw",
+    "Id": "Action_1e44pxw",
+    "Kind": "Action",
+    "Version": 1,
+    "Name": "notify → itpmd_risk",
+    "ActionType": "notify",
+    "TargetFlow": "itpmd_risk",
+    "FieldMap": {
+      "Risk_Owner": "Risk_Owner",
+      "Project": "Project",
+      "Risk_Title": "Risk_Title",
+      "Risk_Rating_Band": "Risk_Rating_Band"
+    },
+    "Condition": "BR-22: Escalation_Flag = 1 (Risk_Rating_Band = High or Critical)"
+  }
+}

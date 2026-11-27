@@ -1,0 +1,4 @@
+{
+  "Name": "PSR DH-approved (sponsor required) → notify Project Sponsor",
+  "Description": "BR-10 routing (health Red / baseline-or-budget change requested / PS_Approval_Required flag) + workflow_meta step-entry → role:Project Sponsor (ITPH-00157): 'A Department-Head-approved PSR ... requires your sign-off.'"
+}

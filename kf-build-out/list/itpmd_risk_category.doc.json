@@ -1,0 +1,26 @@
+{
+  "_id": "itpmd_risk_category",
+  "Name": "ITPMD Risk Category",
+  "Description": "",
+  "Type": "List",
+  "Status": "Live",
+  "ListItems": [
+    "Technical",
+    "Financial",
+    "Schedule",
+    "Resource",
+    "Vendor",
+    "Scope",
+    "Regulatory",
+    "Operational",
+    "Data",
+    "External",
+    "Operations",
+    "Change"
+  ],
+  "_application_id": "itpmd_project_hub_A00",
+  "Security": {
+    "AllowAllFlows": true,
+    "AllowedFlows": []
+  }
+}

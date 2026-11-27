@@ -1,0 +1,4 @@
+{
+  "Name": "Action item Overdue (auto) → notify Assignee",
+  "Description": "workflow_meta status:itpmd_action_item.Open/In Progress SLA on_breach: escalate + notify assignee and PM. This stitch covers the assignee half (ITPH-00155); PM visibility is reached via the same Project reference field (Project field mapped for template context), not a separate authored field."
+}

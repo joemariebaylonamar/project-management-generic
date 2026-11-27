@@ -1,0 +1,4 @@
+{
+  "Name": "My Tasks",
+  "Description": "Team Member's My Tasks — activities and action items assigned to me (security.data_scope: my). Editable on Activity/Issue/Action Item only; Project/Risk/PSR are ReadOnly for this role and are not carded here (residual gap, see decisions.md)."
+}

@@ -1,0 +1,147 @@
+{
+  "Root": "Perm_12pzp5z",
+  "Perm_12pzp5z": {
+    "Id": "Perm_12pzp5z",
+    "Kind": "FlowPermission",
+    "Role": "project_manager",
+    "RoleName": "Project Manager",
+    "Model": "itpmd_risk",
+    "Level": "Editable",
+    "Scope": "my",
+    "FlowPermission::Permission": [
+      "Permission_1fz91a0",
+      "Permission_ahebqt",
+      "Permission_1xp8sb8",
+      "Permission_13srwhr",
+      "Permission_liog9o",
+      "Permission_94btx7",
+      "Permission_7xha85",
+      "Permission_1kt45e7",
+      "Permission_1fw0kyp",
+      "Permission_1r2rlib",
+      "Permission_1nrel3z",
+      "Permission_vknhqv",
+      "Permission_1sn8ok",
+      "Permission_w7f6b",
+      "Permission_1c46akl",
+      "Permission_1rl9dbb",
+      "Permission_s4bcte",
+      "Permission_4m7wpm",
+      "Permission_wnuste"
+    ]
+  },
+  "Permission_1fz91a0": {
+    "Id": "Permission_1fz91a0",
+    "Kind": "Permission",
+    "Column": "risk_title",
+    "Permission": "Editable"
+  },
+  "Permission_ahebqt": {
+    "Id": "Permission_ahebqt",
+    "Kind": "Permission",
+    "Column": "project",
+    "Permission": "Editable"
+  },
+  "Permission_1xp8sb8": {
+    "Id": "Permission_1xp8sb8",
+    "Kind": "Permission",
+    "Column": "risk_category",
+    "Permission": "Editable"
+  },
+  "Permission_13srwhr": {
+    "Id": "Permission_13srwhr",
+    "Kind": "Permission",
+    "Column": "probability",
+    "Permission": "Editable"
+  },
+  "Permission_liog9o": {
+    "Id": "Permission_liog9o",
+    "Kind": "Permission",
+    "Column": "impact",
+    "Permission": "Editable"
+  },
+  "Permission_94btx7": {
+    "Id": "Permission_94btx7",
+    "Kind": "Permission",
+    "Column": "risk_rating",
+    "Permission": "Editable"
+  },
+  "Permission_7xha85": {
+    "Id": "Permission_7xha85",
+    "Kind": "Permission",
+    "Column": "risk_band_code",
+    "Permission": "Editable"
+  },
+  "Permission_1kt45e7": {
+    "Id": "Permission_1kt45e7",
+    "Kind": "Permission",
+    "Column": "risk_rating_band",
+    "Permission": "Editable"
+  },
+  "Permission_1fw0kyp": {
+    "Id": "Permission_1fw0kyp",
+    "Kind": "Permission",
+    "Column": "risk_owner",
+    "Permission": "Editable"
+  },
+  "Permission_1r2rlib": {
+    "Id": "Permission_1r2rlib",
+    "Kind": "Permission",
+    "Column": "mitigation_actions",
+    "Permission": "Editable"
+  },
+  "Permission_1nrel3z": {
+    "Id": "Permission_1nrel3z",
+    "Kind": "Permission",
+    "Column": "response_strategy",
+    "Permission": "Editable"
+  },
+  "Permission_vknhqv": {
+    "Id": "Permission_vknhqv",
+    "Kind": "Permission",
+    "Column": "residual_probability",
+    "Permission": "Editable"
+  },
+  "Permission_1sn8ok": {
+    "Id": "Permission_1sn8ok",
+    "Kind": "Permission",
+    "Column": "residual_impact",
+    "Permission": "Editable"
+  },
+  "Permission_w7f6b": {
+    "Id": "Permission_w7f6b",
+    "Kind": "Permission",
+    "Column": "residual_risk_rating",
+    "Permission": "Editable"
+  },
+  "Permission_1c46akl": {
+    "Id": "Permission_1c46akl",
+    "Kind": "Permission",
+    "Column": "residual_band_code",
+    "Permission": "Editable"
+  },
+  "Permission_1rl9dbb": {
+    "Id": "Permission_1rl9dbb",
+    "Kind": "Permission",
+    "Column": "residual_risk_rating_band",
+    "Permission": "Editable"
+  },
+  "Permission_s4bcte": {
+    "Id": "Permission_s4bcte",
+    "Kind": "Permission",
+    "Column": "status",
+    "Permission": "Editable"
+  },
+  "Permission_4m7wpm": {
+    "Id": "Permission_4m7wpm",
+    "Kind": "Permission",
+    "Column": "escalation_flag",
+    "Permission": "Editable"
+  },
+  "Permission_wnuste": {
+    "Id": "Permission_wnuste",
+    "Kind": "Permission",
+    "Column": "critical_flag",
+    "Permission": "Editable"
+  }
+}

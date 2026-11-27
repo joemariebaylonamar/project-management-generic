@@ -1,0 +1,57 @@
+{
+  "Root": "auto_psr_deadline_reminder_A00",
+  "auto_psr_deadline_reminder_A00": {
+    "_id": "auto_psr_deadline_reminder_A00",
+    "Id": "auto_psr_deadline_reminder_A00",
+    "Kind": "Integration",
+    "Name": "PSR deadline reminders (3-day / 1-day / daily overdue)",
+    "Type": "Integration",
+    "Status": "Draft",
+    "IsActive": true,
+    "_application_id": "itpmd_project_hub_A00",
+    "Connectors": [
+      "Connector_1qubfzw"
+    ],
+    "Integration::Trigger": [
+      "Trigger_wcq3ze"
+    ],
+    "Integration::Action": [
+      "Action_wcq3yv"
+    ]
+  },
+  "Connector_1qubfzw": {
+    "_id": "Connector_1qubfzw",
+    "Id": "Connector_1qubfzw",
+    "Kind": "Connector",
+    "Name": "PSR deadline reminders (3-day / 1-day / daily overdue) connector",
+    "Entities": [
+      "Trigger_wcq3ze",
+      "Action_wcq3yv"
+    ]
+  },
+  "Trigger_wcq3ze": {
+    "_id": "Trigger_wcq3ze",
+    "Id": "Trigger_wcq3ze",
+    "Kind": "Trigger",
+    "Version": 1,
+    "Name": "itpmd_psr · updated",
+    "Flow": "itpmd_psr",
+    "On": "Draft",
+    "Event": "updated"
+  },
+  "Action_wcq3yv": {
+    "_id": "Action_wcq3yv",
+    "Id": "Action_wcq3yv",
+    "Kind": "Action",
+    "Version": 1,
+    "Name": "notify → itpmd_psr",
+    "ActionType": "notify",
+    "TargetFlow": "itpmd_psr",
+    "FieldMap": {
+      "Project_Manager": "Project_Manager",
+      "Project": "Project",
+      "Reporting_Period_Month": "Reporting_Period_Month"
+    },
+    "Condition": "SLA (BR-11): PSR due on working day 5 of the following month (ITPMD Hub Settings/ITPMD Holiday Calendar working-day logic) — fire 3 days before due, 1 day before due, and daily while the Draft step remains un-submitted past due"
+  }
+}

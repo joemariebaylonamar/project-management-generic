@@ -1,0 +1,19 @@
+{
+  "_id": "itpmd_invoice_status",
+  "Name": "ITPMD Invoice Status",
+  "Description": "",
+  "Type": "List",
+  "Status": "Live",
+  "ListItems": [
+    "Pending",
+    "Approved",
+    "Paid",
+    "Disputed",
+    "For payment"
+  ],
+  "_application_id": "itpmd_project_hub_A00",
+  "Security": {
+    "AllowAllFlows": true,
+    "AllowedFlows": []
+  }
+}

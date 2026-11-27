@@ -1,0 +1,21 @@
+{
+  "_id": "itpmd_business_unit",
+  "Name": "ITPMD Business Unit",
+  "Description": "",
+  "Type": "List",
+  "Status": "Live",
+  "ListItems": [
+    "Retail Banking",
+    "Corporate Banking",
+    "Treasury",
+    "Operations",
+    "IT Shared Services",
+    "Risk Management",
+    "Compliance"
+  ],
+  "_application_id": "itpmd_project_hub_A00",
+  "Security": {
+    "AllowAllFlows": true,
+    "AllowedFlows": []
+  }
+}

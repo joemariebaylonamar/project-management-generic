@@ -1,0 +1,139 @@
+{
+  "design": {
+    "id": "itpmd_project_hub_A00",
+    "name": "ITPMD Project Hub",
+    "anchorId": "ledger",
+    "anchorName": "Ledger",
+    "palette": {
+      "background": "140 12% 94%",
+      "foreground": "120 6% 7%",
+      "card": "0 0% 100%",
+      "card-foreground": "120 6% 7%",
+      "muted": "139 6% 89%",
+      "muted-foreground": "120 4% 35%",
+      "secondary": "139 6% 89%",
+      "secondary-foreground": "120 6% 7%",
+      "accent": "122 96% 95%",
+      "accent-foreground": "122 80% 31%",
+      "primary": "122 96% 31%",
+      "primary-foreground": "180 0% 98%",
+      "destructive": "355 100% 37%",
+      "destructive-foreground": "0 0% 100%",
+      "success": "146 96% 26%",
+      "success-foreground": "0 0% 100%",
+      "warning": "46 96% 47%",
+      "warning-foreground": "46 40% 14%",
+      "border": "140 12% 87%",
+      "input": "140 12% 87%",
+      "ring": "122 96% 31%",
+      "sidebar": "0 0% 100%",
+      "sidebar-foreground": "120 6% 7%",
+      "sidebar-muted": "120 4% 35%",
+      "sidebar-border": "140 12% 87%",
+      "sidebar-accent": "122 96% 31%",
+      "sidebarDark": "146 10% 8%",
+      "neutralHue": 140,
+      "chart": {
+        "1": "175 96% 31%",
+        "2": "146 96% 26%",
+        "3": "355 100% 37%",
+        "4": "46 96% 47%",
+        "5": "221 97% 54%",
+        "6": "175 96% 31%",
+        "7": "146 96% 26%",
+        "8": "355 100% 37%"
+      },
+      "category": {
+        "1": "359 83% 58%",
+        "2": "26 98% 42%",
+        "3": "83 96% 31%",
+        "4": "147 99% 32%",
+        "5": "174 98% 31%",
+        "6": "217 100% 60%",
+        "7": "258 93% 68%",
+        "8": "329 73% 56%"
+      }
+    },
+    "type": {
+      "display": {
+        "family": "Space Grotesk",
+        "weights": [
+          400,
+          600,
+          700
+        ]
+      },
+      "body": {
+        "family": "IBM Plex Sans",
+        "weights": [
+          400,
+          600,
+          700
+        ]
+      },
+      "headWeight": 700,
+      "tracking": "0em",
+      "weights": {
+        "normal": 400,
+        "medium": 400,
+        "semibold": 700,
+        "bold": 600,
+        "black": 700
+      },
+      "scale": {
+        "xs": "0.6875rem",
+        "sm": "0.78125rem",
+        "base": "0.90625rem",
+        "lg": "1.0625rem",
+        "xl": "1.25rem",
+        "2xl": "1.53125rem",
+        "display": "2.75rem",
+        "kpi": "1.75rem"
+      },
+      "trackingScale": {
+        "tighter": "-0.025em",
+        "tight": "-0.01em",
+        "normal": "0em",
+        "wide": "0.04em",
+        "wider": "0.07em",
+        "widest": "0.1em"
+      },
+      "leadingScale": {
+        "tight": "1.175",
+        "snug": "1.225",
+        "normal": "1.425",
+        "relaxed": "1.525",
+        "loose": "1.925"
+      },
+      "mono": "\"Geist Mono\", ui-monospace, \"SF Mono\", \"JetBrains Mono\", Menlo, monospace"
+    },
+    "shape": {
+      "radius": "0.75rem",
+      "surface": "solid",
+      "borderWidth": "1px",
+      "ringWidth": "2px",
+      "shadowScale": {
+        "2xs": "0 1px 2px 0px oklch(0.179 0.005 145.4 / 0.05)",
+        "xs": "0 1px 2px 0px oklch(0.179 0.005 145.4 / 0.05)",
+        "sm": "0 2px 4px 0px oklch(0.179 0.005 145.4 / 0.03), 0 14px 36px -14px oklch(0.179 0.005 145.4 / 0.1)",
+        "md": "0 4px 8px 0px oklch(0.179 0.005 145.4 / 0.05), 0 20px 44px -14px oklch(0.179 0.005 145.4 / 0.14)",
+        "lg": "0 10px 28px -10px oklch(0.179 0.005 145.4 / 0.14)",
+        "xl": "0 17px 46px -15px oklch(0.179 0.005 145.4 / 0.16)",
+        "2xl": "0 24px 64px -20px oklch(0.179 0.005 145.4 / 0.18)"
+      }
+    },
+    "spacingUnit": "0.2rem",
+    "motionTiming": {
+      "duration": "0ms",
+      "easing": "cubic-bezier(0.3, 0.7, 0.4, 1)",
+      "moveDuration": "0ms"
+    },
+    "density": "compact",
+    "shell": {
+      "archetype": "rail-dark",
+      "sidebarTone": "light"
+    },
+    "icons": "line",
+    "rationale": "Anchor: Ledger (`compact rows, stark numerals, raised cards and still motion. Ledgers, invoicing, treasury.`) was picked over runner-up Realty for a government bank's ITPM/PSR hub -- its dense-tabular, still-motion register fits schedules, budgets, invoices and monthly PSR approvals, and its IBM Plex Sans body font matches the BRD's mandated typeface (BRD §11.3) verbatim without needing an override. hueShift -53 deliberately exceeds the usual +/-40 guardrail: BRD §9.8 ITPH-00296 is a hard MVP requirement ('the system shall use the Bank's visual identity -- logo and green colour palette'), and the approved prototype's CSS pins exact hex values (primary #2F7D32, brand #74BC44, sidebar #123A1C). The shift was solved by inverting the anchor's own HSL math to land primary at hue 122 -- identical to #2F7D32's hue -- so the app reads as LANDBANK green, not generic teal, while keeping Ledger's font pairing, radius (0.75rem) and shadow/motion character untouched. Archetype rail-dark renders the prototype's dark-green navigation rail (BRD 'Sidebar green -- Navigation background') via the anchor's own dark-mode palette (sidebarDark 146 10% 8%, a near-black desaturated green close to #123A1C) rather than a hand-picked color. Density stays at Ledger's default 'compact' -- PSR schedules, risk registers and financial tables are dense grids that need to stay legible at the BRD's required tablet/phone widths without excess scroll."
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "_id": "itpmd_issue_category",
+  "Name": "ITPMD Issue Category",
+  "Description": "",
+  "Type": "List",
+  "Status": "Live",
+  "ListItems": [
+    "Technical",
+    "Resource",
+    "Vendor",
+    "Schedule",
+    "Scope",
+    "Financial",
+    "Other",
+    "Environment",
+    "Operations",
+    "Data"
+  ],
+  "_application_id": "itpmd_project_hub_A00",
+  "Security": {
+    "AllowAllFlows": true,
+    "AllowedFlows": []
+  }
+}

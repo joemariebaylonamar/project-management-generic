@@ -1,0 +1,35 @@
+{
+  "Root": "Perm_d1gk3",
+  "Perm_d1gk3": {
+    "Id": "Perm_d1gk3",
+    "Kind": "FlowPermission",
+    "Role": "psc_member",
+    "RoleName": "PSC Member",
+    "Model": "itpmd_portfolio_report",
+    "Level": "Editable",
+    "Scope": "all",
+    "FlowPermission::Permission": [
+      "Permission_up09sa",
+      "Permission_pddvkl",
+      "Permission_1g4a5nh"
+    ]
+  },
+  "Permission_up09sa": {
+    "Id": "Permission_up09sa",
+    "Kind": "Permission",
+    "Column": "report_period",
+    "Permission": "Editable"
+  },
+  "Permission_pddvkl": {
+    "Id": "Permission_pddvkl",
+    "Kind": "Permission",
+    "Column": "portfolio_narrative",
+    "Permission": "Editable"
+  },
+  "Permission_1g4a5nh": {
+    "Id": "Permission_1g4a5nh",
+    "Kind": "Permission",
+    "Column": "total_projects_reported",
+    "Permission": "Editable"
+  }
+}

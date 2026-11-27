@@ -1,0 +1,140 @@
+{
+ "Risk_escalated_High_Critical_notif_A00": {
+  "name": "Risk escalated (High/Critical) → notify Risk Owner",
+  "keys": 5,
+  "triggers": 0,
+  "actions": 0,
+  "fieldMapping": "[]",
+  "active": false,
+  "st": 200,
+  "trigDesc": []
+ },
+ "Issue_Escalated_auto_notify_Issue__A00": {
+  "name": "Issue Escalated (auto) → notify Issue Owner/PM and PSC Member",
+  "keys": 9,
+  "triggers": 1,
+  "actions": 1,
+  "fieldMapping": "[[]]",
+  "active": false,
+  "st": 200,
+  "trigDesc": [
+   "{\"Id\":\"Trigger_1sj1q8\",\"Kind\":\"Trigger\",\"Type\":\"App\",\"Name\":\"When an item StatusUpdated\",\"IsInternalAuth\":false,\"Connection\":{\"_id\":\"CnEF6rDFiQc7\",\"Name\":\"Kissf"
+  ]
+ },
+ "Action_item_Overdue_auto_notify_As_A00": {
+  "name": "Action item Overdue (auto) → notify Assignee",
+  "keys": 9,
+  "triggers": 1,
+  "actions": 1,
+  "fieldMapping": "[[]]",
+  "active": false,
+  "st": 200,
+  "trigDesc": [
+   "{\"Id\":\"Trigger_1lhyw9\",\"Kind\":\"Trigger\",\"Type\":\"App\",\"Name\":\"When an item StatusUpdated\",\"IsInternalAuth\":false,\"Connection\":{\"_id\":\"CnEF6rDFiQc7\",\"Name\":\"Kissf"
+  ]
+ },
+ "Action_item_created_assigned_notif_A00": {
+  "name": "Action item created/assigned → notify Assignee",
+  "keys": 9,
+  "triggers": 1,
+  "actions": 1,
+  "fieldMapping": "[[]]",
+  "active": false,
+  "st": 200,
+  "trigDesc": [
+   "{\"Id\":\"Trigger_1egw2a\",\"Kind\":\"Trigger\",\"Type\":\"App\",\"Name\":\"When an item ItemSubmitted\",\"IsInternalAuth\":false,\"Connection\":{\"_id\":\"CnEF6rDFiQc7\",\"Name\":\"Kissf"
+  ]
+ },
+ "Activity_forecast_past_baseline_Re_A00": {
+  "name": "Activity forecast past baseline (Red) → notify Responsible Person",
+  "keys": 5,
+  "triggers": 0,
+  "actions": 0,
+  "fieldMapping": "[]",
+  "active": false,
+  "st": 200,
+  "trigDesc": []
+ },
+ "Activity_assigned_reassigned_notif_A00": {
+  "name": "Activity assigned/reassigned → notify Responsible Person",
+  "keys": 5,
+  "triggers": 0,
+  "actions": 0,
+  "fieldMapping": "[]",
+  "active": false,
+  "st": 200,
+  "trigDesc": []
+ },
+ "PSR_deadline_reminders_3_day_1_day_A00": {
+  "name": "PSR deadline reminders (3-day / 1-day / daily overdue)",
+  "keys": 9,
+  "triggers": 1,
+  "actions": 1,
+  "fieldMapping": "[[]]",
+  "active": false,
+  "st": 200,
+  "trigDesc": [
+   "{\"Id\":\"Trigger_112n11\",\"Kind\":\"Trigger\",\"Type\":\"App\",\"Name\":\"When an item ItemAdvancesToNextStep\",\"IsInternalAuth\":false,\"Connection\":{\"_id\":\"CnEF6rBPCs8z\",\"Nam"
+  ]
+ },
+ "PSR_Approved_locked_notify_PM_A00": {
+  "name": "PSR Approved (locked) → notify PM",
+  "keys": 9,
+  "triggers": 1,
+  "actions": 1,
+  "fieldMapping": "[[]]",
+  "active": false,
+  "st": 200,
+  "trigDesc": [
+   "{\"Id\":\"Trigger_u1k72\",\"Kind\":\"Trigger\",\"Type\":\"App\",\"Name\":\"When an item ItemCompleted\",\"IsInternalAuth\":false,\"Connection\":{\"_id\":\"CnEF6rBPCs8z\",\"Name\":\"Kissfl"
+  ]
+ },
+ "PSR_returned_at_Sponsor_Approval_n_A00": {
+  "name": "PSR returned at Sponsor Approval → notify PM with comment",
+  "keys": 9,
+  "triggers": 1,
+  "actions": 1,
+  "fieldMapping": "[[]]",
+  "active": false,
+  "st": 200,
+  "trigDesc": [
+   "{\"Id\":\"Trigger_nhd3\",\"Kind\":\"Trigger\",\"Type\":\"App\",\"Name\":\"When an item ItemRejected\",\"IsInternalAuth\":false,\"Connection\":{\"_id\":\"CnEF6rBPCs8z\",\"Name\":\"Kissflow"
+  ]
+ },
+ "PSR_returned_at_DH_Review_notify_P_A00": {
+  "name": "PSR returned at DH Review → notify PM with comment",
+  "keys": 9,
+  "triggers": 1,
+  "actions": 1,
+  "fieldMapping": "[[]]",
+  "active": false,
+  "st": 200,
+  "trigDesc": [
+   "{\"Id\":\"Trigger_gku4w\",\"Kind\":\"Trigger\",\"Type\":\"App\",\"Name\":\"When an item ItemRejected\",\"IsInternalAuth\":false,\"Connection\":{\"_id\":\"CnEF6rBPCs8z\",\"Name\":\"Kissflo"
+  ]
+ },
+ "PSR_DH_approved_sponsor_required_n_A00": {
+  "name": "PSR DH-approved (sponsor required) → notify Project Sponsor",
+  "keys": 9,
+  "triggers": 1,
+  "actions": 1,
+  "fieldMapping": "[[]]",
+  "active": false,
+  "st": 200,
+  "trigDesc": [
+   "{\"Id\":\"Trigger_9jrax\",\"Kind\":\"Trigger\",\"Type\":\"App\",\"Name\":\"When an item ItemCompleted\",\"IsInternalAuth\":false,\"Connection\":{\"_id\":\"CnEF6rBPCs8z\",\"Name\":\"Kissfl"
+  ]
+ },
+ "PSR_submitted_notify_Department_He_A00": {
+  "name": "PSR submitted → notify Department Head",
+  "keys": 9,
+  "triggers": 1,
+  "actions": 1,
+  "fieldMapping": "[[]]",
+  "active": false,
+  "st": 200,
+  "trigDesc": [
+   "{\"Id\":\"Trigger_2iogy\",\"Kind\":\"Trigger\",\"Type\":\"App\",\"Name\":\"When an item DraftItemSubmitted\",\"IsInternalAuth\":false,\"Connection\":{\"_id\":\"CnEF6rBPCs8z\",\"Name\":\"K"
+  ]
+ }
+}

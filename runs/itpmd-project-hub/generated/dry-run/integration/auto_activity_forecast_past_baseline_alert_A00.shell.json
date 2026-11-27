@@ -1,0 +1,4 @@
+{
+  "Name": "Activity forecast past baseline (Red) → notify Responsible Person",
+  "Description": "Journey J-04 explicitly names a 'forecast-past-baseline alert automation' following the PM's forecast update; BR-03's Red threshold (variance > 10 working days, or a missed milestone) is the trigger condition."
+}

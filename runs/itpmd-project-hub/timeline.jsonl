@@ -1,0 +1,204 @@
+{"ts":"2026-09-28T03:05:53.135Z","actor":"orchestrator","step":"express run","ev":"start"}
+{"ts":"2026-09-28T03:06:39.998Z","actor":"kf-ba","step":"domain","ev":"start"}
+{"ts":"2026-09-28T03:14:47.961Z","actor":"engine","step":"validate","ev":"start"}
+{"ts":"2026-09-28T03:14:47.966Z","actor":"engine","step":"validate","ev":"end"}
+{"ts":"2026-09-28T03:16:15.418Z","actor":"kf-ba","step":"domain","ev":"end"}
+{"ts":"2026-09-28T03:16:46.224Z","actor":"kf-ba","step":"agent aea1b4945e1ee00c9","ev":"tokens","tokens":{"input":146,"output":37672,"cacheRead":4732284,"cacheWrite":245152,"turns":73,"total":5015254}}
+{"ts":"2026-09-28T03:17:01.307Z","actor":"kf-architect","step":"architecture","ev":"start"}
+{"ts":"2026-09-28T03:17:40.443Z","actor":"engine","step":"verify","ev":"start"}
+{"ts":"2026-09-28T03:17:40.448Z","actor":"engine","step":"verify","ev":"end"}
+{"ts":"2026-09-28T03:17:40.508Z","actor":"engine","step":"gate","ev":"start"}
+{"ts":"2026-09-28T03:17:40.534Z","actor":"engine","step":"gate","ev":"end"}
+{"ts":"2026-09-28T03:21:11.127Z","actor":"kf-architect","step":"validate","ev":"start"}
+{"ts":"2026-09-28T03:21:11.141Z","actor":"kf-architect","step":"validate","ev":"end"}
+{"ts":"2026-09-28T03:21:11.265Z","actor":"kf-architect","step":"verify","ev":"start"}
+{"ts":"2026-09-28T03:21:11.275Z","actor":"kf-architect","step":"verify","ev":"end"}
+{"ts":"2026-09-28T03:21:11.446Z","actor":"kf-architect","step":"gate","ev":"start"}
+{"ts":"2026-09-28T03:21:11.455Z","actor":"kf-architect","step":"gate","ev":"end"}
+{"ts":"2026-09-28T03:21:36.368Z","actor":"kf-architect","step":"architecture","ev":"end"}
+{"ts":"2026-09-28T03:22:02.040Z","actor":"kf-architect","step":"agent abefad3491a68970d","ev":"tokens","tokens":{"input":54,"output":404,"cacheRead":1396322,"cacheWrite":158613,"turns":27,"total":1555393}}
+{"ts":"2026-09-28T03:22:37.723Z","actor":"kf-workflow-designer","step":"workflow","ev":"start"}
+{"ts":"2026-09-28T03:22:38.018Z","actor":"kf-data-architect","step":"data","ev":"start"}
+{"ts":"2026-09-28T03:26:16.952Z","actor":"kf-workflow-designer","step":"workflow","ev":"end"}
+{"ts":"2026-09-28T03:26:35.931Z","actor":"kf-workflow-designer","step":"agent ac7a88403a75f8b51","ev":"tokens","tokens":{"input":84,"output":7834,"cacheRead":2032944,"cacheWrite":163101,"turns":42,"total":2203963}}
+{"ts":"2026-09-28T03:26:53.051Z","actor":"kf-workflow-designer","step":"agent ac7a88403a75f8b51","ev":"tokens","tokens":{"input":88,"output":7874,"cacheRead":2191525,"cacheWrite":166239,"turns":44,"total":2365726}}
+{"ts":"2026-09-28T03:30:38.068Z","actor":"engine","step":"validate","ev":"start"}
+{"ts":"2026-09-28T03:30:38.076Z","actor":"engine","step":"validate","ev":"end"}
+{"ts":"2026-09-28T03:30:42.629Z","actor":"engine","step":"verify","ev":"start"}
+{"ts":"2026-09-28T03:30:42.636Z","actor":"engine","step":"verify","ev":"end"}
+{"ts":"2026-09-28T03:31:58.431Z","actor":"engine","step":"verify","ev":"start"}
+{"ts":"2026-09-28T03:31:58.440Z","actor":"engine","step":"verify","ev":"end"}
+{"ts":"2026-09-28T03:32:29.669Z","actor":"kf-data-architect","step":"--run","ev":"end"}
+{"ts":"2026-09-28T03:32:33.303Z","actor":"engine","step":"verify","ev":"start"}
+{"ts":"2026-09-28T03:32:33.310Z","actor":"engine","step":"verify","ev":"end"}
+{"ts":"2026-09-28T03:33:02.422Z","actor":"kf-data-architect","step":"agent ad4fa304cf39d0334","ev":"tokens","tokens":{"input":134,"output":23387,"cacheRead":6283122,"cacheWrite":354872,"turns":67,"total":6661515}}
+{"ts":"2026-09-28T03:33:04.959Z","actor":"engine","step":"verify","ev":"start"}
+{"ts":"2026-09-28T03:33:04.966Z","actor":"engine","step":"verify","ev":"end"}
+{"ts":"2026-09-28T03:33:05.021Z","actor":"engine","step":"gate","ev":"start"}
+{"ts":"2026-09-28T03:33:05.029Z","actor":"engine","step":"gate","ev":"end"}
+{"ts":"2026-09-28T03:33:21.660Z","actor":"kf-security-designer","step":"security","ev":"start"}
+{"ts":"2026-09-28T03:35:51.062Z","actor":"engine","step":"verify","ev":"start"}
+{"ts":"2026-09-28T03:35:51.070Z","actor":"engine","step":"verify","ev":"end"}
+{"ts":"2026-09-28T03:35:54.811Z","actor":"engine","step":"gate","ev":"start"}
+{"ts":"2026-09-28T03:35:54.821Z","actor":"engine","step":"gate","ev":"end"}
+{"ts":"2026-09-28T03:37:01.153Z","actor":"kf-security-designer","step":"--run","ev":"end"}
+{"ts":"2026-09-28T03:37:26.105Z","actor":"kf-security-designer","step":"agent a5e877d227ff59603","ev":"tokens","tokens":{"input":64,"output":614,"cacheRead":1320851,"cacheWrite":136862,"turns":32,"total":1458391}}
+{"ts":"2026-09-28T03:37:57.739Z","actor":"kf-integration-analyst","step":"automations","ev":"start"}
+{"ts":"2026-09-28T03:37:58.458Z","actor":"kf-experience-designer","step":"experience","ev":"start"}
+{"ts":"2026-09-28T03:37:58.537Z","actor":"kf-design-director","step":"design","ev":"start"}
+{"ts":"2026-09-28T03:41:09.606Z","actor":"kf-design-director","step":"design","ev":"end"}
+{"ts":"2026-09-28T03:41:25.495Z","actor":"kf-design-director","step":"agent a7607dde886f5ca0c","ev":"tokens","tokens":{"input":92,"output":2831,"cacheRead":2015619,"cacheWrite":240010,"turns":46,"total":2258552}}
+{"ts":"2026-09-28T03:42:37.886Z","actor":"kf-integration-analyst","step":"automations","ev":"end"}
+{"ts":"2026-09-28T03:42:59.021Z","actor":"kf-integration-analyst","step":"agent ae95b5661e85f619d","ev":"tokens","tokens":{"input":98,"output":7907,"cacheRead":2642353,"cacheWrite":181843,"turns":49,"total":2832201}}
+{"ts":"2026-09-28T03:44:26.927Z","actor":"engine","step":"verify","ev":"start"}
+{"ts":"2026-09-28T03:44:26.955Z","actor":"engine","step":"verify","ev":"end"}
+{"ts":"2026-09-28T03:44:30.355Z","actor":"engine","step":"gate","ev":"start"}
+{"ts":"2026-09-28T03:44:30.366Z","actor":"engine","step":"gate","ev":"end"}
+{"ts":"2026-09-28T03:48:56.154Z","actor":"engine","step":"verify","ev":"start"}
+{"ts":"2026-09-28T03:48:56.167Z","actor":"engine","step":"verify","ev":"end"}
+{"ts":"2026-09-28T03:48:56.237Z","actor":"engine","step":"gate","ev":"start"}
+{"ts":"2026-09-28T03:48:56.251Z","actor":"engine","step":"gate","ev":"end"}
+{"ts":"2026-09-28T03:49:23.823Z","actor":"engine","step":"verify","ev":"start"}
+{"ts":"2026-09-28T03:49:23.832Z","actor":"engine","step":"verify","ev":"end"}
+{"ts":"2026-09-28T03:49:23.899Z","actor":"engine","step":"gate","ev":"start"}
+{"ts":"2026-09-28T03:49:23.911Z","actor":"engine","step":"gate","ev":"end"}
+{"ts":"2026-09-28T03:49:30.092Z","actor":"engine","step":"gate","ev":"start"}
+{"ts":"2026-09-28T03:49:30.110Z","actor":"engine","step":"gate","ev":"end"}
+{"ts":"2026-09-28T03:50:23.863Z","actor":"kf-experience-designer","step":"experience","ev":"end"}
+{"ts":"2026-09-28T03:50:27.805Z","actor":"engine","step":"verify","ev":"start"}
+{"ts":"2026-09-28T03:50:27.813Z","actor":"engine","step":"verify","ev":"end"}
+{"ts":"2026-09-28T03:50:27.878Z","actor":"engine","step":"gate","ev":"start"}
+{"ts":"2026-09-28T03:50:27.890Z","actor":"engine","step":"gate","ev":"end"}
+{"ts":"2026-09-28T03:51:00.029Z","actor":"kf-experience-designer","step":"agent a17d5ac3769a09e7b","ev":"tokens","tokens":{"input":176,"output":2783,"cacheRead":7930136,"cacheWrite":309918,"turns":88,"total":8243013}}
+{"ts":"2026-09-28T03:51:05.586Z","actor":"engine","step":"verify","ev":"start"}
+{"ts":"2026-09-28T03:51:05.617Z","actor":"engine","step":"verify","ev":"end"}
+{"ts":"2026-09-28T03:51:05.727Z","actor":"engine","step":"gate","ev":"start"}
+{"ts":"2026-09-28T03:51:05.745Z","actor":"engine","step":"gate","ev":"end"}
+{"ts":"2026-09-28T03:51:21.917Z","actor":"kf-coherence-critic","step":"coherence","ev":"start"}
+{"ts":"2026-09-28T03:51:27.263Z","actor":"engine","step":"verify","ev":"start"}
+{"ts":"2026-09-28T03:51:27.272Z","actor":"engine","step":"verify","ev":"end"}
+{"ts":"2026-09-28T03:51:27.325Z","actor":"engine","step":"gate","ev":"start"}
+{"ts":"2026-09-28T03:51:27.343Z","actor":"engine","step":"gate","ev":"end"}
+{"ts":"2026-09-28T03:55:43.232Z","actor":"engine","step":"verify","ev":"start"}
+{"ts":"2026-09-28T03:55:43.249Z","actor":"engine","step":"verify","ev":"end"}
+{"ts":"2026-09-28T03:55:43.329Z","actor":"engine","step":"gate","ev":"start"}
+{"ts":"2026-09-28T03:55:43.342Z","actor":"engine","step":"gate","ev":"end"}
+{"ts":"2026-09-28T03:56:14.533Z","actor":"engine","step":"verify","ev":"start"}
+{"ts":"2026-09-28T03:56:14.544Z","actor":"engine","step":"verify","ev":"end"}
+{"ts":"2026-09-28T03:56:14.607Z","actor":"engine","step":"gate","ev":"start"}
+{"ts":"2026-09-28T03:56:14.621Z","actor":"engine","step":"gate","ev":"end"}
+{"ts":"2026-09-28T03:56:33.407Z","actor":"kf-coherence-critic","step":"coherence","ev":"end"}
+{"ts":"2026-09-28T03:56:55.894Z","actor":"runs","step":"snapshot v1 — v1 — express plan","ev":"mark"}
+{"ts":"2026-09-28T03:56:58.484Z","actor":"kf-coherence-critic","step":"agent a8c0d69062bebe933","ev":"tokens","tokens":{"input":108,"output":1254,"cacheRead":3270615,"cacheWrite":201601,"turns":54,"total":3473578}}
+{"ts":"2026-09-28T03:57:03.051Z","actor":"engine","step":"build","ev":"start"}
+{"ts":"2026-09-28T03:57:03.115Z","actor":"engine","step":"build","ev":"end"}
+{"ts":"2026-09-28T03:57:07.565Z","actor":"engine","step":"build","ev":"start"}
+{"ts":"2026-09-28T03:57:07.613Z","actor":"engine","step":"build","ev":"end"}
+{"ts":"2026-09-28T04:01:15.074Z","actor":"engine","step":"verify","ev":"start"}
+{"ts":"2026-09-28T04:01:15.084Z","actor":"engine","step":"verify","ev":"end"}
+{"ts":"2026-09-28T04:01:20.168Z","actor":"engine","step":"gate","ev":"start"}
+{"ts":"2026-09-28T04:01:20.183Z","actor":"engine","step":"gate","ev":"end"}
+{"ts":"2026-09-28T04:01:20.277Z","actor":"engine","step":"build","ev":"start"}
+{"ts":"2026-09-28T04:01:20.349Z","actor":"engine","step":"build","ev":"end"}
+{"ts":"2026-09-28T04:01:25.125Z","actor":"kf-author","step":"apply","ev":"start"}
+{"ts":"2026-09-28T04:01:35.566Z","actor":"engine","step":"apply","ev":"start"}
+{"ts":"2026-09-28T04:04:24.076Z","actor":"kf-author","step":"agent af2f8dcdfd2854442","ev":"tokens","tokens":{"input":102,"output":340,"cacheRead":1351996,"cacheWrite":77189,"turns":51,"total":1429627}}
+{"ts":"2026-09-28T04:07:19.010Z","actor":"engine","step":"apply","ev":"end"}
+{"ts":"2026-09-28T04:07:31.594Z","actor":"engine","step":"apply","ev":"start"}
+{"ts":"2026-09-28T04:10:17.983Z","actor":"kf-author","step":"agent af2f8dcdfd2854442","ev":"tokens","tokens":{"input":130,"output":577,"cacheRead":1964246,"cacheWrite":104095,"turns":65,"total":2069048}}
+{"ts":"2026-09-28T04:14:25.464Z","actor":"engine","step":"apply","ev":"end"}
+{"ts":"2026-09-28T04:14:37.859Z","actor":"engine","step":"apply","ev":"start"}
+{"ts":"2026-09-28T04:16:48.738Z","actor":"kf-author","step":"agent af2f8dcdfd2854442","ev":"tokens","tokens":{"input":148,"output":685,"cacheRead":2423945,"cacheWrite":114716,"turns":74,"total":2539494}}
+{"ts":"2026-09-28T04:17:43.393Z","actor":"kf-author","step":"agent af2f8dcdfd2854442","ev":"tokens","tokens":{"input":172,"output":761,"cacheRead":3080080,"cacheWrite":117600,"turns":86,"total":3198613}}
+{"ts":"2026-09-28T04:19:55.170Z","actor":"engine","step":"apply","ev":"end"}
+{"ts":"2026-09-28T04:21:24.243Z","actor":"runs","step":"snapshot v2 — generated → dev","ev":"mark"}
+{"ts":"2026-09-28T04:21:24.294Z","actor":"kf-author","step":"apply","ev":"end"}
+{"ts":"2026-09-28T04:21:59.740Z","actor":"kf-author","step":"agent af2f8dcdfd2854442","ev":"tokens","tokens":{"input":200,"output":943,"cacheRead":3929475,"cacheWrite":140974,"turns":100,"total":4071592}}
+{"ts":"2026-09-28T04:28:37.544Z","actor":"kf-acceptance","step":"acceptance","ev":"start"}
+{"ts":"2026-09-28T04:45:14.618Z","actor":"kf-acceptance","step":"acceptance","ev":"end"}
+{"ts":"2026-09-28T04:45:39.274Z","actor":"kf-acceptance","step":"agent af592023ff8b68fd1","ev":"tokens","tokens":{"input":348,"output":9842,"cacheRead":17288773,"cacheWrite":384620,"turns":174,"total":17683583}}
+{"ts":"2026-09-28T04:45:48.833Z","actor":"orchestrator","step":"done","ev":"start"}
+{"ts":"2026-09-28T04:58:56.003Z","actor":"engine","step":"verify","ev":"start"}
+{"ts":"2026-09-28T04:58:56.011Z","actor":"engine","step":"verify","ev":"end"}
+{"ts":"2026-09-28T04:58:56.061Z","actor":"engine","step":"build","ev":"start"}
+{"ts":"2026-09-28T04:58:56.113Z","actor":"engine","step":"build","ev":"end"}
+{"ts":"2026-09-28T04:59:24.870Z","actor":"engine","step":"apply","ev":"start"}
+{"ts":"2026-09-28T04:59:58.409Z","actor":"engine","step":"apply","ev":"end"}
+{"ts":"2026-09-28T05:10:55.712Z","actor":"kf-ui-architect","step":"agent a07d93be0c77ae4df","ev":"tokens","tokens":{"input":66,"output":24758,"cacheRead":1601092,"cacheWrite":190079,"turns":33,"total":1815995}}
+{"ts":"2026-09-28T07:25:20.656Z","actor":"engine","step":"verify","ev":"start"}
+{"ts":"2026-09-28T07:25:20.663Z","actor":"engine","step":"verify","ev":"end"}
+{"ts":"2026-09-28T07:25:20.689Z","actor":"engine","step":"build","ev":"start"}
+{"ts":"2026-09-28T07:25:20.721Z","actor":"engine","step":"build","ev":"end"}
+{"ts":"2026-09-28T07:25:33.623Z","actor":"engine","step":"build","ev":"start"}
+{"ts":"2026-09-28T07:25:33.650Z","actor":"engine","step":"build","ev":"end"}
+{"ts":"2026-09-28T07:26:03.243Z","actor":"engine","step":"verify","ev":"start"}
+{"ts":"2026-09-28T07:26:03.248Z","actor":"engine","step":"verify","ev":"end"}
+{"ts":"2026-09-28T07:26:03.278Z","actor":"engine","step":"build","ev":"start"}
+{"ts":"2026-09-28T07:26:03.302Z","actor":"engine","step":"build","ev":"end"}
+{"ts":"2026-09-28T07:26:11.369Z","actor":"engine","step":"apply","ev":"start"}
+{"ts":"2026-09-28T07:26:46.868Z","actor":"engine","step":"apply","ev":"end"}
+{"ts":"2026-09-28T07:29:46.281Z","actor":"engine","step":"apply","ev":"start"}
+{"ts":"2026-09-28T07:30:16.712Z","actor":"engine","step":"apply","ev":"end"}
+{"ts":"2026-09-28T07:32:26.240Z","actor":"engine","step":"apply","ev":"start"}
+{"ts":"2026-09-28T07:33:05.222Z","actor":"engine","step":"apply","ev":"end"}
+{"ts":"2026-09-28T07:35:20.004Z","actor":"engine","step":"build","ev":"start"}
+{"ts":"2026-09-28T07:35:20.037Z","actor":"engine","step":"build","ev":"end"}
+{"ts":"2026-09-28T07:35:20.078Z","actor":"engine","step":"apply","ev":"start"}
+{"ts":"2026-09-28T07:35:56.452Z","actor":"engine","step":"apply","ev":"end"}
+{"ts":"2026-09-28T07:40:05.649Z","actor":"engine","step":"apply","ev":"start"}
+{"ts":"2026-09-28T07:40:47.538Z","actor":"engine","step":"apply","ev":"end"}
+{"ts":"2026-09-28T12:06:07.301Z","actor":"engine","step":"apply","ev":"start"}
+{"ts":"2026-09-28T12:07:07.657Z","actor":"engine","step":"apply","ev":"end"}
+{"ts":"2026-09-28T12:58:24.311Z","actor":"engine","step":"verify","ev":"start"}
+{"ts":"2026-09-28T12:58:24.316Z","actor":"engine","step":"verify","ev":"end"}
+{"ts":"2026-09-28T12:58:24.343Z","actor":"engine","step":"build","ev":"start"}
+{"ts":"2026-09-28T12:58:24.371Z","actor":"engine","step":"build","ev":"end"}
+{"ts":"2026-09-28T12:58:34.565Z","actor":"engine","step":"apply","ev":"start"}
+{"ts":"2026-09-28T12:59:06.585Z","actor":"engine","step":"apply","ev":"end"}
+{"ts":"2026-09-28T13:05:36.162Z","actor":"engine","step":"apply","ev":"start"}
+{"ts":"2026-09-28T13:06:31.008Z","actor":"engine","step":"apply","ev":"end"}
+{"ts":"2026-09-29T04:34:22.250Z","actor":"engine","step":"validate","ev":"start"}
+{"ts":"2026-09-29T04:34:22.257Z","actor":"engine","step":"validate","ev":"end"}
+{"ts":"2026-09-29T04:34:28.950Z","actor":"engine","step":"apply","ev":"start"}
+{"ts":"2026-09-29T04:35:08.415Z","actor":"engine","step":"apply","ev":"end"}
+{"ts":"2026-09-30T08:09:53.856Z","actor":"engine","step":"validate","ev":"start"}
+{"ts":"2026-09-30T08:09:53.864Z","actor":"engine","step":"validate","ev":"end"}
+{"ts":"2026-09-30T08:15:16.463Z","actor":"engine","step":"apply","ev":"start"}
+{"ts":"2026-09-30T08:16:02.493Z","actor":"engine","step":"apply","ev":"end"}
+{"ts":"2026-09-30T10:04:40.794Z","actor":"engine","step":"validate","ev":"start"}
+{"ts":"2026-09-30T10:04:40.799Z","actor":"engine","step":"validate","ev":"end"}
+{"ts":"2026-09-30T10:04:40.828Z","actor":"engine","step":"apply","ev":"start"}
+{"ts":"2026-09-30T10:05:20.033Z","actor":"engine","step":"apply","ev":"end"}
+{"ts":"2026-09-30T14:43:18.445Z","actor":"engine","step":"validate","ev":"start"}
+{"ts":"2026-09-30T14:43:18.449Z","actor":"engine","step":"validate","ev":"end"}
+{"ts":"2026-09-30T14:43:18.483Z","actor":"engine","step":"apply","ev":"start"}
+{"ts":"2026-09-30T14:43:51.559Z","actor":"engine","step":"apply","ev":"end"}
+{"ts":"2026-10-28T08:07:12.434Z","actor":"kf-seed","step":"agent a675d21d7582d53c7","ev":"tokens","tokens":{"input":60,"output":25408,"cacheRead":918148,"cacheWrite":89206,"turns":30,"total":1032822}}
+{"ts":"2026-10-28T11:51:02.978Z","actor":"engine","step":"validate","ev":"start"}
+{"ts":"2026-10-28T11:51:02.982Z","actor":"engine","step":"validate","ev":"end"}
+{"ts":"2026-10-28T11:51:22.797Z","actor":"engine","step":"apply","ev":"start"}
+{"ts":"2026-10-28T11:51:54.491Z","actor":"engine","step":"apply","ev":"end"}
+{"ts":"2026-10-28T11:56:29.821Z","actor":"engine","step":"apply","ev":"start"}
+{"ts":"2026-10-28T11:57:05.866Z","actor":"engine","step":"apply","ev":"end"}
+{"ts":"2026-10-28T12:05:38.471Z","actor":"engine","step":"validate","ev":"start"}
+{"ts":"2026-10-28T12:05:38.476Z","actor":"engine","step":"validate","ev":"end"}
+{"ts":"2026-10-28T12:05:49.843Z","actor":"engine","step":"apply","ev":"start"}
+{"ts":"2026-10-28T12:06:31.872Z","actor":"engine","step":"apply","ev":"end"}
+{"ts":"2026-10-28T12:11:20.560Z","actor":"engine","step":"validate","ev":"start"}
+{"ts":"2026-10-28T12:11:20.565Z","actor":"engine","step":"validate","ev":"end"}
+{"ts":"2026-10-28T12:11:21.030Z","actor":"engine","step":"apply","ev":"start"}
+{"ts":"2026-10-28T12:12:07.031Z","actor":"engine","step":"apply","ev":"end"}
+{"ts":"2026-10-28T12:16:39.096Z","actor":"engine","step":"validate","ev":"start"}
+{"ts":"2026-10-28T12:16:39.101Z","actor":"engine","step":"validate","ev":"end"}
+{"ts":"2026-10-28T12:16:39.558Z","actor":"engine","step":"apply","ev":"start"}
+{"ts":"2026-10-28T12:17:16.457Z","actor":"engine","step":"apply","ev":"end"}
+{"ts":"2026-10-28T12:22:03.111Z","actor":"engine","step":"validate","ev":"start"}
+{"ts":"2026-10-28T12:22:03.117Z","actor":"engine","step":"validate","ev":"end"}
+{"ts":"2026-10-28T12:22:03.554Z","actor":"engine","step":"apply","ev":"start"}
+{"ts":"2026-10-28T12:22:40.842Z","actor":"engine","step":"apply","ev":"end"}
+{"ts":"2026-10-30T06:03:14.028Z","actor":"kf-runtime-qa","step":"agent a15518818f2a7c90c","ev":"tokens","tokens":{"input":74,"output":42797,"cacheRead":1605466,"cacheWrite":153014,"turns":37,"total":1801351}}
+{"ts":"2026-10-30T06:48:30.193Z","actor":"kf-runtime-qa","step":"agent ae8184b33a336b583","ev":"tokens","tokens":{"input":318,"output":209124,"cacheRead":20842158,"cacheWrite":462124,"turns":159,"total":21513724}}
+{"ts":"2026-10-30T06:53:11.926Z","actor":"engine","step":"apply","ev":"start"}
+{"ts":"2026-10-30T06:53:48.753Z","actor":"engine","step":"apply","ev":"end"}
+{"ts":"2026-10-30T07:03:06.235Z","actor":"engine","step":"apply","ev":"start"}
+{"ts":"2026-10-30T07:03:43.779Z","actor":"engine","step":"apply","ev":"end"}

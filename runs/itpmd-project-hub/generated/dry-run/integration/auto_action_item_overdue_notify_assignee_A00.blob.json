@@ -1,0 +1,57 @@
+{
+  "Root": "auto_action_item_overdue_notify_assignee_A00",
+  "auto_action_item_overdue_notify_assignee_A00": {
+    "_id": "auto_action_item_overdue_notify_assignee_A00",
+    "Id": "auto_action_item_overdue_notify_assignee_A00",
+    "Kind": "Integration",
+    "Name": "Action item Overdue (auto) → notify Assignee",
+    "Type": "Integration",
+    "Status": "Draft",
+    "IsActive": true,
+    "_application_id": "itpmd_project_hub_A00",
+    "Connectors": [
+      "Connector_hs6yh4"
+    ],
+    "Integration::Trigger": [
+      "Trigger_19ftzw6"
+    ],
+    "Integration::Action": [
+      "Action_19ftzvn"
+    ]
+  },
+  "Connector_hs6yh4": {
+    "_id": "Connector_hs6yh4",
+    "Id": "Connector_hs6yh4",
+    "Kind": "Connector",
+    "Name": "Action item Overdue (auto) → notify Assignee connector",
+    "Entities": [
+      "Trigger_19ftzw6",
+      "Action_19ftzvn"
+    ]
+  },
+  "Trigger_19ftzw6": {
+    "_id": "Trigger_19ftzw6",
+    "Id": "Trigger_19ftzw6",
+    "Kind": "Trigger",
+    "Version": 1,
+    "Name": "itpmd_action_item · updated",
+    "Flow": "itpmd_action_item",
+    "On": "Overdue",
+    "Event": "updated"
+  },
+  "Action_19ftzvn": {
+    "_id": "Action_19ftzvn",
+    "Id": "Action_19ftzvn",
+    "Kind": "Action",
+    "Version": 1,
+    "Name": "notify → itpmd_action_item",
+    "ActionType": "notify",
+    "TargetFlow": "itpmd_action_item",
+    "FieldMap": {
+      "Assignee": "Assignee",
+      "Project": "Project",
+      "Action_Description": "Action_Description"
+    },
+    "Condition": "auto-transition In Progress/Open → Overdue when Due_Date has passed (ITPH-0037/00155)"
+  }
+}

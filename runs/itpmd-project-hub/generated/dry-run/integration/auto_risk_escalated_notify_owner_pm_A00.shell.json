@@ -1,0 +1,4 @@
+{
+  "Name": "Risk escalated (High/Critical) → notify Risk Owner",
+  "Description": "BR-22 (risk escalates automatically at High/Critical rating, appears on PSC view, triggers notifications) + BRD ITPH-00150 (PM alerts for critical risks and issues). Risk is a plain Form (no workflow steps, D15/architecture), so the trigger is a field-value change (Escalation_Flag), not a step/status transition."
+}

@@ -1,0 +1,57 @@
+{
+  "Root": "auto_psr_sponsor_returned_notify_pm_A00",
+  "auto_psr_sponsor_returned_notify_pm_A00": {
+    "_id": "auto_psr_sponsor_returned_notify_pm_A00",
+    "Id": "auto_psr_sponsor_returned_notify_pm_A00",
+    "Kind": "Integration",
+    "Name": "PSR returned at Sponsor Approval → notify PM with comment",
+    "Type": "Integration",
+    "Status": "Draft",
+    "IsActive": true,
+    "_application_id": "itpmd_project_hub_A00",
+    "Connectors": [
+      "Connector_1m2ptb5"
+    ],
+    "Integration::Trigger": [
+      "Trigger_qomthr"
+    ],
+    "Integration::Action": [
+      "Action_qomth8"
+    ]
+  },
+  "Connector_1m2ptb5": {
+    "_id": "Connector_1m2ptb5",
+    "Id": "Connector_1m2ptb5",
+    "Kind": "Connector",
+    "Name": "PSR returned at Sponsor Approval → notify PM with comment connector",
+    "Entities": [
+      "Trigger_qomthr",
+      "Action_qomth8"
+    ]
+  },
+  "Trigger_qomthr": {
+    "_id": "Trigger_qomthr",
+    "Id": "Trigger_qomthr",
+    "Kind": "Trigger",
+    "Version": 1,
+    "Name": "itpmd_psr · rejected",
+    "Flow": "itpmd_psr",
+    "On": "Sponsor Approval",
+    "Event": "rejected"
+  },
+  "Action_qomth8": {
+    "_id": "Action_qomth8",
+    "Id": "Action_qomth8",
+    "Kind": "Action",
+    "Version": 1,
+    "Name": "notify → itpmd_psr",
+    "ActionType": "notify",
+    "TargetFlow": "itpmd_psr",
+    "FieldMap": {
+      "Project_Manager": "Project_Manager",
+      "Project": "Project",
+      "Reporting_Period_Month": "Reporting_Period_Month"
+    },
+    "Condition": null
+  }
+}

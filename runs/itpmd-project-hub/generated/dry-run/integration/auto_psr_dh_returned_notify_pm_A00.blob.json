@@ -1,0 +1,57 @@
+{
+  "Root": "auto_psr_dh_returned_notify_pm_A00",
+  "auto_psr_dh_returned_notify_pm_A00": {
+    "_id": "auto_psr_dh_returned_notify_pm_A00",
+    "Id": "auto_psr_dh_returned_notify_pm_A00",
+    "Kind": "Integration",
+    "Name": "PSR returned at DH Review → notify PM with comment",
+    "Type": "Integration",
+    "Status": "Draft",
+    "IsActive": true,
+    "_application_id": "itpmd_project_hub_A00",
+    "Connectors": [
+      "Connector_2qjp21"
+    ],
+    "Integration::Trigger": [
+      "Trigger_1ws6qx3"
+    ],
+    "Integration::Action": [
+      "Action_1ws6qwk"
+    ]
+  },
+  "Connector_2qjp21": {
+    "_id": "Connector_2qjp21",
+    "Id": "Connector_2qjp21",
+    "Kind": "Connector",
+    "Name": "PSR returned at DH Review → notify PM with comment connector",
+    "Entities": [
+      "Trigger_1ws6qx3",
+      "Action_1ws6qwk"
+    ]
+  },
+  "Trigger_1ws6qx3": {
+    "_id": "Trigger_1ws6qx3",
+    "Id": "Trigger_1ws6qx3",
+    "Kind": "Trigger",
+    "Version": 1,
+    "Name": "itpmd_psr · rejected",
+    "Flow": "itpmd_psr",
+    "On": "Department Head Review",
+    "Event": "rejected"
+  },
+  "Action_1ws6qwk": {
+    "_id": "Action_1ws6qwk",
+    "Id": "Action_1ws6qwk",
+    "Kind": "Action",
+    "Version": 1,
+    "Name": "notify → itpmd_psr",
+    "ActionType": "notify",
+    "TargetFlow": "itpmd_psr",
+    "FieldMap": {
+      "Project_Manager": "Project_Manager",
+      "Project": "Project",
+      "Reporting_Period_Month": "Reporting_Period_Month"
+    },
+    "Condition": null
+  }
+}
